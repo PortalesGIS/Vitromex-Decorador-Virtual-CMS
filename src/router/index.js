@@ -6,7 +6,8 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta:{protected :true}
   },
   {
     path: '/login',
@@ -19,6 +20,22 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+router.beforeEach((to,from,next)=>{
+  if(to.meta.protected){
+    if(localStorage.getItem("isLogged")){
+      next();
+      console.log("siguite????")
+    }
+    else{
+      console.log("nopppppp????")
+      next("/login");
+    }
+  }
+  else{
+    next();
+  }
 })
 
 export default router
