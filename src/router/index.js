@@ -27,10 +27,8 @@ router.beforeEach((to,from,next)=>{
   if(to.meta.protected){
     if(localStorage.getItem("isLogged")){
       next();
-      console.log("siguite????")
     }
     else{
-      console.log("nopppppp????")
       next("/login");
     }
   }
