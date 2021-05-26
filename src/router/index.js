@@ -14,9 +14,7 @@ const routes = [
     name: 'Login',
     component: Login
   },
-
 ]
-
 const router = createRouter({
   mode:"history",
   history: createWebHistory(process.env.BASE_URL),
@@ -27,10 +25,8 @@ router.beforeEach((to,from,next)=>{
   if(to.meta.protected){
     if(localStorage.getItem("isLogged")){
       next();
-      console.log("siguite????")
     }
     else{
-      console.log("nopppppp????")
       next("/login");
     }
   }
