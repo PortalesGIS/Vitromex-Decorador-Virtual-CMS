@@ -22,6 +22,10 @@ const router = createRouter({
 })
 
 router.beforeEach((to,from,next)=>{
+  if(to.name==="Login" && localStorage.getItem("isLogged")){
+    next("/")
+    return;
+  }
   if(to.meta.protected){
     if(localStorage.getItem("isLogged")){
       next();

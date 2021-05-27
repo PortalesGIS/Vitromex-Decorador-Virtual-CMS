@@ -22,7 +22,7 @@ export default {
     
     components:{
         LoginFormComponentVue
-    }
+    },
 
 }
 </script>

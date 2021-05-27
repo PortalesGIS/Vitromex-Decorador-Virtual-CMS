@@ -52,8 +52,8 @@
     </div> 
 
 </template>
-
 <script>
+import { mapActions } from 'vuex'
 export default {
     data() {
         return {
@@ -61,8 +61,10 @@ export default {
             password:""
         }
     },
-    methods: {        
+    methods: {  
+        ...mapActions(["AdminLogin"]),      
         onLogiIn() {
+            this.AdminLogin(true);
             // this.password="";
             // this.email="";
         }
