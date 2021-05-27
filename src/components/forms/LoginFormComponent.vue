@@ -57,14 +57,17 @@ import { mapActions } from 'vuex'
 export default {
     data() {
         return {
-            email: "",
-            password:""
+            email: "test@admin.com",
+            password:"123456"
         }
     },
     methods: {  
         ...mapActions(["AdminLogin"]),      
         onLogiIn() {
-            this.AdminLogin(true);
+            this.AdminLogin({
+                email:this.email,
+                password:this.password
+            });
             // this.password="";
             // this.email="";
         }
