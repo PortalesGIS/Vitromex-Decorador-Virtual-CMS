@@ -7,7 +7,7 @@
          </div>
          <div class="w-6/12 h-full bg-gray-300">
              <div class="w-full h-full flex justify-center items-center">                    
-                 <div class="p-4 w-full max-w-lg h-4/6  bg-white ">
+                 <div class="p-4 w-full max-w-lg h-full max-h-120 bg-white ">
                     <LoginFormComponentVue/>
                  </div>
              </div>
