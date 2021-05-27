@@ -1,6 +1,6 @@
 <template>
   <h1>
-     Home
+     this is home
   </h1>
 </template>
 
