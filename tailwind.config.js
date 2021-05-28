@@ -9,7 +9,8 @@ module.exports = {
     },
     maxWidth:{
       "17":"17rem",
-      "170px":"150px"
+      "170px":"150px",
+      "48px":"48px"
     },
     screens: {
       "sm": '640px',

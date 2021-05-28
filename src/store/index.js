@@ -6,12 +6,16 @@ const baseUrl = "http://localhost:8080";
 export default createStore({
   state: {
     adminStateLogin:false,
+    activeWindow:1,
   },
   mutations: {
     setAdminStateLogin(state,payload){
       state.adminStateLogin = payload;
       localStorage.setItem("isLogged","true");
       router.push("/");
+    },
+    setView(state,payload){
+      state.activeWindow = payload;
     }
   },
   actions: {
@@ -32,6 +36,14 @@ export default createStore({
       .catch(error => console.error('Error:', error))
       // 
       commit("setAdminStateLogin",payload);
+    },
+    onChangeViewWindow({commit},payload){      
+      commit("setView",payload);
+    }
+  },
+  getters:{
+    getVieWindow(state){
+      return state.activeWindow;
     }
   },
   modules: {
