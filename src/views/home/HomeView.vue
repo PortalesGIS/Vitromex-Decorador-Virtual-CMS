@@ -1,7 +1,7 @@
 <template>
   <div class="flex h-screen w-screen">
     <MenuGlobalComponenVue/>
-    <div class="w-full h-full ">
+    <div class="w-full h-full">
       <div 
         v-if="getVieWindow===windows.dashboard"
         class="w-full h-full">
@@ -30,9 +30,8 @@
       <div 
         v-if="!getVieWindow || getVieWindow>=6"
         class="w-full h-full bg-red-500">
-        
       </div>    
-    </div>
+    </div>    
   </div>
 </template>
 

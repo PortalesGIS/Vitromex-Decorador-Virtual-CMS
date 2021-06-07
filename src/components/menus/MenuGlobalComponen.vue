@@ -1,8 +1,12 @@
 <template>
-  <div>
-      <div v-if="isOpen">
-      <div class="h-screen">
-      <div class="absolute w-4/12 max-w-17 h-full bg-black overflow-auto rounded-r-lg">
+  <div 
+    :class="isOpen?'max-w-17':'max-w-48px'"
+    class="w-full">
+      <div 
+      class="w-full "
+      v-if="isOpen">
+      <div class="h-screen w-full">
+      <div class="w-full max-w-17 h-full bg-black overflow-auto rounded-r-lg">
       <div class="h-5/6 overflow-auto">
      <div class="flex  justify-between pt-4 mx-4">
         <div 
@@ -100,9 +104,11 @@
   </div>
   </div>
   <!-- escritorio -->
-      <div v-if="!isOpen">
-          <div class="h-screen">
-      <div class="absolute w-4/12 max-w-48px h-full bg-black overflow-auto rounded-r-lg">
+      <div 
+      class="w-full max-w-48px "
+      v-if="!isOpen">
+          <div class="w-full h-screen">
+      <div class="w-full max-w-48px h-full bg-black overflow-auto rounded-r-lg">
       <div class="h-5/6 overflow-auto">
      <div class="flex  justify-between pt-4 mx-4">
         <div
