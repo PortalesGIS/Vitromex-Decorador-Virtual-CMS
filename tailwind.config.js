@@ -10,7 +10,8 @@ module.exports = {
     maxWidth:{
       "17":"17rem",
       "170px":"150px",
-      "48px":"48px"
+      "48px":"48px",
+      "1400px":"1400px"
     },
     screens: {
       "sm": '640px',
@@ -27,7 +28,11 @@ module.exports = {
 
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
-    }
+    },
+    backgroundColor:theme=>({
+      ...theme("colors"),
+      "fondo":"#E5E5E5"
+    })
   },
   variants: {
     extend: {},
