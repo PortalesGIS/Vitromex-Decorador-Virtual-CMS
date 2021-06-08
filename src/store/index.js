@@ -1,5 +1,11 @@
 import { createStore } from 'vuex'
 import router from '../router'
+import {
+  getAllUsersApp
+} from './actions'
+import {setAllUsers} from './mutations'
+import {getAllUsers} from './getters'
+
 const baseUrl = "http://localhost:8080";
 
 
@@ -7,8 +13,10 @@ export default createStore({
   state: {
     adminStateLogin:false,
     activeWindow:1,
+    listUsers:[],
   },
   mutations: {
+    setAllUsers,
     setAdminStateLogin(state,payload){
       state.adminStateLogin = payload;
       localStorage.setItem("isLogged","true");
@@ -19,6 +27,7 @@ export default createStore({
     }
   },
   actions: {
+    getAllUsersApp,
     AdminLogin({commit},payload){
       // TODO: consumir api
       fetch(`${baseUrl}/api/admin/login`,{
@@ -42,6 +51,7 @@ export default createStore({
     }
   },
   getters:{
+    getAllUsers,
     getVieWindow(state){
       return state.activeWindow;
     }
