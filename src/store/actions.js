@@ -14,9 +14,25 @@ const getAllUsersApp = async ({commit})=>{
     } )
     .catch(error => console.error('Error:', error))
     // 
-    console.log(commit)
+  }
+
+const getAllStore = async ({commit})=>{
+    
+    await fetch(`${baseUrl}/api/shop`,{
+      method: "GET",
+      headers:{
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(result => result.json())
+    .then(response => {
+        commit("setAllStores",response)
+    } )
+    .catch(error => console.error('Error:', error))
+    // 
   }
 
   module.exports = {
-    getAllUsersApp
+    getAllUsersApp,
+    getAllStore,
   }
