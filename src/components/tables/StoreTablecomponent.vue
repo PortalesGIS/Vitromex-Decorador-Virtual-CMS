@@ -26,7 +26,7 @@
                 <i class="fas fa-angle-down"></i></div>
       </div>
       <div class="">
-          <div class="px-1"><p class="text-black text-sm font-bold py-2">Suspender</p></div>
+          <div class="px-1"><p class="text-black text-sm font-bold py-2">Publicar</p></div>
       </div>
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
