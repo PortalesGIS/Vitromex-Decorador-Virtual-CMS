@@ -32,7 +32,27 @@ const getAllStore = async ({commit})=>{
     // 
   }
 
+  const AdminLogin  = async({commit},payload)=>{
+    // TODO: consumir api
+    fetch(`${baseUrl}/api/admin/login`,{
+      method: "POST",
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email:payload.email,
+        password:payload.password
+      }),
+    })
+    .then(result => result.json())
+    .then(response => console.log("ok",response) )
+    .catch(error => console.error('Error:', error))
+    // 
+    commit("setAdminStateLogin",payload);
+  }
+
   module.exports = {
     getAllUsersApp,
     getAllStore,
+    AdminLogin
   }
