@@ -1,7 +1,7 @@
 <template>
     <div class="h-full w-full bg-white">
     <div>
-      <p class="uppercase text-7xl text-black font-bold pt-36 pl-20">
+      <p class="uppercase text-7xl text-black font-bold pt-16 pl-20">
       tiendas
       </p>
     </div>
