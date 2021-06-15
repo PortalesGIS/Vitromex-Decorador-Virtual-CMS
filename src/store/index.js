@@ -2,10 +2,11 @@ import { createStore } from 'vuex'
 import {
   getAllUsersApp,
   getAllStore,
-  AdminLogin
+  AdminLogin,
+  getAllproductsdb
 } from './actions'
-import {setAllUsers,setAllStores,setAdminStateLogin} from './mutations'
-import {getAllUsers,getAllStores} from './getters'
+import {setAllUsers,setAllStores,setAdminStateLogin,setAllProduts} from './mutations'
+import {getAllUsers,getAllStores,getAllProducts} from './getters'
 
 
 export default createStore({
@@ -14,11 +15,13 @@ export default createStore({
     activeWindow:1,
     listUsers:[],
     listStores:[],
+    products:[]
   },
   mutations: {
     setAllUsers,
     setAllStores,
     setAdminStateLogin,
+    setAllProduts,
     setView(state,payload){
       state.activeWindow = payload;
     }
@@ -27,6 +30,7 @@ export default createStore({
     getAllUsersApp,
     getAllStore,
     AdminLogin,
+    getAllproductsdb,
     onChangeViewWindow({commit},payload){      
       commit("setView",payload);
     }
@@ -34,6 +38,7 @@ export default createStore({
   getters:{
     getAllUsers,
     getAllStores,
+    getAllProducts,
     getVieWindow(state){
       return state.activeWindow;
     }

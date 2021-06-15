@@ -51,8 +51,23 @@ const getAllStore = async ({commit})=>{
     commit("setAdminStateLogin",payload);
   }
 
+  const getAllproductsdb = async({commit})=>{
+    await fetch(`${baseUrl}/api/product/vitromex`,{
+      method: "GET",
+      headers:{
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(result => result.json())
+    .then(response => {
+        commit("setAllProduts",response.products)
+    } )
+    .catch(error => console.error('Error:', error))
+  }
+
   module.exports = {
     getAllUsersApp,
     getAllStore,
-    AdminLogin
+    AdminLogin,
+    getAllproductsdb
   }

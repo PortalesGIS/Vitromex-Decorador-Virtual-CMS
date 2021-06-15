@@ -7,6 +7,11 @@ const setAllUsers = (state,payload) =>{
 const setAllStores = (state,payload) =>{
     state.listStores = payload.shops;
 }
+
+const setAllProduts = (state,payload) =>{
+    state.products = payload;
+}
+
 const setAdminStateLogin=(state,payload)=>{
     state.adminStateLogin = payload;
     localStorage.setItem("isLogged","true");
@@ -16,5 +21,6 @@ const setAdminStateLogin=(state,payload)=>{
 module.exports ={
     setAllUsers,
     setAllStores,
-    setAdminStateLogin
+    setAdminStateLogin,
+    setAllProduts
 }

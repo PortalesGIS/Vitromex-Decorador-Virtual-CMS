@@ -14,7 +14,7 @@
       </div>    
       <div 
         v-if="getVieWindow===windows.products"
-        class="w-full h-full">
+        class="w-full h-full ">
         <ProductsComponentVue/>
       </div>    
       <div 

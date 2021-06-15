@@ -6,7 +6,12 @@ const getAllStores=(state)=>{
     return state.listStores;
   }
 
+const getAllProducts=(state)=>{
+    return state.products;
+  }
+
   module.exports = {
       getAllUsers,
+      getAllProducts,
       getAllStores,
   }
