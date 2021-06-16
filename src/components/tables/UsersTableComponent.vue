@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-10 w-full bg-gray-100 ">
+  <div class="w-full bg-gray-100 ">
       <div class="pl-10 w-full max-w-1400px grid grid-cols-12 ">
           <div class="">
               <p class="text-black text-sm font-bold py-2">No.</p></div>

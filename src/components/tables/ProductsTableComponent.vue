@@ -1,7 +1,7 @@
 <template>
-  <div class="h-full w-full bg-gray-300 min-w-1900px ">
-      <div class="h-20 flex justify-between bg-black">
-          <div class="pl-10 w-full  min-w-1900px grid grid-cols-36 ">
+  <div class="h-full w-full bg-gray-300  overflow-x-auto">
+      <div class="h-20 flex justify-between bg-black min-w-1900px  overflow-x-auto">
+          <div class="pl-10 w-full  grid grid-cols-36 overflow-x-auto">
           <div class="">
               <p class="text-white text-sm font-bold py-2">
                   <input type="checkbox">
@@ -63,13 +63,13 @@
       </div>
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
-      <div class="h-5/6  overflow-auto">
+      <div class="h-5/6 overflow-x-auto min-w-1900px">
           <div v-for="(product,index) in products" :key="index" class="">
           <div  
             class="flex justify-between"
             :class="(index%2)?'bg-white':''"
             >
-          <div class="pl-10 w-full grid grid-cols-36  min-w-1900px ">
+          <div class="pl-10 w-full grid grid-cols-36">
           <div class="col-span-1">
               <p class="text-black text-sm py-2"> <input type="checkbox"></p>
           </div>
@@ -77,31 +77,28 @@
               <p class="text-black text-sm py-2">{{index}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2 ">{{product.name}}</p>
+              <p class="text-black text-sm py-2 ">{{(product.smallPicture!="")?'1/1':'0/1'}}</p>
           </div>
           <div class="col-span-2 ">
-              <p class="text-black text-sm py-2 truncate  ">{{`${product.street} ${product.city}`}}</p>
+              <p class="text-black text-sm py-2 truncate  ">{{`${countImgsProduct(product)}/3`}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">{{`18.1354-18.161`}}</p>
+              <p class="text-black text-sm py-2">{{`1/1`}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">{{product.phone}}</p>
+              <p class="text-black text-sm py-2">{{product.name}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">01/10/2020</p>
+              <p class="text-black text-sm py-2">{{product.typologies}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">01/10/2020</p>
+              <p class="text-black text-sm py-2">{{product.sized}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">01/10/2020</p>
+              <p class="text-black text-sm py-2">{{product.finish}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">01/10/2020</p>
-          </div>
-          <div class="col-span-2">
-              <p class="text-black text-sm py-2">---</p>
+              <p class="text-black text-sm py-2">{{product.color}}</p>
           </div>
           <div class="col-span-2">
               <p class="text-black text-sm py-2">---</p>
@@ -119,10 +116,15 @@
               <p class="text-black text-sm py-2">---</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">01/10/2020</p>
+              <p class="text-black text-sm py-2">---</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">01/10/2020</p>
+              <p class="text-black text-sm py-2">15/06/2021</p>
+          </div>
+          <div class="col-span-2">
+              <div class="h-6 w-12 bg-blue-500">
+
+              </div>
           </div>
            <div class="col-span-2 ">
                 <label class="switch">
@@ -135,8 +137,9 @@
       </div>
       </div>
   </div>
-  <div class="pl-10 py-2 flex items-center   min-w-1900px justify-between bg-black">
-     <div class="flex">
+  <div class="pl-10 py-2 w-full flex items-center  justify-between bg-black">
+     <div class="flex w-full items-center  justify-between max-w-1500px">
+         <div class="flex ">
           <p class="text-white font-bold text-sm pr-2">Total de Filas:</p>
         <div class="border-2 px-1 bg-white">
             <select 
@@ -158,9 +161,10 @@
             <i class="fas fa-angle-left fa-2x" style="color:gray"></i>
          </div>
          <div class="mx-4 cursor-pointer">
-            <i class="fas fa-angle-right fa-2x"></i>
+            <i class="fas fa-angle-right fa-2x" style="color:white"></i>
          </div>
      </div>
+         </div>     
   </div>
 </template>
 
@@ -179,6 +183,13 @@ export default {
             await this.getAllproductsdb();
             this.products = this.getAllProducts          
             console.log(this.products)
+        },
+        countImgsProduct(product){
+            let counter = 0;
+            if(product.albedo!="")counter++
+            if(product.normal!="")counter++
+            if(product.roughness!="")counter++
+            return counter            
         }
     },
     computed: {
