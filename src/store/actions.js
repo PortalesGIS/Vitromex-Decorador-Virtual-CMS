@@ -61,13 +61,23 @@ const getAllStore = async ({commit})=>{
     .then(result => result.json())
     .then(response => {
         commit("setAllProduts",response.products)
+        commit("setAllProdutsFilter",response.products)
     } )
     .catch(error => console.error('Error:', error))
+  }
+
+  const filterProductsForString=({commit,getters},{word=""})=>{
+    word= word.toUpperCase()
+    const result = getters.getAllProductsFilter.filter(name =>
+      name.name.includes(word))
+      console.log(result)
+    commit("setAllProduts",result)
   }
 
   module.exports = {
     getAllUsersApp,
     getAllStore,
     AdminLogin,
-    getAllproductsdb
+    getAllproductsdb,
+    filterProductsForString
   }

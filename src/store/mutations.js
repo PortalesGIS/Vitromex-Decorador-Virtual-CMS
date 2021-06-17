@@ -11,6 +11,9 @@ const setAllStores = (state,payload) =>{
 const setAllProduts = (state,payload) =>{
     state.products = payload;
 }
+const setAllProdutsFilter = (state,payload) =>{
+    state.productsForFilter =payload;
+}
 
 const setAdminStateLogin=(state,payload)=>{
     state.adminStateLogin = payload;
@@ -22,5 +25,6 @@ module.exports ={
     setAllUsers,
     setAllStores,
     setAdminStateLogin,
-    setAllProduts
+    setAllProduts,
+    setAllProdutsFilter
 }

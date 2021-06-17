@@ -1,8 +1,8 @@
 <template>
   <div class="h-full w-full bg-gray-300  overflow-x-auto">
-      <div class="h-20 flex justify-between bg-black min-w-1900px  overflow-x-auto">
-          <div class="pl-10 w-full  grid grid-cols-36 overflow-x-auto">
-          <div class="">
+      <div class="h-20 flex justify-between bg-black min-w-2100px  overflow-x-auto">
+          <div class="pl-10 w-full  grid grid-cols-38 overflow-x-auto">
+          <div class="flex items-center justify-between">
               <p class="text-white text-sm font-bold py-2">
                   <input type="checkbox">
                   </p></div>
@@ -28,7 +28,10 @@
               <p class="text-white text-sm font-bold py-2">Serie</p>
                 <i class="fas fa-angle-down" style="color:white"></i></div>
           <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">formato</p>
+              <p class="text-white text-sm font-bold py-2">Tipologia</p>
+                <i class="fas fa-angle-down" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-between mr-4">
+              <p class="text-white text-sm font-bold py-2">Acabado</p>
                 <i class="fas fa-angle-down" style="color:white"></i></div>
           <div class="col-span-2 flex items-center justify-between mr-4">
               <p class="text-white text-sm font-bold py-2">Color</p>
@@ -63,13 +66,13 @@
       </div>
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
-      <div class="h-5/6 overflow-x-auto min-w-1900px">
-          <div v-for="(product,index) in products" :key="index" class="">
+      <div class="h-5/6 overflow-x-auto min-w-2100px">
+          <div v-for="(product,index) in getAllProducts" :key="index" class="">
           <div  
             class="flex justify-between"
             :class="(index%2)?'bg-white':''"
             >
-          <div class="pl-10 w-full grid grid-cols-36">
+          <div class="pl-10 w-full grid grid-cols-38">
           <div class="col-span-1">
               <p class="text-black text-sm py-2"> <input type="checkbox"></p>
           </div>
@@ -80,12 +83,12 @@
               <p class="text-black text-sm py-2 ">{{(product.smallPicture!="")?'1/1':'0/1'}}</p>
           </div>
           <div class="col-span-2 ">
-              <p class="text-black text-sm py-2 truncate  ">{{`${countImgsProduct(product)}/3`}}</p>
+              <p class="text-black text-sm py-2 truncate  ">0/3</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">{{`1/1`}}</p>
+              <p class="text-black text-sm py-2">{{`${countImgsProduct(product)}/2`}}</p>
           </div>
-          <div class="col-span-2">
+          <div class="col-span-2 max-w-full truncate">
               <p class="text-black text-sm py-2">{{product.name}}</p>
           </div>
           <div class="col-span-2">
@@ -95,31 +98,53 @@
               <p class="text-black text-sm py-2">{{product.sized}}</p>
           </div>
           <div class="col-span-2">
+              <p class="text-black text-sm py-2">{{`tipologia`}}</p>
+          </div>
+          <div class="col-span-2">
               <p class="text-black text-sm py-2">{{product.finish}}</p>
           </div>
           <div class="col-span-2">
               <p class="text-black text-sm py-2">{{product.color}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">---</p>
+              <div v-if="serchAplication(product,'Piso')">
+                *
+              </div>
+              <div v-else>---</div>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">---</p>
+              <div v-if="serchAplication(product,'Muro')">
+                *
+              </div>
+              <div v-else>---</div>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">---</p>
+              <div v-if="serchAplication(product,'Interior')">
+                *
+              </div>
+              <div v-else>---</div>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">---</p>
+              <div v-if="serchAplication(product,'Exterior')">
+                *
+              </div>
+              <div v-else>---</div>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">---</p>
+              <div v-if="serchAplication(product,'Fachada')">
+                *
+              </div>
+              <div v-else>---</div>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">---</p>
+              <div v-if="serchAplication(product,'Baño')">
+                *
+              </div>
+              <div v-else>---</div>
           </div>
+          
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">15/06/2021</p>
+              <p class="text-black text-sm py-2">{{product.dateCreated}}</p>
           </div>
           <div class="col-span-2">
               <div class="h-6 w-12 bg-blue-500">
@@ -174,15 +199,12 @@ import { mapActions, mapGetters } from 'vuex';
 export default {
     data() {
         return {
-            products: [],
         }
     },
     methods: {
         ...mapActions(["getAllproductsdb"]),
         async onGetAllProducts(){
             await this.getAllproductsdb();
-            this.products = this.getAllProducts          
-            console.log(this.products)
         },
         countImgsProduct(product){
             let counter = 0;
@@ -190,7 +212,14 @@ export default {
             if(product.normal!="")counter++
             if(product.roughness!="")counter++
             return counter            
-        }
+        },
+        serchAplication(product,aplication){
+          if(product){
+            const found = product.aplications.find(element => element === aplication)
+            return found
+          }
+          return false
+        },
     },
     computed: {
     ...mapGetters(["getAllProducts"]),

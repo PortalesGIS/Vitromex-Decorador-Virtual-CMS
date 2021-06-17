@@ -3,7 +3,9 @@
       <div class="h-full  mr-4">
           <div class="flex items-center  h-full bg-gray-100 max-w-17">
               <i class="fas fa-search mx-2"></i>
-              <input type="text"
+              <input type="text"               
+               v-model="stringSearch"
+               @input="chngeInputName"
                     class=" appearance-none h-full w-full border-0 border-transparent bg-gray-100 focus:outline-none active:outline-non"
                     placeholder="Buscar"
               >
@@ -29,8 +31,22 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 export default {
-
+    data() {
+        return {
+            stringSearch: ""
+        }
+    },
+    methods: {
+        ...mapActions(["filterProductsForString"]),
+        chngeInputName() {
+            this.filterProductsForString({word:this.stringSearch});
+        }
+    },
+    computed:{
+        ...mapGetters(["getAllProducts"]),
+    }
 }
 </script>
 

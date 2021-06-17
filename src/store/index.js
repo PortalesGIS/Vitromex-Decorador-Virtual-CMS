@@ -3,10 +3,11 @@ import {
   getAllUsersApp,
   getAllStore,
   AdminLogin,
-  getAllproductsdb
+  getAllproductsdb,
+  filterProductsForString
 } from './actions'
-import {setAllUsers,setAllStores,setAdminStateLogin,setAllProduts} from './mutations'
-import {getAllUsers,getAllStores,getAllProducts} from './getters'
+import {setAllUsers,setAllStores,setAdminStateLogin,setAllProduts,setAllProdutsFilter} from './mutations'
+import {getAllUsers,getAllStores,getAllProducts,getAllProductsFilter} from './getters'
 
 
 export default createStore({
@@ -15,13 +16,16 @@ export default createStore({
     activeWindow:1,
     listUsers:[],
     listStores:[],
-    products:[]
+    products:[],
+    productsForFilter:[],
+
   },
   mutations: {
     setAllUsers,
     setAllStores,
     setAdminStateLogin,
     setAllProduts,
+    setAllProdutsFilter,
     setView(state,payload){
       state.activeWindow = payload;
     }
@@ -31,6 +35,7 @@ export default createStore({
     getAllStore,
     AdminLogin,
     getAllproductsdb,
+    filterProductsForString,
     onChangeViewWindow({commit},payload){      
       commit("setView",payload);
     }
@@ -39,6 +44,7 @@ export default createStore({
     getAllUsers,
     getAllStores,
     getAllProducts,
+    getAllProductsFilter,
     getVieWindow(state){
       return state.activeWindow;
     }

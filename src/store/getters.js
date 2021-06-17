@@ -9,9 +9,13 @@ const getAllStores=(state)=>{
 const getAllProducts=(state)=>{
     return state.products;
   }
+const getAllProductsFilter=(state)=>{
+    return state.productsForFilter;
+  }
 
   module.exports = {
       getAllUsers,
       getAllProducts,
       getAllStores,
+      getAllProductsFilter
   }
