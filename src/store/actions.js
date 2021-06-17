@@ -11,6 +11,7 @@ const getAllUsersApp = async ({commit})=>{
     .then(result => result.json())
     .then(response => {
         commit("setAllUsers",response)
+        commit("setAllUsersFilter",response)
     } )
     .catch(error => console.error('Error:', error))
     // 
@@ -67,17 +68,41 @@ const getAllStore = async ({commit})=>{
   }
 
   const filterProductsForString=({commit,getters},{word=""})=>{
-    word= word.toUpperCase()
+    word= normalizeText(word)
     const result = getters.getAllProductsFilter.filter(name =>
-      name.name.includes(word))
-      console.log(result)
+      normalizeText(name.name).includes(word))
     commit("setAllProduts",result)
   }
+
+  const filterUsersForCountry = ({commit,getters},{word=""})=>{
+    word= normalizeText(word)
+    const result = getters.getAllUsersFilter.filter(name =>{
+     return normalizeText(name.country).includes(word)}
+      )
+    commit("setAllUsers",{users:result})
+  }
+  const filterUsersForCity = ({commit,getters},{word=""})=>{
+    word= normalizeText(word)
+    const result = getters.getAllUsersFilter.filter(name =>{
+     return normalizeText(name.city).includes(word)}
+      )
+    commit("setAllUsers",{users:result})
+  }
+
+
+  const normalizeText=(text)=>{
+    return text.toUpperCase().normalize('NFD')
+    .replace(/([aeio])\u0301|(u)[\u0301\u0308]/gi,"$1$2")
+    .normalize();
+  }
+
 
   module.exports = {
     getAllUsersApp,
     getAllStore,
     AdminLogin,
     getAllproductsdb,
-    filterProductsForString
+    filterProductsForString,
+    filterUsersForCountry,
+    filterUsersForCity
   }

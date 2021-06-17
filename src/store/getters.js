@@ -1,6 +1,9 @@
 const getAllUsers=(state)=>{
     return state.listUsers;
   }
+const getAllUsersFilter=(state)=>{
+    return state.listUsersForFilter;
+  }
 
 const getAllStores=(state)=>{
     return state.listStores;
@@ -17,5 +20,6 @@ const getAllProductsFilter=(state)=>{
       getAllUsers,
       getAllProducts,
       getAllStores,
-      getAllProductsFilter
+      getAllProductsFilter,
+      getAllUsersFilter
   }

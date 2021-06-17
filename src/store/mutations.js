@@ -3,6 +3,9 @@ const { default: router } = require("../router");
 const setAllUsers = (state,payload) =>{
     state.listUsers = payload.users;
 }
+const setAllUsersFilter = (state,payload) =>{
+    state.listUsersForFilter = payload.users;
+}
 
 const setAllStores = (state,payload) =>{
     state.listStores = payload.shops;
@@ -26,5 +29,6 @@ module.exports ={
     setAllStores,
     setAdminStateLogin,
     setAllProduts,
-    setAllProdutsFilter
+    setAllProdutsFilter,
+    setAllUsersFilter,
 }

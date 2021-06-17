@@ -23,7 +23,7 @@
                 <i class="fas fa-angle-down"></i></div>
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
-      <div v-for="(user,i) in users" :key="user.id">
+      <div v-for="(user,i) in getAllUsers" :key="i">
           <div class="pl-10 grid grid-cols-12 max-w-1400px ">
           <div class="">
               <p class="text-black text-sm py-2">{{i}}</p>
@@ -83,14 +83,12 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
     data() {
         return {
-            users: [],
         }
     },
     methods: {
         ...mapActions(["getAllUsersApp"]),
         async onGetAllUsers(){
-            await this.getAllUsersApp();
-            this.users = this.getAllUsers;
+            await this.getAllUsersApp();      
         }
     },
     computed: {
