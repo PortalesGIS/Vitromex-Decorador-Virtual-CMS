@@ -17,7 +17,7 @@ const getAllUsersApp = async ({commit})=>{
     // 
   }
 
-const getAllStore = async ({commit})=>{
+const getAllStoreDB = async ({commit})=>{
     
     await fetch(`${baseUrl}/api/shop`,{
       method: "GET",
@@ -28,6 +28,7 @@ const getAllStore = async ({commit})=>{
     .then(result => result.json())
     .then(response => {
         commit("setAllStores",response)
+        commit("setAllStoresFilter",response)
     } )
     .catch(error => console.error('Error:', error))
     // 
@@ -69,24 +70,53 @@ const getAllStore = async ({commit})=>{
 
   const filterProductsForString=({commit,getters},{word=""})=>{
     word= normalizeText(word)
-    const result = getters.getAllProductsFilter.filter(name =>
-      normalizeText(name.name).includes(word))
+    const result = getters.getAllProductsFilter.filter(product =>
+      normalizeText(product.name).includes(word) || 
+      normalizeText(product.color).includes(word) || 
+      normalizeText(product.finish).includes(word) ||
+      normalizeText(product.typologies).includes(word) ||
+      normalizeText(product.sized).includes(word) 
+      )  
     commit("setAllProduts",result)
   }
 
   const filterUsersForCountry = ({commit,getters},{word=""})=>{
     word= normalizeText(word)
-    const result = getters.getAllUsersFilter.filter(name =>{
-     return normalizeText(name.country).includes(word)}
+    const result = getters.getAllUsersFilter.filter(name =>
+      normalizeText(name.city).includes(word) ||
+      normalizeText(name.name).includes(word) ||
+      normalizeText(name.country).includes(word) ||
+      normalizeText(name.email).includes(word) ||
+      normalizeText(name.lastName).includes(word)
       )
     commit("setAllUsers",{users:result})
   }
+  
   const filterUsersForCity = ({commit,getters},{word=""})=>{
     word= normalizeText(word)
-    const result = getters.getAllUsersFilter.filter(name =>{
-     return normalizeText(name.city).includes(word)}
+    const result = getters.getAllUsersFilter.filter(name =>
+      normalizeText(name.city).includes(word) ||
+      normalizeText(name.country).includes(word) ||
+      normalizeText(name.email).includes(word) ||
+      normalizeText(name.lastName).includes(word)
       )
     commit("setAllUsers",{users:result})
+  }
+
+  const filterShops= ({commit,getters},{word=""})=>{
+    word= normalizeText(word)
+    const result = getters.getAllStoresFilter.filter(shop =>
+      normalizeText(shop.name).includes(word) ||
+      normalizeText(shop.state).includes(word) ||
+      normalizeText(shop.city).includes(word) ||
+      normalizeText(shop.suburb).includes(word) ||
+      normalizeText(shop.street).includes(word) ||
+      normalizeText(shop.num).includes(word) ||
+      normalizeText(shop.phone).includes(word) ||
+      normalizeText(shop.country).includes(word) 
+      )
+      console.log(result)
+    commit("setAllStores",{shops:result})
   }
 
 
@@ -99,10 +129,11 @@ const getAllStore = async ({commit})=>{
 
   module.exports = {
     getAllUsersApp,
-    getAllStore,
+    getAllStoreDB,
     AdminLogin,
     getAllproductsdb,
     filterProductsForString,
     filterUsersForCountry,
-    filterUsersForCity
+    filterUsersForCity,
+    filterShops
   }

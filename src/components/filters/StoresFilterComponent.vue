@@ -4,6 +4,8 @@
           <div class="flex items-center h-full bg-gray-100 max-w-17">
               <i class="fas fa-search mx-2"></i>
               <input type="text"
+               v-model="word"
+               @input="chngeInputText"
                     class=" appearance-none h-full w-full border-0 border-transparent bg-gray-100 focus:outline-none active:outline-non"
                     placeholder="Buscar"
               >
@@ -29,10 +31,17 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
     data() {
         return {
-          
+          word:""
+        }
+    },
+    methods: {
+        ...mapActions(["filterShops"]),
+        chngeInputText() {
+            this.filterShops({word:this.word})   
         }
     },
     mounted () {

@@ -28,7 +28,7 @@
               <p class="text-white text-sm font-bold py-2">Serie</p>
                 <i class="fas fa-angle-down" style="color:white"></i></div>
           <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Tipologia</p>
+              <p class="text-white text-sm font-bold py-2">Serie</p>
                 <i class="fas fa-angle-down" style="color:white"></i></div>
           <div class="col-span-2 flex items-center justify-between mr-4">
               <p class="text-white text-sm font-bold py-2">Acabado</p>
@@ -98,7 +98,7 @@
               <p class="text-black text-sm py-2">{{product.sized}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">{{`tipologia`}}</p>
+              <p class="text-black text-sm py-2">{{`Serie`}}</p>
           </div>
           <div class="col-span-2">
               <p class="text-black text-sm py-2">{{product.finish}}</p>

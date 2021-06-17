@@ -21,12 +21,12 @@
           class=" appearance-none w-30 bg-gray-100 focus:outline-none active:outline-non"
           type="date">          
       </div>
-      <div class="h-full ml-10 mr-4">
+      <!-- <div class="h-full ml-10 mr-4">
           <div class="flex items-center h-full max-w-17 cursor-pointer">
               <div class="w-4 h-4 rounded-full bg-gray-400 mx-2"></div>
               <div><p class="text-gray-400">Eliminar</p></div>
           </div>
-      </div>
+      </div> -->
   </div>
 </template>
 

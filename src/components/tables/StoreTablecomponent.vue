@@ -30,7 +30,7 @@
       </div>
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
-      <div v-for="(store,index) in stores" :key="index">
+      <div v-for="(store,index) in getAllStores" :key="index">
           <div class="flex justify-between">
           <div class="pl-10 w-full grid grid-cols-12 max-w-1400px ">
           <div class="col-span-1">
@@ -99,15 +99,12 @@ import { mapActions, mapGetters } from 'vuex';
 export default {
     data() {
         return {
-            stores: [],
         }
     },
     methods: {
-        ...mapActions(["getAllStore"]),
+        ...mapActions(["getAllStoreDB"]),
         async onGetAllStores(){
-            await this.getAllStore();
-            this.stores = this.getAllStores
-            console.log(this.stores)
+            await this.getAllStoreDB();
         }
     },
     computed: {

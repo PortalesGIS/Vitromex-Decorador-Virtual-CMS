@@ -1,15 +1,17 @@
 import { createStore } from 'vuex'
 import {
   getAllUsersApp,
-  getAllStore,
+  getAllStoreDB,
   AdminLogin,
   getAllproductsdb,
   filterProductsForString,
   filterUsersForCountry,
-  filterUsersForCity
+  filterUsersForCity,
+  filterShops
 } from './actions'
-import {setAllUsers,setAllStores,setAdminStateLogin,setAllProduts,setAllProdutsFilter,setAllUsersFilter} from './mutations'
-import {getAllUsers,getAllStores,getAllProducts,getAllProductsFilter,getAllUsersFilter} from './getters'
+import {setAllUsers,setAllStores,setAdminStateLogin,setAllProduts,setAllProdutsFilter,setAllUsersFilter,
+  setAllStoresFilter} from './mutations'
+import {getAllUsers,getAllStores,getAllProducts,getAllProductsFilter,getAllUsersFilter,getAllStoresFilter} from './getters'
 
 
 export default createStore({
@@ -19,6 +21,7 @@ export default createStore({
     listUsers:[],
     listUsersForFilter:[],
     listStores:[],
+    listStoresFilter:[],
     products:[],
     productsForFilter:[],
 
@@ -30,18 +33,20 @@ export default createStore({
     setAllProduts,
     setAllProdutsFilter,
     setAllUsersFilter,
+    setAllStoresFilter,
     setView(state,payload){
       state.activeWindow = payload;
     }
   },
   actions: {
     getAllUsersApp,
-    getAllStore,
+    getAllStoreDB,
     AdminLogin,
     filterUsersForCountry,
     getAllproductsdb,
     filterProductsForString,
     filterUsersForCity,
+    filterShops,
     onChangeViewWindow({commit},payload){      
       commit("setView",payload);
     }
@@ -52,6 +57,7 @@ export default createStore({
     getAllProducts,
     getAllUsersFilter,
     getAllProductsFilter,
+    getAllStoresFilter,
     getVieWindow(state){
       return state.activeWindow;
     }

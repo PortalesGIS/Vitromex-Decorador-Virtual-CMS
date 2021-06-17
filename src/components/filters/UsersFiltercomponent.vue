@@ -11,7 +11,7 @@
               >
           </div>
       </div>
-      <div class="h-full mr-4">
+      <!-- <div class="h-full mr-4">
           <div class="flex items-center h-full bg-gray-100 max-w-17">
               <i class="fas fa-map-marker-alt mx-2"></i>
               <input type="text"
@@ -21,7 +21,7 @@
                     placeholder="Buscar por Ciudad"
               >
           </div>
-      </div>
+      </div> -->
       <div class="flex  h-full bg-gray-100 items-center">
             <i class="fas fa-calendar-alt mx-2"></i>
           <input 

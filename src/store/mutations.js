@@ -10,6 +10,9 @@ const setAllUsersFilter = (state,payload) =>{
 const setAllStores = (state,payload) =>{
     state.listStores = payload.shops;
 }
+const setAllStoresFilter = (state,payload) =>{
+    state.listStoresFilter = payload.shops;
+}
 
 const setAllProduts = (state,payload) =>{
     state.products = payload;
@@ -31,4 +34,5 @@ module.exports ={
     setAllProduts,
     setAllProdutsFilter,
     setAllUsersFilter,
+    setAllStoresFilter,
 }
