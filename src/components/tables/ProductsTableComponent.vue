@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full w-full bg-gray-300  overflow-x-auto">
+  <div class="h-full w-full bg-gray-100  overflow-x-auto">
       <div class="h-20 flex justify-between bg-black min-w-2100px  overflow-x-auto">
           <div class="pl-10 w-full  grid grid-cols-38 overflow-x-auto">
           <div class="flex items-center justify-between">

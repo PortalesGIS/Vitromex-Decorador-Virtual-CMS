@@ -17,6 +17,23 @@ const getAllUsersApp = async ({commit})=>{
     // 
   }
 
+const getAllAdminsDB = async ({commit})=>{
+    
+    await fetch(`${baseUrl}/api/admin/`,{
+      method: "GET",
+      headers:{
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(result => result.json())
+    .then(response => {
+        commit("setAllAdmins",response)
+        commit("setAllAdminsFilter",response)
+    } )
+    .catch(error => console.error('Error:', error))
+    // 
+  }
+
 const getAllStoreDB = async ({commit})=>{
     
     await fetch(`${baseUrl}/api/shop`,{
@@ -119,6 +136,16 @@ const getAllStoreDB = async ({commit})=>{
     commit("setAllStores",{shops:result})
   }
 
+  const filterAdmin= ({commit,getters},{word=""})=>{
+    word= normalizeText(word)
+    const result = getters.getAllAdminsFilter.filter(shop =>
+      normalizeText(shop.name).includes(word) ||
+      normalizeText(shop.email).includes(word) 
+      )
+      console.log(result)
+    commit("setAllAdmins",{admins:result})
+  }
+
 
   const normalizeText=(text)=>{
     return text.toUpperCase().normalize('NFD')
@@ -135,5 +162,7 @@ const getAllStoreDB = async ({commit})=>{
     filterProductsForString,
     filterUsersForCountry,
     filterUsersForCity,
-    filterShops
+    filterShops,
+    getAllAdminsDB,
+    filterAdmin
   }

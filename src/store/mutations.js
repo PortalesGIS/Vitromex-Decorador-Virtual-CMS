@@ -7,6 +7,14 @@ const setAllUsersFilter = (state,payload) =>{
     state.listUsersForFilter = payload.users;
 }
 
+const setAllAdmins =(state,payload)=>{
+    state.listAdmins = payload.admins
+}
+
+const setAllAdminsFilter =(state,payload)=>{
+    state.listAdminsFilter = payload.admins
+}
+
 const setAllStores = (state,payload) =>{
     state.listStores = payload.shops;
 }
@@ -35,4 +43,6 @@ module.exports ={
     setAllProdutsFilter,
     setAllUsersFilter,
     setAllStoresFilter,
+    setAllAdmins,
+    setAllAdminsFilter,
 }
