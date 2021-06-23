@@ -1,6 +1,6 @@
 <template>
-  <div class="h-full w-full bg-gray-100  overflow-x-auto">
-      <div class="h-20 flex justify-between bg-black min-w-2100px  overflow-x-auto">
+  <div class="h-full w-full bg-f5  overflow-x-auto">
+      <div class="h-20 flex justify-between bg-1f min-w-2100px  overflow-x-auto">
           <div class="pl-10 w-full  grid grid-cols-38 overflow-x-auto">
           <div class="flex items-center justify-between">
               <p class="text-white text-sm font-bold py-2">
@@ -162,7 +162,7 @@
       </div>
       </div>
   </div>
-  <div class="pl-10 py-2 w-full flex items-center  justify-between bg-black">
+  <div class="pl-10 py-2 w-full flex items-center  justify-between bg-1f">
      <div class="flex w-full items-center  justify-between max-w-1500px">
          <div class="flex ">
           <p class="text-white font-bold text-sm pr-2">Total de Filas:</p>

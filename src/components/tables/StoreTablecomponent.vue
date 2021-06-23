@@ -1,32 +1,32 @@
 <template>
-  <div class="w-full bg-gray-100 ">
+  <div class="w-full bg-f5 ">
       <div class="flex justify-between">
-          <div class="pl-10 w-full max-w-1400px grid grid-cols-12 ">
+          <div class="pl-10 w-full max-w-1400px grid grid-cols-12 bg-1f">
           <div class="">
-              <p class="text-black text-sm font-bold py-2">
+              <p class="text-white text-sm font-bold py-2">
                   <input type="checkbox">
                   </p></div>
           <div class="col-span-1 flex items-center justify-between mr-4">
-              <p class="text-black text-sm font-bold py-2">No.</p>
-                <i class="fas fa-angle-down"></i></div>
+              <p class="text-white text-sm font-bold py-2">No.</p>
+                <i class="fas fa-angle-down" style="color:white"></i></div>
           <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-black text-sm font-bold py-2">Nombre de la Tienda</p>
-                <i class="fas fa-angle-down"></i></div>
+              <p class="text-white text-sm font-bold py-2">Nombre de la Tienda</p>
+                <i class="fas fa-angle-down" style="color:white"></i></div>
           <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-black text-sm font-bold py-2">Direccion</p>
-                <i class="fas fa-angle-down"></i></div>
+              <p class="text-white text-sm font-bold py-2">Direccion</p>
+                <i class="fas fa-angle-down" style="color:white"></i></div>
           <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-black text-sm font-bold py-2">Coordenadas</p>
-                <i class="fas fa-angle-down"></i></div>
+              <p class="text-white text-sm font-bold py-2">Coordenadas</p>
+                <i class="fas fa-angle-down" style="color:white"></i></div>
           <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-black text-sm font-bold py-2">Telefono</p>
-                <i class="fas fa-angle-down"></i></div>
+              <p class="text-white text-sm font-bold py-2">Telefono</p>
+                <i class="fas fa-angle-down" style="color:white"></i></div>
           <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-black text-sm font-bold py-2">Fecha de Registro</p>
-                <i class="fas fa-angle-down"></i></div>
+              <p class="text-white text-sm font-bold py-2">Fecha de Registro</p>
+                <i class="fas fa-angle-down" style="color:white"></i></div>
       </div>
-      <div class="">
-          <div class="px-1"><p class="text-black text-sm font-bold py-2">Publicar</p></div>
+      <div class="bg-1f">
+          <div class="px-1"><p class="text-white text-sm font-bold py-2">Publicar</p></div>
       </div>
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
@@ -65,7 +65,7 @@
         </div>
       </div>
   </div>
-  <div class="pl-10 py-2 flex items-center w-full justify-between bg-black">
+  <div class="pl-10 py-2 flex items-center w-full justify-between bg-1f">
      <div class="flex">
           <p class="text-white font-bold text-sm pr-2">Total de Filas:</p>
         <div class="border-2 px-1 bg-white">

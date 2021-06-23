@@ -19,6 +19,7 @@ module.exports = {
       "full":"100%",
     },
     minWidth: {
+      "17":"17rem",
       '0': '0',
       '1/4': '25%',
       '1/2': '50%',
@@ -61,7 +62,12 @@ module.exports = {
     },
     backgroundColor:theme=>({
       ...theme("colors"),
-      "fondo":"#E5E5E5"
+      "fondo":"#E5E5E5",
+      "555555":"#555555",
+      "f5":"#F5F5F5",
+      "1d":"#1D1D1D",
+      "6f":"#6F6F6F",
+      "1f":"#1F1F1F",
     }),
     boxShadow: {
       sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
@@ -71,7 +77,7 @@ module.exports = {
       xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
       '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
      '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
-     '10xl': '0 35px 60px -15px rgba(0, 0, 0, 1)',
+     '10xl': '10px 0px 10px 0px rgba(0, 0, 0, 0.8)',
       inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
       none: 'none',
     }
