@@ -47,13 +47,13 @@
               <p class="text-black text-sm py-2 truncate  ">{{`${store.street} ${store.city}`}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">{{`18.1354-18.161`}}</p>
+              <p class="text-black text-sm py-2">{{`${store.lat},${store.lng}`}}</p>
           </div>
           <div class="col-span-2">
               <p class="text-black text-sm py-2">{{store.phone}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">01/10/2020</p>
+              <p class="text-black text-sm py-2">{{store.dateCreated}}</p>
           </div>
       </div>
         <div class="mx-2">

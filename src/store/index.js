@@ -6,7 +6,11 @@ import {
   getAllproductsdb,
   filterProductsForString,
   filterUsersForCountry,
+  productFilterDates,
+  userFilterDates,
   filterUsersForCity,
+  storesFilterDates,
+  adminFilterDates,
   filterShops,
   getAllAdminsDB,
   filterAdmin
@@ -53,7 +57,7 @@ export default createStore({
     setAllProduts,
     setAllProdutsFilter,
     setAllAdmins,
-  setAllAdminsFilter,
+    setAllAdminsFilter,
     setAllUsersFilter,
     setAllStoresFilter,
     setView(state,payload){
@@ -65,11 +69,15 @@ export default createStore({
     filterAdmin,
     getAllStoreDB,
     AdminLogin,
+    adminFilterDates,
     filterUsersForCountry,
     getAllproductsdb,
     filterProductsForString,
     filterUsersForCity,
     filterShops,
+    userFilterDates,
+    storesFilterDates,
+    productFilterDates,
     getAllAdminsDB,
     onChangeViewWindow({commit},payload){      
       commit("setView",payload);

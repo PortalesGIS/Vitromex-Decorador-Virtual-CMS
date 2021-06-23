@@ -15,10 +15,14 @@
       <div class="flex  h-full bg-gray-100 items-center">
             <i class="fas fa-calendar-alt mx-2"></i>
           <input 
+          v-model="dateone"
+          @input="changeInputDate"
           class=" appearance-none w-30 bg-gray-100 focus:outline-none active:outline-non"
           type="date">
           <p class="mx-2">-</p>
           <input 
+          v-model="dateTwo"
+          @input="changeInputDate"
           class=" appearance-none w-30 bg-gray-100 focus:outline-none active:outline-non"
           type="date">          
       </div>
@@ -40,14 +44,25 @@ export default {
     data() {
         return {
           word:"",
-          city:""
+          city:"",
+          dateone:"",
+          dateTwo:""
         }
     },
     methods: {
-        ...mapActions(["filterAdmin"]),
+        ...mapActions(["filterAdmin","adminFilterDates"]),
         chngeInputName() {
           this.filterAdmin({word:this.word})
         },
+        changeInputDate(){
+            // console.log(new Date(this.dateone).getTime() < new Date("2021-06-20").getTime() && new Date(this.dateTwo).getTime() > new Date("2021-06-20").getTime() )            
+            if(this.dateone!="" && this.dateTwo!=""){
+                this.adminFilterDates({
+                    dateOne:this.dateone,
+                    dateTwo:this.dateTwo
+                })
+            }            
+        }
     },
 }
 </script>

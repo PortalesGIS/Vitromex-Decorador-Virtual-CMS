@@ -1,5 +1,7 @@
 const baseUrl = "https://vitromex-arko-api.herokuapp.com";
+const plataforma ="vitromex"
 
+// Gets DB
 const getAllUsersApp = async ({commit})=>{
     
     await fetch(`${baseUrl}/api/user?limit=100`,{
@@ -50,6 +52,7 @@ const getAllStoreDB = async ({commit})=>{
     .catch(error => console.error('Error:', error))
     // 
   }
+  // 
 
   const AdminLogin  = async({commit},payload)=>{
     // TODO: consumir api
@@ -71,7 +74,7 @@ const getAllStoreDB = async ({commit})=>{
   }
 
   const getAllproductsdb = async({commit})=>{
-    await fetch(`${baseUrl}/api/product/vitromex`,{
+    await fetch(`${baseUrl}/api/product/${plataforma}`,{
       method: "GET",
       headers:{
         'Content-Type': 'application/json'
@@ -84,6 +87,8 @@ const getAllStoreDB = async ({commit})=>{
     } )
     .catch(error => console.error('Error:', error))
   }
+
+  // FILTROS
 
   const filterProductsForString=({commit,getters},{word=""})=>{
     word= normalizeText(word)
@@ -154,6 +159,50 @@ const getAllStoreDB = async ({commit})=>{
   }
 
 
+  // FILTROS FECHAS
+
+  const productFilterDates = ({commit,getters},{dateOne="",dateTwo=""})=>{
+    const result =  getters.getAllProductsFilter.filter(
+      product => {
+        console.log(new Date(dateOne).getTime() <= new Date(product.dateCreated).getTime() 
+        && new Date(dateTwo).getTime() >= new Date("2021-06-20").getTime())
+        return new Date(dateOne).getTime() <= new Date(product.dateCreated).getTime() 
+        && new Date(dateTwo).getTime() >= new Date(product.dateCreated).getTime()
+      }
+    )
+    console.log(result)
+    commit("setAllProduts",result)
+  }
+  const userFilterDates = ({commit,getters},{dateOne="",dateTwo=""})=>{
+    const result =  getters.getAllUsersFilter.filter(
+      product => {
+        return new Date(dateOne).getTime() <= new Date(product.dateUserCreated).getTime() 
+        && new Date(dateTwo).getTime() >= new Date(product.dateUserCreated).getTime()
+      }
+    )
+    commit("setAllUsers",{users:result})
+  }
+
+  const storesFilterDates = ({commit,getters},{dateOne="",dateTwo=""})=>{
+    const result =  getters.getAllStoresFilter.filter(
+      product => {
+        return new Date(dateOne).getTime() <= new Date(product.dateCreated).getTime() 
+        && new Date(dateTwo).getTime() >= new Date(product.dateCreated).getTime()
+      }
+    )
+    commit("setAllStores",{shops:result})
+  }
+
+  const adminFilterDates = ({commit,getters},{dateOne="",dateTwo=""})=>{
+    const result =  getters.getAllAdminsFilter.filter(
+      product => {
+        return new Date(dateOne).getTime() <= new Date(product.dateCreated).getTime() 
+        && new Date(dateTwo).getTime() >= new Date(product.dateCreated).getTime()
+      }
+    )
+    commit("setAllAdmins",{admins:result})
+  }
+
   module.exports = {
     getAllUsersApp,
     getAllStoreDB,
@@ -164,5 +213,9 @@ const getAllStoreDB = async ({commit})=>{
     filterUsersForCity,
     filterShops,
     getAllAdminsDB,
-    filterAdmin
+    filterAdmin,
+    productFilterDates,
+    userFilterDates,
+    storesFilterDates,
+    adminFilterDates,
   }

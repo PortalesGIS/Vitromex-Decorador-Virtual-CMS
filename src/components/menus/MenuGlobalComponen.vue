@@ -31,7 +31,7 @@
           <div class="mx-2">
               <p 
               :class="(getVieWindow===typesViews.dashboard)?'text-black':'text-white'"
-              class="">DASHBOARD</p>
+              class="">Dashboard</p>
           </div>
       </div>
       <div 
@@ -45,7 +45,7 @@
           <div class="mx-2">
               <p 
               :class="(getVieWindow===typesViews.users)?'text-black':'text-white'"
-              class="">USUARIOS</p>
+              class="">Usuarios</p>
           </div>
       </div>
       <div 
@@ -59,7 +59,21 @@
           <div class="mx-2">
               <p 
               :class="(getVieWindow===typesViews.products)?'text-black':'text-white'"
-              class="">PRODUCTOS</p>
+              class="">Productos</p>
+          </div>
+      </div>
+      <div 
+            @click="goTo(typesViews.onboarding )"
+            class="flex justify-start items-center px-6 mt-5 py-4 cursor-pointer"
+            :class="(getVieWindow===typesViews.onboarding)?'bg-white':'bg-black'"
+        >
+          <div 
+            :class="(getVieWindow===typesViews.onboarding)?'bg-black':'bg-white'"
+            class="h-4 w-4 rounded-full"></div>
+          <div class="mx-2">
+              <p 
+              :class="(getVieWindow===typesViews.onboarding)?'text-black':'text-white'"
+              class="">Onboarding</p>
           </div>
       </div>
       <div 
@@ -73,7 +87,7 @@
           <div class="mx-2">
               <p 
               :class="(getVieWindow===typesViews.stores)?'text-black':'text-white'"
-              class="">TIENDAS</p>
+              class="">Tendas</p>
           </div>
       </div>
       <div 
@@ -87,7 +101,7 @@
           <div class="mx-2">
               <p 
               :class="(getVieWindow===typesViews.admins)?'text-black':'text-white'"
-              class="">ADMINISTRADORES</p>
+              class="">Administradores</p>
           </div>
       </div>
       </div>
@@ -135,7 +149,9 @@
       </div>
       <div class="flex justify-center items-center mt-10">          
           <div class="h-4 w-4 rounded-full bg-white"></div>
-          
+      </div>
+      <div class="flex justify-center items-center mt-10">          
+          <div class="h-4 w-4 rounded-full bg-white"></div>
       </div>
       <div class="flex justify-center items-center mt-10">          
           <div class="h-4 w-4 rounded-full bg-white"></div>

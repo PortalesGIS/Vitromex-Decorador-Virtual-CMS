@@ -45,7 +45,7 @@
               <p class="text-black text-sm py-2">{{user.city}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">01/10/2020</p>
+              <p class="text-black text-sm py-2">{{user.dateUserCreated}}</p>
           </div>
       </div>
       </div>
@@ -90,7 +90,7 @@ export default {
         ...mapActions(["getAllUsersApp"]),
         async onGetAllUsers(){
             await this.getAllUsersApp();      
-        }
+        },
     },
     computed: {
         ...mapGetters(["getAllUsers"])

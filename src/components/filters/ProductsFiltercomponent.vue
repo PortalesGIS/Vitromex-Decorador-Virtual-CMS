@@ -14,10 +14,14 @@
       <div class="flex h-full bg-gray-100 items-center">
             <i class="fas fa-calendar-alt mx-2"></i>
           <input 
+          v-model="dateone"
+           @input="changeInputDate"
           class=" appearance-none w-30 bg-gray-100 focus:outline-none active:outline-non"
           type="date">
           <p class="mx-2">-</p>
           <input 
+          v-model="dateTwo"
+          @input="changeInputDate"
           class=" appearance-none w-30 bg-gray-100 focus:outline-none active:outline-non"
           type="date">          
       </div>
@@ -35,13 +39,26 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
     data() {
         return {
-            stringSearch: ""
+            stringSearch: "",
+            dateone:"",
+            dateTwo:"",
         }
     },
     methods: {
-        ...mapActions(["filterProductsForString"]),
+        ...mapActions(["filterProductsForString","productFilterDates"]),
         chngeInputName() {
             this.filterProductsForString({word:this.stringSearch});
+        },
+        changeInputDate(){
+            // console.log(new Date(this.dateone).getTime() < new Date("2021-06-20").getTime() && new Date(this.dateTwo).getTime() > new Date("2021-06-20").getTime() )            
+            if(this.dateone!="" && this.dateTwo!=""){
+                this.productFilterDates({
+                    dateOne:this.dateone,
+                    dateTwo:this.dateTwo
+                })
+                console.log(this.dateone)
+                console.log(this.dateTwo)
+            }            
         }
     },
     computed:{

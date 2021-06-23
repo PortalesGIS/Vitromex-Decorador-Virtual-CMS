@@ -34,7 +34,7 @@
               <p class="text-black text-sm py-2">{{user.email}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2 overflow-x-hidden">{{`00/00/00`}}</p>
+              <p class="text-black text-sm py-2 overflow-x-hidden">{{user.dateCreated}}</p>
           </div>
       </div>
       </div>

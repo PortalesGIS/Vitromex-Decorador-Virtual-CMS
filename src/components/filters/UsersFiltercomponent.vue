@@ -11,24 +11,17 @@
               >
           </div>
       </div>
-      <!-- <div class="h-full mr-4">
-          <div class="flex items-center h-full bg-gray-100 max-w-17">
-              <i class="fas fa-map-marker-alt mx-2"></i>
-              <input type="text"
-               v-model="city"
-               @input="chngeInputcity"
-                    class=" appearance-none h-full w-full border-0 border-transparent bg-gray-100 focus:outline-none active:outline-non"
-                    placeholder="Buscar por Ciudad"
-              >
-          </div>
-      </div> -->
       <div class="flex  h-full bg-gray-100 items-center">
             <i class="fas fa-calendar-alt mx-2"></i>
           <input 
+          v-model="dateone"
+           @input="changeInputDate"
           class=" appearance-none w-30 bg-gray-100 focus:outline-none active:outline-non"
           type="date">
           <p class="mx-2">-</p>
           <input 
+          v-model="dateTwo"
+          @input="changeInputDate"
           class=" appearance-none w-30 bg-gray-100 focus:outline-none active:outline-non"
           type="date">          
       </div>
@@ -41,16 +34,28 @@ export default {
     data() {
         return {
           country:"",
-          city:""
+          city:"",
+          dateone:"",
+          dateTwo:"",
+
         }
     },
     methods: {
-        ...mapActions(["filterUsersForCountry","filterUsersForCity"]),
+        ...mapActions(["filterUsersForCountry","filterUsersForCity","userFilterDates"]),
         chngeInputName() {
             this.filterUsersForCountry({word:this.country});
         },
         chngeInputcity() {
             this.filterUsersForCity({word:this.city});
+        },
+         changeInputDate(){
+            // console.log(new Date(this.dateone).getTime() < new Date("2021-06-20").getTime() && new Date(this.dateTwo).getTime() > new Date("2021-06-20").getTime() )            
+            if(this.dateone!="" && this.dateTwo!=""){
+                this.userFilterDates({
+                    dateOne:this.dateone,
+                    dateTwo:this.dateTwo
+                })
+            }            
         }
     },
 }
