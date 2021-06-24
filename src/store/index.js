@@ -12,8 +12,13 @@ import {
   storesFilterDates,
   adminFilterDates,
   filterShops,
+  getAllSpacesDB,
   getAllAdminsDB,
-  filterAdmin
+  filterAdmin,
+  getAllSeriesDB,
+  filterSeries,
+  seriesFilterDates,
+  filterSpaces,
 } from './actions'
 import {setAllUsers,
   setAllStores,
@@ -23,7 +28,11 @@ import {setAllUsers,
 setAllAdminsFilter,
   setAllProdutsFilter,
   setAllUsersFilter,
-  setAllStoresFilter
+  setAllSpaces,
+setAllSpacesFilter,
+  setAllStoresFilter,
+  setAllSeries,
+setAllSeriesFilter,
 } from './mutations'
 import {getAllUsers,
   getAllStores,
@@ -33,6 +42,10 @@ import {getAllUsers,
   getAllStoresFilter,
   getAllAdmins,
   getAllAdminsFilter,
+  getAllSeries,
+  getAllSeriesFilter,
+  getAllSpaces,
+getAllSpacesFilter,
 } from './getters'
 
 
@@ -48,6 +61,10 @@ export default createStore({
     listStoresFilter:[],
     products:[],
     productsForFilter:[],
+    listSeries:[],
+    listSeriesFilter:[],
+    listSpaces:[],
+    listSpacesFilter:[],
 
   },
   mutations: {
@@ -60,6 +77,10 @@ export default createStore({
     setAllAdminsFilter,
     setAllUsersFilter,
     setAllStoresFilter,
+    setAllSeries,
+setAllSeriesFilter,
+setAllSpaces,
+setAllSpacesFilter,
     setView(state,payload){
       state.activeWindow = payload;
     }
@@ -79,6 +100,11 @@ export default createStore({
     storesFilterDates,
     productFilterDates,
     getAllAdminsDB,
+    getAllSeriesDB,
+    getAllSpacesDB,
+    filterSpaces,
+    filterSeries,
+    seriesFilterDates,
     onChangeViewWindow({commit},payload){      
       commit("setView",payload);
     }
@@ -92,6 +118,10 @@ export default createStore({
     getAllStoresFilter,
     getAllAdmins,
     getAllAdminsFilter,
+    getAllSeries,
+    getAllSeriesFilter,
+    getAllSpaces,
+getAllSpacesFilter,
     getVieWindow(state){
       return state.activeWindow;
     }

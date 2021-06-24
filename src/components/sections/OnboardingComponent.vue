@@ -1,15 +1,72 @@
 <template>
-  <div class="h-screen w-full bg-red-400">
-
+  <div class="h-screen w-full bg-6f overflow-hidden">
+    <div class="h-16"></div>
+    <div class="h-5/6  bg-6f shadow-10xl overflow-hidden">
+      <div class="overflow-hidden">
+        <p class="uppercase text-7xl text-white font-bold pl-10 ">
+          ONBOARDING APP
+        </p>
+      </div>
+      <div class="flex h-10  mt-16 px-5 mb-px">
+        <div
+          class="mx-1 px-8 py-2 font-semibold text-sm cursor-pointer rounded-t-lg"
+          :class="
+            menuOption === 0 ? 'bg-f5 text-black' : 'bg-555555 text-white'
+          "
+          @click="chageMenuOption(0)"
+        >
+          Espacios
+        </div>
+        <div
+          class=" px-8 py-2 font-semibold text-sm cursor-pointer rounded-t-lg"
+          :class="
+            menuOption === 1 ? 'bg-f5 text-black' : 'bg-555555 text-white'
+          "
+          @click="chageMenuOption(1)"
+        >
+          Tipologías
+        </div>
+      </div>
+      <div v-if="menuOption === 0" class="w-full h-full">
+        <div class="w-full h-full px-5">
+          <div class="flex items-center w-full  bg-f5 h-16">
+            <SpaceFilterComponentVue/>
+          </div>
+          <div class="w-full h-4/6   bg-f5">
+            <SpacesTablecomponentVue />
+          </div>
+        </div>
+      </div>
+      <div v-else class="w-full h-full px-5 ">
+        <div class="flex items-center w-full  bg-f5 h-16">
+            <!-- <SeriesFiltercomponentVue /> -->
+          </div>
+          <div class="w-full h-4/6   bg-f5">
+            <!-- <SeriesTableComponentVue /> -->
+          </div>
+      </div>
+    </div>
   </div>
 </template>
-
 <script>
+import SpaceFilterComponentVue from '../filters/SpaceFilterComponent.vue';
+import SpacesTablecomponentVue from '../tables/SpacesTablecomponent.vue';
 export default {
-
-}
+  components: {
+    SpaceFilterComponentVue,
+    SpacesTablecomponentVue,
+  },
+  data() {
+    return {
+      menuOption: 0,
+    };
+  },
+  methods: {
+    chageMenuOption(value) {
+      this.menuOption = value;
+    },
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

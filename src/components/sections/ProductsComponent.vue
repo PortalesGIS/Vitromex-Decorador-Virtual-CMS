@@ -37,19 +37,28 @@
           </div>
         </div>
       </div>
-      <div v-else class="w-full h-full px-5 bg-green-50">
-        
+      <div v-else class="w-full h-full px-5 ">
+        <div class="flex items-center w-full  bg-f5 h-16">
+            <SeriesFiltercomponentVue />
+          </div>
+          <div class="w-full h-4/6   bg-f5">
+            <SeriesTableComponentVue />
+          </div>
       </div>
     </div>
   </div>
 </template>
 <script>
 import ProductsFiltercomponentVue from "../filters/ProductsFiltercomponent.vue";
+import SeriesFiltercomponentVue from '../filters/SeriesFiltercomponent.vue';
 import ProductsTableComponentVue from "../tables/ProductsTableComponent.vue";
+import SeriesTableComponentVue from '../tables/SeriesTableComponent.vue';
 export default {
   components: {
     ProductsFiltercomponentVue,
     ProductsTableComponentVue,
+    SeriesFiltercomponentVue,
+    SeriesTableComponentVue
   },
   data() {
     return {

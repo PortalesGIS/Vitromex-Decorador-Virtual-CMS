@@ -13,6 +13,19 @@ const getAllUsersFilter=(state)=>{
     return state.listAdminsFilter;
   }
 
+  const getAllSeries = (state)=>{
+    return state.listSeries
+  }
+  const getAllSeriesFilter = (state)=>{
+    return state.listSeriesFilter
+  }
+
+  const getAllSpaces = (state)=>{
+    return state.listSpaces }
+  const getAllSpacesFilter = (state)=>{
+    return state.listSpacesFilter
+  }
+
 const getAllStores=(state)=>{
     return state.listStores;
   }
@@ -35,5 +48,9 @@ const getAllProductsFilter=(state)=>{
       getAllUsersFilter,
       getAllStoresFilter,
       getAllAdmins,
-      getAllAdminsFilter
+      getAllAdminsFilter,
+      getAllSeries,
+      getAllSeriesFilter,
+      getAllSpaces,
+      getAllSpacesFilter,
   }

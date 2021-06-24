@@ -52,6 +52,40 @@ const getAllStoreDB = async ({commit})=>{
     .catch(error => console.error('Error:', error))
     // 
   }
+
+const getAllSeriesDB = async ({commit})=>{
+    
+    await fetch(`${baseUrl}/api/series/cms`,{
+      method: "GET",
+      headers:{
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(result => result.json())
+    .then(response => {
+        commit("setAllSeries",response)
+        commit("setAllSeriesFilter",response)
+    } )
+    .catch(error => console.error('Error:', error))
+     
+  }
+
+const getAllSpacesDB = async ({commit})=>{
+    
+    await fetch(`${baseUrl}/api/onboarding/aplications`,{
+      method: "GET",
+      headers:{
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(result => result.json())
+    .then(response => {
+        commit("setAllSpaces",response)
+        commit("setAllSpacesFilter",response)
+    } )
+    .catch(error => console.error('Error:', error))
+     
+  }
   // 
 
   const AdminLogin  = async({commit},payload)=>{
@@ -137,7 +171,7 @@ const getAllStoreDB = async ({commit})=>{
       normalizeText(shop.phone).includes(word) ||
       normalizeText(shop.country).includes(word) 
       )
-      console.log(result)
+     
     commit("setAllStores",{shops:result})
   }
 
@@ -147,8 +181,23 @@ const getAllStoreDB = async ({commit})=>{
       normalizeText(shop.name).includes(word) ||
       normalizeText(shop.email).includes(word) 
       )
-      console.log(result)
     commit("setAllAdmins",{admins:result})
+  }
+
+  const filterSeries= ({commit,getters},{word=""})=>{
+    word= normalizeText(word)
+    const result = getters.getAllSeriesFilter.filter(serie =>
+      normalizeText(serie.name).includes(word) 
+      )
+    commit("setAllSeries",{serie:result})
+  }
+
+  const filterSpaces= ({commit,getters},{word=""})=>{
+    word= normalizeText(word)
+    const result = getters.getAllSpacesFilter.filter(serie =>
+      normalizeText(serie.name).includes(word) 
+      )
+    commit("setAllSpaces",{aplications:result})
   }
 
 
@@ -203,6 +252,16 @@ const getAllStoreDB = async ({commit})=>{
     commit("setAllAdmins",{admins:result})
   }
 
+  const seriesFilterDates = ({commit,getters},{dateOne="",dateTwo=""})=>{
+    const result =  getters.getAllSeriesFilter.filter(
+      product => {
+        return new Date(dateOne).getTime() <= new Date(product.dateCreated).getTime() 
+        && new Date(dateTwo).getTime() >= new Date(product.dateCreated).getTime()
+      }
+    )
+    commit("setAllSeries",{serie:result})
+  }
+
   module.exports = {
     getAllUsersApp,
     getAllStoreDB,
@@ -218,4 +277,9 @@ const getAllStoreDB = async ({commit})=>{
     userFilterDates,
     storesFilterDates,
     adminFilterDates,
+    getAllSeriesDB,
+    filterSpaces,
+    filterSeries,
+    seriesFilterDates,
+    getAllSpacesDB,
   }

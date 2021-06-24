@@ -11,6 +11,21 @@ const setAllAdmins =(state,payload)=>{
     state.listAdmins = payload.admins
 }
 
+const setAllSeries =(state,payload)=>{
+    state.listSeries = payload.serie
+}
+const setAllSeriesFilter =(state,payload)=>{
+    state.listSeriesFilter = payload.serie
+}
+
+const setAllSpaces =(state,payload)=>{
+    state.listSpaces = payload.aplications
+}
+const setAllSpacesFilter =(state,payload)=>{
+    state.listSpacesFilter = payload.aplications
+}
+
+
 const setAllAdminsFilter =(state,payload)=>{
     state.listAdminsFilter = payload.admins
 }
@@ -45,4 +60,8 @@ module.exports ={
     setAllStoresFilter,
     setAllAdmins,
     setAllAdminsFilter,
+    setAllSeries,
+setAllSeriesFilter,
+setAllSpaces,
+setAllSpacesFilter,
 }
