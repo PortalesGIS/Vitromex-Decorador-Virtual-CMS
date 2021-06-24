@@ -2,7 +2,7 @@ const baseUrl = "https://vitromex-arko-api.herokuapp.com";
 const plataforma ="vitromex"
 
 // Gets DB
-const getAllUsersApp = async ({commit})=>{
+export const getAllUsersApp = async ({commit})=>{
     
     await fetch(`${baseUrl}/api/user?limit=100`,{
       method: "GET",
@@ -19,7 +19,7 @@ const getAllUsersApp = async ({commit})=>{
     // 
   }
 
-const getAllAdminsDB = async ({commit})=>{
+export const getAllAdminsDB = async ({commit})=>{
     
     await fetch(`${baseUrl}/api/admin/`,{
       method: "GET",
@@ -36,7 +36,7 @@ const getAllAdminsDB = async ({commit})=>{
     // 
   }
 
-const getAllStoreDB = async ({commit})=>{
+export const getAllStoreDB = async ({commit})=>{
     
     await fetch(`${baseUrl}/api/shop`,{
       method: "GET",
@@ -53,7 +53,7 @@ const getAllStoreDB = async ({commit})=>{
     // 
   }
 
-const getAllSeriesDB = async ({commit})=>{
+export const getAllSeriesDB = async ({commit})=>{
     
     await fetch(`${baseUrl}/api/series/cms`,{
       method: "GET",
@@ -70,7 +70,7 @@ const getAllSeriesDB = async ({commit})=>{
      
   }
 
-const getAllSpacesDB = async ({commit})=>{
+export const getAllSpacesDB = async ({commit})=>{
     
     await fetch(`${baseUrl}/api/onboarding/aplications`,{
       method: "GET",
@@ -88,7 +88,7 @@ const getAllSpacesDB = async ({commit})=>{
   }
   // 
 
-  const AdminLogin  = async({commit},payload)=>{
+  export const AdminLogin  = async({commit},payload)=>{
     // TODO: consumir api
     fetch(`${baseUrl}/api/admin/login`,{
       method: "POST",
@@ -107,7 +107,7 @@ const getAllSpacesDB = async ({commit})=>{
     commit("setAdminStateLogin",payload);
   }
 
-  const getAllproductsdb = async({commit})=>{
+  export const getAllproductsdb = async({commit})=>{
     await fetch(`${baseUrl}/api/product/${plataforma}`,{
       method: "GET",
       headers:{
@@ -124,7 +124,7 @@ const getAllSpacesDB = async ({commit})=>{
 
   // FILTROS
 
-  const filterProductsForString=({commit,getters},{word=""})=>{
+  export const filterProductsForString=({commit,getters},{word=""})=>{
     word= normalizeText(word)
     const result = getters.getAllProductsFilter.filter(product =>
       normalizeText(product.name).includes(word) || 
@@ -136,7 +136,7 @@ const getAllSpacesDB = async ({commit})=>{
     commit("setAllProduts",result)
   }
 
-  const filterUsersForCountry = ({commit,getters},{word=""})=>{
+  export const filterUsersForCountry = ({commit,getters},{word=""})=>{
     word= normalizeText(word)
     const result = getters.getAllUsersFilter.filter(name =>
       normalizeText(name.city).includes(word) ||
@@ -148,7 +148,7 @@ const getAllSpacesDB = async ({commit})=>{
     commit("setAllUsers",{users:result})
   }
   
-  const filterUsersForCity = ({commit,getters},{word=""})=>{
+  export const filterUsersForCity = ({commit,getters},{word=""})=>{
     word= normalizeText(word)
     const result = getters.getAllUsersFilter.filter(name =>
       normalizeText(name.city).includes(word) ||
@@ -159,7 +159,7 @@ const getAllSpacesDB = async ({commit})=>{
     commit("setAllUsers",{users:result})
   }
 
-  const filterShops= ({commit,getters},{word=""})=>{
+  export const filterShops= ({commit,getters},{word=""})=>{
     word= normalizeText(word)
     const result = getters.getAllStoresFilter.filter(shop =>
       normalizeText(shop.name).includes(word) ||
@@ -175,7 +175,7 @@ const getAllSpacesDB = async ({commit})=>{
     commit("setAllStores",{shops:result})
   }
 
-  const filterAdmin= ({commit,getters},{word=""})=>{
+  export const filterAdmin= ({commit,getters},{word=""})=>{
     word= normalizeText(word)
     const result = getters.getAllAdminsFilter.filter(shop =>
       normalizeText(shop.name).includes(word) ||
@@ -184,7 +184,7 @@ const getAllSpacesDB = async ({commit})=>{
     commit("setAllAdmins",{admins:result})
   }
 
-  const filterSeries= ({commit,getters},{word=""})=>{
+  export const filterSeries= ({commit,getters},{word=""})=>{
     word= normalizeText(word)
     const result = getters.getAllSeriesFilter.filter(serie =>
       normalizeText(serie.name).includes(word) 
@@ -192,7 +192,7 @@ const getAllSpacesDB = async ({commit})=>{
     commit("setAllSeries",{serie:result})
   }
 
-  const filterSpaces= ({commit,getters},{word=""})=>{
+  export const filterSpaces= ({commit,getters},{word=""})=>{
     word= normalizeText(word)
     const result = getters.getAllSpacesFilter.filter(serie =>
       normalizeText(serie.name).includes(word) 
@@ -201,7 +201,7 @@ const getAllSpacesDB = async ({commit})=>{
   }
 
 
-  const normalizeText=(text)=>{
+  export const normalizeText=(text)=>{
     return text.toUpperCase().normalize('NFD')
     .replace(/([aeio])\u0301|(u)[\u0301\u0308]/gi,"$1$2")
     .normalize();
@@ -210,7 +210,7 @@ const getAllSpacesDB = async ({commit})=>{
 
   // FILTROS FECHAS
 
-  const productFilterDates = ({commit,getters},{dateOne="",dateTwo=""})=>{
+  export const productFilterDates = ({commit,getters},{dateOne="",dateTwo=""})=>{
     const result =  getters.getAllProductsFilter.filter(
       product => {
         console.log(new Date(dateOne).getTime() <= new Date(product.dateCreated).getTime() 
@@ -222,7 +222,7 @@ const getAllSpacesDB = async ({commit})=>{
     console.log(result)
     commit("setAllProduts",result)
   }
-  const userFilterDates = ({commit,getters},{dateOne="",dateTwo=""})=>{
+  export const userFilterDates = ({commit,getters},{dateOne="",dateTwo=""})=>{
     const result =  getters.getAllUsersFilter.filter(
       product => {
         return new Date(dateOne).getTime() <= new Date(product.dateUserCreated).getTime() 
@@ -232,7 +232,7 @@ const getAllSpacesDB = async ({commit})=>{
     commit("setAllUsers",{users:result})
   }
 
-  const storesFilterDates = ({commit,getters},{dateOne="",dateTwo=""})=>{
+  export const storesFilterDates = ({commit,getters},{dateOne="",dateTwo=""})=>{
     const result =  getters.getAllStoresFilter.filter(
       product => {
         return new Date(dateOne).getTime() <= new Date(product.dateCreated).getTime() 
@@ -242,7 +242,7 @@ const getAllSpacesDB = async ({commit})=>{
     commit("setAllStores",{shops:result})
   }
 
-  const adminFilterDates = ({commit,getters},{dateOne="",dateTwo=""})=>{
+  export const adminFilterDates = ({commit,getters},{dateOne="",dateTwo=""})=>{
     const result =  getters.getAllAdminsFilter.filter(
       product => {
         return new Date(dateOne).getTime() <= new Date(product.dateCreated).getTime() 
@@ -252,7 +252,7 @@ const getAllSpacesDB = async ({commit})=>{
     commit("setAllAdmins",{admins:result})
   }
 
-  const seriesFilterDates = ({commit,getters},{dateOne="",dateTwo=""})=>{
+  export const seriesFilterDates = ({commit,getters},{dateOne="",dateTwo=""})=>{
     const result =  getters.getAllSeriesFilter.filter(
       product => {
         return new Date(dateOne).getTime() <= new Date(product.dateCreated).getTime() 
@@ -260,26 +260,4 @@ const getAllSpacesDB = async ({commit})=>{
       }
     )
     commit("setAllSeries",{serie:result})
-  }
-
-  module.exports = {
-    getAllUsersApp,
-    getAllStoreDB,
-    AdminLogin,
-    getAllproductsdb,
-    filterProductsForString,
-    filterUsersForCountry,
-    filterUsersForCity,
-    filterShops,
-    getAllAdminsDB,
-    filterAdmin,
-    productFilterDates,
-    userFilterDates,
-    storesFilterDates,
-    adminFilterDates,
-    getAllSeriesDB,
-    filterSpaces,
-    filterSeries,
-    seriesFilterDates,
-    getAllSpacesDB,
   }

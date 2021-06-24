@@ -1,67 +1,51 @@
 const { default: router } = require("../router");
 
-const setAllUsers = (state,payload) =>{
+export const setAllUsers = (state,payload) =>{
     state.listUsers = payload.users;
 }
-const setAllUsersFilter = (state,payload) =>{
+export const setAllUsersFilter = (state,payload) =>{
     state.listUsersForFilter = payload.users;
 }
 
-const setAllAdmins =(state,payload)=>{
+export const setAllAdmins =(state,payload)=>{
     state.listAdmins = payload.admins
 }
 
-const setAllSeries =(state,payload)=>{
+export const setAllSeries =(state,payload)=>{
     state.listSeries = payload.serie
 }
-const setAllSeriesFilter =(state,payload)=>{
+export const setAllSeriesFilter =(state,payload)=>{
     state.listSeriesFilter = payload.serie
 }
 
-const setAllSpaces =(state,payload)=>{
+export const setAllSpaces =(state,payload)=>{
     state.listSpaces = payload.aplications
 }
-const setAllSpacesFilter =(state,payload)=>{
+export const setAllSpacesFilter =(state,payload)=>{
     state.listSpacesFilter = payload.aplications
 }
 
 
-const setAllAdminsFilter =(state,payload)=>{
+export const setAllAdminsFilter =(state,payload)=>{
     state.listAdminsFilter = payload.admins
 }
 
-const setAllStores = (state,payload) =>{
+export const setAllStores = (state,payload) =>{
     state.listStores = payload.shops;
 }
-const setAllStoresFilter = (state,payload) =>{
+export const setAllStoresFilter = (state,payload) =>{
     state.listStoresFilter = payload.shops;
 }
 
-const setAllProduts = (state,payload) =>{
+export const setAllProduts = (state,payload) =>{
     state.products = payload;
 }
-const setAllProdutsFilter = (state,payload) =>{
+export const setAllProdutsFilter = (state,payload) =>{
     state.productsForFilter =payload;
 }
 
-const setAdminStateLogin=(state,payload)=>{
+export const setAdminStateLogin=(state,payload)=>{
     state.adminStateLogin = payload;
     localStorage.setItem("isLogged","true");
     router.push("/");
   }
-
-module.exports ={
-    setAllUsers,
-    setAllStores,
-    setAdminStateLogin,
-    setAllProduts,
-    setAllProdutsFilter,
-    setAllUsersFilter,
-    setAllStoresFilter,
-    setAllAdmins,
-    setAllAdminsFilter,
-    setAllSeries,
-setAllSeriesFilter,
-setAllSpaces,
-setAllSpacesFilter,
-}

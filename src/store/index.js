@@ -1,52 +1,7 @@
 import { createStore } from 'vuex'
-import {
-  getAllUsersApp,
-  getAllStoreDB,
-  AdminLogin,
-  getAllproductsdb,
-  filterProductsForString,
-  filterUsersForCountry,
-  productFilterDates,
-  userFilterDates,
-  filterUsersForCity,
-  storesFilterDates,
-  adminFilterDates,
-  filterShops,
-  getAllSpacesDB,
-  getAllAdminsDB,
-  filterAdmin,
-  getAllSeriesDB,
-  filterSeries,
-  seriesFilterDates,
-  filterSpaces,
-} from './actions'
-import {setAllUsers,
-  setAllStores,
-  setAdminStateLogin,
-  setAllProduts,
-  setAllAdmins,
-setAllAdminsFilter,
-  setAllProdutsFilter,
-  setAllUsersFilter,
-  setAllSpaces,
-setAllSpacesFilter,
-  setAllStoresFilter,
-  setAllSeries,
-setAllSeriesFilter,
-} from './mutations'
-import {getAllUsers,
-  getAllStores,
-  getAllProducts,
-  getAllProductsFilter,
-  getAllUsersFilter,
-  getAllStoresFilter,
-  getAllAdmins,
-  getAllAdminsFilter,
-  getAllSeries,
-  getAllSeriesFilter,
-  getAllSpaces,
-getAllSpacesFilter,
-} from './getters'
+import * as actions from './actions'
+import * as mutations from './mutations'
+import * as getters from './getters'
 
 
 export default createStore({
@@ -68,60 +23,19 @@ export default createStore({
 
   },
   mutations: {
-    setAllUsers,
-    setAllStores,
-    setAdminStateLogin,
-    setAllProduts,
-    setAllProdutsFilter,
-    setAllAdmins,
-    setAllAdminsFilter,
-    setAllUsersFilter,
-    setAllStoresFilter,
-    setAllSeries,
-setAllSeriesFilter,
-setAllSpaces,
-setAllSpacesFilter,
+   ...mutations,
     setView(state,payload){
       state.activeWindow = payload;
     }
   },
   actions: {
-    getAllUsersApp,
-    filterAdmin,
-    getAllStoreDB,
-    AdminLogin,
-    adminFilterDates,
-    filterUsersForCountry,
-    getAllproductsdb,
-    filterProductsForString,
-    filterUsersForCity,
-    filterShops,
-    userFilterDates,
-    storesFilterDates,
-    productFilterDates,
-    getAllAdminsDB,
-    getAllSeriesDB,
-    getAllSpacesDB,
-    filterSpaces,
-    filterSeries,
-    seriesFilterDates,
+    ...actions,
     onChangeViewWindow({commit},payload){      
       commit("setView",payload);
     }
   },
   getters:{
-    getAllUsers,
-    getAllStores,
-    getAllProducts,
-    getAllUsersFilter,
-    getAllProductsFilter,
-    getAllStoresFilter,
-    getAllAdmins,
-    getAllAdminsFilter,
-    getAllSeries,
-    getAllSeriesFilter,
-    getAllSpaces,
-getAllSpacesFilter,
+    ...getters,
     getVieWindow(state){
       return state.activeWindow;
     }

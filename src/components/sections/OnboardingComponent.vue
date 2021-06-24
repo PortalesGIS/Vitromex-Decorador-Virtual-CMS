@@ -30,7 +30,7 @@
       <div v-if="menuOption === 0" class="w-full h-full">
         <div class="w-full h-full px-5">
           <div class="flex items-center w-full  bg-f5 h-16">
-            <SpaceFilterComponentVue/>
+            <SpaceFilterComponenVue/>
           </div>
           <div class="w-full h-4/6   bg-f5">
             <SpacesTablecomponentVue />
@@ -39,22 +39,26 @@
       </div>
       <div v-else class="w-full h-full px-5 ">
         <div class="flex items-center w-full  bg-f5 h-16">
-            <!-- <SeriesFiltercomponentVue /> -->
+            <TypologieFilterComponentVue />
           </div>
           <div class="w-full h-4/6   bg-f5">
-            <!-- <SeriesTableComponentVue /> -->
+            <TypologieTableComponentVue />
           </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import SpaceFilterComponentVue from '../filters/SpaceFilterComponent.vue';
+import SpaceFilterComponenVue from '../filters/SpaceFilterComponen.vue';
+import TypologieFilterComponentVue from '../filters/TypologieFilterComponent.vue';
 import SpacesTablecomponentVue from '../tables/SpacesTablecomponent.vue';
+import TypologieTableComponentVue from '../tables/TypologieTableComponent.vue';
 export default {
   components: {
-    SpaceFilterComponentVue,
     SpacesTablecomponentVue,
+    SpaceFilterComponenVue,
+    TypologieTableComponentVue,
+    TypologieFilterComponentVue
   },
   data() {
     return {

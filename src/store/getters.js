@@ -1,56 +1,41 @@
-const getAllUsers=(state)=>{
+export const getAllUsers=(state)=>{
     return state.listUsers;
   }
-const getAllUsersFilter=(state)=>{
+export const getAllUsersFilter=(state)=>{
     return state.listUsersForFilter;
   }
 
-  const getAllAdmins =(state)=>{
+  export const getAllAdmins =(state)=>{
     return state.listAdmins;
   }
 
-  const getAllAdminsFilter =(state)=>{
+  export const getAllAdminsFilter =(state)=>{
     return state.listAdminsFilter;
   }
 
-  const getAllSeries = (state)=>{
+  export const getAllSeries = (state)=>{
     return state.listSeries
   }
-  const getAllSeriesFilter = (state)=>{
+  export const getAllSeriesFilter = (state)=>{
     return state.listSeriesFilter
   }
 
-  const getAllSpaces = (state)=>{
+  export const getAllSpaces = (state)=>{
     return state.listSpaces }
-  const getAllSpacesFilter = (state)=>{
+  export const getAllSpacesFilter = (state)=>{
     return state.listSpacesFilter
   }
 
-const getAllStores=(state)=>{
+export const getAllStores=(state)=>{
     return state.listStores;
   }
-const getAllStoresFilter=(state)=>{
+export const getAllStoresFilter=(state)=>{
     return state.listStoresFilter;
   }
 
-const getAllProducts=(state)=>{
+export const getAllProducts=(state)=>{
     return state.products;
   }
-const getAllProductsFilter=(state)=>{
+export const getAllProductsFilter=(state)=>{
     return state.productsForFilter;
-  }
-
-  module.exports = {
-      getAllUsers,
-      getAllProducts,
-      getAllStores,
-      getAllProductsFilter,
-      getAllUsersFilter,
-      getAllStoresFilter,
-      getAllAdmins,
-      getAllAdminsFilter,
-      getAllSeries,
-      getAllSeriesFilter,
-      getAllSpaces,
-      getAllSpacesFilter,
   }
