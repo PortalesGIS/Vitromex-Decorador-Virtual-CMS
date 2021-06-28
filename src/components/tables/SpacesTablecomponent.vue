@@ -38,7 +38,7 @@
               <p class="text-black text-sm py-2 truncate  ">{{serie.name}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">{{`2021-20-19`}}</p>
+              <p class="text-black text-sm py-2">{{`pendiente`}}</p>
           </div>
       </div>
       <div class="mx-2">

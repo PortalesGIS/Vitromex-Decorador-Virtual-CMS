@@ -21,7 +21,7 @@
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
       <div class="h-full overflow-y-auto bg-f5">
-      <div v-for="(serie,index) in getAllSpaces" :key="index">
+      <div v-for="(typologie,index) in getAllTypologies" :key="index">
           <div class="flex justify-between"
              :class="(index%2)?'bg-white':''">
           <div class="pl-10 w-full grid grid-cols-12 max-w-1400px ">
@@ -29,16 +29,16 @@
               <p class="text-black text-sm py-2">{{index}}</p>
           </div>
           <div class="col-span-2">
-              <!-- <p class="text-black text-sm py-2">{{serie.name}}</p> -->
+              <!-- <p class="text-black text-sm py-2">{{typologie.name}}</p> -->
               <div class="py-2">
-                <img  :src="serie.img" style="width:86px; height:86px" alt="">              
+                <img  :src="typologie.img" style="width:86px; height:86px" alt="">              
               </div>
           </div>
           <div class="col-span-2 ">
-              <p class="text-black text-sm py-2 truncate  ">{{serie.name}}</p>
+              <p class="text-black text-sm py-2 truncate  ">{{typologie.name}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">{{`2021-20-19`}}</p>
+              <p class="text-black text-sm py-2">{{typologie.dateCreated}}</p>
           </div>
       </div>
       <div class="mx-2">
@@ -87,16 +87,16 @@ export default {
         }
     },
     methods: {
-        ...mapActions(["getAllSpacesDB"]),
-        async onGetAllSeries(){
-            await this.getAllSpacesDB();
+        ...mapActions(["getAllTypologiesDB"]),
+        async onGetAllTypologies(){
+            await this.getAllTypologiesDB();
         }
     },
     computed: {
-    ...mapGetters(["getAllSpaces"]),
+    ...mapGetters(["getAllTypologies"]),
     },
     created () {
-        this.onGetAllSeries();
+        this.onGetAllTypologies();
     },
 }
 </script>

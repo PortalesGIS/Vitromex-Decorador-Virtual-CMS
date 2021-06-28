@@ -70,6 +70,23 @@ export const getAllSeriesDB = async ({commit})=>{
      
   }
 
+export const getAllTypologiesDB = async ({commit})=>{
+    
+    await fetch(`${baseUrl}/api/onboarding/typologies/cms`,{
+      method: "GET",
+      headers:{
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(result => result.json())
+    .then(response => {
+        commit("setAllTypologies",response)
+        commit("setAllTypologiesFilter",response)
+    } )
+    .catch(error => console.error('Error:', error))
+     
+  }
+
 export const getAllSpacesDB = async ({commit})=>{
     
     await fetch(`${baseUrl}/api/onboarding/aplications`,{
@@ -198,6 +215,14 @@ export const getAllSpacesDB = async ({commit})=>{
       normalizeText(serie.name).includes(word) 
       )
     commit("setAllSpaces",{aplications:result})
+  }
+
+  export const filterTypologies= ({commit,getters},{word=""})=>{
+    word= normalizeText(word)
+    const result = getters.getAllTypologiesFilter.filter(typologie =>
+      normalizeText(typologie.name).includes(word) 
+      )
+    commit("setAllTypologies",{typologies:result})
   }
 
 

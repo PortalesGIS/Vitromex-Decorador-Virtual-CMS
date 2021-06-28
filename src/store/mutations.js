@@ -25,6 +25,13 @@ export const setAllSpacesFilter =(state,payload)=>{
     state.listSpacesFilter = payload.aplications
 }
 
+export const setAllTypologies =(state,payload)=>{
+    state.listTypologies = payload.typologies
+}
+export const setAllTypologiesFilter =(state,payload)=>{
+    state.listTypologiesFilter = payload.typologies
+}
+
 
 export const setAllAdminsFilter =(state,payload)=>{
     state.listAdminsFilter = payload.admins

@@ -20,6 +20,8 @@ export default createStore({
     listSeriesFilter:[],
     listSpaces:[],
     listSpacesFilter:[],
+    listTypologies:[],
+    listTypologiesFilter:[],
 
   },
   mutations: {

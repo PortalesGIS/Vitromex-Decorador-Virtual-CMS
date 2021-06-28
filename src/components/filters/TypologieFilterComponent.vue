@@ -24,9 +24,9 @@ export default {
         }
     },
     methods: {
-        ...mapActions(["filterSpaces"]),
+        ...mapActions(["filterTypologies"]),
         chngeInputText() {
-            this.filterSpaces({word:this.word})   
+            this.filterTypologies({word:this.word})   
         },
     },
     mounted () {
