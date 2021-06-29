@@ -1,4 +1,9 @@
 <template>
+<SpacesAndTypoModalComponentVue 
+    :titleForm="'tipología'"
+    :isNew="false" 
+    :onSaveNewSpace="onSaveNewSpace" 
+    ref="modal"/>
   <div class=" w-full h-full bg-f5 ">
       <div class=" flex justify-between">
           <div class="pl-10 w-full max-w-1400px grid grid-cols-12 bg-1f">
@@ -16,7 +21,7 @@
                 <i class="fas fa-angle-down" style="color:white"></i></div>
       </div>
       <div class="bg-1f">
-          <div class="px-1"><p class="text-white text-sm font-bold py-2">Editar</p></div>
+          <div class="mr-10"><p class="text-white text-sm font-bold py-2">Editar</p></div>
       </div>
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
@@ -41,8 +46,11 @@
               <p class="text-black text-sm py-2">{{typologie.dateCreated}}</p>
           </div>
       </div>
-      <div class="mx-2">
-                <button>btn</button>
+      <div class="mr-10 flex items-center">
+                <button  
+                @click="onOpenModalForEditing(typologie)" >
+                    <img class="object-cover h-6 w-6" src="../../assets/icons/editar.svg" alt="">                    
+                </button>
         </div>
         </div>
         
@@ -80,8 +88,12 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
+import SpacesAndTypoModalComponentVue from '../modals/SpacesAndTypoModalComponent.vue';
 
 export default {
+    components: {
+        SpacesAndTypoModalComponentVue,
+    },
     data() {
         return {
         }
@@ -90,6 +102,13 @@ export default {
         ...mapActions(["getAllTypologiesDB"]),
         async onGetAllTypologies(){
             await this.getAllTypologiesDB();
+        },
+        onOpenModalForEditing(typologie){
+          this.$refs.modal.openModalForEditing(typologie)
+        },
+        onSaveNewSpace(typologie){
+            console.log(typologie)
+            //TODO: update product
         }
     },
     computed: {

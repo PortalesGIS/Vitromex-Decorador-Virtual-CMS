@@ -67,6 +67,7 @@ module.exports = {
       "f5":"#F5F5F5",
       "1d":"#1D1D1D",
       "6f":"#6F6F6F",
+      "6e":"#6e6e6e",
       "1f":"#1F1F1F",
     }),
     boxShadow: {
