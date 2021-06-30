@@ -10,24 +10,35 @@
       <div class="h-5/6 overflow-auto">
      <div class="flex  justify-between py-4 bg-f5">
         <div 
-             @click="onChangeViewMenu()" 
-            class="bg-black w-4 h-4 cursor-pointer"></div>
+            class="w-4 h-4 cursor-pointer"></div>
         <div 
              @click="onChangeViewMenu()" 
-            class="bg-black w-4 h-4 cursor-pointer"></div>
+            class="w-4 h-4 cursor-pointer mr-4">
+                <img src="../../assets/menu.svg" alt="">
+            </div>
       </div>
       <div class="flex justify-evenly items-center mx-6 mt-10">          
-          <div class="w-full h-20 max-h-32px max-w-170px bg-white"></div>
-          <div class="w-4 h-4 bg-white" ></div>
+          <div class="w-full h-20 max-h-32px max-w-170px ">
+              <img src="../../assets/Logo.svg" alt="">              
+          </div>
+          <div class="w-4 h-4 ">
+              <img src="../../assets/dropdown.svg" alt="">              
+          </div>
       </div>
       <div 
             @click="goTo(typesViews.dashboard )"
-            class="flex justify-start items-center px-6 mt-5 py-4 cursor-pointer"
+            class="flex justify-start items-center px-6 mt-8 py-4 cursor-pointer"
             :class="(getVieWindow===typesViews.dashboard)?'bg-white':'bg-1d'"
         >
           <div 
-            :class="(getVieWindow===typesViews.dashboard)?'bg-1d':'bg-white'"
-            class="h-4 w-4 rounded-full"></div>
+            class="h-4 w-4 ">
+            <div v-if="getVieWindow===typesViews.dashboard">
+                <img src="../../assets/menu_dashboard.svg" alt=""> 
+            </div>
+            <div v-else>
+                 <img src="../../assets/menu_dashboard_B.svg" alt=""> 
+            </div>
+            </div>
           <div class="mx-2">
               <p 
               :class="(getVieWindow===typesViews.dashboard)?'text-1d':'text-white'"
@@ -40,8 +51,14 @@
             :class="(getVieWindow===typesViews.users)?'bg-white':'bg-1d'"
         >
           <div 
-            :class="(getVieWindow===typesViews.users)?'bg-1d':'bg-white'"
-            class="h-4 w-4 rounded-full"></div>
+            class="h-4 w-4 rounded-full">
+            <div v-if="getVieWindow===typesViews.users">
+                <img src="../../assets/menu_usuarios_B.svg" alt=""> 
+            </div>
+            <div v-else>
+                 <img src="../../assets/menu_usuarios.svg" alt=""> 
+            </div>
+            </div>
           <div class="mx-2">
               <p 
               :class="(getVieWindow===typesViews.users)?'text-1d':'text-white'"
@@ -54,8 +71,14 @@
             :class="(getVieWindow===typesViews.products)?'bg-white':'bg-1d'"
         >
           <div 
-            :class="(getVieWindow===typesViews.products)?'bg-1d':'bg-white'"
-            class="h-4 w-4 rounded-full"></div>
+            class="h-4 w-4 rounded-full">
+            <div v-if="getVieWindow===typesViews.products">
+                <img src="../../assets/menu_seriesyproductos_B.svg" alt=""> 
+            </div>
+            <div v-else>
+                 <img src="../../assets/menu_seriesyproductos.svg" alt=""> 
+            </div>
+            </div>
           <div class="mx-2">
               <p 
               :class="(getVieWindow===typesViews.products)?'text-1d':'text-white'"
@@ -68,8 +91,14 @@
             :class="(getVieWindow===typesViews.onboarding)?'bg-white':'bg-1d'"
         >
           <div 
-            :class="(getVieWindow===typesViews.onboarding)?'bg-1d':'bg-white'"
-            class="h-4 w-4 rounded-full"></div>
+            class="h-4 w-4 rounded-full">
+            <div v-if="getVieWindow===typesViews.onboarding">
+                <img src="../../assets/menu_onboarding_B.svg" alt=""> 
+            </div>
+            <div v-else>
+                 <img src="../../assets/menu_onboarding.svg" alt=""> 
+            </div>
+            </div>
           <div class="mx-2">
               <p 
               :class="(getVieWindow===typesViews.onboarding)?'text-1d':'text-white'"
@@ -82,8 +111,14 @@
             :class="(getVieWindow===typesViews.stores)?'bg-white':'bg-1d'"
         >
           <div 
-            :class="(getVieWindow===typesViews.stores)?'bg-1d':'bg-white'"
-            class="h-4 w-4 rounded-full"></div>
+            class="h-4 w-4 rounded-full">
+            <div v-if="getVieWindow===typesViews.stores">
+                <img src="../../assets/menu_tiendas_B.svg" alt=""> 
+            </div>
+            <div v-else>
+                 <img src="../../assets/menu_tiendas.svg" alt=""> 
+            </div>
+            </div>
           <div class="mx-2">
               <p 
               :class="(getVieWindow===typesViews.stores)?'text-1d':'text-white'"
@@ -96,8 +131,14 @@
             :class="(getVieWindow===typesViews.admins)?'bg-white':'bg-1d'"
         >
           <div 
-            :class="(getVieWindow===typesViews.admins)?'bg-1d':'bg-white'"
-            class="h-4 w-4 rounded-full"></div>
+            class="h-4 w-4 rounded-full">
+            <div v-if="getVieWindow===typesViews.admins">
+                <img src="../../assets/menu_administracion_B.svg" alt=""> 
+            </div>
+            <div v-else>
+                 <img src="../../assets/menu_administracion.svg" alt=""> 
+            </div>
+            </div>
           <div class="mx-2">
               <p 
               :class="(getVieWindow===typesViews.admins)?'text-1d':'text-white'"
@@ -105,14 +146,19 @@
           </div>
       </div>
       </div>
-      <div class="h-1/6 pb-10 overflow-auto ">      
-          <div class="flex h-full justify-start mx-6 bottom-0 items-end">          
-          <div class="h-8 w-8 rounded-full bg-white"></div>
-          <div class="mx-2">
-              <p class="text-white">NOMBRE DEL ADMIN</p>
-              <button class="text-xs text-green-400">CERRAR SESIÓN</button>
-          </div>
-      </div>
+      <div class="h-1/6  overflow-auto ">      
+          <div class="h-full w-full flex items-end ">          
+              <div class="w-full">
+                  <div class="flex w-full bg-black py-4">
+                  <div class="mx-4"><img src="../../assets/perfil.svg" alt=""></div>
+                  <div><p class="text-white text-sm">Nombre de usuario</p></div>
+              </div>
+              <div class="w-full flex justify-center">
+                   <button class="text-xs text-white py-4 focus:outline-none">Cerrar Sesión                       
+                   </button>
+              </div>
+              </div>
+        </div>
       </div>
       </div>
   </div>

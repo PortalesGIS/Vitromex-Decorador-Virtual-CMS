@@ -140,16 +140,19 @@
           <div class="col-span-2">
               <p class="text-black text-sm py-2">{{product.dateCreated}}</p>
           </div>
-          <div class="col-span-2">
-              <div class="h-6 w-12 bg-blue-500">
-
-              </div>
+          <div class="col-span-2 flex justify-center items-center">
+              <button  
+                >
+                    <img class="object-cover h-6 w-6" src="../../assets/icons/editar.svg" alt="">                    
+                </button>
           </div>
-           <div class="col-span-2 ">
-                <label class="switch">
-                  <input type="checkbox">
-                  <span class="slider round"></span>
-                </label>
+           <div class="col-span-2 mx-2 cursor-pointer flex justify-center items-center">
+                <div v-if="product.available">
+                  <img src="../../assets/switch_on.svg" alt="">
+                </div>
+                <div v-else>
+                  <img src="../../assets/switch_off.svg" alt="">                  
+                </div>
         </div>
       </div>
         </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="w-full bg-f5 ">
       <div class="flex justify-between">
-          <div class="pl-10 w-full max-w-1400px grid grid-cols-12 bg-1f">
+          <div class="pl-10 w-full  grid grid-cols-12 bg-1f">
           <div class="">
               <p class="text-white text-sm font-bold py-2">
                   <input type="checkbox">
@@ -33,7 +33,7 @@
       <div v-for="(store,index) in getAllStores" :key="index">
           <div class="flex justify-between"
              :class="(index%2)?'bg-white':''">
-          <div class="pl-10 w-full grid grid-cols-12 max-w-1400px ">
+          <div class="pl-10 w-full grid grid-cols-12  ">
           <div class="col-span-1">
               <p class="text-black text-sm py-2"> <input type="checkbox"></p>
           </div>
@@ -56,11 +56,13 @@
               <p class="text-black text-sm py-2">{{store.dateCreated}}</p>
           </div>
       </div>
-        <div class="mx-2">
-                <label class="switch">
-                  <input type="checkbox">
-                  <span class="slider round"></span>
-                </label>
+        <div class="mx-2 cursor-pointer flex items-center">
+                <div v-if="store.status">
+                  <img src="../../assets/switch_on.svg" alt="">
+                </div>
+                <div v-else>
+                  <img src="../../assets/switch_off.svg" alt="">                  
+                </div>
         </div>
         </div>
       </div>

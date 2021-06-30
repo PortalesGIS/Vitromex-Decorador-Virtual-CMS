@@ -1,4 +1,9 @@
 <template>
+    <SerieModalComponentVue 
+    :titleForm="'espacio'"
+    :isNew="false" 
+    :onSaveNew="onSaveNew" 
+    ref="modal"/>
   <div class=" w-full h-full bg-f5 ">
       <div class=" flex justify-between">
           <div class="pl-10 w-full max-w-1400px grid grid-cols-12 bg-1f">
@@ -15,7 +20,7 @@
               <p class="text-white text-sm font-bold py-2">fecha de registro</p>
                 <i class="fas fa-angle-down" style="color:white"></i></div>
       </div>
-      <div class="bg-1f">
+      <div class="bg-1f pr-10">
           <div class="px-1"><p class="text-white text-sm font-bold py-2">Editar</p></div>
       </div>
       </div>
@@ -38,8 +43,11 @@
               <p class="text-black text-sm py-2">{{serie.dateCreated}}</p>
           </div>
       </div>
-      <div class="mx-2">
-                <button>btn</button>
+      <div class="mr-10 flex items-center">
+                <button  
+                @click="onOpenModal(serie)" >
+                    <img class="object-cover h-6 w-6" src="../../assets/icons/editar.svg" alt="">                    
+                </button>
         </div>
         </div>
         
@@ -77,8 +85,12 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
+import SerieModalComponentVue from '../modals/SerieModalComponent.vue';
 
 export default {
+    components: {
+        SerieModalComponentVue,
+    },
     data() {
         return {
         }
@@ -87,6 +99,12 @@ export default {
         ...mapActions(["getAllSeriesDB"]),
         async onGetAllSeries(){
             await this.getAllSeriesDB();
+        },
+        onOpenModal(serie){
+              this.$refs.modal.openModalForEditing(serie)
+        },        
+        onSaveNew(payload){
+            console.log(payload)
         }
     },
     computed: {
