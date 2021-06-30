@@ -1,7 +1,7 @@
 <template>
   <div class="w-full h-8 flex">
-      <div class="h-full ml-10 mr-4">
-          <div class="flex items-center h-full bg-f5 max-w-17">
+      <div class="h-full ml-10 mr-4 bg-white">
+          <div class="flex items-center h-full bg-white max-w-17">
               <i class="fas fa-map-marker-alt mx-2"></i>
               <input type="text"
               v-model="country"

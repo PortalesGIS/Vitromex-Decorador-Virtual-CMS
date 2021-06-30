@@ -5,8 +5,8 @@
     :onSaveNewSpace="onSaveNewSpace" 
     ref="modal"/>
   <div class="w-full h-8 flex">
-      <div class="h-full w-full flex justify-between ml-10 mr-4">
-          <div class="flex items-center h-full bg-f5 max-w-17">
+      <div class="h-full w-full flex justify-between bg-white ml-10 mr-4">
+          <div class="flex items-center h-full  max-w-17">
               <i class="fas fa-search mx-2"></i>
               <input type="text"
                v-model="word"

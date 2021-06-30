@@ -3,7 +3,7 @@
     <div class="h-16"></div>    
     <div class="h-5/6  bg-6f shadow-10xl overflow-hidden">
     <div class="overflow-hidden">
-      <p class="uppercase text-7xl text-white font-bold pl-10 ">
+      <p class="uppercase text-7xl text-white font-normal pl-10 py-7 ">
       DASHBOARD
       </p>
     </div>

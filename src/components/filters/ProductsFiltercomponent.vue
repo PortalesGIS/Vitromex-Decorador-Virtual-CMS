@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full h-8 flex items-center ml-4">
-      <div class="h-full  mr-4">
+  <div class="w-full h-8 flex items-center">
+      <div class="h-full ml-10 mr-4">
           <div class="flex items-center  h-full bg-white max-w-17">
               <i class="fas fa-search mx-2"></i>
               <input type="text"               

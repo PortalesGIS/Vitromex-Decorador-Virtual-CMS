@@ -32,10 +32,6 @@
         class="w-full h-full">
         <AdmisComponentVue/>
       </div>    
-      <div 
-        v-if="!getVieWindow || getVieWindow>=6"
-        class="w-full h-full bg-red-500">
-      </div>    
     </div>    
   </div>
 </template>

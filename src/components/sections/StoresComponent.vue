@@ -3,12 +3,12 @@
     <div class="h-16"></div>    
     <div class="h-5/6  bg-6f shadow-10xl overflow-hidden">
     <div class="overflow-hidden">
-      <p class="uppercase text-7xl text-white font-bold pl-10 ">
+      <p class="uppercase text-5xl text-white font-normal pl-10 py-7 ">
       Tiendas
       </p>
     </div>
       <div class="w-full h-full px-5">
-        <div class="flex items-center w-full mt-16  bg-f5 h-16">
+        <div class="flex items-center w-full  bg-f5 h-16">
       <StoresFilterComponentVue/>
     </div>
     <div class="w-full h-4/6   bg-6f">

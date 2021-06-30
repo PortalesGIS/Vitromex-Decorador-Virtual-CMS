@@ -1,7 +1,7 @@
 <template>
   <div class="w-full bg-f5 ">
-      <div class="pl-10 w-full max-w-1400px grid grid-cols-12 bg-1f">
-          <div class="flex items-center justify-between">
+      <div class="pl-10 w-full  grid grid-cols-12 bg-1f">
+          <div class="flex items-center justify-between bg-1f">
               <p class="text-white text-sm font-bold py-2">
                   <input type="checkbox">
                   </p></div>
@@ -19,7 +19,7 @@
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
       <div v-for="(user,i) in getAllAdmins" :key="i">
-          <div class="pl-10 grid grid-cols-12 max-w-1400px "
+          <div class="pl-10 grid grid-cols-12  "
            :class="(i%2)?'bg-white':''">
            <div class="col-span-1">
               <p class="text-black text-sm py-2"> <input type="checkbox"></p>

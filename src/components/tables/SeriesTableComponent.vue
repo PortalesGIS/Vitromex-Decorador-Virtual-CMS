@@ -5,8 +5,8 @@
     :onSaveNew="onSaveNew" 
     ref="modal"/>
   <div class=" w-full h-full bg-f5 ">
-      <div class=" flex justify-between">
-          <div class="pl-10 w-full max-w-1400px grid grid-cols-12 bg-1f">
+      <div class=" flex justify-between bg-1f">
+          <div class="pl-10 w-full max-w-1400px grid grid-cols-12 ">
           <div class="col-span-1 flex items-center justify-between mr-4">
               <p class="text-white text-sm font-bold py-2">No.</p>
                 <i class="fas fa-angle-down" style="color:white"></i></div>

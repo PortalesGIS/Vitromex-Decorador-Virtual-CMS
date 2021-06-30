@@ -1,6 +1,6 @@
 <template>
   <div class="w-full bg-f5 ">
-      <div class="pl-10 w-full max-w-1400px grid grid-cols-12 bg-1f">
+      <div class="pl-10 w-full  grid grid-cols-12 bg-1f">
           <div class="">
               <p class="text-white text-sm font-bold py-2">No.</p></div>
           <div class="col-span-2 flex items-center justify-between mr-4">
@@ -24,7 +24,7 @@
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
       <div v-for="(user,i) in getAllUsers" :key="i">
-          <div class="pl-10 grid grid-cols-12 max-w-1400px "
+          <div class="pl-10 grid grid-cols-12  "
            :class="(i%2)?'bg-white':''">
           <div class="">
               <p class="text-black text-sm py-2">{{i}}</p>

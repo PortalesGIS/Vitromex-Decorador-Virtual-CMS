@@ -3,11 +3,11 @@
     <div class="h-16"></div>
     <div class="h-5/6  bg-6f shadow-10xl overflow-hidden">
       <div class="overflow-hidden">
-        <p class="uppercase text-7xl text-white font-bold pl-10 ">
+        <p class="uppercase text-5xl text-white font-normal pl-10 py-7">
           ONBOARDING APP
         </p>
       </div>
-      <div class="flex h-10  mt-16 px-5 mb-px">
+      <div class="flex h-10  px-5 mb-px">
         <div
           class="mx-1 px-8 py-2 font-semibold text-sm cursor-pointer rounded-t-lg"
           :class="

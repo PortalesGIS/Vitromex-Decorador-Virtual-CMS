@@ -1,8 +1,8 @@
 <template>
   <div class="w-full h-8 flex">
       <div class="h-full ml-10 mr-4">
-          <div class="flex items-center h-full bg-f5 max-w-17">
-              <i class="fas fa-search mx-2"></i>
+          <div class="flex items-center h-full bg-white max-w-17">
+              <i class="fas fa-search mx-2 bg-white"></i>
               <input type="text"
                v-model="word"
                @input="chngeInputText"
