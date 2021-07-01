@@ -172,8 +172,8 @@
                             </div>
                         </div>
                     </div>  
-                    <div class="px-3 mt-16">
-                        <div class="h-px bg-d5"></div>
+                    <div class="px-3 " style=" margin-top:85px">
+                        <div class="h-px bg-d5 "></div>
                     </div>    
                     <div class="mt-5 px-16">
                         <div class="flex justify-center">
@@ -198,31 +198,31 @@
                         <div class="grid grid-cols-3 justify-center">
                             <div class="py-4  flex justify-start items-center">
                                 <input type="checkbox" class="h-4 w-4">
-                                <p class="pl-2 font-semibold text-black text-xs">lorem</p>
+                                <p class="pl-2 font-semibold text-black text-xs">Piso</p>
                             </div>
                             <div class="py-4  flex justify-start items-center">
                                 <input type="checkbox" class="h-4 w-4">
-                                <p class="pl-2 font-semibold text-black text-xs">lorem</p>
+                                <p class="pl-2 font-semibold text-black text-xs">Interior</p>
                             </div>
                             <div class="py-4  flex justify-start items-center">
                                 <input type="checkbox" class="h-4 w-4">
-                                <p class="pl-2 font-semibold text-black text-xs">lorem</p>
+                                <p class="pl-2 font-semibold text-black text-xs">Fachada</p>
                             </div>
                             <div class="py-4  flex justify-start items-center">
                                 <input type="checkbox" class="h-4 w-4">
-                                <p class="pl-2 font-semibold text-black text-xs">lorem</p>
+                                <p class="pl-2 font-semibold text-black text-xs">Muro</p>
                             </div>
                             <div class="py-4  flex justify-start items-center">
                                 <input type="checkbox" class="h-4 w-4">
-                                <p class="pl-2 font-semibold text-black text-xs">lorem</p>
+                                <p class="pl-2 font-semibold text-black text-xs">Exterior</p>
                             </div>
                             <div class="py-4  flex justify-start items-center">
                                 <input type="checkbox" class="h-4 w-4">
-                                <p class="pl-2 font-semibold text-black text-xs">lorem</p>
+                                <p class="pl-2 font-semibold text-black text-xs">Baño</p>
                             </div>
                         </div>
                     </div>
-                    <div class="px-3" style=" margin-top:521px">
+                    <div class="px-3" style=" margin-top:537px">
                             <div class="h-px bg-d5"></div>
                         </div>    
                     <div class="mt-5 px-16">
