@@ -5,7 +5,7 @@
     :onSaveNewSpace="onSaveNewSpace" 
     ref="modal"/>
   <div class="w-full h-8 flex">
-      <div class="h-full w-full flex justify-between ml-10 mr-4 bg-white">
+      <div class="h-full w-full flex justify-between ml-10 mr-4 ">
           <div class="flex items-center h-full  max-w-17">
               <i class="fas fa-search mx-2"></i>
               <input type="text"
@@ -17,7 +17,7 @@
           </div>
           <div class="flex">
               <div class="px-6">
-                  <button class="w-28 h-8 bg-white">
+                  <button class="w-28 h-8 bg-white border">
                       Eliminar
                   </button>
               </div>

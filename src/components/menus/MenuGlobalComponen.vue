@@ -122,7 +122,7 @@
           <div class="mx-2">
               <p 
               :class="colorText(typesViews.stores)"
-              class="">Tendas</p>
+              class="">Tiendas</p>
           </div>
       </div>
       <div 

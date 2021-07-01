@@ -38,7 +38,7 @@ export const getAllAdminsDB = async ({commit})=>{
 
 export const getAllStoreDB = async ({commit})=>{
     
-    await fetch(`${baseUrl}/api/shop`,{
+    await fetch(`${baseUrl}/api/shop/cms`,{
       method: "GET",
       headers:{
         'Content-Type': 'application/json'
