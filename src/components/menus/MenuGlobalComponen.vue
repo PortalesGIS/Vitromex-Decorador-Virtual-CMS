@@ -28,7 +28,7 @@
       <div 
             @click="goTo(typesViews.dashboard )"
             class="flex justify-start items-center px-6 mt-8 py-4 cursor-pointer"
-            :class="(getVieWindow===typesViews.dashboard)?'bg-white':'bg-1d'"
+            :class="colorSelected(typesViews.dashboard)"
         >
           <div 
             class="h-4 w-4 ">
@@ -41,14 +41,14 @@
             </div>
           <div class="mx-2">
               <p 
-              :class="(getVieWindow===typesViews.dashboard)?'text-1d':'text-white'"
+              :class="colorText(typesViews.dashboard)"
               class="">Dashboard</p>
           </div>
       </div>
       <div 
             @click="goTo(typesViews.users )"
-            class="flex justify-start items-center px-6 mt-5 py-4 cursor-pointer"
-            :class="(getVieWindow===typesViews.users)?'bg-white':'bg-1d'"
+            class="flex justify-start items-center px-6 py-4 cursor-pointer"
+             :class="colorSelected(typesViews.users)"
         >
           <div 
             class="h-4 w-4 rounded-full">
@@ -61,14 +61,14 @@
             </div>
           <div class="mx-2">
               <p 
-              :class="(getVieWindow===typesViews.users)?'text-1d':'text-white'"
+              :class="colorText(typesViews.users)"
               class="">Usuarios</p>
           </div>
       </div>
       <div 
             @click="goTo(typesViews.products )"
-            class="flex justify-start items-center px-6 mt-5 py-4 cursor-pointer"
-            :class="(getVieWindow===typesViews.products)?'bg-white':'bg-1d'"
+            class="flex justify-start items-center px-6  py-4 cursor-pointer"
+            :class="colorSelected(typesViews.products)"
         >
           <div 
             class="h-4 w-4 rounded-full">
@@ -81,14 +81,14 @@
             </div>
           <div class="mx-2">
               <p 
-              :class="(getVieWindow===typesViews.products)?'text-1d':'text-white'"
+              :class="colorText(typesViews.products)"
               class="">Series y Productos</p>
           </div>
       </div>
       <div 
             @click="goTo(typesViews.onboarding )"
-            class="flex justify-start items-center px-6 mt-5 py-4 cursor-pointer"
-            :class="(getVieWindow===typesViews.onboarding)?'bg-white':'bg-1d'"
+            class="flex justify-start items-center px-6  py-4 cursor-pointer"
+            :class="colorSelected(typesViews.onboarding)"
         >
           <div 
             class="h-4 w-4 rounded-full">
@@ -101,14 +101,14 @@
             </div>
           <div class="mx-2">
               <p 
-              :class="(getVieWindow===typesViews.onboarding)?'text-1d':'text-white'"
+              :class="colorText(typesViews.onboarding)"
               class="">Onboarding</p>
           </div>
       </div>
       <div 
             @click="goTo(typesViews.stores )"
-            class="flex justify-start items-center px-6 mt-5 py-4 cursor-pointer"
-            :class="(getVieWindow===typesViews.stores)?'bg-white':'bg-1d'"
+            class="flex justify-start items-center px-6  py-4 cursor-pointer"
+             :class="colorSelected(typesViews.stores)"
         >
           <div 
             class="h-4 w-4 rounded-full">
@@ -121,14 +121,14 @@
             </div>
           <div class="mx-2">
               <p 
-              :class="(getVieWindow===typesViews.stores)?'text-1d':'text-white'"
+              :class="colorText(typesViews.stores)"
               class="">Tendas</p>
           </div>
       </div>
       <div 
             @click="goTo(typesViews.admins )"
-            class="flex justify-start items-center px-6 mt-5 py-4 cursor-pointer"
-            :class="(getVieWindow===typesViews.admins)?'bg-white':'bg-1d'"
+            class="flex justify-start items-center px-6  py-4 cursor-pointer"
+            :class="colorSelected(typesViews.admins)"
         >
           <div 
             class="h-4 w-4 rounded-full">
@@ -141,7 +141,7 @@
             </div>
           <div class="mx-2">
               <p 
-              :class="(getVieWindow===typesViews.admins)?'text-1d':'text-white'"
+              :class="colorText(typesViews.admins)"
               class="">Administradores</p>
           </div>
       </div>
@@ -170,38 +170,91 @@
           <div class="w-full h-screen">
       <div class="w-full max-w-48px h-full bg-1d overflow-auto rounded-r-lg">
       <div class="h-5/6 overflow-auto">
-     <div class="flex  justify-between pt-4 mx-4">
+     <div @click="onChangeViewMenu()" 
+     class="flex w-full justify-center cursor-pointer items-center  py-4 bg-white">
         <div
-            @click="onChangeViewMenu()" 
-            class="bg-white w-4 h-4 cursor-pointer"></div>
+            class="w-4 h-4 ">
+              <img src="../../assets/menu.svg" alt="">
+              </div>
       </div>
       <div class="flex justify-evenly items-center mx-6 mt-10">          
           <div class=" h-20 max-h-32px"></div>
           <div class="h-4" ></div>
       </div>
-      <div class="flex justify-center items-center mt-10">          
-          <div class="h-4 w-4 rounded-full bg-white"></div>
-          
+      <div 
+         @click="goTo(typesViews.dashboard)"
+        class="flex justify-center items-center py-4 cursor-pointer "
+       :class="colorSelected(typesViews.dashboard)">          
+          <div class="h-4 w-4">
+              <div v-if="getVieWindow===typesViews.dashboard">
+                <img src="../../assets/menu_dashboard.svg" alt=""> 
+            </div>
+            <div v-else>
+                 <img src="../../assets/menu_dashboard_B.svg" alt=""> 
+            </div>
+          </div>
       </div>
       <div 
         @click="goTo(typesViews.users)"
-        class="flex justify-center items-center mt-10 cursor-pointer">          
-          <div class="h-4 w-4 rounded-full bg-white"></div>
+        class="flex justify-center items-center py-4 cursor-pointer"
+        :class="colorSelected(typesViews.users)">               
+          <div class="h-4 w-4">
+              <div v-if="getVieWindow===typesViews.users">
+                <img src="../../assets/menu_usuarios_B.svg" alt=""> 
+            </div>
+            <div v-else>
+                 <img src="../../assets/menu_usuarios.svg" alt=""> 
+            </div>
+          </div>
           
       </div>
-      <div class="flex justify-center items-center mt-10">          
-          <div class="h-4 w-4 rounded-full bg-white"></div>
-          
+      <div class="flex justify-center items-center py-4 cursor-pointer"
+       @click="goTo(typesViews.products)"
+       :class="colorSelected(typesViews.products)">          
+          <div class="h-4 w-4 ">
+              <div v-if="getVieWindow===typesViews.products">
+                <img src="../../assets/menu_seriesyproductos_B.svg" alt=""> 
+            </div>
+            <div v-else>
+                 <img src="../../assets/menu_seriesyproductos.svg" alt=""> 
+            </div>
+          </div>
       </div>
-      <div class="flex justify-center items-center mt-10">          
-          <div class="h-4 w-4 rounded-full bg-white"></div>
+       <div class="flex justify-center items-center py-4 cursor-pointer"
+       @click="goTo(typesViews.onboarding)"
+       :class="colorSelected(typesViews.onboarding)">          
+          <div class="h-4 w-4 ">
+              <div v-if="getVieWindow===typesViews.onboarding">
+                <img src="../../assets/menu_onboarding_B.svg" alt=""> 
+            </div>
+            <div v-else>
+                 <img src="../../assets/menu_onboarding.svg" alt=""> 
+            </div>
+          </div>
       </div>
-      <div class="flex justify-center items-center mt-10">          
-          <div class="h-4 w-4 rounded-full bg-white"></div>
+       <div class="flex justify-center items-center py-4 cursor-pointer"
+       @click="goTo(typesViews.stores)"
+       :class="colorSelected(typesViews.stores)">          
+          <div class="h-4 w-4 ">
+              <div v-if="getVieWindow===typesViews.stores">
+                <img src="../../assets/menu_tiendas_B.svg" alt=""> 
+            </div>
+            <div v-else>
+                 <img src="../../assets/menu_tiendas.svg" alt=""> 
+            </div>
+          </div>
       </div>
-      <div class="flex justify-center items-center mt-10">          
-          <div class="h-4 w-4 rounded-full bg-white"></div>
-          
+       <div class="flex justify-center items-center py-4 cursor-pointer"
+       @click="goTo(typesViews.admins)"
+       :class="colorSelected(typesViews.admins)">          
+          <div class="h-4 w-4 ">
+              <div v-if="getVieWindow===typesViews.admins">
+                <img src="../../assets/menu_administracion_B.svg" alt=""> 
+            </div>
+            <div v-else>
+                 <img src="../../assets/menu_administracion.svg" alt=""> 
+            </div>
+          </div>
       </div>
       </div>
       <div class="h-1/6 pb-10 overflow-auto ">      
@@ -232,10 +285,26 @@ export default {
         },
         onChangeViewMenu(){
             this.isOpen = !this.isOpen;
+        },
+         colorSelected(view){
+            if(this.getVieWindow===view){
+                return 'bg-white'
+            }
+            else{
+                return 'bg-1d'
+            }
+        },
+        colorText(view){
+            if(this.getVieWindow===view){
+                return 'text-black'                
+            }
+            else{
+                return'text-white'
+            }
         }
     },
     computed: {
-        ...mapGetters(["getVieWindow"])
+        ...mapGetters(["getVieWindow"]),
     },
 }
 </script>

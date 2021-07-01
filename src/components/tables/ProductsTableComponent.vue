@@ -1,4 +1,7 @@
 <template>
+<ProductsModalComponenVue
+  ref="modal"
+/>
   <div class="h-full w-full bg-f5  overflow-x-auto">
       <div class="h-20 flex justify-between bg-1f min-w-2100px  overflow-x-auto">
           <div class="pl-10 w-full  grid grid-cols-38 overflow-x-auto">
@@ -77,7 +80,7 @@
               <p class="text-black text-sm py-2 ">{{(product.smallPicture!="")?'1/1':'0/1'}}</p>
           </div>
           <div class="col-span-2 ">
-              <p class="text-black text-sm py-2 truncate  ">0/3</p>
+              <p class="text-black text-sm py-2 truncate  ">{{`${countRendersProduct(product)}/3`}}</p>
           </div>
           <div class="col-span-2">
               <p class="text-black text-sm py-2">{{`${countImgsProduct(product)}/2`}}</p>
@@ -142,6 +145,7 @@
           </div>
           <div class="col-span-2 flex justify-center items-center">
               <button  
+                @click="onOpenModal(product)"
                 >
                     <img class="object-cover h-6 w-6" src="../../assets/icons/editar.svg" alt="">                    
                 </button>
@@ -192,8 +196,11 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
-
+import ProductsModalComponenVue from '../modals/ProductsModalComponen.vue';
 export default {
+  components: {
+    ProductsModalComponenVue,
+  },
     data() {
         return {
         }
@@ -210,6 +217,13 @@ export default {
             if(product.roughness!="")counter++
             return counter            
         },
+        countRendersProduct(product){
+            let counter = 0;
+            if(product.renders[0]!="")counter++
+            if(product.renders[1]!="")counter++
+            if(product.renders[2]!="")counter++
+            return counter            
+        },
         serchAplication(product,aplication){
           if(product){
             const found = product.aplications.find(element => element === aplication)
@@ -217,6 +231,9 @@ export default {
           }
           return false
         },
+         onOpenModal(product){
+              this.$refs.modal.onActiveModal(product)
+        }, 
     },
     computed: {
     ...mapGetters(["getAllProducts"]),
