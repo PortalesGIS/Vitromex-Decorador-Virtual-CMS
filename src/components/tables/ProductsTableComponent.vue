@@ -6,63 +6,63 @@
       <div class="h-20 flex justify-between bg-1f min-w-2100px  overflow-x-auto">
           <div class="pl-10 w-full  grid grid-cols-38 overflow-x-auto">
           
-          <div class="col-span-1 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">No.</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Imagen Miniatura</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Imagen del producto</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Textura AR/3D</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Nombre del producto</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Tipologia</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Serie</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Serie</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Acabado</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Color</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Piso</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Muro</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Iterior</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Exterior</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Fachada</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Baño</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Fecha de Registro</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Editar</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Suspender</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
+          <div class="col-span-1 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">No.</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Imagen Miniatura</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Imagen del producto</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Textura AR/3D</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Nombre del producto</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Tipologia</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Serie</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Serie</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Acabado</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Color</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Piso</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Muro</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Iterior</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Exterior</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Fachada</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Baño</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Fecha de Registro</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Editar</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Suspender</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
       </div>
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>

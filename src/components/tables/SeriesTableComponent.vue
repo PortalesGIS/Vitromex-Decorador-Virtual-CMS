@@ -7,18 +7,18 @@
   <div class=" w-full h-full bg-f5 ">
       <div class=" flex justify-between bg-1f">
           <div class="pl-10 w-full max-w-1400px grid grid-cols-12 ">
-          <div class="col-span-1 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">No.</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Nombre de la Serie</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Imagen Miniatura</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">fecha de registro</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
+          <div class="col-span-1 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">No.</p>
+              </div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Nombre de la Serie</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-center mr-4">
+              <p class="text-white text-xs font-semibold py-2">Imagen Miniatura</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-center mr-4">
+              <p class="text-white text-xs font-semibold py-2">fecha de registro</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
       </div>
       <div class="bg-1f pr-10">
           <div class="px-1"><p class="text-white text-sm font-bold py-2">Editar</p></div>
@@ -30,16 +30,16 @@
           <div class="flex justify-between"
              :class="(index%2)?'bg-white':''">
           <div class="pl-10 w-full grid grid-cols-12 max-w-1400px ">
-          <div class="col-span-1">
+          <div class="col-span-1 flex justify-start">
               <p class="text-black text-sm py-2">{{index}}</p>
           </div>
-          <div class="col-span-2">
+          <div class="col-span-2 flex justify-start">
               <p class="text-black text-sm py-2">{{serie.name}}</p>
           </div>
-          <div class="col-span-2 ">
+          <div class="col-span-2  flex justify-center">
               <p class="text-black text-sm py-2 truncate  ">{{`${(serie.img!="")?'1':"0"}/1`}}</p>
           </div>
-          <div class="col-span-2">
+          <div class="col-span-2 flex justify-center">
               <p class="text-black text-sm py-2">{{serie.dateCreated}}</p>
           </div>
       </div>

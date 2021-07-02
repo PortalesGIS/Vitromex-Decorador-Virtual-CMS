@@ -7,18 +7,18 @@
   <div class=" w-full h-full bg-f5 ">
       <div class=" flex justify-between bg-1f">
           <div class="pl-10 w-full max-w-1400px grid grid-cols-12 bg-1f">
-          <div class="col-span-1 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">No.</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Imagen</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Nombre del espacio</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Fecha de Registro</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
+          <div class="col-span-1 flex items-center justify-center mr-4">
+              <p class="text-white text-xs font-semibold py-2">No.</p>
+            </div>
+          <div class="col-span-2 flex items-center justify-center mr-4">
+              <p class="text-white text-xs font-semibold py-2">Imágenes</p>
+            </div>
+          <div class="col-span-2 flex items-center justify-center mr-4">
+              <p class="text-white text-xs font-semibold py-2">Nombre del Espacio</p>
+            </div>
+          <div class="col-span-2 flex items-center justify-center mr-4">
+              <p class="text-white text-xs font-semibold py-2">Fecha de Registro</p>
+            </div>
       </div>
       <div class="bg-1f">
           <div class="mr-10"><p class="text-white text-sm font-bold py-2">Editar</p></div>
@@ -30,19 +30,19 @@
           <div class="flex justify-between"
              :class="(index%2)?'bg-white':''">
           <div class="pl-10 w-full grid grid-cols-12 max-w-1400px ">
-          <div class="col-span-1">
+          <div class="col-span-1 flex justify-center items-center">
               <p class="text-black text-sm py-2">{{index}}</p>
           </div>
-          <div class="col-span-2">
+          <div class="col-span-2 flex justify-center items-center">
               <!-- <p class="text-black text-sm py-2">{{typologie.name}}</p> -->
               <div class="py-2">
                 <img  :src="typologie.img" style="width:86px; height:86px" alt="">              
               </div>
           </div>
-          <div class="col-span-2 ">
+          <div class="col-span-2  flex justify-center items-center">
               <p class="text-black text-sm py-2 truncate  ">{{typologie.name}}</p>
           </div>
-          <div class="col-span-2">
+          <div class="col-span-2 flex justify-center items-center">
               <p class="text-black text-sm py-2">{{typologie.dateCreated}}</p>
           </div>
       </div>

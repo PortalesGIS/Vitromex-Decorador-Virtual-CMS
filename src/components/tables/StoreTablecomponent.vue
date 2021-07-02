@@ -6,27 +6,27 @@
               <p class="text-white text-sm font-bold py-2">
                   <input type="checkbox">
                   </p></div>
-          <div class="col-span-1 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">No.</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Nombre de la Tienda</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Direccion</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Coordenadas</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Telefono</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-between mr-4">
-              <p class="text-white text-sm font-bold py-2">Fecha de Registro</p>
-                <i class="fas fa-angle-down" style="color:white"></i></div>
+          <div class="col-span-1 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">No.</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Nombre de la Tienda</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Direccion</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Coordenadas</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Telefono</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-2 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2">Fecha de Registro</p>
+                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
       </div>
       <div class="bg-1f">
-          <div class="px-1"><p class="text-white text-sm font-bold py-2">Publicar</p></div>
+          <div class="px-1"><p class="text-white text-sm font-bold px-4 py-2">Publicar</p></div>
       </div>
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
@@ -56,7 +56,7 @@
               <p class="text-black text-sm py-2">{{store.dateCreated}}</p>
           </div>
       </div>
-        <div class="mx-2 cursor-pointer flex items-center">
+        <div class="mx-2 cursor-pointer flex items-center px-4">
                 <div v-if="store.status">
                   <img src="../../assets/switch_on.svg" alt="">
                 </div>

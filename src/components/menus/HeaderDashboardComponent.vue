@@ -73,7 +73,7 @@
                 <div class="w-full h-px bg-d4"></div>
               </div>
             </div>
-          <div class="w-full flex ml-4 mt-3">
+          <div class="px-7 w-full flex ml-4 mt-3">
             <div>
               <div>
                 <p class="text-sm py-1 font-medium text-black">Espacio más visitado</p>

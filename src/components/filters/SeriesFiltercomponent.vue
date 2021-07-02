@@ -2,7 +2,7 @@
   <div class="w-full h-8 flex">
       <div class="h-full ml-10 mr-4">
           <div class="flex items-center h-full bg-white max-w-17">
-              <i class="fas fa-search mx-2 bg-white"></i>
+               <img src="../../assets/buscar.svg" class="w-4 h-4 mx-2" alt="">    
               <input type="text"
                v-model="word"
                @input="chngeInputText"

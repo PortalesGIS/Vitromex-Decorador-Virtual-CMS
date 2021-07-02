@@ -8,7 +8,7 @@
       </p>
     </div>
       <div class="w-full h-full px-5 ">
-        <div class="flex items-center w-full mt-16  bg-f5 h-16">
+        <div class="flex items-center w-full  bg-f5 h-16">
       <AdminFilterComponentVue/>
     </div>
     <div class="w-full h-4/6   bg-6f">

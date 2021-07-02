@@ -9,7 +9,7 @@
       </div>
       <div class="flex h-10  px-5 mb-px">
         <div
-          class="mx-1 px-8 py-2 font-semibold text-sm cursor-pointer rounded-t-lg"
+          class="mx-1 px-16 py-2 font-semibold text-sm cursor-pointer rounded-t-sm"
           :class="
             menuOption === 0 ? 'bg-f5 text-black' : 'bg-555555 text-white'
           "
@@ -18,7 +18,7 @@
           Espacios
         </div>
         <div
-          class=" px-8 py-2 font-semibold text-sm cursor-pointer rounded-t-lg"
+          class="  px-16 py-2 font-semibold text-sm cursor-pointer rounded-t-sm"
           :class="
             menuOption === 1 ? 'bg-f5 text-black' : 'bg-555555 text-white'
           "
