@@ -1,4 +1,10 @@
 <template>
+    <NewAdminModalComponentVue
+    ref="modal"
+    />
+    <DeleteAdminModalComponentVue
+    ref="modalDelete"
+    />
   <div class="w-full   h-8 flex justify-between">
       <div class="flex">
           <div class="h-full ml-10 mr-4 bg-white">
@@ -29,10 +35,14 @@
       </div>
       <div class="flex">
           <div>
-              <button class="border-gray-400 border-2 bg-white text-gray-500 px-4 py-2 mx-2">Eliminar</button>
+              <button 
+              @click="OnOpenModalDelete"
+              class="border-gray-400 border-2 bg-white text-gray-500 px-4 py-2 mx-2">Eliminar</button>
           </div>
           <div>
-              <button class=" border-black border-2 bg-black text-white mx-2 p-2">Nuevo administrador</button>
+              <button 
+              @click="OnOpenModalNew"
+              class=" border-black border-2 bg-black text-white mx-2 p-2">Nuevo administrador</button>
           </div>
       </div>
   </div>
@@ -40,7 +50,13 @@
 
 <script>
 import { mapActions } from 'vuex';
+import DeleteAdminModalComponentVue from '../modals/DeleteAdminModalComponent.vue';
+import NewAdminModalComponentVue from '../modals/NewAdminModalComponent.vue';
 export default {
+    components: {
+        NewAdminModalComponentVue,
+        DeleteAdminModalComponentVue
+    },
     data() {
         return {
           word:"",
@@ -62,6 +78,12 @@ export default {
                     dateTwo:this.dateTwo
                 })
             }            
+        },
+        OnOpenModalNew(){
+             this.$refs.modal.openModal()
+        },
+        OnOpenModalDelete(){
+             this.$refs.modalDelete.openModal()
         }
     },
 }
