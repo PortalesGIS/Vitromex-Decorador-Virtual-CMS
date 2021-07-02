@@ -1,30 +1,38 @@
 <template>
   <div class="w-full h-8 flex">
-      <div class="h-full ml-10 mr-4 bg-white">
-          <div class="flex items-center h-full bg-white max-w-17">
-              <i class="fas fa-map-marker-alt mx-2"></i>
-              <input type="text"
-              v-model="country"
-               @input="chngeInputName"
-                    class=" appearance-none h-full w-full border-0 border-transparent bg-white focus:outline-none active:outline-non"
-                    placeholder="Buscar"
-              >
+      <div class="flex justify-between w-full">
+          <div class="flex">
+                <div class="h-full ml-10 mr-4 bg-white">
+                 <div class="flex items-center h-full bg-white max-w-17">
+                     <img src="../../assets/buscar.svg" class="w-4 h-4 mx-2" alt="">              
+                     <input type="text"
+                     v-model="country"
+                      @input="chngeInputName"
+                           class=" appearance-none h-full w-full border-0 border-transparent bg-white focus:outline-none active:outline-non"
+                           placeholder="Buscar"
+                     >
+                 </div>
+             </div>
+             <div class="flex  h-full bg-white items-center">
+                   <i class="fas fa-calendar-alt mx-2"></i>
+                 <input 
+                 v-model="dateone"
+                  @input="changeInputDate"
+                 class=" appearance-none w-30 bg-white focus:outline-none active:outline-non"
+                 type="date">
+                 <p class="mx-2">-</p>
+                 <input 
+                 v-model="dateTwo"
+                 @input="changeInputDate"
+                 class=" appearance-none w-30 bg-white focus:outline-none active:outline-non"
+                 type="date">          
+             </div>
+          </div>
+          <div class="flex justify-center items-center pr-3">
+              <button class="bg-1f w-44 h-8 text-white text-sm">Exportar Documento</button>
           </div>
       </div>
-      <div class="flex  h-full bg-white items-center">
-            <i class="fas fa-calendar-alt mx-2"></i>
-          <input 
-          v-model="dateone"
-           @input="changeInputDate"
-          class=" appearance-none w-30 bg-white focus:outline-none active:outline-non"
-          type="date">
-          <p class="mx-2">-</p>
-          <input 
-          v-model="dateTwo"
-          @input="changeInputDate"
-          class=" appearance-none w-30 bg-white focus:outline-none active:outline-non"
-          type="date">          
-      </div>
+          
   </div>
 </template>
 

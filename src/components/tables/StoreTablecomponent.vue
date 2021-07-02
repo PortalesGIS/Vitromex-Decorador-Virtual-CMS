@@ -67,30 +67,30 @@
         </div>
       </div>
   </div>
-  <div class="pl-10 py-2 flex items-center w-full justify-between bg-1f">
-     <div class="flex">
-          <p class="text-white font-bold text-sm pr-2">Total de Filas:</p>
+  <div class="pl-10 py-2 flex items-center w-full  justify-between bg-1f">
+     <div class="flex items-center">
+          <p class="text-white font-semibold text-xs pr-2">Total de Filas:</p>
         <div class="border-2 px-1 bg-white">
             <select 
-            class="ml-4 text-xl text-black font-bold appearance-none focus:outline-none active:outline-non"
+            class="text-xs w-10 pl-2   appearance-none focus:outline-none active:outline-non"
             name="" id="">
             <option value="20">20</option>
             <option value="50">50</option>
-            <option value="10">100</option>
+            <option value="10">10</option>
             <option value="1000">full</option>
         </select>
-        <i class="fas fa-angle-down"></i>
+        <i class="fas fa-angle-down w-2"></i>
         </div>
      </div>
-     <div class="flex mr-10">
+     <div class="flex mr-7 items-center">
          <div>
-             <p class="text-white font-bold">20-12,458</p>
+             <p class="text-white font-semibold text-xs">20-12,458</p>
          </div>
-         <div class="mx-4 cursor-pointer">
-            <i class="fas fa-angle-left fa-2x" style="color:white"></i>
+         <div class="cursor-pointer ml-7">
+            <img src="../../assets/paginador_izquierda.svg" style="width:18px; height:12px" alt="">
          </div>
-         <div class="mx-4 cursor-pointer">
-            <i class="fas fa-angle-right fa-2x" style="color:white"></i>
+         <div class="cursor-pointer ml-14">
+            <img src="../../assets/paginador_derecha.svg" style="width:18px; height:12px" alt="">            
          </div>
      </div>
   </div>

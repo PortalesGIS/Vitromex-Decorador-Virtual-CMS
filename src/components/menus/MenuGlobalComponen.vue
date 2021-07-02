@@ -151,7 +151,9 @@
               <div class="w-full">
                   <div class="flex w-full bg-black py-4">
                   <div class="mx-4"><img src="../../assets/perfil.svg" alt=""></div>
-                  <div><p class="text-white text-sm">Nombre de usuario</p></div>
+                  <div class="flex items-center">
+                      <p class="text-white text-sm">Nombre de usuario</p>
+                    </div>
               </div>
               <div class="w-full flex justify-center">
                    <button class="text-xs text-white py-4 focus:outline-none">Cerrar Sesión                       
