@@ -88,7 +88,7 @@
                     </div>
               </div>
             </div>
-            <div>
+            <div class="ml-12">
               <div>
                 <p class="text-sm py-1 font-medium text-black">Visitas al Decorador</p>
               </div>
