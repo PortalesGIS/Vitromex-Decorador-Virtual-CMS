@@ -52,7 +52,8 @@ export const setAllProdutsFilter = (state,payload) =>{
 }
 
 export const setAdminStateLogin=(state,payload)=>{
-    state.adminStateLogin = payload;
+    state.adminStateLogin = payload.ok;
     localStorage.setItem("isLogged","true");
+    localStorage.setItem("token",payload.token);
     router.push("/");
   }

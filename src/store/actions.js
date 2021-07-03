@@ -1,4 +1,5 @@
 const baseUrl = "https://vitromex-arko-api.herokuapp.com";
+// const baseUrl = "http://localhost:8080";
 const plataforma ="vitromex"
 
 // Gets DB
@@ -118,14 +119,19 @@ export const getAllSpacesDB = async ({commit})=>{
       }),
     })
     .then(result => result.json())
-    .then(response => console.log("ok",response) )
+    .then(response =>{
+      if(response.ok){
+        commit("setAdminStateLogin",response);
+      }      
+    })
+      
     .catch(error => console.error('Error:', error))
     // 
-    commit("setAdminStateLogin",payload);
+    
   }
 
   export const getAllproductsdb = async({commit})=>{
-    await fetch(`${baseUrl}/api/product/${plataforma}`,{
+    await fetch(`${baseUrl}/api/product/${plataforma}/cms`,{
       method: "GET",
       headers:{
         'Content-Type': 'application/json'

@@ -61,7 +61,7 @@
               <p class="text-white text-xs font-semibold py-2">Editar</p>
                 <i class="fas fa-angle-down px-2" style="color:white"></i></div>
           <div class="col-span-2 flex items-center justify-start mr-4">
-              <p class="text-white text-xs font-semibold py-2">Suspender</p>
+              <p class="text-white text-xs font-semibold py-2">Activar</p>
                 <i class="fas fa-angle-down px-2" style="color:white"></i></div>
       </div>
       </div>
