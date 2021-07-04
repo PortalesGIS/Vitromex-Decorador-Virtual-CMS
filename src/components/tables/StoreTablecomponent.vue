@@ -56,7 +56,9 @@
               <p class="text-black text-sm py-2">{{store.dateCreated}}</p>
           </div>
       </div>
-        <div class="mx-2 cursor-pointer flex items-center px-4">
+        <div 
+          @click="onChangeState(store)"
+          class="mx-2 cursor-pointer flex items-center px-4">
                 <div v-if="store.status">
                   <img src="../../assets/switch_on.svg" alt="">
                 </div>
@@ -105,17 +107,20 @@ export default {
         }
     },
     methods: {
-        ...mapActions(["getAllStoreDB"]),
+        ...mapActions(["getAllStoreDB","changeStatusShopDB"]),
         async onGetAllStores(){
             await this.getAllStoreDB();
-        }
+        },
+    onChangeState(shop){
+      this.changeStatusShopDB(shop)
+    }
     },
     computed: {
     ...mapGetters(["getAllStores"]),
     },
     created () {
         this.onGetAllStores();
-    },
+    }
 }
 </script>
 

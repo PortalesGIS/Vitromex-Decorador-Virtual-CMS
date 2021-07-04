@@ -150,7 +150,9 @@
                     <img class="object-cover h-6 w-6" src="../../assets/icons/editar.svg" alt="">                    
                 </button>
           </div>
-           <div class="col-span-2 mx-2 cursor-pointer flex justify-center items-center">
+           <div 
+            @click="onChageStatusAvailable(product)"
+            class="col-span-2 mx-2 cursor-pointer flex justify-center items-center">
                 <div v-if="product.available">
                   <img src="../../assets/switch_on.svg" alt="">
                 </div>
@@ -204,7 +206,7 @@ export default {
         }
     },
     methods: {
-        ...mapActions(["getAllproductsdb"]),
+        ...mapActions(["getAllproductsdb","changeAvailableProductDB"]),
         async onGetAllProducts(){
             await this.getAllproductsdb();
         },
@@ -232,6 +234,9 @@ export default {
          onOpenModal(product){
               this.$refs.modal.onActiveModal(product)
         }, 
+        onChageStatusAvailable(product){
+          this.changeAvailableProductDB(product)
+        }
     },
     computed: {
     ...mapGetters(["getAllProducts"]),
