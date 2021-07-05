@@ -19,11 +19,14 @@
                  v-model="dateone"
                   @input="changeInputDate"
                  class=" appearance-none w-30 bg-white focus:outline-none active:outline-non"
+                 :max="now"
                  type="date">
                  <p class="mx-2">-</p>
                  <input 
                  v-model="dateTwo"
-                 @input="changeInputDate"
+                 @input="changeInputDate"   
+                 :min="dateone===''?'':dateone"
+                 :max="now"
                  class=" appearance-none w-30 bg-white focus:outline-none active:outline-non"
                  type="date">          
              </div>
@@ -41,6 +44,7 @@ import { mapActions } from 'vuex';
 export default {
     data() {
         return {
+          now: new Date().toISOString().slice(0,10),
           country:"",
           city:"",
           dateone:"",
@@ -57,7 +61,7 @@ export default {
             this.filterUsersForCity({word:this.city});
         },
          changeInputDate(){
-            // console.log(new Date(this.dateone).getTime() < new Date("2021-06-20").getTime() && new Date(this.dateTwo).getTime() > new Date("2021-06-20").getTime() )            
+            console.log(this.dateone)            
             if(this.dateone!="" && this.dateTwo!=""){
                 this.userFilterDates({
                     dateOne:this.dateone,

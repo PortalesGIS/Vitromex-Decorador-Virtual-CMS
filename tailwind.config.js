@@ -73,7 +73,8 @@ module.exports = {
       "d5":"#D5D5D5",
       "d4":"#D4D4D4",
       "7d":"#7D7D7D",
-      "7db":"#7DBCDF"
+      "7db":"#7DBCDF",
+      "4f":"#4F4F4F",
     }),
     boxShadow: {
       sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',

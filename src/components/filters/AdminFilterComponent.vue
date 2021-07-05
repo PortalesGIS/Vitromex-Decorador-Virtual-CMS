@@ -23,12 +23,15 @@
           <input 
           v-model="dateone"
           @input="changeInputDate"
+        :max="now"
           class=" appearance-none w-30 bg-white focus:outline-none active:outline-non"
           type="date">
           <p class="mx-2">-</p>
           <input 
           v-model="dateTwo"
           @input="changeInputDate"
+          :min="dateone===''?'':dateone"
+          :max="now"
           class=" appearance-none w-30 bg-white focus:outline-none active:outline-non"
           type="date">          
       </div>
@@ -59,6 +62,7 @@ export default {
     },
     data() {
         return {
+             now: new Date().toISOString().slice(0,10),
           word:"",
           city:"",
           dateone:"",

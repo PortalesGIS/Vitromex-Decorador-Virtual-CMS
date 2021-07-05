@@ -35,29 +35,29 @@
                     <p class="mt-3 text-xs text-black font-normal">Carga las imágenes que visualizarán los usuarios dentro del detalle de los productos en la App. Puedes cargar hasta 3 imágenes.</p>
                 </div> 
                 <div class="px-16 mt-5">
-                    <div class="flex justify-between items-center">
-                        <div class="" style="width:174px; height:112px;">
+                    <div class="flex items-center">
+                        <div class="mx-1" style="width:174px; height:112px;">
                            <div v-if="img1===''" class="flex justify-center">
                                     <img src="../../assets/agregar_imagen.svg"  alt=""> 
                                </div>
                                <div v-else class="flex justify-center">
-                                    <img :src="img1"  alt=""> 
+                                    <img :src="img1"  alt="" style="width:174px; height:112px;"> 
                                </div>
                         </div>
-                        <div class="" style="width:174px; height:112px;">
+                        <div class="mx-1" style="width:174px; height:112px;">
                            <div v-if="img2===''" class="flex justify-center">
                                     <img src="../../assets/agregar_imagen.svg"  alt=""> 
                                </div>
                                <div v-else class="flex justify-center">
-                                    <img :src="img2"  alt=""> 
+                                    <img :src="img2"  alt="" style="width:174px; height:112px;"> 
                                </div>
                         </div>
-                        <div class="" style="width:174px; height:112px;">
+                        <div class="mx-1" style="width:174px; height:112px;">
                            <div v-if="img3===''" class="flex justify-center">
                                     <img src="../../assets/agregar_imagen.svg"  alt=""> 
                                </div>
                                <div v-else class="flex justify-center">
-                                    <img :src="img3"  alt=""> 
+                                    <img :src="img3"  alt="" style="width:174px; height:112px;"> 
                                </div>
                         </div>
                     </div>
@@ -130,10 +130,17 @@
                                <div v-if="albedo===''" class="flex justify-center">
                                     <img src="../../assets/agregar_imagen.svg" style="width:51px; height:51px" alt=""> 
                                </div>
-                               <div v-else class="flex justify-center">
-                                    <img :src="albedo" style="width:51px; height:51px" alt=""> 
+                               <div v-else class="flex justify-center pt-5">
+                                    <img :src="albedo" style="width:174px; height:112px" alt=""> 
                                </div>
-                                <p class="text-xs mt-2">Agregar imagen</p>
+                               <div v-if="albedo===''" class="flex w-full justify-center">
+                                    <p  class="text-xs mt-2">Agregar imagen</p>
+                               </div>
+                               <div v-else class="py-2">
+                                  <div class="border border-black py-1 px-2 flex w-full justify-center">
+                                        <p class="text-xs font-medium text-black">Cambiar imagen</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>        
@@ -147,10 +154,17 @@
                                <div v-if="normal===''" class="flex justify-center">
                                     <img src="../../assets/agregar_imagen.svg" style="width:51px; height:51px" alt=""> 
                                </div>
-                               <div v-else class="flex justify-center">
-                                    <img :src="normal" style="width:51px; height:51px" alt=""> 
+                               <div v-else class="flex justify-center pt-5">
+                                    <img :src="normal" style="width:174px; height:112px" alt=""> 
                                </div>
-                                <p class="text-xs mt-2">Agregar imagen</p>
+                                <div v-if="normal===''" class="flex w-full justify-center">
+                                    <p  class="text-xs mt-2">Agregar imagen</p>
+                               </div>
+                               <div v-else class="py-2">
+                                  <div class="border border-black py-1 px-2 flex w-full justify-center">
+                                        <p class="text-xs font-medium text-black">Cambiar imagen</p>
+                                    </div>
+                                </div>                               
                             </div>
                         </div>
                     </div>  
