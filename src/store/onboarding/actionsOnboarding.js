@@ -54,3 +54,8 @@ export const getAllSpacesDB = async ({commit})=>{
       )
     commit("setAllTypologies",{typologies:result})
   }
+
+  export const updateSpaceDB= ({commit},payload) =>{
+    console.log(payload)
+    commit("changeOneSpace",payload)
+  }

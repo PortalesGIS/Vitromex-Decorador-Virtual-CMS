@@ -100,16 +100,16 @@ export default {
         }
     },
     methods: {
-        ...mapActions(["getAllSpacesDB"]),
+        ...mapActions(["getAllSpacesDB","updateSpaceDB"]),
         async onGetAllSeries(){
             await this.getAllSpacesDB();
         },
         onOpenModalForEditing(space){
           this.$refs.modal.openModalForEditing(space)
         },
-        onSaveNewSpace(space){
-            console.log(space)
+        onSaveNewSpace(space){            
             //TODO: update product
+            this.updateSpaceDB(space)
         }
     },
     computed: {
