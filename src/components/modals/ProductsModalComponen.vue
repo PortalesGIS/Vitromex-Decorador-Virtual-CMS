@@ -36,46 +36,76 @@
                 </div> 
                 <div class="px-16 mt-5">
                     <div class="flex items-center">
-                        <div class="mx-1" style="width:174px; height:112px;">
-                           <div v-if="img1===''" class="flex justify-center">
+                        <div class="mx-1 cursor-pointer" style="width:174px; height:112px;">
+                           <label for="inp">
+                               <div v-if="img1===''" class="flex justify-center cursor-pointer">
                                     <img src="../../assets/agregar_imagen.svg"  alt=""> 
                                </div>
-                               <div v-else class="flex justify-center">
+                               <div v-else class="flex justify-center cursor-pointer">
                                     <img :src="img1"  alt="" style="width:174px; height:112px;"> 
                                </div>
+                           </label>
                         </div>
                         <div class="mx-1" style="width:174px; height:112px;">
-                           <div v-if="img2===''" class="flex justify-center">
+                           <label for="inp2">
+                               <div v-if="img2===''" class="flex justify-center">
                                     <img src="../../assets/agregar_imagen.svg"  alt=""> 
                                </div>
                                <div v-else class="flex justify-center">
                                     <img :src="img2"  alt="" style="width:174px; height:112px;"> 
                                </div>
+                           </label>
                         </div>
                         <div class="mx-1" style="width:174px; height:112px;">
-                           <div v-if="img3===''" class="flex justify-center">
+                           <label for="inp3">
+                               <div v-if="img3===''" class="flex justify-center">
                                     <img src="../../assets/agregar_imagen.svg"  alt=""> 
                                </div>
                                <div v-else class="flex justify-center">
                                     <img :src="img3"  alt="" style="width:174px; height:112px;"> 
                                </div>
+                           </label>
                         </div>
                     </div>
                     <div class="flex justify-between items-center mt-2">
-                        <div class="w-44 flex justify-center items-center " >
-                            <div class="border border-black py-1 px-2">
-                                <p class="text-xs font-medium text-black">Cambiar imagen</p>
-                            </div>
+                        <div class="w-44 flex justify-center items-center cursor-pointer" >
+                               <label for="inp">
+                                <div class="border border-black py-1 px-2 cursor-pointer">
+                                <p class="text-xs font-medium text-black ">Cambiar imagen</p>
+                                <input 
+                                @change="addFileimg1"   
+                                accept="image/png, image/jpeg"                             
+                                type="file" 
+                                class="hidden" 
+                                id="inp">
+                                </div>
+                               </label>
                         </div>
                         <div class="w-44 flex justify-center items-center " >
-                            <div class="border border-black py-1 px-2">
-                                <p class="text-xs font-medium text-black">Cambiar imagen</p>
-                            </div>
+                            <label for="inp2">
+                                <div class="border border-black py-1 px-2 cursor-pointer">
+                                <p class="text-xs font-medium text-black ">Cambiar imagen</p>
+                                <input 
+                                @change="addFileimg2"   
+                                accept="image/png, image/jpeg"                             
+                                type="file" 
+                                class="hidden" 
+                                id="inp2">
+                                </div>
+                               </label>
                         </div>
                         <div class="w-44 flex justify-center items-center " >
-                            <div class="border border-black py-1 px-2">
-                                <p class="text-xs font-medium text-black">Cambiar imagen</p>
-                            </div>
+                            <label for="inp3">
+                                <div class="border border-black py-1 px-2 cursor-pointer">
+                                <p class="text-xs font-medium text-black ">Cambiar imagen</p>
+                                <input 
+                                @change="addFileimg3"   
+                                accept="image/png, image/jpeg"                             
+                                type="file" 
+                                class="hidden" 
+                                id="inp3">
+                                </div>
+                               </label>
                         </div>                        
                     </div>
                 </div>  
@@ -84,7 +114,8 @@
                         <p class="mt-3 text-xs text-black font-normal">Carga la imagen que se mostrará como vista previa 
                             o miniatura del producto en la App y Web 3D.</p>
                         <div class="mt-5">
-                            <div class="" style="width:167px; height:112px;">
+                            <label for="inpminiatura">
+                                <div class="" style="width:167px; height:112px;">
                                 <div v-if="smallPicture===''" class="flex justify-center">
                                     <img src="../../assets/agregar_imagen.svg" class="object-contain" style="width:167px; height:112px;" alt=""> 
                                </div>
@@ -92,11 +123,21 @@
                                    <img :src="smallPicture" class="object-cover" style="width:167px; height:112px;" alt="">
                                </div>
                             </div>
+                            </label>
                         </div>
                         <div class="w-44 flex justify-center items-center mt-3" >
+                            <label for="inpminiatura">
                             <div class="border border-black py-1 px-2">
                                 <p class="text-xs font-medium text-black">Cambiar imagen</p>
                             </div>
+                            <input 
+                                @change="addFileMiniatura"   
+                                accept="image/png, image/jpeg"                             
+                                type="file" 
+                                class="hidden" 
+                                id="inpminiatura">
+                          
+                            </label>
                         </div> 
                 </div>  
                 <div class="px-3 mt-5">
@@ -126,7 +167,8 @@
                     </div>            
                     <div class="mt-5 px-16">
                         <div class="w-44 h-28 bg-f5 flex justify-center items-center">
-                            <div class="">
+                            <label for="inpalbedo">
+                                <div class="">
                                <div v-if="albedo===''" class="flex justify-center">
                                     <img src="../../assets/agregar_imagen.svg" style="width:51px; height:51px" alt=""> 
                                </div>
@@ -142,6 +184,13 @@
                                     </div>
                                 </div>
                             </div>
+                             <input 
+                                @change="addFilefilealbedo"   
+                                accept="image/png, image/jpeg"                             
+                                type="file" 
+                                class="hidden" 
+                                id="inpalbedo">
+                            </label>
                         </div>
                     </div>        
                     <div class="mt-6 px-16">
@@ -150,7 +199,8 @@
                     </div>            
                     <div class="mt-5 px-16">
                         <div class="w-44 h-28 bg-f5 flex justify-center items-center">
-                            <div class="">
+                            <label for="inpnormal">
+                                <div class="">
                                <div v-if="normal===''" class="flex justify-center">
                                     <img src="../../assets/agregar_imagen.svg" style="width:51px; height:51px" alt=""> 
                                </div>
@@ -166,6 +216,13 @@
                                     </div>
                                 </div>                               
                             </div>
+                             <input 
+                                @change="addFilefilenormal"   
+                                accept="image/png, image/jpeg"                             
+                                type="file" 
+                                class="hidden" 
+                                id="inpnormal">
+                            </label>
                         </div>
                     </div>  
                     <div class="mt-6 px-16">
@@ -211,27 +268,27 @@
                     <div class=" px-16">
                         <div class="grid grid-cols-3 justify-center">
                             <div class="py-4  flex justify-start items-center">
-                                <input type="checkbox" class="h-4 w-4">
+                                <input type="checkbox" @change="changeTextBox('Piso')" class="h-4 w-4">
                                 <p class="pl-2 font-semibold text-black text-xs">Piso</p>
                             </div>
                             <div class="py-4  flex justify-start items-center">
-                                <input type="checkbox" class="h-4 w-4">
+                                <input type="checkbox" @change="changeTextBox('Interior')" class="h-4 w-4">
                                 <p class="pl-2 font-semibold text-black text-xs">Interior</p>
                             </div>
                             <div class="py-4  flex justify-start items-center">
-                                <input type="checkbox" class="h-4 w-4">
+                                <input type="checkbox" @change="changeTextBox('Fachada')" class="h-4 w-4">
                                 <p class="pl-2 font-semibold text-black text-xs">Fachada</p>
                             </div>
                             <div class="py-4  flex justify-start items-center">
-                                <input type="checkbox" class="h-4 w-4">
+                                <input type="checkbox"  @change="changeTextBox('Muro')" class="h-4 w-4">
                                 <p class="pl-2 font-semibold text-black text-xs">Muro</p>
                             </div>
                             <div class="py-4  flex justify-start items-center">
-                                <input type="checkbox" class="h-4 w-4">
+                                <input type="checkbox"  @change="changeTextBox('Exterior')" class="h-4 w-4">
                                 <p class="pl-2 font-semibold text-black text-xs">Exterior</p>
                             </div>
                             <div class="py-4  flex justify-start items-center">
-                                <input type="checkbox" class="h-4 w-4">
+                                <input type="checkbox"  @change="changeTextBox('Baño')" class="h-4 w-4">
                                 <p class="pl-2 font-semibold text-black text-xs">Baño</p>
                             </div>
                         </div>
@@ -242,7 +299,7 @@
                     <div class="mt-5 px-16">
                         <div class="flex justify-center">
                             <button  @click="beforePage" class="mx-2 w-44 h-8 border border-black">Anterior</button>                                
-                            <button  @click="nexPage" class="mx-2 w-44 h-8 bg-black text-white">Guardar Cambios</button>                                
+                            <button  @click="save" class="mx-2 w-44 h-8 bg-black text-white">Guardar Cambios</button>                                
                         </div>
                     </div>                    
                 </div>
@@ -252,6 +309,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import HeaderModalProductsVue from './HeaderModalProducts.vue'
 export default {
     components: {
@@ -259,20 +317,29 @@ export default {
     },
     data() {
         return {
+            id:"",
             activeModal:false,
             page: 0,
             img1:"",
+            fileimg1:File,
             img2:"",
+            fileimg2:File,
             img3:"",
+            fileimg3:File,
             smallPicture:"",
+            fileSmallPicture:File,
             name:"",
             albedo:"",
+            filealbedo:File,
             normal:"",
+            filenormal:File,
             textureWidth:0,
-            textureHeight:0,          
+            textureHeight:0,    
+            spaces:[]      
         }
     },
     methods: {
+        ...mapActions(["updateProductDB"]),
         nexPage() {
             if(this.page<2){
                 this.page++
@@ -290,6 +357,7 @@ export default {
             }
         },
         onActiveModal(payload){
+            this.id=payload._id
             this.page=0;
             this.name=payload.name
             this.activeModal=true;
@@ -304,6 +372,53 @@ export default {
         },
         onCloseModal(){
             this.activeModal=false;
+        },
+        addFileimg1(e){                    
+             this.img1 = URL.createObjectURL(e.target.files[0]);   
+             this.fileimg1 =  e.target.files[0]  
+        },
+        addFileimg2(e){                    
+             this.img2 = URL.createObjectURL(e.target.files[0]);   
+             this.fileimg2 =  e.target.files[0]  
+        },
+        addFileimg3(e){                    
+             this.img3 = URL.createObjectURL(e.target.files[0]);   
+             this.fileimg3 =  e.target.files[0]  
+        },
+        addFileMiniatura(e){                    
+             this.smallPicture = URL.createObjectURL(e.target.files[0]);   
+             this.fileSmallPicture =  e.target.files[0]  
+        },
+        addFilefilealbedo(e){                    
+             this.albedo = URL.createObjectURL(e.target.files[0]);   
+             this.filealbedo =  e.target.files[0]  
+        },
+        addFilefilenormal(e){                    
+             this.normal = URL.createObjectURL(e.target.files[0]);   
+             this.filenormal =  e.target.files[0]  
+        },
+        changeTextBox(value){
+            const inde = this.spaces.findIndex(elm =>elm ===value)
+            if(inde>=0){
+                this.spaces.splice(inde,1)
+            }
+            else{
+             this.spaces.push(value)
+            }
+        },
+        save(){
+            this.onCloseModal()
+            this.updateProductDB({
+                id:this.id,
+                name:this.name,
+                renders:[this.fileimg1,this.fileimg2,this.fileimg3],
+                miniatura:this.fileSmallPicture,                
+                albedo:this.filealbedo,
+                normal:this.filenormal,
+                textureHeight:this.textureHeight,                
+                textureWidth:this.textureWidth,
+                spaces:this.spaces
+            })
         }
     },
 
