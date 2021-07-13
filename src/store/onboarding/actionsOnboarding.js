@@ -56,6 +56,26 @@ export const getAllSpacesDB = async ({commit})=>{
   }
 
   export const updateSpaceDB= ({commit},payload) =>{
-    console.log(payload)
-    commit("changeOneSpace",payload)
+    let myHeaders = new Headers();
+    myHeaders.append("key",`${localStorage.getItem("token")}`);
+    let formdata = new FormData();
+    formdata.append("id", payload.id);
+    formdata.append("name", payload.name);
+    if(payload.file.size){
+      console.log("entro")
+      formdata.append("file", payload.file);
+      commit("changeOneSpace",{...payload,_id:payload.id, img:URL.createObjectURL(payload.file)})      
+    }
+    commit("changeOneSpace",{...payload,_id:payload.id  })      
+    let requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: formdata,
+      redirect: 'follow'
+    };
+    fetch(`${baseUrl}/api/onboarding/aplications/update`, requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+    
   }

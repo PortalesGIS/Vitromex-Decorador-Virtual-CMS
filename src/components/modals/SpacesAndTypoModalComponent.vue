@@ -27,7 +27,8 @@
                      <p>Imagen Miniatura</p>
                 </div>
                 <div  class="flex justify-center pt-3">
-                    <div class="bg-f5 px-6 pt-4 cursor-pointer">
+                    <label for="inpfile">
+                        <div class="bg-f5 px-6 pt-4 cursor-pointer">
                         <div v-if="isNew">
                             <img 
                          src='../../assets/agregar_imagen.svg'
@@ -40,6 +41,13 @@
                         </div>
                         <p class="py-2 " style="color:#6e6e6e">Agregar imagen</p>
                     </div>
+                    <input 
+                        @change="addFileImg"   
+                        accept="image/png, image/jpeg"                             
+                        type="file" 
+                        class="hidden" 
+                        id="inpfile">
+                    </label>
                 </div>
                 <div  class="flex justify-center py-7">
                     <button 
@@ -74,6 +82,7 @@ export default {
             isOpen: false,
             name:"",
             img:"",
+            fileimg:File,
             id:""
         }        
     },
@@ -90,11 +99,16 @@ export default {
             this.id=payload._id
             this.isOpen =true
         },
+         addFileImg(e){                    
+             this.img = URL.createObjectURL(e.target.files[0]);   
+             this.fileimg =  e.target.files[0]
+        },
         onSave(){           
             this.onSaveNewSpace({
                 name:this.name,
-                img:this.img,
-                id:this.id
+                file:this.fileimg,
+                id:this.id,
+                img:this.img
             })
             this.closeModal()
         }

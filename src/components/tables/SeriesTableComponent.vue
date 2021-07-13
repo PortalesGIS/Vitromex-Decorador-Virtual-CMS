@@ -96,15 +96,19 @@ export default {
         }
     },
     methods: {
-        ...mapActions(["getAllSeriesDB"]),
+        ...mapActions(["getAllSeriesDB","UpdateSerieImgDB"]),
         async onGetAllSeries(){
             await this.getAllSeriesDB();
         },
         onOpenModal(serie){
               this.$refs.modal.openModalForEditing(serie)
         },        
-        onSaveNew(payload){
-            console.log(payload)
+        onSaveNew(payload){           
+            this.UpdateSerieImgDB({
+                id:payload.id,
+                file:payload.file,
+                name:payload.name
+            })
         }
     },
     computed: {

@@ -37,3 +37,22 @@ export const getAllSeriesDB = async ({commit})=>{
     )
     commit("setAllSeries",{serie:result})
   }
+
+  export const UpdateSerieImgDB = async ({commit},payload) =>{
+    let myHeaders = new Headers();
+    myHeaders.append("key",`${localStorage.getItem("token")}`);
+    let formdata = new FormData();
+    formdata.append("id", payload.id);
+    formdata.append("file", payload.file);
+    let requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: formdata,
+      redirect: 'follow'
+    };
+    fetch(`${baseUrl}/api/series/upload-img`, requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+      console.log(commit)
+  }

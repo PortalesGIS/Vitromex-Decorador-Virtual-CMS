@@ -107,8 +107,7 @@ export default {
         onOpenModalForEditing(space){
           this.$refs.modal.openModalForEditing(space)
         },
-        onSaveNewSpace(space){            
-            //TODO: update product
+        onSaveNewSpace(space){    
             this.updateSpaceDB(space)
         }
     },

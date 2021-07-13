@@ -15,7 +15,6 @@ export const setAllTypologiesFilter =(state,payload)=>{
 
 export const changeOneSpace = (state,payload)=>{
     const arrayupdated = state.listSpacesFilter.map(product =>{
-        console.log(product._id === payload.id)
         if(product._id === payload.id){
             return payload
         }

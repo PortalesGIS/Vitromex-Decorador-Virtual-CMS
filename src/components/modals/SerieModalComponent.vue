@@ -23,7 +23,8 @@
                      <p class="text-sm">Imagen Miniatura</p>
                 </div>
                 <div  class="flex justify-center pt-3 ">                                       
-                    <div v-if="img">
+                    <label for="inpserie">
+                        <div v-if="img">
                         <div class=" cursor-pointer  flex justify-center">
                             <img 
                          :src="img"
@@ -46,6 +47,13 @@
                         <button><p class="px-2" style="color:#6e6e6e">Cambiar imagen</p></button>
                             </div>                        
                     </div>
+                    <input 
+                        @change="addFileImg"   
+                        accept="image/png, image/jpeg"                             
+                        type="file" 
+                        class="hidden" 
+                        id="inpserie">
+                    </label>
                 </div>
                 <div  class="flex justify-center py-9">
                     <button 
@@ -80,6 +88,7 @@ export default {
             isOpen: false,
             name:"",
             img:"",
+            fileImg:File,
             id:""
         }        
     },
@@ -96,10 +105,14 @@ export default {
             this.id=payload._id
             this.isOpen =true
         },
+        addFileImg(e){                    
+             this.img = URL.createObjectURL(e.target.files[0]);   
+             this.fileImg =  e.target.files[0]
+        },
         onSave(){           
             this.onSaveNew({
                 name:this.name,
-                img:this.img,
+                file:this.fileImg,
                 id:this.id
             })
             this.closeModal()
