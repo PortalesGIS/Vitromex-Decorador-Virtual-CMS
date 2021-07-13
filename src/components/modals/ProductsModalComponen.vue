@@ -265,38 +265,20 @@
                         <p class="uppercase text-xl text-black font-bold ">Asignar Espacios</p>
                         <p class="mt-2 text-xs text-black font-normal">Selecciona dentro de los check box las opciones de Espacios correspondientes</p>
                     </div>
-                    <div class=" px-16">
+                    <div class=" px-16" style="max-height:633px; min-height:633px">
                         <div class="grid grid-cols-3 justify-center">
+                            <div v-for="aplication in getAllSpaces" :key="aplication">
                             <div class="py-4  flex justify-start items-center">
-                                <input type="checkbox" @change="changeTextBox('Piso')" class="h-4 w-4">
-                                <p class="pl-2 font-semibold text-black text-xs">Piso</p>
+                                <input type="checkbox" @change="changeTextBox(aplication.name)" class="h-4 w-4">
+                                <p class="pl-2 font-semibold text-black text-xs">{{aplication.name}}</p>
                             </div>
-                            <div class="py-4  flex justify-start items-center">
-                                <input type="checkbox" @change="changeTextBox('Interior')" class="h-4 w-4">
-                                <p class="pl-2 font-semibold text-black text-xs">Interior</p>
-                            </div>
-                            <div class="py-4  flex justify-start items-center">
-                                <input type="checkbox" @change="changeTextBox('Fachada')" class="h-4 w-4">
-                                <p class="pl-2 font-semibold text-black text-xs">Fachada</p>
-                            </div>
-                            <div class="py-4  flex justify-start items-center">
-                                <input type="checkbox"  @change="changeTextBox('Muro')" class="h-4 w-4">
-                                <p class="pl-2 font-semibold text-black text-xs">Muro</p>
-                            </div>
-                            <div class="py-4  flex justify-start items-center">
-                                <input type="checkbox"  @change="changeTextBox('Exterior')" class="h-4 w-4">
-                                <p class="pl-2 font-semibold text-black text-xs">Exterior</p>
-                            </div>
-                            <div class="py-4  flex justify-start items-center">
-                                <input type="checkbox"  @change="changeTextBox('Baño')" class="h-4 w-4">
-                                <p class="pl-2 font-semibold text-black text-xs">Baño</p>
-                            </div>
+                            </div>                            
                         </div>
                     </div>
-                    <div class="px-3" style=" margin-top:537px">
-                            <div class="h-px bg-d5"></div>
-                        </div>    
-                    <div class="mt-5 px-16">
+                    <div class="px-3">
+                      <div class=" h-px bg-d5"></div>
+                    </div>                    
+                    <div class=" relative bottom-0 mt-5 px-16">
                         <div class="flex justify-center">
                             <button  @click="beforePage" class="mx-2 w-44 h-8 border border-black">Anterior</button>                                
                             <button  @click="save" class="mx-2 w-44 h-8 bg-black text-white">Guardar Cambios</button>                                
@@ -309,7 +291,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import HeaderModalProductsVue from './HeaderModalProducts.vue'
 export default {
     components: {
@@ -338,8 +320,11 @@ export default {
             spaces:[]      
         }
     },
+    computed: {
+        ...mapGetters(["getAllSpaces"])
+    },
     methods: {
-        ...mapActions(["updateProductDB"]),
+        ...mapActions(["updateProductDB","getAllSpacesDB"]),
         nexPage() {
             if(this.page<2){
                 this.page++
@@ -462,7 +447,13 @@ export default {
             this.textureWidth=0;
             this.textureHeight=0;
             this.spaces=[]  ;
+        },
+        async getAllSpacescreated(){
+            await this.getAllSpacesDB()
         }
+    },
+    created () {
+        this.getAllSpacescreated()
     },
 
 }

@@ -99,7 +99,7 @@ export default {
         }
     },
     methods: {
-        ...mapActions(["getAllTypologiesDB"]),
+        ...mapActions(["getAllTypologiesDB","updateTypologieDB"]),
         async onGetAllTypologies(){
             await this.getAllTypologiesDB();
         },
@@ -107,8 +107,7 @@ export default {
           this.$refs.modal.openModalForEditing(typologie)
         },
         onSaveNewSpace(typologie){
-            console.log(typologie)
-            //TODO: update product
+            this.updateTypologieDB(typologie)
         }
     },
     computed: {

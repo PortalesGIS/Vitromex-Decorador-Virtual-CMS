@@ -19,6 +19,7 @@
                 </div>
                 <div  class="flex justify-start px-6">
                         <input 
+                        @keyup="validateText"
                         v-model="name"
                         class="border w-full h-8 pl-3" type="text" placeholder="Ingresa el nombre">
                     
@@ -51,10 +52,13 @@
                 </div>
                 <div  class="flex justify-center py-7">
                     <button 
+                    :disabled="btnDisabled"
                     @click="onSave"
-                    class="w-44 h-8 bg-gray-300 text-white">
+                    class="w-44 h-8 text-white"
+                    :class="btnDisabled ? 'bg-gray-300':'bg-black'"
+                    >
                         Agregar
-                        </button>                    
+                    </button>                    
                 </div>
             </div>
         </div>
@@ -83,7 +87,8 @@ export default {
             name:"",
             img:"",
             fileimg:File,
-            id:""
+            id:"",
+            btnDisabled:true
         }        
     },
     methods: {
@@ -102,8 +107,12 @@ export default {
          addFileImg(e){                    
              this.img = URL.createObjectURL(e.target.files[0]);   
              this.fileimg =  e.target.files[0]
+             this.btnDisabled=false;
         },
-        onSave(){           
+        validateText(){
+            this.name = this.name.replace(/[^a-zA-Z]+/,''); 
+        },
+        onSave(){ 
             this.onSaveNewSpace({
                 name:this.name,
                 file:this.fileimg,

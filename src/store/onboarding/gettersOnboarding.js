@@ -7,7 +7,9 @@
   }
 
   export const getAllSpaces = (state)=>{
-    return state.listSpaces }
+    return state.listSpaces 
+  }
+  
   export const getAllSpacesFilter = (state)=>{
     return state.listSpacesFilter
   }
