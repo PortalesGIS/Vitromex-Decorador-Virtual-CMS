@@ -18,10 +18,6 @@ import * as actionsOnboarding from './onboarding/actionsOnboarding'
 import * as gettersOnboarding from './onboarding/gettersOnboarding'
 import * as mutationsOnboarding from './onboarding/mutationsOnboarding'
 
-// const baseUrl = "https://vitromex-arko-api.herokuapp.com";
-// const baseUrl = "http://localhost:8080";
-// const plataforma ="vitromex"
-
 export default createStore({
   state: {
     adminStateLogin:false,

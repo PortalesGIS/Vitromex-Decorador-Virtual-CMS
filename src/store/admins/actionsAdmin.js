@@ -1,6 +1,6 @@
 import { normalizeText } from "../helpers";
 
-const baseUrl = "https://vitromex-arko-api.herokuapp.com";
+import {baseUrl} from "../../types/data"
 
 export const getAllAdminsDB = async ({commit})=>{
     

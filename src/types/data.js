@@ -1,5 +1,5 @@
 
-
+export const baseUrl = "https://testing-api-vitro-arko.xyz"
 
 export const typesViewsMenu={
     dashboard:1,

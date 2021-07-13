@@ -1,6 +1,6 @@
 import { normalizeText } from "../helpers";
+import {baseUrl} from "../../types/data"
 
-const baseUrl = "https://www.testing-api-vitro-arko.xyz";
 const plataforma ="vitromex"
 
 export const getAllproductsdb = async({commit})=>{
