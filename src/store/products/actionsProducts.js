@@ -42,29 +42,36 @@ export const getAllproductsdb = async({commit})=>{
   export const updateProductDB = async ({commit},product) =>{
     if(product.render){
       updateImgDB(product.id,product.render,product.index)
+      
     }
     if(product.name){
       updateProductCamp(product.id,"name",product.name)
+      commit("updateProduct",{id:product.id,camp:"name",value:product.name})
     }
     if(product.textureHeight){
       updateProductCamp(product.id,"textureHeight",product.textureHeight)
+      commit("updateProduct",{id:product.id,camp:"textureHeight",value:product.textureHeight})
     }
     if(product.textureWidth){
       updateProductCamp(product.id,"textureWidth",product.textureWidth)
+      commit("updateProduct",{id:product.id,camp:"textureHeight",value:product.textureHeight})
     }
     if(product.spaces && product.spaces.length >= 1){
       updateProductCamp(product.id,"aplications",product.spaces)
+      commit("updateProduct",{id:product.id,camp:"aplications",value:product.spaces})
     }
     if(product.miniatura){
       updateImgDBOne(product.id,product.miniatura,"smallPicture")
+      commit("updateProduct",{id:product.id,camp:"smallPicture",value:URL.createObjectURL(product.miniatura)})
     }
     if(product.albedo){
       updateImgDBOne(product.id,product.albedo,"albedo")
+      commit("updateProduct",{id:product.id,camp:"albedo",value:URL.createObjectURL(product.albedo)})      
     }
     if(product.normal){
       updateImgDBOne(product.id,product.normal,"normal")
+      commit("updateProduct",{id:product.id,camp:"normal",value:URL.createObjectURL(product.normal)})
     }
-    console.log(commit)
   }
 
   const updateProductCamp = async(id,camp,value) =>{
