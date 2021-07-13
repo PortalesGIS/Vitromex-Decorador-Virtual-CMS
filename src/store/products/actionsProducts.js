@@ -1,7 +1,6 @@
 import { normalizeText } from "../helpers";
 
-const baseUrl = "http://104.45.235.46:8080";
-// const baseUrl = "http://localhost:8080";
+const baseUrl = "https://www.testing-api-vitro-arko.xyz";
 const plataforma ="vitromex"
 
 export const getAllproductsdb = async({commit})=>{
@@ -41,12 +40,9 @@ export const getAllproductsdb = async({commit})=>{
   }
 
   export const updateProductDB = async ({commit},product) =>{
-    product.renders.map((file,index)=>{
-      if(file.size ){
-        console.log(index)
-        updateImgDB(product.id,file,index)
-      }
-    })
+    if(product.render){
+      updateImgDB(product.id,product.render,product.index)
+    }
     if(product.name){
       updateProductCamp(product.id,"name",product.name)
     }
@@ -56,16 +52,16 @@ export const getAllproductsdb = async({commit})=>{
     if(product.textureWidth){
       updateProductCamp(product.id,"textureWidth",product.textureWidth)
     }
-    if(product.spaces.length >= 1){
+    if(product.spaces && product.spaces.length >= 1){
       updateProductCamp(product.id,"aplications",product.spaces)
     }
-    if(product.miniatura.size){
+    if(product.miniatura){
       updateImgDBOne(product.id,product.miniatura,"smallPicture")
     }
-    if(product.albedo.size){
+    if(product.albedo){
       updateImgDBOne(product.id,product.albedo,"albedo")
     }
-    if(product.normal.size){
+    if(product.normal){
       updateImgDBOne(product.id,product.normal,"normal")
     }
     console.log(commit)
@@ -89,6 +85,7 @@ export const getAllproductsdb = async({commit})=>{
   }
 
   const updateImgDB = async (id,file,positionArray)=>{
+    console.log("pdate one render")
     let myHeaders = new Headers();
     myHeaders.append("key",`${localStorage.getItem("token")}`);
 let formdata = new FormData();
@@ -109,6 +106,7 @@ formdata.append("positionArray", positionArray);
   }
 
   const updateImgDBOne = async (id,file,name)=>{
+    console.log("pdate one just")
     let myHeaders = new Headers();
     myHeaders.append("key",`${localStorage.getItem("token")}`);
 let formdata = new FormData();

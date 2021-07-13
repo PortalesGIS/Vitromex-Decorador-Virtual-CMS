@@ -376,26 +376,54 @@ export default {
         addFileimg1(e){                    
              this.img1 = URL.createObjectURL(e.target.files[0]);   
              this.fileimg1 =  e.target.files[0]  
+              this.updateProductDB({
+                id:this.id,
+                render:this.fileimg1,
+                index:0
+              })
+
         },
         addFileimg2(e){                    
-             this.img2 = URL.createObjectURL(e.target.files[0]);   
+            this.img2 = URL.createObjectURL(e.target.files[0]);   
              this.fileimg2 =  e.target.files[0]  
+             this.updateProductDB({
+                id:this.id,
+                render:this.fileimg2,
+                index:1
+              })
         },
         addFileimg3(e){                    
-             this.img3 = URL.createObjectURL(e.target.files[0]);   
+            this.img3 = URL.createObjectURL(e.target.files[0]);   
              this.fileimg3 =  e.target.files[0]  
+              this.updateProductDB({
+                id:this.id,
+                render:this.fileimg3,
+                index:2
+              })           
         },
         addFileMiniatura(e){                    
              this.smallPicture = URL.createObjectURL(e.target.files[0]);   
              this.fileSmallPicture =  e.target.files[0]  
+             this.updateProductDB({
+                id:this.id,
+                miniatura:this.fileSmallPicture,
+              })
         },
         addFilefilealbedo(e){                    
              this.albedo = URL.createObjectURL(e.target.files[0]);   
              this.filealbedo =  e.target.files[0]  
+             this.updateProductDB({
+                id:this.id,
+                albedo:this.filealbedo,
+              })
         },
         addFilefilenormal(e){                    
              this.normal = URL.createObjectURL(e.target.files[0]);   
-             this.filenormal =  e.target.files[0]  
+             this.filenormal =  e.target.files[0]
+             this.updateProductDB({
+                id:this.id,
+                normal:this.filenormal,
+              })  
         },
         changeTextBox(value){
             const inde = this.spaces.findIndex(elm =>elm ===value)
@@ -411,14 +439,29 @@ export default {
             this.updateProductDB({
                 id:this.id,
                 name:this.name,
-                renders:[this.fileimg1,this.fileimg2,this.fileimg3],
-                miniatura:this.fileSmallPicture,                
-                albedo:this.filealbedo,
-                normal:this.filenormal,
                 textureHeight:this.textureHeight,                
                 textureWidth:this.textureWidth,
                 spaces:this.spaces
             })
+            this.id="";
+            this.activeModal=false;
+            this.page= 0;
+            this.img1="";
+            this.fileimg1=File;
+            this.img2="";
+            this.fileimg2=File;
+            this.img3="";
+            this.fileimg3=File;
+            this.smallPicture="";
+            this.fileSmallPicture=File;
+            this.name="";
+            this.albedo="";
+            this.filealbedo=File;
+            this.normal="";
+            this.filenormal=File;
+            this.textureWidth=0;
+            this.textureHeight=0;
+            this.spaces=[]  ;
         }
     },
 
