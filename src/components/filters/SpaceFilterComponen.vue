@@ -47,7 +47,7 @@ export default {
         }
     },
     methods: {
-        ...mapActions(["filterSpaces"]),
+        ...mapActions(["filterSpaces","createSpace"]),
         chngeInputText() {
             this.filterSpaces({word:this.word})   
         },
@@ -55,8 +55,7 @@ export default {
            this.$refs.modal.openModal()
         },
         onSaveNewSpace(space){
-        console.log(space)
-        // TODO: save new space in DB
+        this.createSpace(space)
         }
     },
     mounted () {

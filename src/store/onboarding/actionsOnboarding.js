@@ -102,3 +102,22 @@ export const getAllSpacesDB = async ({commit})=>{
       .catch(error => console.log('error', error));
     
   }
+
+  export const createSpace =({commit},payload)=>{
+    let myHeaders = new Headers();
+    myHeaders.append("key",`${localStorage.getItem("token")}`);
+    let formdata = new FormData();
+    formdata.append("name", payload.name);
+    formdata.append("file", payload.file);    
+    let requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: formdata,
+      redirect: 'follow'
+    };
+    fetch(`${baseUrl}/api/onboarding/aplications/create`, requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+      console.log(commit)
+  }

@@ -30,7 +30,7 @@
                 <div  class="flex justify-center pt-3">
                     <label for="inpfile">
                         <div class="bg-f5 px-6 pt-4 cursor-pointer">
-                        <div v-if="isNew">
+                        <div v-if="!img">
                             <img 
                          src='../../assets/agregar_imagen.svg'
                         style="width:120px;height:120px" alt="">
@@ -93,6 +93,10 @@ export default {
     },
     methods: {
         closeModal() {
+            this.name=""
+            this.img=""
+            this.fileimg=File
+            this.id=""
             this.isOpen =false
         },
         openModal() {
@@ -114,12 +118,16 @@ export default {
         },
         onSave(){ 
             this.onSaveNewSpace({
-                name:this.name,
+                name:this.name.toUpperCase(),
                 file:this.fileimg,
                 id:this.id,
                 img:this.img
             })
             this.closeModal()
+             this.name=""
+            this.img=""
+            this.fileimg=File
+            this.id=""
         }
     },
 
