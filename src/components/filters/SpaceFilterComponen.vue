@@ -17,7 +17,9 @@
           </div>
           <div class="flex">
               <div class="px-6">
-                  <button class="w-28 h-8 bg-white border">
+                  <button 
+                  @click="deleteSpace"
+                  class="w-28 h-8 bg-white border">
                       Eliminar
                   </button>
               </div>
@@ -40,14 +42,17 @@ export default {
     components: {
         SpacesAndTypoModalComponentVue,
     },
+    props: {
+        spacesSelected: {
+        },
+    },
     data() {
         return {
           word:"",
-
         }
     },
     methods: {
-        ...mapActions(["filterSpaces","createSpace"]),
+        ...mapActions(["filterSpaces","createSpace","deleteAplications"]),
         chngeInputText() {
             this.filterSpaces({word:this.word})   
         },
@@ -56,6 +61,9 @@ export default {
         },
         onSaveNewSpace(space){
         this.createSpace(space)
+        },
+        async deleteSpace(){
+            await this.deleteAplications(this.spacesSelected)
         }
     },
     mounted () {

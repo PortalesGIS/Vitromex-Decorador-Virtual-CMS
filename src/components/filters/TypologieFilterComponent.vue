@@ -17,7 +17,9 @@
               </div>
               <div class="flex">
               <div class="px-6">
-                  <button class="w-28 h-8 bg-white">
+                  <button 
+                  @click="deletetypologie"
+                  class="w-28 h-8 bg-white">
                       Eliminar
                   </button>
               </div>
@@ -25,7 +27,7 @@
                   <button 
                   @click="onOpenModal"
                   class="w-48 h-8 bg-black text-white">
-                      Nuevo espacio
+                      Nuevo Tipología
                   </button>
               </div>
           
@@ -47,17 +49,23 @@ export default {
 
         }
     },
+    props: {
+        typologiasSelected: {
+        },
+    },
     methods: {
-        ...mapActions(["filterTypologies"]),
+        ...mapActions(["filterTypologies","createTypologie","deleteTypologies"]),
         chngeInputText() {
             this.filterTypologies({word:this.word})   
         },
         onOpenModal(){
            this.$refs.modal.openModal()
         },
-        onSaveNewSpace(space){
-        console.log(space)
-        // TODO: save new space in DB
+        onSaveNewSpace(typol){
+            this.createTypologie(typol)
+        },
+        deletetypologie(){
+          this.deleteTypologies(this.typologiasSelected)
         }
     },
     mounted () {

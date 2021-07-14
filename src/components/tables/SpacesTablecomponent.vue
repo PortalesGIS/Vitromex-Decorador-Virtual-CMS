@@ -7,6 +7,10 @@
     <div class=" w-full h-full bg-f5 ">
       <div class=" flex justify-between bg-1f">
           <div class="pl-10 w-full max-w-1400px grid grid-cols-12 bg-1f">
+              <div class="">
+              <p class="text-white text-sm font-bold py-2">
+                  <input type="checkbox">
+              </p></div>
           <div class="col-span-1 flex items-center justify-center mr-4">
               <p class="text-white text-xs font-semibold py-2">No.</p>
             </div>
@@ -30,6 +34,11 @@
           <div class="flex justify-between"
              :class="(index%2)?'bg-white':''">
           <div class="pl-10 w-full grid grid-cols-12 max-w-1400px ">
+               <div class="col-span-1 flex justify-start items-center">
+              <p class="text-black text-sm py-2"> 
+                  <input @change="changeTextBox(serie._id)" type="checkbox">
+                  </p>
+          </div>
           <div class="col-span-1 flex justify-center items-center">
               <p class="text-black text-sm py-2">{{index}}</p>
           </div>
@@ -94,6 +103,12 @@ export default {
     components: {
         SpacesAndTypoModalComponentVue,
     },
+    props: {
+        changespaseSelected: {
+            type: Function,
+            default: ()=>{}
+        },
+    },
     data() {
         return {
             
@@ -109,7 +124,10 @@ export default {
         },
         onSaveNewSpace(space){    
             this.updateSpaceDB(space)
-        }
+        },
+        changeTextBox(value){
+            this.changespaseSelected(value)
+        },
     },
     computed: {
     ...mapGetters(["getAllSpaces"]),

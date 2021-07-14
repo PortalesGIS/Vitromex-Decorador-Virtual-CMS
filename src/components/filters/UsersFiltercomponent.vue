@@ -43,6 +43,8 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
+const { Parser } = require('json2csv');
+
 export default {
     data() {
         return {
@@ -60,10 +62,18 @@ export default {
     methods: {
         ...mapActions(["filterUsersForCountry","filterUsersForCity","userFilterDates"]),
         onexportDocument(){
-            console.log(this.getAllUsers)
-            let csvContent = "data:text/csv;charset=utf-8," 
-            + this.getAllUsers.map(e => e.join(",")).join("\n");
-            console.log(csvContent)        
+            const fields = ["_id","name","lastName","state","email","country","city","dateUserCreated"]
+            const opts = {fields}    
+            try {
+                const parser = new Parser(opts);
+                const csv = parser.parse(this.getAllUsers);
+                let link = document.createElement('a');
+                link.href = 'data:text/plain;charset=UTF-8,' + escape(csv);
+                link.download = `UsersVitroArko-${new Date().toISOString().slice(0,10)}.csv`;
+                link.click();
+            } catch (error) {
+                 console.error(error);
+            }
         },
         chngeInputName() {
             this.filterUsersForCountry({word:this.country});

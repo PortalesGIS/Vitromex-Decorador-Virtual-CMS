@@ -2,10 +2,6 @@
   <div class="w-full bg-f5 ">
       <div class="flex justify-between">
           <div class="pl-10 w-full  grid grid-cols-12 bg-1f">
-          <div class="">
-              <p class="text-white text-sm font-bold py-2">
-                  <input type="checkbox">
-                  </p></div>
           <div class="col-span-1 flex items-center justify-start mr-4">
               <p class="text-white text-xs font-semibold py-2">No.</p>
                 <i class="fas fa-angle-down px-2" style="color:white"></i></div>
@@ -34,9 +30,6 @@
           <div class="flex justify-between"
              :class="(index%2)?'bg-white':''">
           <div class="pl-10 w-full grid grid-cols-12  ">
-          <div class="col-span-1">
-              <p class="text-black text-sm py-2"> <input type="checkbox"></p>
-          </div>
           <div class="col-span-1">
               <p class="text-black text-sm py-2">{{index}}</p>
           </div>

@@ -37,8 +37,6 @@ export const getAllSpacesDB = async ({commit})=>{
   }
   // 
   
-
-
   export const filterSpaces= ({commit,getters},{word=""})=>{
     word= normalizeText(word)
     const result = getters.getAllSpacesFilter.filter(serie =>
@@ -120,4 +118,66 @@ export const getAllSpacesDB = async ({commit})=>{
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
       console.log(commit)
+  }
+
+  export const createTypologie =({commit},payload)=>{
+    let myHeaders = new Headers();
+    myHeaders.append("key",`${localStorage.getItem("token")}`);
+    let formdata = new FormData();
+    formdata.append("name", payload.name);
+    formdata.append("file", payload.file);    
+    let requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: formdata,
+      redirect: 'follow'
+    };
+    fetch(`${baseUrl}/api/onboarding/typologies/create`, requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+      console.log(commit)
+  }
+
+  export const deleteAplications = ({commit},payload)=>{
+    payload.map(async (aplication) => {
+      console.log(aplication)
+      let myHeaders = new Headers();
+      myHeaders.append("key",`${localStorage.getItem("token")}`);
+      myHeaders.append("Content-Type",`application/json`);
+      let requestOptions = {
+        method: 'DELETE',
+        headers: myHeaders,
+        body:  JSON.stringify({
+          id: aplication,
+        }),
+        redirect: 'follow'
+      };
+      fetch(`${baseUrl}/api/onboarding/aplications/delete`, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+    })
+    console.log(commit)    
+  }
+
+  export const deleteTypologies = ({commit},payload)=>{
+    payload.map(async (typologie) => {
+      let myHeaders = new Headers();
+      myHeaders.append("key",`${localStorage.getItem("token")}`);
+      myHeaders.append("Content-Type",`application/json`);
+      let requestOptions = {
+        method: 'DELETE',
+        headers: myHeaders,
+        body:  JSON.stringify({
+          id: typologie,
+        }),
+        redirect: 'follow'
+      };
+      fetch(`${baseUrl}/api/onboarding/typlogies/delete`, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+    })
+    console.log(commit)    
   }

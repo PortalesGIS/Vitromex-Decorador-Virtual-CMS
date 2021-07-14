@@ -30,6 +30,11 @@
           <div class="flex justify-between"
              :class="(index%2)?'bg-white':''">
           <div class="pl-10 w-full grid grid-cols-12 max-w-1400px ">
+              <div class="col-span-1 flex justify-start items-center">
+              <p class="text-black text-sm py-2"> 
+                  <input @change="changeTextBox(typologie._id)" type="checkbox">
+                  </p>
+          </div>
           <div class="col-span-1 flex justify-center items-center">
               <p class="text-black text-sm py-2">{{index}}</p>
           </div>
@@ -98,6 +103,12 @@ export default {
         return {
         }
     },
+    props: {
+        changeTypologieSelected: {
+            type: Function,
+            default: ()=>{}
+        },
+    },
     methods: {
         ...mapActions(["getAllTypologiesDB","updateTypologieDB"]),
         async onGetAllTypologies(){
@@ -105,6 +116,9 @@ export default {
         },
         onOpenModalForEditing(typologie){
           this.$refs.modal.openModalForEditing(typologie)
+        },
+        changeTextBox(value){
+            this.changeTypologieSelected(value)
         },
         onSaveNewSpace(typologie){
             this.updateTypologieDB(typologie)

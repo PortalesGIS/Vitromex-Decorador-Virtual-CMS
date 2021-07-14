@@ -30,19 +30,27 @@
       <div v-if="menuOption === 0" class="w-full h-full">
         <div class="w-full h-full px-5">
           <div class="flex items-center w-full  bg-f5 h-16">
-            <SpaceFilterComponenVue/>
+            <SpaceFilterComponenVue
+            :spacesSelected="spacesSelected"
+            />
           </div>
           <div class="w-full h-4/6   bg-f5">
-            <SpacesTablecomponentVue />
+            <SpacesTablecomponentVue 
+            :changespaseSelected="onchangeSpaceSelected"
+            />
           </div>
         </div>
       </div>
       <div v-else class="w-full h-full px-5 ">
         <div class="flex items-center w-full  bg-f5 h-16">
-            <TypologieFilterComponentVue />
+            <TypologieFilterComponentVue 
+            :typologiasSelected="typologiesSelected"
+            />
           </div>
           <div class="w-full h-4/6   bg-f5">
-            <TypologieTableComponentVue />
+            <TypologieTableComponentVue 
+            :changeTypologieSelected="onchangeTypologieSelected"
+            />
           </div>
       </div>
     </div>
@@ -63,12 +71,34 @@ export default {
   data() {
     return {
       menuOption: 0,
+      spacesSelected:[],
+      typologiesSelected:[]
     };
   },
   methods: {
     chageMenuOption(value) {
       this.menuOption = value;
+      this.spacesSelected=[]
+      this.typologiesSelected
     },
+    onchangeSpaceSelected(value){
+      const inde = this.spacesSelected.findIndex(elm =>elm ===value)
+            if(inde>=0){
+                this.spacesSelected.splice(inde,1)
+            }
+            else{
+             this.spacesSelected.push(value)
+            }
+    },
+    onchangeTypologieSelected(value){
+      const inde = this.typologiesSelected.findIndex(elm =>elm ===value)
+            if(inde>=0){
+                this.typologiesSelected.splice(inde,1)
+            }
+            else{
+             this.typologiesSelected.push(value)
+            }
+    }
   },
 };
 </script>
