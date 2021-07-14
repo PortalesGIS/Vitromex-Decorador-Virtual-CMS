@@ -4,6 +4,7 @@
     />
     <DeleteAdminModalComponentVue
     ref="modalDelete"
+    :actionYes="onDeletesAdmins"
     />
   <div class="w-full   h-8 flex justify-between">
       <div class="flex">
@@ -60,6 +61,10 @@ export default {
         NewAdminModalComponentVue,
         DeleteAdminModalComponentVue
     },
+    props: {
+        adminsSelected: {
+        },
+    },
     data() {
         return {
              now: new Date().toISOString().slice(0,10),
@@ -70,7 +75,7 @@ export default {
         }
     },
     methods: {
-        ...mapActions(["filterAdmin","adminFilterDates"]),
+        ...mapActions(["filterAdmin","adminFilterDates","deleteAdmin"]),
         chngeInputName() {
           this.filterAdmin({word:this.word})
         },
@@ -88,6 +93,9 @@ export default {
         },
         OnOpenModalDelete(){
              this.$refs.modalDelete.openModal()
+        },
+        onDeletesAdmins(){
+            this.deleteAdmin(this.adminsSelected)
         }
     },
 }

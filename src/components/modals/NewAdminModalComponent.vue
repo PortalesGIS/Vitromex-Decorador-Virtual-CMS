@@ -15,9 +15,14 @@
                     </div>
                     <div class="pt-6">
                         <p class="text-black text-sm font-normal">Nombre del administrador</p>
-                    </div>         
+                    </div>   
+                   <form action=""
+                        @submit.prevent="onSaveNewAdmin"
+                   >                       
                     <div class="pt-3">
                         <input type="text" 
+                        required
+                        v-model="name"
                         class="border w-full h-7 px-2"
                         placeholder="Escribe el nombre del nuevo administrador">
                     </div>                               
@@ -25,18 +30,24 @@
                         <p class="text-black text-sm font-normal">Correo</p>
                     </div>         
                     <div class="pt-3">
-                        <input type="text" 
+                        <input type="email" 
+                        required
                         class="border w-full h-7 px-2"
+                        v-model="email"
                         placeholder="Indica el correo electrónico del nuevo administrador">
                     </div>   
                     <div :class="false ? 'visible':'invisible'">
                         <p
                         class="font-medium" style="font-size:10px; color:#DC7575;"
-                        >La dirección de correo electrónico no se encuentra registrada en la base de datos</p>
+                        >La dirección de correo electrónico ya se encuentra registrada en la base de datos</p>
                     </div>                    
-                    <div class="w-full flex justify-center pt-3">
-                        <button class="bg-1f text-white w-44 h-8 text-sm font-medium">Agregar</button>    
+                    <div 
+                        class="w-full flex justify-center pt-3">
+                        <button 
+                        type="submit"
+                        class="bg-1f text-white w-44 h-8 text-sm font-medium">Agregar</button>    
                     </div>                                                
+                   </form>              
                 </div>                
                     
             </div>
@@ -45,6 +56,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
     props: {
     },
@@ -53,16 +65,22 @@ export default {
             isOpen: false,
             name:"",
             img:"",
+            email:"",
             id:""
         }        
     },
     methods: {
+        ...mapActions(["createAdmin"]),
         closeModal() {
             this.isOpen =false
         },
         openModal() {
             this.isOpen =true
         },
+        onSaveNewAdmin (){
+            this.createAdmin({name:this.name,email:this.email})
+            this.closeModal()
+        }
     },
 
 }

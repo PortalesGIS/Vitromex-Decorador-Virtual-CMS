@@ -26,7 +26,10 @@
     <div v-for="(user, i) in getAllAdmins" :key="i">
       <div class="pl-10 grid grid-cols-12" :class="i % 2 ? 'bg-white' : ''">
         <div class="col-span-1">
-          <p class="text-black text-sm py-2"><input type="checkbox" /></p>
+          <p class="text-black text-sm py-2">
+            <input 
+            @change="selectCheckBox(user._id)"
+            type="checkbox" /></p>
         </div>
         <div class="">
           <p class="text-black text-sm py-2">{{ i }}</p>
@@ -97,11 +100,20 @@ export default {
   data() {
     return {};
   },  
+  props: {
+    onSelectedAdmin: {
+      type: Function,
+      default: ()=>{}
+    },
+  },
   methods: {
     ...mapActions(["getAllAdminsDB"]),
     async onGetAllUsers() {
       await this.getAllAdminsDB();
     },
+  selectCheckBox(value){  
+    this.onSelectedAdmin(value)
+  }
   },
   computed: {
     ...mapGetters(["getAllAdmins"]),

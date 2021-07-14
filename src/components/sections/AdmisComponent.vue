@@ -9,10 +9,14 @@
     </div>
       <div class="w-full h-full px-5 ">
         <div class="flex items-center w-full  bg-f5 h-16">
-      <AdminFilterComponentVue/>
+      <AdminFilterComponentVue
+        :adminsSelected="adminSelected"
+      />
     </div>
     <div class="w-full h-4/6   bg-6f">
-     <AdminTableComponentVue/>
+     <AdminTableComponentVue
+      :onSelectedAdmin="selectedAdmin"
+     />
     </div>
       </div>
     </div>
@@ -27,7 +31,22 @@ export default {
     AdminFilterComponentVue,
     AdminTableComponentVue
   },
-
+ data() {
+   return {
+     adminSelected: [],
+   }   
+ },
+ methods: {
+   selectedAdmin(value) {
+     const index = this.adminSelected.findIndex(elm =>elm ===value)
+            if(index>=0){
+                this.adminSelected.splice(index,1)
+            }
+            else{
+             this.adminSelected.push(value)
+            }          
+   }
+ },
 }
 </script>
 

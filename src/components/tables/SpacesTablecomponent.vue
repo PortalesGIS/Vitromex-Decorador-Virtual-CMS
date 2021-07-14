@@ -52,7 +52,7 @@
               <p class="text-black text-sm py-2 truncate  ">{{serie.name}}</p>
           </div>
           <div class="col-span-2 flex justify-center items-center">
-              <p class="text-black text-sm py-2">{{`pendiente`}}</p>
+              <p class="text-black text-sm py-2">{{serie.dateCreated}}</p>
           </div>
       </div>
       <div class="mr-10 flex items-center">

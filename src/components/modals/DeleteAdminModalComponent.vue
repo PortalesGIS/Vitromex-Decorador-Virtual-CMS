@@ -14,7 +14,9 @@
                         >¿Estás seguro de que deseas eliminar a este administrador?</p>
                     </div>
                     <div class="flex justify-evenly mt-7">
-                        <button class="bg-1f text-white w-44 h-8 ">Eliminar administrador</button>
+                        <button 
+                        @click="OnAccept"
+                        class="bg-1f text-white w-44 h-8 ">Eliminar administrador</button>
                         <button 
                         @click="closeModal"
                         class="bg-white w-44 text-black h-8 border border-black ">Cancelar</button>
@@ -29,6 +31,10 @@
 <script>
 export default {
     props: {
+        actionYes: {
+            type: Function,
+            default: ()=>{}
+        },
     },
     data() {
         return {
@@ -45,6 +51,10 @@ export default {
         openModal() {
             this.isOpen =true
         },
+        OnAccept(){            
+            this.actionYes()
+            this.closeModal()
+        }
     },
 
 }

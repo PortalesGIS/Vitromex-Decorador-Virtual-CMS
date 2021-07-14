@@ -61,3 +61,44 @@ export const getAllAdminsDB = async ({commit})=>{
     )
     commit("setAllAdmins",{admins:result})
   }
+
+  export const deleteAdmin =(commit,payload)=>{
+    payload.map(async (admin) => {
+      let myHeaders = new Headers();
+      myHeaders.append("key",`${localStorage.getItem("token")}`);
+      myHeaders.append("Content-Type",`application/json`);
+      let requestOptions = {
+        method: 'DELETE',
+        headers: myHeaders,
+        body:  JSON.stringify({
+          id: admin,
+        }),
+        redirect: 'follow'
+      };
+      fetch(`${baseUrl}/api/admin/delete`, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+    })
+    console.log(commit)    
+  }
+
+  export const createAdmin =(commit,payload)=>{
+    let myHeaders = new Headers();
+      myHeaders.append("key",`${localStorage.getItem("token")}`);
+      myHeaders.append("Content-Type",`application/json`);
+      let requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body:  JSON.stringify({
+          name: payload.name,
+          email:payload.email
+        }),
+        redirect: 'follow'
+      };
+      fetch(`${baseUrl}/api/admin/create`, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+    console.log(commit)    
+  }

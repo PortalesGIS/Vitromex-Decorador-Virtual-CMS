@@ -25,7 +25,8 @@
             <input 
             class="border px-2 py-1 w-full"
             v-model="email"
-            type="text" 
+            type="email" 
+            required
             placeholder="Ingresa tu correo electrónico">
             </div>
         </div>
