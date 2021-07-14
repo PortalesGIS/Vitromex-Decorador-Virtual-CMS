@@ -32,7 +32,9 @@
              </div>
           </div>
           <div class="flex justify-center items-center pr-3">
-              <button class="bg-1f w-44 h-8 text-white text-sm">Exportar Documento</button>
+              <button 
+              @click="onexportDocument"
+              class="bg-1f w-44 h-8 text-white text-sm">Exportar Documento</button>
           </div>
       </div>
           
@@ -40,7 +42,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 export default {
     data() {
         return {
@@ -52,8 +54,17 @@ export default {
 
         }
     },
+    computed:{
+        ...mapGetters(["getAllUsers"])
+    },
     methods: {
         ...mapActions(["filterUsersForCountry","filterUsersForCity","userFilterDates"]),
+        onexportDocument(){
+            console.log(this.getAllUsers)
+            let csvContent = "data:text/csv;charset=utf-8," 
+            + this.getAllUsers.map(e => e.join(",")).join("\n");
+            console.log(csvContent)        
+        },
         chngeInputName() {
             this.filterUsersForCountry({word:this.country});
         },

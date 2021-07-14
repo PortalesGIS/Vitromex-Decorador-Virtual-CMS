@@ -57,16 +57,12 @@
           <div class="col-span-2 flex items-center justify-start mr-4">
               <p class="text-white text-xs font-semibold py-2">Fecha de Registro</p>
                 <i class="fas fa-angle-down px-2" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-start mr-4">
-              <p class="text-white text-xs font-semibold py-2">Editar</p>
-                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
-          <div class="col-span-2 flex items-center justify-start mr-4">
-              <p class="text-white text-xs font-semibold py-2">Activar</p>
-                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+          <div class="col-span-4 flex items-center justify-start mr-4">
+              <p class="text-white text-xs font-semibold py-2"></p></div>
       </div>
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
-      <div class="h-5/6 overflow-x-auto min-w-2100px">
+      <div class="h-5/6 overflow-x-auto overflow-y-auto max-h-700px min-w-2100px">
           <div v-for="(product,index) in getAllProducts" :key="index" class="">
           <div  
             class="flex justify-between"
@@ -143,7 +139,7 @@
           <div class="col-span-2">
               <p class="text-black text-sm py-2">{{product.dateCreated}}</p>
           </div>
-          <div class="col-span-2 flex justify-center items-center">
+          <div class="absolute right-0 col-span-2 flex justify-center items-center">
               <button  
                 @click="onOpenModal(product)"
                 >
@@ -152,7 +148,7 @@
           </div>
            <div 
             @click="onChageStatusAvailable(product)"
-            class="col-span-2 mx-2 cursor-pointer flex justify-center items-center">
+            class="absolute right-0 col-span-2 mx-2 cursor-pointer flex justify-center items-center">
                 <div v-if="product.available">
                   <img src="../../assets/switch_on.svg" alt="">
                 </div>
