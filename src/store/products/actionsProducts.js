@@ -39,6 +39,31 @@ export const getAllproductsdb = async({commit})=>{
     })
   }
 
+  export const changeStatusIsNewProductDB = async ({commit},product)=>{
+    commit("ChangeOneProduct",{...product, isNewProduct: !product.isNewProduct});
+    let myHeaders = new Headers();
+    myHeaders.append("key",`${localStorage.getItem("token")}`);
+    myHeaders.append("Content-Type",`application/json`);
+    let requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: JSON.stringify({
+        id: product._id,
+        isNew: !product.isNewProduct
+      }),
+      redirect: 'follow'
+    };
+    fetch(`${baseUrl}/api/product/chagestatusNew`, requestOptions)
+      .then(response => response.text())
+      .then(result => {
+        console.log(result)
+        if(result.errors){
+          commit("ChangeOneProduct",{...product, isNewProduct:product.isNewProduct});
+        }
+      })
+      .catch(() => commit("ChangeOneProduct",{...product, isNewProduct:product.isNewProduct}));
+  }
+
   export const updateProductDB = async ({commit},product) =>{
     if(product.render){
       updateImgDB(product.id,product.render,product.index)
@@ -112,13 +137,12 @@ formdata.append("positionArray", positionArray);
   }
 
   const updateImgDBOne = async (id,file,name)=>{
-    console.log("pdate one just")
     let myHeaders = new Headers();
     myHeaders.append("key",`${localStorage.getItem("token")}`);
-let formdata = new FormData();
-formdata.append("id", id);
-formdata.append("file", file);
-formdata.append("camp", name);
+    let formdata = new FormData();
+    formdata.append("id", id);
+    formdata.append("file", file);
+    formdata.append("camp", name);
 
     let requestOptions = {
       method: 'POST',

@@ -42,7 +42,7 @@ module.exports = {
       '12': 'repeat(12, minmax(0, 1fr))',
       '13': 'repeat(13, minmax(0, 1fr))',
      '34': 'repeat(34, minmax(0, 1fr))',
-     '38': 'repeat(38, minmax(0, 1fr))',
+     '38': 'repeat(39, minmax(0, 1fr))',
     },
     screens: {
       "sm": '640px',
