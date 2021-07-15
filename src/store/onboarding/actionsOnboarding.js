@@ -117,7 +117,7 @@ export const getAllSpacesDB = async ({commit})=>{
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
-      console.log(commit)
+      commit("addEspaceToArray",payload)
   }
 
   export const createTypologie =({commit},payload)=>{
@@ -136,12 +136,11 @@ export const getAllSpacesDB = async ({commit})=>{
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
-      console.log(commit)
+      commit("addTypologieToArray",payload)
   }
 
   export const deleteAplications = ({commit},payload)=>{
     payload.map(async (aplication) => {
-      console.log(aplication)
       let myHeaders = new Headers();
       myHeaders.append("key",`${localStorage.getItem("token")}`);
       myHeaders.append("Content-Type",`application/json`);
@@ -158,7 +157,7 @@ export const getAllSpacesDB = async ({commit})=>{
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
     })
-    console.log(commit)    
+    commit("deleteEspaceToArray",payload)
   }
 
   export const deleteTypologies = ({commit},payload)=>{
@@ -179,5 +178,5 @@ export const getAllSpacesDB = async ({commit})=>{
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
     })
-    console.log(commit)    
+    commit("deleteTypologieToArray",payload) 
   }

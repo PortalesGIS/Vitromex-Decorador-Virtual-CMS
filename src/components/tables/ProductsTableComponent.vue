@@ -131,27 +131,27 @@
               <p class="text-black text-sm py-2">{{ product.color }}</p>
             </div>
             <div class="col-span-2">
-              <div v-if="serchAplication(product, 'Piso')">*</div>
+              <div v-if="serchAplication(product, 'PISO')">*</div>
               <div v-else>---</div>
             </div>
             <div class="col-span-2">
-              <div v-if="serchAplication(product, 'Muro')">*</div>
+              <div v-if="serchAplication(product, 'MURO')">*</div>
               <div v-else>---</div>
             </div>
             <div class="col-span-2">
-              <div v-if="serchAplication(product, 'Interior')">*</div>
+              <div v-if="serchAplication(product, 'INTERIOR')">*</div>
               <div v-else>---</div>
             </div>
             <div class="col-span-2">
-              <div v-if="serchAplication(product, 'Exterior')">*</div>
+              <div v-if="serchAplication(product, 'EXTERIOR')">*</div>
               <div v-else>---</div>
             </div>
             <div class="col-span-2">
-              <div v-if="serchAplication(product, 'Fachada')">*</div>
+              <div v-if="serchAplication(product, 'FACHADA')">*</div>
               <div v-else>---</div>
             </div>
             <div class="col-span-2">
-              <div v-if="serchAplication(product, 'Baño')">*</div>
+              <div v-if="serchAplication(product, 'BANO')">*</div>
               <div v-else>---</div>
             </div>
 

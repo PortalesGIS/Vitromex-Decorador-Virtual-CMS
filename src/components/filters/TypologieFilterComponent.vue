@@ -61,6 +61,7 @@ export default {
         onOpenModal(){
            this.$refs.modal.openModal()
         },
+        // typologie
         onSaveNewSpace(typol){
             this.createTypologie(typol)
         },
