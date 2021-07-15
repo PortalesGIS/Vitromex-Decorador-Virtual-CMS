@@ -62,7 +62,7 @@ export const getAllAdminsDB = async ({commit})=>{
     commit("setAllAdmins",{admins:result})
   }
 
-  export const deleteAdmin =(commit,payload)=>{
+  export const deleteAdmin =({commit},payload)=>{
     payload.map(async (admin) => {
       let myHeaders = new Headers();
       myHeaders.append("key",`${localStorage.getItem("token")}`);
@@ -80,10 +80,10 @@ export const getAllAdminsDB = async ({commit})=>{
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
     })
-    console.log(commit)    
+    commit("setView",1)   
   }
 
-  export const createAdmin =(commit,payload)=>{
+  export const createAdmin =({commit},payload)=>{
     let myHeaders = new Headers();
       myHeaders.append("key",`${localStorage.getItem("token")}`);
       myHeaders.append("Content-Type",`application/json`);
@@ -100,5 +100,5 @@ export const getAllAdminsDB = async ({commit})=>{
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
-    console.log(commit)    
+        commit("setView",1)   
   }
