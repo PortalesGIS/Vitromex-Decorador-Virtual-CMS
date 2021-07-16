@@ -1,4 +1,10 @@
 <template>
+
+<DeleteAlertModalVue
+ref="modalDelete"
+:name="'Espacio'"
+:actionYes="deleteSpace"
+/>
 <SpacesAndTypoModalComponentVue 
     :titleForm="'espacio'"
     :isNew="true" 
@@ -16,9 +22,11 @@
               >
           </div>
           <div class="flex">
-              <div class="px-6">
+              <div class="px-6"
+                :class="!isActive ? 'opacity-100':'opacity-10'">
                   <button 
-                  @click="deleteSpace"
+                  @click="onOpenModalDelete"
+                   :disabled="isActive"
                   class="w-28 h-8 bg-white border">
                       Eliminar
                   </button>
@@ -37,10 +45,12 @@
 
 <script>
 import { mapActions } from 'vuex'
+import DeleteAlertModalVue from '../modals/DeleteAlertModal.vue'
 import SpacesAndTypoModalComponentVue from '../modals/SpacesAndTypoModalComponent.vue'
 export default {
     components: {
         SpacesAndTypoModalComponentVue,
+        DeleteAlertModalVue
     },
     props: {
         spacesSelected: {
@@ -62,8 +72,19 @@ export default {
         onSaveNewSpace(space){
         this.createSpace(space)
         },
+        onOpenModalDelete(){
+             this.$refs.modalDelete.openModal()
+        },
         async deleteSpace(){
             await this.deleteAplications(this.spacesSelected)
+        }
+    },
+    computed: {
+        isActive() {
+            if(this.spacesSelected.length > 0){
+                return false
+            }
+            return true
         }
     },
     mounted () {

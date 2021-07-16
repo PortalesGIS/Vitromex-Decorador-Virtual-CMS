@@ -21,8 +21,7 @@
                         @click="closeModal"
                         class="bg-white w-44 text-black h-8 border border-black ">Cancelar</button>
                     </div>
-                </div>                
-                    
+                </div>  
             </div>
         </div>
     </div>
@@ -38,7 +37,7 @@ export default {
         name: {
             type: String,
             default:""
-        }
+        },
     },
     data() {
         return {
