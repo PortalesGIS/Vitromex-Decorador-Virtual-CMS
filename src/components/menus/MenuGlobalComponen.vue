@@ -152,11 +152,13 @@
                   <div class="flex w-full bg-black py-4">
                   <div class="mx-4"><img src="../../assets/perfil.svg" alt=""></div>
                   <div class="flex items-center">
-                      <p class="text-white text-sm">Nombre de usuario</p>
+                      <p class="text-white text-sm">{{nameAdmin}}</p>
                     </div>
               </div>
               <div class="w-full flex justify-center">
-                   <button class="text-xs text-white py-4 focus:outline-none">Cerrar Sesión                       
+                   <button 
+                   @click="exit()"
+                   class="text-xs text-white py-4 focus:outline-none">Cerrar Sesión                       
                    </button>
               </div>
               </div>
@@ -277,11 +279,12 @@ export default {
     data() {
         return {
             isOpen: true,
-            typesViews: typesViewsMenu
+            typesViews: typesViewsMenu,
+            nameAdmin:"Nombre del usuario"
         }
     },
     methods: {
-        ...mapActions(["onChangeViewWindow"]),
+        ...mapActions(["onChangeViewWindow","exitCms"]),
         goTo(payload) {
             this.onChangeViewWindow(payload)
         },
@@ -303,10 +306,18 @@ export default {
             else{
                 return'text-white'
             }
+        },
+        exit(){
+            this.exitCms()
         }
     },
     computed: {
         ...mapGetters(["getVieWindow"]),
+    },
+    created () {
+        if (localStorage.getItem("nameUser")){
+            this.nameAdmin = localStorage.getItem("nameUser")
+        }
     },
 }
 </script>

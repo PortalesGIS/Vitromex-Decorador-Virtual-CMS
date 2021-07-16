@@ -1,5 +1,5 @@
 import { normalizeText } from "../helpers";
-
+import router from "../../router"
 import {baseUrl} from "../../types/data"
 
 export const getAllAdminsDB = async ({commit})=>{
@@ -101,4 +101,9 @@ export const getAllAdminsDB = async ({commit})=>{
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
         commit("setView",1)   
+  }
+
+  export const exitCms = ()=>{
+    localStorage.clear();
+    router.push("/login") 
   }

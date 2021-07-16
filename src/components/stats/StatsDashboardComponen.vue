@@ -21,13 +21,13 @@
             </div>
           <div class="w-full h-full ">
             <div class="px-4 py-4 overflow-y-auto" style="max-height:538px">
-              <div v-for="x in 20" :key="x">
+              <div v-for="product in getDasboardData.listProductFavorites" :key="product">
                 <div class="">
                   <div class="w-full h-px bg-d4"></div>
                 </div>
                 <div class="grid grid-cols-12 w-full">
                   <div class="col-span-3 h-14  flex items-center justify-center">
-                    <p class="text-base font-medium" style="color:#030405">lorem ipsum </p>
+                    <p class="text-base font-medium" style="color:#030405">{{product.name}} </p>
                   </div>
                   <div class="col-span-8 h-14  flex items-center  justify-center">
                     <div class="h-4" style="width:450px;">
@@ -35,7 +35,7 @@
                     </div>
                   </div>
                   <div class="col-span-1 h-14 flex items-center justify-center">
-                    <p class="text-base font-medium" style="color:#030405">400</p>
+                    <p class="text-base font-medium" style="color:#030405">{{product.total}}</p>
                   </div>
                 </div>
               </div>
@@ -64,13 +64,13 @@
             </div>
           <div class="w-full h-full ">
             <div class="px-4 py-4 overflow-y-auto" style="max-height:538px">
-              <div v-for="x in 20" :key="x">
+              <div v-for="product in getDasboardData.listProductsApplications" :key="product">
                 <div class="">
                   <div class="w-full h-px bg-d4"></div>
                 </div>
                 <div class="grid grid-cols-12 w-full">
                   <div class="col-span-3 h-14  flex items-center justify-center">
-                    <p class="text-base font-medium" style="color:#030405">lorem ipsum </p>
+                    <p class="text-base font-medium" style="color:#030405">{{product.name}}</p>
                   </div>
                   <div class="col-span-8 h-14  flex items-center  justify-center">
                     <div class="h-4" style="width:450px;">
@@ -78,7 +78,7 @@
                     </div>
                   </div>
                   <div class="col-span-1 h-14 flex items-center justify-center">
-                    <p class="text-base font-medium" style="color:#030405">400</p>
+                    <p class="text-base font-medium" style="color:#030405">{{product.total}}</p>
                   </div>
                 </div>
               </div>
@@ -90,8 +90,18 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 export default {
-
+ computed: {
+    ...mapGetters(["getDasboardData"])
+  },
+  methods: {
+    ...mapActions(["onGetProductsFavorites","onGetProductsAplicated"])
+  },
+  created () {
+    this.onGetProductsFavorites()
+    this.onGetProductsAplicated()
+  },
 }
 </script>
 

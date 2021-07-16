@@ -17,11 +17,25 @@ import * as mutationsSeries from './series/mutationsSeries'
 import * as actionsOnboarding from './onboarding/actionsOnboarding'
 import * as gettersOnboarding from './onboarding/gettersOnboarding'
 import * as mutationsOnboarding from './onboarding/mutationsOnboarding'
+import * as actionsDashboard from './dashboard/actionsDashboard'
+import * as gettersDashboard from './dashboard/gettersDashboard'
+import * as mutationsDashboard from './dashboard/mutationsDashboard'
+
 
 export default createStore({
   state: {
     adminStateLogin:false,
     activeWindow:1,
+    dashboard:{
+      totalUserRegister:0,
+      totalDownloadsApps:0,
+      totalDownloadAndoid:0,
+      totalDownloadsIos:0,
+      totalspaceMoreVisited:0,
+      totalViewsDecorator:0,
+      listProductFavorites:[],
+      listProductsApplications:[],
+    },
     listUsers:[],
     listUsersForFilter:[],
     listAdmins:[],
@@ -42,6 +56,7 @@ export default createStore({
     ...mutationsShop,
     ...mutationsAdmin,
     ...mutationsUsers,
+    ...mutationsDashboard,
     ...mutationsSeries,
     ...mutationsOnboarding,
     setView(state,payload){
@@ -55,6 +70,7 @@ export default createStore({
    ...actionsUsers,
    ...actionsSeries,
    ...actionsOnboarding,
+   ...actionsDashboard,
     onChangeViewWindow({commit},payload){      
       commit("setView",payload);
     }
@@ -66,6 +82,7 @@ export default createStore({
     ...gettersUsers,
     ...gettersSeries,
     ...gettersOnboarding,
+    ...gettersDashboard,
     getVieWindow(state){
       return state.activeWindow;
     }

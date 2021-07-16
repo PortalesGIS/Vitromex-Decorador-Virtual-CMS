@@ -131,28 +131,40 @@
               <p class="text-black text-sm py-2">{{ product.color }}</p>
             </div>
             <div class="col-span-2">
-              <div v-if="serchAplication(product, 'PISO')">*</div>
-              <div v-else>---</div>
+              <div v-if="serchAplication(product, 'PISO')" class="flex items-center h-full">
+                <img src="../../assets/ok.svg" alt="">
+              </div>
+              <div v-else>-</div>
             </div>
             <div class="col-span-2">
-              <div v-if="serchAplication(product, 'MURO')">*</div>
-              <div v-else>---</div>
+              <div v-if="serchAplication(product, 'MURO')" class="flex items-center h-full">
+                <img src="../../assets/ok.svg" alt="">
+              </div>
+              <div v-else>-</div>
             </div>
             <div class="col-span-2">
-              <div v-if="serchAplication(product, 'INTERIOR')">*</div>
-              <div v-else>---</div>
+              <div v-if="serchAplication(product, 'INTERIOR')" class="flex items-center h-full">
+                <img src="../../assets/ok.svg" alt="">
+              </div>
+              <div v-else>-</div>
             </div>
             <div class="col-span-2">
-              <div v-if="serchAplication(product, 'EXTERIOR')">*</div>
-              <div v-else>---</div>
+              <div v-if="serchAplication(product, 'EXTERIOR')" class="flex items-center h-full">
+                <img src="../../assets/ok.svg" alt="">
+              </div>
+              <div v-else>-</div>
             </div>
             <div class="col-span-2">
-              <div v-if="serchAplication(product, 'FACHADA')">*</div>
-              <div v-else>---</div>
+              <div v-if="serchAplication(product, 'FACHADA')" class="flex items-center h-full">
+                <img src="../../assets/ok.svg" alt="">
+              </div>
+              <div v-else>-</div>
             </div>
             <div class="col-span-2">
-              <div v-if="serchAplication(product, 'BANO')">*</div>
-              <div v-else>---</div>
+              <div v-if="serchAplication(product, 'BANO')" class="flex items-center h-full">
+                <img src="../../assets/ok.svg" alt="">
+              </div>
+              <div v-else>-</div>
             </div>
 
             <div class="col-span-2">
