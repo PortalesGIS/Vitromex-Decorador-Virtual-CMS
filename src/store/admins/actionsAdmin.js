@@ -35,7 +35,9 @@ export const getAllAdminsDB = async ({commit})=>{
     .then(response =>{
       if(response.ok){
         commit("setAdminStateLogin",response);
-      }      
+      }else{
+        alert("usuario/contraseña erroneo")
+      }
     })
       
     .catch(error => console.error('Error:', error))

@@ -1,13 +1,25 @@
 <template>
    <div class="w-full h-full ">
        <div class='w-full relative bg-4f' style="height: 174px">
-            <div class="absolute w-full">
-                <img class="object-contain w-full" src="../../assets/logo_fondo.png" style="height: 174px" alt="">
+            <div v-if="view===0">
+                <div class="absolute w-full">
+                <img class="object-cover w-full" src="../../assets/logo_fondo.png" style="height: 174px" alt="">
             </div>
             <div class="absolute z-10 h-full  w-full">
                <div class=' h-full flex justify-center items-center'>
                     <img class="object-contain" src="../../assets/Logo.svg" style="height: 57px" alt="">
                </div>
+            </div>
+            </div>
+            <div v-else>
+                <div class="absolute w-full ">
+                <img class="object-cover w-full" src="../../assets/logo_fondo_B.png" style="height: 174px" alt="">
+            </div>
+            <div class="absolute z-10 h-full  w-full">
+               <div class=' h-full flex justify-center items-center'>
+                    <img class="object-contain" src="../../assets/ARKO_LOGO.svg" style="height: 57px" alt="">
+               </div>
+            </div>
             </div>
        </div>    
        <div class="pt-20 w-full flex justify-center">
@@ -55,18 +67,26 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
+    props: {
+        view: {
+            type: Number,
+            default: 0
+        },
+    },
     data() {
         return {
             email: "test@admin.com",
-            password:"123456"
+            password:"123456",
         }
     },
     methods: {  
         ...mapActions(["AdminLogin"]),      
         onLogiIn() {
+            // TODO: validar entrada arko-vitro
             this.AdminLogin({
                 email:this.email,
-                password:this.password
+                password:this.password,
+                view:this.view
             });
             // this.password="";
             // this.email="";

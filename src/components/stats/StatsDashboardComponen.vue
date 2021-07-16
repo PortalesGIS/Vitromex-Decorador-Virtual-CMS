@@ -31,7 +31,8 @@
                   </div>
                   <div class="col-span-8 h-14  flex items-center  justify-center">
                     <div class="h-4" style="width:450px;">
-                        <div class="h-full w-full bg-7db"></div>
+                        <div class="h-full bg-7db"
+                        :style="{width:`${getPercentage(product.total,getDasboardData.listProductFavorites[0].total)}%`}"></div>
                     </div>
                   </div>
                   <div class="col-span-1 h-14 flex items-center justify-center">
@@ -74,7 +75,9 @@
                   </div>
                   <div class="col-span-8 h-14  flex items-center  justify-center">
                     <div class="h-4" style="width:450px;">
-                        <div class="h-full w-full bg-7db"></div>
+                        <div class="h-full  bg-7db" 
+                        :style="{width:`${getPercentage(product.total,getDasboardData.listProductsApplications[0].total)}%`}"
+                        ></div>
                     </div>
                   </div>
                   <div class="col-span-1 h-14 flex items-center justify-center">
@@ -96,7 +99,10 @@ export default {
     ...mapGetters(["getDasboardData"])
   },
   methods: {
-    ...mapActions(["onGetProductsFavorites","onGetProductsAplicated"])
+    ...mapActions(["onGetProductsFavorites","onGetProductsAplicated"]),
+    getPercentage(total,max){   
+      return (total*100)/max;
+    }
   },
   created () {
     this.onGetProductsFavorites()

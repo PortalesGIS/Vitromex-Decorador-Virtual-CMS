@@ -1,4 +1,9 @@
 <template>
+<DeleteAlertModalVue
+ref="modalDelete"
+:name="'Tipología'"
+:actionYes="deletetypologie"
+/>
 <SpacesAndTypoModalComponentVue 
     :titleForm="'tipologia'"
     :isNew="true" 
@@ -16,9 +21,12 @@
               >
               </div>
               <div class="flex">
-              <div class="px-6">
+              <div class="px-6"
+                    :class="!isActive ? 'opacity-100':'opacity-10'"
+              >
                   <button 
-                  @click="deletetypologie"
+                  :disabled="isActive"
+                  @click="onOpenModalDelete"
                   class="w-28 h-8 bg-white">
                       Eliminar
                   </button>
@@ -38,10 +46,12 @@
 
 <script>
 import { mapActions } from 'vuex'
+import DeleteAlertModalVue from '../modals/DeleteAlertModal.vue'
 import SpacesAndTypoModalComponentVue from '../modals/SpacesAndTypoModalComponent.vue'
 export default {
     components: {
         SpacesAndTypoModalComponentVue,
+        DeleteAlertModalVue
     },
     data() {
         return {
@@ -65,8 +75,19 @@ export default {
         onSaveNewSpace(typol){
             this.createTypologie(typol)
         },
+        onOpenModalDelete(){
+             this.$refs.modalDelete.openModal()
+        },
         deletetypologie(){
           this.deleteTypologies(this.typologiasSelected)
+        }
+    },
+    computed: {
+        isActive() {
+            if(this.typologiasSelected.length > 0){
+                return false
+            }
+            return true
         }
     },
     mounted () {

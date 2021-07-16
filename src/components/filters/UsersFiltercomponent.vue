@@ -66,6 +66,7 @@ export default {
             const opts = {fields}    
             try {
                 const parser = new Parser(opts);
+                // TODO: no tiene que afectar el filtro getallusersfilter
                 const csv = parser.parse(this.getAllUsers);
                 let link = document.createElement('a');
                 link.href = 'data:text/plain;charset=UTF-8,' + escape(csv);
