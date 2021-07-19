@@ -69,12 +69,52 @@
           </div>
       </div>
         <div 
-          @click="onChangeState(store)"
           class="mx-2 cursor-pointer flex items-center px-4">
-                <div v-if="store.status">
+          <div
+                  v-if="index === modalAlertActiveStore"
+                  class=" z-50 -ml-64 mt-40 absolute w-72 h-28 bg-white border border-black"
+                >
+                  <div class="flex px-3 pt-5">
+                    <img src="../../assets/alerta.svg" class="pr-2" alt="" />
+                    <p class="text-black text-justify text-xs font-normal">
+                      ¿Estás seguro que deseas
+                      {{ store.status ? "suspender" : "activar" }} este producto en la App y Web 3D?
+                    </p>
+                  </div>
+                  <div class="flex px-3 pt-5 justify-evenly">
+                    <button
+                      @click="onChangeState(store)"
+                      class="
+                        w-28
+                        h-6
+                        bg-black
+                        text-center text-xs
+                        font-medium
+                      text-white "
+                    >
+                      {{
+                        store.status ? "Suspender" : "Activar"
+                      }}
+                    </button>
+                    <button
+                      @click="onActiveAlertchangeStatus(-1)"
+                      class="
+                        w-28
+                        h-6
+                        bg-white
+                        text-center text-xs
+                        font-medium
+                        border border-black
+                      "
+                    >
+                      Cancelar
+                    </button>
+                  </div>
+                </div>
+                <div v-if="store.status"   @click="onActiveAlertchangeStatus(index)">
                   <img src="../../assets/switch_on.svg" alt="">
                 </div>
-                <div v-else>
+                <div v-else   @click="onActiveAlertchangeStatus(index)">
                   <img src="../../assets/switch_off.svg" alt="">                  
                 </div>
         </div>
@@ -119,9 +159,10 @@ import { mapActions, mapGetters } from 'vuex';
 export default {
     data() {
         return {
-           numberDataPerPage: 20,
+      numberDataPerPage: 20,
       startData:0,
       endData:20,
+      modalAlertActiveStore:-1,
         }
     },
     methods: {
@@ -131,6 +172,10 @@ export default {
         },
     onChangeState(shop){
       this.changeStatusShopDB(shop)
+      this.onActiveAlertchangeStatus(-1)
+    },
+    onActiveAlertchangeStatus(index){
+      this.modalAlertActiveStore = index
     },
      changeRange(){        
         this.startData = 0;

@@ -255,16 +255,7 @@
               >
                 <div
                   v-if="index === modalNewProduct"
-                  class="
-                    z-50
-                    -ml-64
-                    mt-40
-                    absolute
-                    w-72
-                    h-28
-                    bg-white
-                    border border-black
-                  "
+                  class=" z-50 -ml-64 mt-40 absolute w-72 h-28 bg-white border border-black"
                 >
                   <div class="flex px-3 pt-5">
                     <img src="../../assets/alerta.svg" class="pr-2" alt="" />
