@@ -24,6 +24,21 @@ export const updateProduct = (state, payload)=>{
     state.products = arrayupdated;
 }
 
+export const updateProductRender = (state, payload)=>{
+    const arrayupdated = state.productsForFilter.map(product =>{
+        if(product._id === payload.id){
+            let arrayupdate = product.renders
+            arrayupdate[payload.index]= payload.render
+            return {...product,renders:arrayupdate}
+        }
+        else{
+            return product
+        }
+    }) 
+    state.productsForFilter = arrayupdated;
+    state.products = arrayupdated;
+}
+
 export const setAllProduts = (state,payload) =>{
     state.products = payload;
 }

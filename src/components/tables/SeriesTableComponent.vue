@@ -15,15 +15,21 @@
           <p class="text-white text-xs font-semibold py-2">
             Nombre de la Serie
           </p>
-          <i class="fas fa-angle-down px-2" style="color: white"></i>
+          <div class="">
+            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+          </div>
         </div>
         <div class="col-span-2 flex items-center justify-center mr-4">
           <p class="text-white text-xs font-semibold py-2">Imagen Miniatura</p>
-          <i class="fas fa-angle-down px-2" style="color: white"></i>
+          <div class="">
+            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+          </div>
         </div>
         <div class="col-span-2 flex items-center justify-center mr-4">
           <p class="text-white text-xs font-semibold py-2">fecha de registro</p>
-          <i class="fas fa-angle-down px-2" style="color: white"></i>
+          <div class="">
+            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+          </div>
         </div>
       </div>
       <div class="bg-1f pr-10">

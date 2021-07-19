@@ -4,22 +4,40 @@
           <div class="pl-10 w-full  grid grid-cols-12 bg-1f">
           <div class="col-span-1 flex items-center justify-start mr-4">
               <p class="text-white text-xs font-semibold py-2">No.</p>
-                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+              <div class="">
+            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+          </div>
+              </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
               <p class="text-white text-xs font-semibold py-2">Nombre de la Tienda</p>
-                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+              <div class="">
+            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+          </div>
+              </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
               <p class="text-white text-xs font-semibold py-2">Direccion</p>
-                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+              <div class="">
+            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+          </div>
+              </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
               <p class="text-white text-xs font-semibold py-2">Coordenadas</p>
-                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+              <div class="">
+            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+          </div>
+              </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
               <p class="text-white text-xs font-semibold py-2">Telefono</p>
-                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+              <div class="">
+            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+          </div>
+              </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
               <p class="text-white text-xs font-semibold py-2">Fecha de Registro</p>
-                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+              <div class="">
+            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+          </div>
+              </div>
       </div>
       <div class="bg-1f">
           <div class="px-1"><p class="text-white text-sm font-bold px-4 py-2">Publicar</p></div>

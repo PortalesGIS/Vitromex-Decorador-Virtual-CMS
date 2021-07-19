@@ -5,22 +5,40 @@
               <p class="text-white text-xs font-semibold py-2">No.</p></div>
           <div class="col-span-2 flex items-center justify-start">
               <p class="text-white text-xs font-semibold py-2">Nombre</p>
-                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+              <div class="">
+            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+          </div>
+              </div>
           <div class="col-span-2 flex items-center justify-start">
               <p class="text-white text-xs font-semibold py-2">Apellido</p>
-                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+              <div class="">
+            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+          </div>
+              </div>
           <div class="col-span-2 flex items-center justify-start">
               <p class="text-white text-xs font-semibold py-2">Correo</p>
-                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+              <div class="">
+            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+          </div>
+              </div>
           <div class="col-span-1 flex items-center justify-start">
               <p class="text-white text-xs font-semibold py-2">Pais         </p>
-                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+              <div class="">
+            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+          </div>
+              </div>
           <div class="col-span-2 flex items-center justify-start">
               <p class="text-white text-xs font-semibold py-2">Ciudad</p>
-                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+              <div class="">
+            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+          </div>
+              </div>
           <div class="col-span-2 flex items-center justify-start">
               <p class="text-white text-xs font-semibold py-2">Fecha de Registro</p>
-                <i class="fas fa-angle-down px-2" style="color:white"></i></div>
+              <div class="">
+            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+          </div>
+              </div>
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
       <div v-for="(user,index) in getAllUsers" :key="index">

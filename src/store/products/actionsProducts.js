@@ -67,6 +67,7 @@ export const getAllproductsdb = async({commit})=>{
   export const updateProductDB = async ({commit},product) =>{
     if(product.render){
       updateImgDB(product.id,product.render,product.index)
+      commit("updateProductRender",{id:product.id,render:URL.createObjectURL(product.render),index:product.index})
     }
     if(product.name){
       updateProductCamp(product.id,"name",product.name)
