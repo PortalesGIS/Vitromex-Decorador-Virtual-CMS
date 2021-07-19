@@ -1,4 +1,58 @@
 <template>
+    <div 
+        v-if="modalCancel"
+        class="z-50 fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-20">
+        <div class="w-full h-full flex items-center justify-center">
+            <div class="bg-white" style="width:434px; height:183px">               
+                <div class="px-4">
+                    <div class="mt-5">
+                        <p class="text-black text-xl font-bold uppercase">Eliminar cambios del Producto</p>
+                    </div>
+                    <div class="mt-3">
+                        <p
+                        class="text-black text-sm font-normal"
+                        >¿Estás seguro de que deseas cancelar la carga de este producto?
+                        <br>
+                        <br> Los cambios realizados no se guardarán.</p>
+                    </div>
+                    <div class="flex justify-evenly mt-7 ">
+                        <button 
+                        @click="cancelEditing"
+                        class="bg-1f text-white w-44 h-8 ">Eliminar cambios</button>
+                        <button 
+                        @click="onReturn"
+                        class="bg-white w-44 text-black h-8 border border-black ">Seguir editando</button>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <div 
+        v-if="activeModalAccept"
+        class="z-50 fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-20">
+        <div class="w-full h-full flex items-center justify-center">
+            <div class="bg-white" style="width:434px; height:183px">               
+                <div class="px-4">
+                    <div class="mt-5">
+                        <p class="text-black text-xl font-bold uppercase">Guardar cambios del Producto</p>
+                    </div>
+                    <div class="mt-3">
+                        <p
+                        class="text-black text-sm font-normal"
+                        >¿Estás seguro de que deseas guardar este producto?</p>
+                    </div>
+                    <div class="flex justify-evenly mt-7">
+                        <button 
+                        @click="onAccept"
+                        class="bg-1f text-white w-44 h-8 ">Guardar cambios</button>
+                        <button 
+                        @click="onReturn"
+                        class="bg-white w-44 text-black h-8 border border-black ">Seguir editando</button>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
    <div 
         v-if="activeModal"
         class="z-50 fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-20">
@@ -301,6 +355,8 @@ export default {
         return {
             id:"",
             activeModal:false,
+            activeModalAccept:false,
+            modalCancel:false,
             page: 0,
             img1:"",
             fileimg1:File,
@@ -357,6 +413,7 @@ export default {
         },
         onCloseModal(){
             this.activeModal=false;
+            this.modalCancel=true;
         },
         addFileimg1(e){                    
              this.img1 = URL.createObjectURL(e.target.files[0]);   
@@ -420,6 +477,10 @@ export default {
             }
         },
         save(){
+            this.activeModal = false;
+            this.activeModalAccept = true;
+        },
+        onAccept(){
             this.onCloseModal()
             this.updateProductDB({
                 id:this.id,
@@ -430,6 +491,8 @@ export default {
             })
             this.id="";
             this.activeModal=false;
+            this.activeModalAccept = false;
+             this.modalCancel =false;
             this.page= 0;
             this.img1="";
             this.fileimg1=File;
@@ -446,10 +509,20 @@ export default {
             this.filenormal=File;
             this.textureWidth=0;
             this.textureHeight=0;
-            this.spaces=[]  ;
+            this.spaces=[] ;
+        },
+        onReturn(){
+             this.activeModal = true;
+            this.activeModalAccept = false;
+            this.modalCancel =false;
         },
         async getAllSpacescreated(){
             await this.getAllSpacesDB()
+        },
+        cancelEditing(){
+              this.modalCancel=false;
+              this.activeModal=false;
+              this.activeModalAccept=false;
         }
     },
     created () {
