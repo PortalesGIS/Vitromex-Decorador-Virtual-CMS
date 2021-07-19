@@ -31,6 +31,7 @@
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
       <div class="h-full overflow-y-auto bg-f5">
       <div v-for="(serie,index) in getAllSpaces" :key="index">
+           <div v-if="(index >= startData && index <= endData)">
           <div class="flex justify-between"
              :class="(index%2)?'bg-white':''">
           <div class="pl-10 w-full grid grid-cols-12 max-w-1400px ">
@@ -62,6 +63,7 @@
                 </button>
         </div>
         </div>
+        </div>
         
       </div>
           </div>      
@@ -71,23 +73,27 @@
         <div class="border-2 px-1 bg-white">
             <select 
             class="text-xs w-10 pl-2   appearance-none focus:outline-none active:outline-non"
-            name="" id="">
+            name="" id=""
+            v-model="numberDataPerPage"
+            @change="changeRange">
             <option value="20">20</option>
             <option value="50">50</option>
-            <option value="10">10</option>
-            <option value="1000">full</option>
+            <option value="10">100</option>
+            <option value="100000">full</option>
         </select>
         <i class="fas fa-angle-down w-2"></i>
         </div>
      </div>
      <div class="flex mr-7 items-center">
          <div>
-             <p class="text-white font-semibold text-xs">20-12,458</p>
+             <p class="text-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllSpaces.length-1}}</p>
          </div>
-         <div class="cursor-pointer ml-7">
+         <div class="cursor-pointer ml-7"
+            @click="backPageTable">
             <img src="../../assets/paginador_izquierda.svg" style="width:18px; height:12px" alt="">
          </div>
-         <div class="cursor-pointer ml-14">
+         <div class="cursor-pointer ml-14"
+          @click="nextPageTable">
             <img src="../../assets/paginador_derecha.svg" style="width:18px; height:12px" alt="">            
          </div>
      </div>
@@ -111,7 +117,9 @@ export default {
     },
     data() {
         return {
-            
+             numberDataPerPage: 20,
+      startData:0,
+      endData:20,
         }
     },
     methods: {
@@ -128,6 +136,31 @@ export default {
         changeTextBox(value){
             this.changespaseSelected(value)
         },
+        changeRange(){        
+        this.startData = 0;
+        this.endData = this.numberDataPerPage
+    },
+    nextPageTable(){
+      if(this.startData<=-1){
+        this.changeRange()
+      }
+      else if(this.endData>this.getAllSpaces.length){
+        return
+      }
+      else{
+        this.startData = this.endData
+        this.endData = parseInt(this.startData)  + parseInt(this.numberDataPerPage)
+      }
+    },
+    backPageTable(){
+      if(this.startData<=0){
+        this.changeRange()
+      }
+      else{
+        this.endData = this.startData
+        this.startData =parseInt(this.endData)  - parseInt(this.numberDataPerPage)
+      }
+    }
     },
     computed: {
     ...mapGetters(["getAllSpaces"]),

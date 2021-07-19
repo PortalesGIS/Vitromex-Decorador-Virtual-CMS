@@ -8,6 +8,9 @@
       <div class=" flex justify-between bg-1f">
           <div class="pl-10 w-full max-w-1400px grid grid-cols-12 bg-1f">
           <div class="col-span-1 flex items-center justify-center mr-4">
+              <p class="text-white text-xs font-semibold py-2"></p>
+            </div>
+          <div class="col-span-1 flex items-center justify-center mr-4">
               <p class="text-white text-xs font-semibold py-2">No.</p>
             </div>
           <div class="col-span-2 flex items-center justify-center mr-4">
@@ -27,6 +30,7 @@
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
       <div class="h-full overflow-y-auto bg-f5">
       <div v-for="(typologie,index) in getAllTypologies" :key="index">
+           <div v-if="(index >= startData && index <= endData)">
           <div class="flex justify-between"
              :class="(index%2)?'bg-white':''">
           <div class="pl-10 w-full grid grid-cols-12 max-w-1400px ">
@@ -58,6 +62,7 @@
                 </button>
         </div>
         </div>
+        </div>
         
       </div>
           </div>      
@@ -70,20 +75,20 @@
             name="" id="">
             <option value="20">20</option>
             <option value="50">50</option>
-            <option value="10">10</option>
-            <option value="1000">full</option>
+            <option value="100">10</option>
+            <option value="100000">full</option>
         </select>
         <i class="fas fa-angle-down w-2"></i>
         </div>
      </div>
      <div class="flex mr-7 items-center">
          <div>
-             <p class="text-white font-semibold text-xs">20-12,458</p>
+             <p class="text-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllTypologies.length}}</p>
          </div>
-         <div class="cursor-pointer ml-7">
+         <div class="cursor-pointer ml-7"    @click="backPageTable()">
             <img src="../../assets/paginador_izquierda.svg" style="width:18px; height:12px" alt="">
          </div>
-         <div class="cursor-pointer ml-14">
+         <div class="cursor-pointer ml-14"  @click="nextPageTable">
             <img src="../../assets/paginador_derecha.svg" style="width:18px; height:12px" alt="">            
          </div>
      </div>
@@ -101,6 +106,9 @@ export default {
     },
     data() {
         return {
+             numberDataPerPage: 20,
+      startData:0,
+      endData:20,
         }
     },
     props: {
@@ -122,7 +130,32 @@ export default {
         },
         onSaveNewSpace(typologie){
             this.updateTypologieDB(typologie)
-        }
+        },
+         changeRange(){        
+        this.startData = 0;
+        this.endData = this.numberDataPerPage
+    },
+    nextPageTable(){
+      if(this.startData<=-1){
+        this.changeRange()
+      }
+      else if(this.endData>this.getAllTypologies.length){
+        return
+      }
+      else{
+        this.startData = this.endData
+        this.endData = parseInt(this.startData)  + parseInt(this.numberDataPerPage)
+      }
+    },
+    backPageTable(){
+      if(this.startData<=0){
+        this.changeRange()
+      }
+      else{
+        this.endData = this.startData
+        this.startData =parseInt(this.endData)  - parseInt(this.numberDataPerPage)
+      }
+    }
     },
     computed: {
     ...mapGetters(["getAllTypologies"]),
