@@ -120,12 +120,14 @@ export const getAllproductsdb = async({commit})=>{
     console.log("pdate one render")
     let myHeaders = new Headers();
     myHeaders.append("key",`${localStorage.getItem("token")}`);
+    myHeaders.append("Access-Control-Allow-Origin",`*`);
 let formdata = new FormData();
 formdata.append("id", id);
 formdata.append("file", file);
 formdata.append("positionArray", positionArray);
 
     let requestOptions = {
+      
       method: 'POST',
       headers: myHeaders,
       body: formdata,
@@ -140,6 +142,7 @@ formdata.append("positionArray", positionArray);
   const updateImgDBOne = async (id,file,name)=>{
     let myHeaders = new Headers();
     myHeaders.append("key",`${localStorage.getItem("token")}`);
+    myHeaders.append("Access-Control-Allow-Origin",`*`);
     let formdata = new FormData();
     formdata.append("id", id);
     formdata.append("file", file);
@@ -147,6 +150,7 @@ formdata.append("positionArray", positionArray);
 
     let requestOptions = {
       method: 'POST',
+      
       headers: myHeaders,
       body: formdata,
       redirect: 'follow'
