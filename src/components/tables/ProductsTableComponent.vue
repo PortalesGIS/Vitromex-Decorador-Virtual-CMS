@@ -5,66 +5,59 @@
       <div class="pl-10 w-full grid grid-cols-38 overflow-x-auto">
         <div class="col-span-1 flex items-center justify-start mr-4">
           <p class="text-white text-xs font-semibold py-2">No.</p>
-          <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
           </div>
-        </div>
         <div class="col-span-2 flex items-center justify-start mr-4">
           <p class="text-white text-xs font-semibold py-2">Imagen Miniatura</p>
-          <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
-          </div>
+          
         </div>
         <div class="col-span-2 flex items-center justify-start mr-4">
           <p class="text-white text-xs font-semibold py-2">
             Imagen del producto
           </p>
-          <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
-          </div>
         </div>
         <div class="col-span-2 flex items-center justify-start mr-4">
           <p class="text-white text-xs font-semibold py-2">Textura AR/3D</p>
-          <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
-          </div>
         </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
+        <div @click="onFilterArrow('name')"
+        class="col-span-2 flex items-center justify-start mr-4 cursor-pointer">
           <p class="text-white text-xs font-semibold py-2">
             Nombre del producto
           </p>
           <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+            <img src="../../assets/dropdown.svg" class=" cursor-pointer px-2" alt="" />
           </div>
         </div>
         <div class="col-span-2 flex items-center justify-start mr-4">
           <p class="text-white text-xs font-semibold py-2">Tipologia</p>
           <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+            <img @click="onFilterArrow('typologies')" src="../../assets/dropdown.svg" class=" cursor-pointer px-2" alt="" />
+          </div>
+        </div>
+        <div class="col-span-2 flex items-center justify-start mr-4">
+          <p class="text-white text-xs font-semibold py-2">Formato</p>
+          <div class="">
+            <img   @click="onFilterArrow('sized')" src="../../assets/dropdown.svg" class=" cursor-pointer px-2" alt="" />
           </div>
         </div>
         <div class="col-span-2 flex items-center justify-start mr-4">
           <p class="text-white text-xs font-semibold py-2">Serie</p>
           <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
-          </div>
-        </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">Serie</p>
-          <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+            <img  @click="onFilterArrow('serie')"
+            src="../../assets/dropdown.svg" class=" cursor-pointer px-2" alt="" />
           </div>
         </div>
         <div class="col-span-2 flex items-center justify-start mr-4">
           <p class="text-white text-xs font-semibold py-2">Acabado</p>
           <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+            <img  @click="onFilterArrow('finish')"
+            src="../../assets/dropdown.svg" class=" cursor-pointer px-2" alt="" />
           </div>
         </div>
         <div class="col-span-2 flex items-center justify-start mr-4">
           <p class="text-white text-xs font-semibold py-2">Color</p>
           <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+            <img @click="onFilterArrow('color')"
+            src="../../assets/dropdown.svg" class=" cursor-pointer px-2" alt="" />
           </div>
         </div>
         <div class="col-span-2 flex items-center justify-start mr-4">
@@ -106,7 +99,8 @@
         <div class="col-span-2 flex items-center justify-start mr-4">
           <p class="text-white text-xs font-semibold py-2">Fecha de Registro</p>
           <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+            <img @click="onFilterArrow('dateCreated')"
+            src="../../assets/dropdown.svg" class="px-2" alt="" />
           </div>
         </div>
         <div class="col-span-2 flex items-center justify-start mr-4">
@@ -493,9 +487,13 @@ export default {
       "getAllproductsdb",
       "changeAvailableProductDB",
       "changeStatusIsNewProductDB",
+      "filterAlphabetProduct"
     ]),
     async onGetAllProducts() {
       await this.getAllproductsdb();
+    },
+    onFilterArrow(value){
+      this.filterAlphabetProduct(value)
     },
     countImgsProduct(product) {
       let counter = 0;

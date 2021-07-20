@@ -16,19 +16,21 @@
             Nombre de la Serie
           </p>
           <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+            <img @click="onFilterArrow('name')"
+            src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
           </div>
         </div>
         <div class="col-span-2 flex items-center justify-center mr-4">
           <p class="text-white text-xs font-semibold py-2">Imagen Miniatura</p>
           <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+            <!-- <img src="../../assets/dropdown.svg" class="px-2" alt=""> -->
           </div>
         </div>
         <div class="col-span-2 flex items-center justify-center mr-4">
           <p class="text-white text-xs font-semibold py-2">fecha de registro</p>
           <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+            <img @click="onFilterArrow('dateCreated')"
+            src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
           </div>
         </div>
       </div>
@@ -141,12 +143,15 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["getAllSeriesDB", "UpdateSerieImgDB"]),
+    ...mapActions(["getAllSeriesDB", "UpdateSerieImgDB","filterAlphabetSeries"]),
     async onGetAllSeries() {
       await this.getAllSeriesDB();
     },
     onOpenModal(serie) {
       this.$refs.modal.openModalForEditing(serie);
+    },
+    onFilterArrow(value){
+      this.filterAlphabetSeries(value)
     },
     onSaveNew(payload) {
       this.UpdateSerieImgDB({

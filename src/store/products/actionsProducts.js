@@ -157,7 +157,6 @@ formdata.append("positionArray", positionArray);
       .catch(error => console.log('error', error));
   }
 
-
   export const filterProductsForString=({commit,getters},{word=""})=>{
     word= normalizeText(word)
     const result = getters.getAllProductsFilter.filter(product =>
@@ -181,4 +180,18 @@ formdata.append("positionArray", positionArray);
     )
     console.log(result)
     commit("setAllProduts",result)
+  }
+
+  export const filterAlphabetProduct = ({commit,getters},payload)=>{
+    const arrayd = getters.getAllProductsFilter
+    arrayd.sort((a,b)=>{
+      if (a[`${payload}`].toUpperCase() < b[`${payload}`].toUpperCase()) {
+        return -1;
+    }
+    if (b[`${payload}`].toUpperCase() < a[`${payload}`].toUpperCase()) {
+        return 1;
+    }
+    return 0;
+    })
+    commit("setAllProduts",arrayd)
   }

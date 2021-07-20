@@ -56,3 +56,17 @@ export const getAllSeriesDB = async ({commit})=>{
       .catch(error => console.log('error', error));
       console.log(commit)
   }
+
+  export const filterAlphabetSeries = ({commit,getters},payload)=>{
+    const arrayd = getters.getAllSeriesFilter
+    arrayd.sort((a,b)=>{
+      if (a[`${payload}`].toUpperCase() < b[`${payload}`].toUpperCase()) {
+        return -1;
+    }
+    if (b[`${payload}`].toUpperCase() < a[`${payload}`].toUpperCase()) {
+        return 1;
+    }
+    return 0;
+    })
+    commit("setAllSeries",{serie:arrayd})
+  }

@@ -11,31 +11,36 @@
           <div class="col-span-2 flex items-center justify-start mr-4">
               <p class="text-white text-xs font-semibold py-2">Nombre de la Tienda</p>
               <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+            <img @click="filterArrow('name')"
+            src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
               <p class="text-white text-xs font-semibold py-2">Direccion</p>
               <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+            <img @click="filterArrow('street')"
+            src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
               <p class="text-white text-xs font-semibold py-2">Coordenadas</p>
               <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+            <img @click="filterArrow('lat')"
+            src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
               <p class="text-white text-xs font-semibold py-2">Telefono</p>
               <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+            <img @click="filterArrow('phone')"
+            src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
               <p class="text-white text-xs font-semibold py-2">Fecha de Registro</p>
               <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+            <img @click="filterArrow('dateCreated')"
+            src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
           </div>
               </div>
       </div>
@@ -166,13 +171,16 @@ export default {
         }
     },
     methods: {
-        ...mapActions(["getAllStoreDB","changeStatusShopDB"]),
+        ...mapActions(["getAllStoreDB","changeStatusShopDB","filterAlphabetShops"]),
         async onGetAllStores(){
             await this.getAllStoreDB();
         },
     onChangeState(shop){
       this.changeStatusShopDB(shop)
       this.onActiveAlertchangeStatus(-1)
+    },
+    filterArrow(value){
+      this.filterAlphabetShops(value)
     },
     onActiveAlertchangeStatus(index){
       this.modalAlertActiveStore = index

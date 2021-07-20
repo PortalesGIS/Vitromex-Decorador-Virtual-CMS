@@ -6,37 +6,46 @@
           <div class="col-span-2 flex items-center justify-start">
               <p class="text-white text-xs font-semibold py-2">Nombre</p>
               <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+            <img 
+            @click="filterAlphabetUsers('name')"
+            src="../../assets/dropdown.svg" class="px-2" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start">
               <p class="text-white text-xs font-semibold py-2">Apellido</p>
               <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+            <img 
+             @click="filterAlphabetUsers('lastName')"
+            src="../../assets/dropdown.svg" class="px-2" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start">
               <p class="text-white text-xs font-semibold py-2">Correo</p>
               <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+            <img  @click="filterAlphabetUsers('email')"
+            src="../../assets/dropdown.svg" class="px-2" alt="">
           </div>
               </div>
           <div class="col-span-1 flex items-center justify-start">
               <p class="text-white text-xs font-semibold py-2">Pais         </p>
               <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+            <img 
+             @click="filterAlphabetUsers('country')"
+            src="../../assets/dropdown.svg" class="px-2" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start">
               <p class="text-white text-xs font-semibold py-2">Ciudad</p>
               <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+            <img  @click="filterAlphabetUsers('city')"
+            src="../../assets/dropdown.svg" class="px-2" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start">
               <p class="text-white text-xs font-semibold py-2">Fecha de Registro</p>
               <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="">
+            <img  @click="filterAlphabetUsers('dateUserCreated')"
+            src="../../assets/dropdown.svg" class="px-2" alt="">
           </div>
               </div>
       </div>
@@ -44,7 +53,7 @@
       <div v-for="(user,index) in getAllUsers" :key="index">
            <div v-if="(index >= startData && index <= endData)">
           <div class="pl-10 grid grid-cols-12  "
-           :class="(i%2)?'bg-white':''">
+           :class="(index%2)?'bg-white':''">
           <div class="">
               <p class="text-black text-xs font-normal py-2">{{index}}</p>
           </div>
@@ -115,13 +124,16 @@ export default {
         }
     },
     methods: {
-        ...mapActions(["getAllUsersApp"]),
+        ...mapActions(["getAllUsersApp","filterAlphabet"]),
         async onGetAllUsers(){
             await this.getAllUsersApp();      
         },
          changeRange(){        
         this.startData = 0;
         this.endData = this.numberDataPerPage
+    },
+    filterAlphabetUsers(value){
+      this.filterAlphabet(value)
     },
     nextPageTable(){
       if(this.startData<=-1){

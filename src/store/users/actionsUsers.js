@@ -53,3 +53,17 @@ export const getAllUsersApp = async ({commit})=>{
     )
     commit("setAllUsers",{users:result})
   }
+
+  export const filterAlphabet = ({commit,getters},payload)=>{
+    const arrayd = getters.getAllUsersFilter
+    arrayd.sort((a,b)=>{
+      if (a[`${payload}`].toUpperCase() < b[`${payload}`].toUpperCase()) {
+        return -1;
+    }
+    if (b[`${payload}`].toUpperCase() < a[`${payload}`].toUpperCase()) {
+        return 1;
+    }
+    return 0;
+    })
+    commit("setAllUsers",{users:arrayd})
+  }
