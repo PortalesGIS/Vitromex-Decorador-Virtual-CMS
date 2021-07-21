@@ -1,421 +1,562 @@
 <template>
   <ProductsModalComponenVue ref="modal" />
-  <div class="h-full w-full bg-f5 overflow-x-auto">
-    <div class="h-20 flex justify-between bg-1f min-w-2100px overflow-x-auto">
-      <div class="pl-10 w-full grid grid-cols-38 overflow-x-auto">
-        <div class="col-span-1 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">No.</p>
-          </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">Imagen Miniatura</p>
-          
-        </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">
-            Imagen del producto
-          </p>
-        </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">Textura AR/3D</p>
-        </div>
-        <div @click="onFilterArrow('name')"
-        class="col-span-2 flex items-center justify-start mr-4 cursor-pointer">
-          <p class="text-white text-xs font-semibold py-2">
-            Nombre del producto
-          </p>
-          <div class="">
-            <img src="../../assets/dropdown.svg" class=" cursor-pointer px-2" alt="" />
-          </div>
-        </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">Tipologia</p>
-          <div class="">
-            <img @click="onFilterArrow('typologies')" src="../../assets/dropdown.svg" class=" cursor-pointer px-2" alt="" />
-          </div>
-        </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">Formato</p>
-          <div class="">
-            <img   @click="onFilterArrow('sized')" src="../../assets/dropdown.svg" class=" cursor-pointer px-2" alt="" />
-          </div>
-        </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">Serie</p>
-          <div class="">
-            <img  @click="onFilterArrow('serie')"
-            src="../../assets/dropdown.svg" class=" cursor-pointer px-2" alt="" />
-          </div>
-        </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">Acabado</p>
-          <div class="">
-            <img  @click="onFilterArrow('finish')"
-            src="../../assets/dropdown.svg" class=" cursor-pointer px-2" alt="" />
-          </div>
-        </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">Color</p>
-          <div class="">
-            <img @click="onFilterArrow('color')"
-            src="../../assets/dropdown.svg" class=" cursor-pointer px-2" alt="" />
-          </div>
-        </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">Piso</p>
-          <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
-          </div>
-        </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">Muro</p>
-          <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
-          </div>
-        </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">Iterior</p>
-          <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
-          </div>
-        </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">Exterior</p>
-          <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
-          </div>
-        </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">Fachada</p>
-          <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
-          </div>
-        </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">Baño</p>
-          <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
-          </div>
-        </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">Fecha de Registro</p>
-          <div class="">
-            <img @click="onFilterArrow('dateCreated')"
-            src="../../assets/dropdown.svg" class="px-2" alt="" />
-          </div>
-        </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">Editar</p>
-          <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
-          </div>
-        </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">Nuevo</p>
-          <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
-          </div>
-        </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">Activar</p>
-          <div class="">
-            <img src="../../assets/dropdown.svg" class="px-2" alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pl-10 h-px w-full bg-gray-400"></div>
-    <div class="h-5/6 overflow-x-auto min-w-2100px">
-      <div v-for="(product, index) in getAllProducts" :key="index" class="">
-        <div v-if="index >= startData && index <= endData">
-          <div
-            class="flex justify-between"
-            :class="index % 2 ? 'bg-white' : ''"
-          >
-            <div class="pl-10 w-full grid grid-cols-38">
-              <div class="col-span-1">
-                <p class="text-black text-sm py-2">{{ index }}</p>
-              </div>
-              <div class="col-span-2">
-                <p class="text-black text-sm py-2">
-                  {{ product.smallPicture != "" ? "1/1" : "0/1" }}
-                </p>
-              </div>
-              <div class="col-span-2">
-                <p class="text-black text-sm py-2 truncate">
-                  {{ `${countRendersProduct(product)}/3` }}
-                </p>
-              </div>
-              <div class="col-span-2">
-                <p class="text-black text-sm py-2">
-                  {{ `${countImgsProduct(product)}/2` }}
-                </p>
-              </div>
-              <div class="col-span-2 max-w-full truncate">
-                <p class="text-black text-sm py-2">{{ product.name }}</p>
-              </div>
-              <div class="col-span-2">
-                <p class="text-black text-sm py-2">{{ product.typologies }}</p>
-              </div>
-              <div class="col-span-2">
-                <p class="text-black text-sm py-2">{{ product.sized }}</p>
-              </div>
-              <div class="col-span-2">
-                <p class="text-black text-sm py-2">{{ product.serie }}</p>
-              </div>
-              <div class="col-span-2">
-                <p class="text-black text-sm py-2">{{ product.finish }}</p>
-              </div>
-              <div class="col-span-2">
-                <p class="text-black text-sm py-2">{{ product.color }}</p>
-              </div>
-              <div class="col-span-2">
-                <div
-                  v-if="serchAplication(product, 'PISO')"
-                  class="flex items-center h-full"
-                >
-                  <img src="../../assets/ok.svg" alt="" />
+  <div class="h-full w-full bg-f5">
+    <div
+      class="
+        h-full
+        w-full
+        flex
+        justify-between
+        overflow-x-auto
+        min-w-1500px
+      "
+    >
+      <div class=" w-full overflow-x-auto h-full">
+        <table class="w-full  min-w-1500px">
+          <thead >
+            <tr>
+              <th  class="sticky top-0 bg-1f z-40">
+                <div class="col-span-1 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">No.</p>
                 </div>
-                <div v-else>-</div>
-              </div>
-              <div class="col-span-2">
-                <div
-                  v-if="serchAplication(product, 'MURO')"
-                  class="flex items-center h-full"
-                >
-                  <img src="../../assets/ok.svg" alt="" />
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">
+                    Imagen Miniatura
+                  </p>
                 </div>
-                <div v-else>-</div>
-              </div>
-              <div class="col-span-2">
-                <div
-                  v-if="serchAplication(product, 'INTERIOR')"
-                  class="flex items-center h-full"
-                >
-                  <img src="../../assets/ok.svg" alt="" />
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">
+                    Imagen del producto
+                  </p>
                 </div>
-                <div v-else>-</div>
-              </div>
-              <div class="col-span-2">
-                <div
-                  v-if="serchAplication(product, 'EXTERIOR')"
-                  class="flex items-center h-full"
-                >
-                  <img src="../../assets/ok.svg" alt="" />
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">
+                    Textura AR/3D
+                  </p>
                 </div>
-                <div v-else>-</div>
-              </div>
-              <div class="col-span-2">
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
                 <div
-                  v-if="serchAplication(product, 'FACHADA')"
-                  class="flex items-center h-full"
-                >
-                  <img src="../../assets/ok.svg" alt="" />
-                </div>
-                <div v-else>-</div>
-              </div>
-              <div class="col-span-2">
-                <div
-                  v-if="serchAplication(product, 'BANO')"
-                  class="flex items-center h-full"
-                >
-                  <img src="../../assets/ok.svg" alt="" />
-                </div>
-                <div v-else>-</div>
-              </div>
-
-              <div class="col-span-2">
-                <p class="text-black text-sm py-2">{{ product.dateCreated }}</p>
-              </div>
-              <div class="col-span-2 flex justify-center items-center">
-                <button @click="onOpenModal(product)">
-                  <img
-                    class="object-cover h-6 w-6"
-                    src="../../assets/icons/editar.svg"
-                    alt=""
-                  />
-                </button>
-              </div>
-              <!-- nuevo -->
-              <div
-                class="
-                  relative
-                  col-span-2
-                  mx-2
-                  cursor-pointer
-                  flex
-                  justify-center
-                  items-center
-                "
-              >
-                <div
-                  v-if="index === modalNewProduct"
-                  class=" z-50 -ml-64 mt-40 absolute w-72 h-28 bg-white border border-black"
-                >
-                  <div class="flex px-3 pt-5">
-                    <img src="../../assets/alerta.svg" class="pr-2" alt="" />
-                    <p class="text-black text-justify text-xs font-normal">
-                      ¿Estás seguro que deseas
-                      {{ product.isNewProduct ? "desmarcar" : "marcar" }} este
-                      producto como nuevo?
-                    </p>
-                  </div>
-                  <div class="flex px-3 pt-5 justify-evenly">
-                    <button
-                      @click="onChangeStatusIsNew(product)"
-                      class="
-                        w-28
-                        h-6
-                        bg-black
-                        text-center text-xs
-                        font-medium
-                        text-white
-                      "
-                    >
-                      {{
-                        product.isNewProduct ? "Desmarcar" : "Nuevo producto"
-                      }}
-                    </button>
-                    <button
-                      @click="modalNewProductToggle(-1)"
-                      class="
-                        w-28
-                        h-6
-                        bg-white
-                        text-center text-xs
-                        font-medium
-                        border border-black
-                      "
-                    >
-                      Cancelar
-                    </button>
-                  </div>
-                </div>
-                <div
-                  v-if="product.isNewProduct"
-                  @click="modalNewProductToggle(index)"
-                >
-                  <img src="../../assets/switch_on.svg" alt="" />
-                </div>
-                <div v-else @click="modalNewProductToggle(index)">
-                  <img src="../../assets/switch_off.svg" alt="" />
-                </div>
-              </div>
-              <!-- end  nuevo -->
-              <!-- start activo -->
-              <div
-                class="
-                  relative
-                  col-span-2
-                  mx-2
-                  cursor-pointer
-                  flex
-                  justify-center
-                  items-center
-                "
-              >
-                <div
-                  v-if="index === modalActiveProduct"
+                  @click="onFilterArrow('name')"
                   class="
-                    z-50
-                    -ml-64
-                    mt-40
-                    absolute
-                    w-72
-                    h-28
-                    bg-white
-                    border border-black
+                    col-span-2
+                    flex
+                    items-center
+                    justify-start
+                    mr-4
+                    cursor-pointer
                   "
                 >
-                  <div class="flex px-3 pt-5">
-                    <img src="../../assets/alerta.svg" class="pr-2" alt="" />
-                    <p class="text-black text-justify text-xs font-normal">
-                      Debes completar los datos de este producto antes de
-                      activarlo.
-                    </p>
-                  </div>
-                  <div class="flex px-3 pt-5 justify-center">
-                    <button
-                      @click="closeModalIncompleteProduct(-1)"
-                      class="
-                        w-28
-                        h-6
-                        bg-black
-                        text-center text-xs
-                        font-medium
-                        text-white
-                      "
-                    >
-                      Aceptar
-                    </button>
+                  <p class="text-white text-xs font-semibold py-2">
+                    Nombre del producto
+                  </p>
+                  <div class="">
+                    <img
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer px-2"
+                      alt=""
+                    />
                   </div>
                 </div>
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">Tipologia</p>
+                  <div class="">
+                    <img
+                      @click="onFilterArrow('typologies')"
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer px-2"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">Formato</p>
+                  <div class="">
+                    <img
+                      @click="onFilterArrow('sized')"
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer px-2"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">Serie</p>
+                  <div class="">
+                    <img
+                      @click="onFilterArrow('serie')"
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer px-2"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">Acabado</p>
+                  <div class="">
+                    <img
+                      @click="onFilterArrow('finish')"
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer px-2"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">Color</p>
+                  <div class="">
+                    <img
+                      @click="onFilterArrow('color')"
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer px-2"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">Piso</p>
+                  <div class="">
+                    <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+                  </div>
+                </div>
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">Muro</p>
+                  <div class="">
+                    <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+                  </div>
+                </div>
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">Iterior</p>
+                  <div class="">
+                    <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+                  </div>
+                </div>
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">Exterior</p>
+                  <div class="">
+                    <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+                  </div>
+                </div>
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">Fachada</p>
+                  <div class="">
+                    <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+                  </div>
+                </div>
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">Baño</p>
+                  <div class="">
+                    <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+                  </div>
+                </div>
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">
+                    Fecha de Registro
+                  </p>
+                  <div class="">
+                    <img
+                      @click="onFilterArrow('dateCreated')"
+                      src="../../assets/dropdown.svg"
+                      class="px-2"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">Editar</p>
+                  <div class="">
+                    <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+                  </div>
+                </div>
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">Nuevo</p>
+                  <div class="">
+                    <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+                  </div>
+                </div>
+              </th>
+              <th class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-start mr-4">
+                  <p class="text-white text-xs font-semibold py-2">Activar</p>
+                  <div class="">
+                    <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+                  </div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-gray-200 min-w-1500px">
+            <tr
+              v-for="(product, index) in getAllProducts"
+              :key="index"
+              :class="index % 2 ? 'bg-white' : ''"
+            >
+              <td v-if="index >= startData && index <= endData">
+                <div class="col-span-1">
+                  <p class="text-black text-sm py-2">{{ index }}</p>
+                </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
+                <div class="col-span-2">
+                  <p class="text-black text-sm py-2">
+                    {{ product.smallPicture != "" ? "1/1" : "0/1" }}
+                  </p>
+                </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
+                <div class="col-span-2">
+                  <p class="text-black text-sm py-2 truncate">
+                    {{ `${countRendersProduct(product)}/3` }}
+                  </p>
+                </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
+                <div class="col-span-2">
+                  <p class="text-black text-sm py-2">
+                    {{ `${countImgsProduct(product)}/2` }}
+                  </p>
+                </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
+                <div class="col-span-2 max-w-full truncate">
+                  <p class="text-black text-sm py-2">{{ product.name }}</p>
+                </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
+                <div class="col-span-2">
+                  <p class="text-black text-sm py-2">
+                    {{ product.typologies }}
+                  </p>
+                </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
+                <div class="col-span-2">
+                  <p class="text-black text-sm py-2">{{ product.sized }}</p>
+                </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
+                <div class="col-span-2">
+                  <p class="text-black text-sm py-2">{{ product.serie }}</p>
+                </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
+                <div class="col-span-2">
+                  <p class="text-black text-sm py-2">{{ product.finish }}</p>
+                </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
+                <div class="col-span-2">
+                  <p class="text-black text-sm py-2">{{ product.color }}</p>
+                </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
+                <div class="col-span-2">
+                  <div
+                    v-if="serchAplication(product, 'PISO')"
+                    class="flex items-center h-full"
+                  >
+                    <img src="../../assets/ok.svg" alt="" />
+                  </div>
+                  <div v-else>-</div>
+                </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
+                <div class="col-span-2">
+                  <div
+                    v-if="serchAplication(product, 'MURO')"
+                    class="flex items-center h-full"
+                  >
+                    <img src="../../assets/ok.svg" alt="" />
+                  </div>
+                  <div v-else>-</div>
+                </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
+                <div class="col-span-2">
+                  <div
+                    v-if="serchAplication(product, 'INTERIOR')"
+                    class="flex items-center h-full"
+                  >
+                    <img src="../../assets/ok.svg" alt="" />
+                  </div>
+                  <div v-else>-</div>
+                </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
+                <div class="col-span-2">
+                  <div
+                    v-if="serchAplication(product, 'EXTERIOR')"
+                    class="flex items-center h-full"
+                  >
+                    <img src="../../assets/ok.svg" alt="" />
+                  </div>
+                  <div v-else>-</div>
+                </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
+                <div class="col-span-2">
+                  <div
+                    v-if="serchAplication(product, 'FACHADA')"
+                    class="flex items-center h-full"
+                  >
+                    <img src="../../assets/ok.svg" alt="" />
+                  </div>
+                  <div v-else>-</div>
+                </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
+                <div class="col-span-2">
+                  <div
+                    v-if="serchAplication(product, 'BANO')"
+                    class="flex items-center h-full"
+                  >
+                    <img src="../../assets/ok.svg" alt="" />
+                  </div>
+                  <div v-else>-</div>
+                </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
+                <div class="col-span-2">
+                  <p class="text-black text-sm py-2">
+                    {{ product.dateCreated }}
+                  </p>
+                </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
+                <div class="col-span-2 flex justify-center items-center">
+                  <button @click="onOpenModal(product)">
+                    <img
+                      class="object-cover h-6 w-6"
+                      src="../../assets/icons/editar.svg"
+                      alt=""
+                    />
+                  </button>
+                </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
                 <div
-                  v-if="index === modalAlertDisableProduct"
                   class="
-                    z-50
-                    -ml-64
-                    mt-40
-                    absolute
-                    w-72
-                    h-28
-                    bg-white
-                    border border-black
+                    relative
+                    col-span-2
+                    mx-2
+                    cursor-pointer
+                    flex
+                    justify-center
+                    items-center
                   "
                 >
-                  <div class="flex px-3 pt-5">
-                    <img src="../../assets/alerta.svg" class="pr-2" alt="" />
-                    <p class="text-black text-justify text-xs font-normal">
-                      ¿Estás seguro de que deseas suspender este producto en la
-                      App y Web 3D?
-                    </p>
+                  <div
+                    v-if="index === modalNewProduct"
+                    class="
+                      z-50
+                      -ml-64
+                      mt-40
+                      absolute
+                      w-72
+                      h-28
+                      bg-white
+                      border border-black
+                    "
+                  >
+                    <div class="flex px-3 pt-5">
+                      <img src="../../assets/alerta.svg" class="pr-2" alt="" />
+                      <p class="text-black text-justify text-xs font-normal">
+                        ¿Estás seguro que deseas
+                        {{ product.isNewProduct ? "desmarcar" : "marcar" }} este
+                        producto como nuevo?
+                      </p>
+                    </div>
+                    <div class="flex px-3 pt-5 justify-evenly">
+                      <button
+                        @click="onChangeStatusIsNew(product)"
+                        class="
+                          w-28
+                          h-6
+                          bg-black
+                          text-center text-xs
+                          font-medium
+                          text-white
+                        "
+                      >
+                        {{
+                          product.isNewProduct ? "Desmarcar" : "Nuevo producto"
+                        }}
+                      </button>
+                      <button
+                        @click="modalNewProductToggle(-1)"
+                        class="
+                          w-28
+                          h-6
+                          bg-white
+                          text-center text-xs
+                          font-medium
+                          border border-black
+                        "
+                      >
+                        Cancelar
+                      </button>
+                    </div>
                   </div>
-                  <div class="flex px-3 pt-5 justify-evenly">
-                    <button
-                      @click="changeDisbaleProduct(product)"
-                      class="
-                        w-28
-                        h-6
-                        bg-black
-                        text-center text-xs
-                        font-medium
-                        text-white
-                      "
-                    >
-                      Suspender
-                    </button>
-                    <button
-                      @click="modalNewProductToggle(-1)"
-                      class="
-                        w-28
-                        h-6
-                        bg-white
-                        text-center text-xs
-                        font-medium
-                        border border-black
-                      "
-                    >
-                      Cancelar
-                    </button>
+                  <div
+                    v-if="product.isNewProduct"
+                    @click="modalNewProductToggle(index)"
+                  >
+                    <img src="../../assets/switch_on.svg" alt="" />
+                  </div>
+                  <div v-else @click="modalNewProductToggle(index)">
+                    <img src="../../assets/switch_off.svg" alt="" />
                   </div>
                 </div>
+              </td>
+              <td v-if="index >= startData && index <= endData">
                 <div
-                  v-if="product.available"
-                  @click="onChageStatusAvailable(product, index)"
+                  class="
+                    relative
+                    col-span-2
+                    mx-2
+                    cursor-pointer
+                    flex
+                    justify-center
+                    items-center
+                  "
                 >
-                  <img src="../../assets/switch_on.svg" alt="" />
+                  <div
+                    v-if="index === modalActiveProduct"
+                    class="
+                      z-50
+                      -ml-64
+                      mt-40
+                      absolute
+                      w-72
+                      h-28
+                      bg-white
+                      border border-black
+                    "
+                  >
+                    <div class="flex px-3 pt-5">
+                      <img src="../../assets/alerta.svg" class="pr-2" alt="" />
+                      <p class="text-black text-justify text-xs font-normal">
+                        Debes completar los datos de este producto antes de
+                        activarlo.
+                      </p>
+                    </div>
+                    <div class="flex px-3 pt-5 justify-center">
+                      <button
+                        @click="closeModalIncompleteProduct(-1)"
+                        class="
+                          w-28
+                          h-6
+                          bg-black
+                          text-center text-xs
+                          font-medium
+                          text-white
+                        "
+                      >
+                        Aceptar
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    v-if="index === modalAlertDisableProduct"
+                    class="
+                      z-50
+                      -ml-64
+                      mt-40
+                      absolute
+                      w-72
+                      h-28
+                      bg-white
+                      border border-black
+                    "
+                  >
+                    <div class="flex px-3 pt-5">
+                      <img src="../../assets/alerta.svg" class="pr-2" alt="" />
+                      <p class="text-black text-justify text-xs font-normal">
+                        ¿Estás seguro de que deseas suspender este producto en
+                        la App y Web 3D?
+                      </p>
+                    </div>
+                    <div class="flex px-3 pt-5 justify-evenly">
+                      <button
+                        @click="changeDisbaleProduct(product)"
+                        class="
+                          w-28
+                          h-6
+                          bg-black
+                          text-center text-xs
+                          font-medium
+                          text-white
+                        "
+                      >
+                        Suspender
+                      </button>
+                      <button
+                        @click="modalNewProductToggle(-1)"
+                        class="
+                          w-28
+                          h-6
+                          bg-white
+                          text-center text-xs
+                          font-medium
+                          border border-black
+                        "
+                      >
+                        Cancelar
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    v-if="product.available"
+                    @click="onChageStatusAvailable(product, index)"
+                  >
+                    <img src="../../assets/switch_on.svg" alt="" />
+                  </div>
+                  <div v-else @click="onChageStatusAvailable(product, index)">
+                    <img src="../../assets/switch_off.svg" alt="" />
+                  </div>
                 </div>
-                <div v-else @click="onChageStatusAvailable(product, index)">
-                  <img src="../../assets/switch_off.svg" alt="" />
-                </div>
-              </div>
-              <!-- end activo -->
-            </div>
-          </div>
-        </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-  <div class="pl-10 py-2 flex items-center w-full justify-between bg-1f">
+  <div class="pl-10 py-2 flex items-center w-full justify-between bg-1f overflow-x-hidden">
     <div class="flex items-center">
       <p class="text-white font-semibold text-xs pr-2">Total de Filas:</p>
       <div class="border-2 px-1 bg-white">
@@ -487,13 +628,13 @@ export default {
       "getAllproductsdb",
       "changeAvailableProductDB",
       "changeStatusIsNewProductDB",
-      "filterAlphabetProduct"
+      "filterAlphabetProduct",
     ]),
     async onGetAllProducts() {
       await this.getAllproductsdb();
     },
-    onFilterArrow(value){
-      this.filterAlphabetProduct(value)
+    onFilterArrow(value) {
+      this.filterAlphabetProduct(value);
     },
     countImgsProduct(product) {
       let counter = 0;
@@ -589,5 +730,4 @@ export default {
 };
 </script>
 
-<style >
-</style>
+<style></style>

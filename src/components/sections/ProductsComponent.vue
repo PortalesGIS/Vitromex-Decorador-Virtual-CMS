@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen w-full bg-6f overflow-hidden">
+  <div class="h-screen w-full bg-6f overflow-x-hidden">
     <div class="h-16"></div>
     <div class="h-5/6  bg-6f shadow-10xl overflow-hidden">
       <div class="overflow-hidden">
@@ -27,7 +27,7 @@
           Productos
         </div>
       </div>
-      <div v-if="menuOption === 1" class="w-full h-full">
+      <div v-if="menuOption === 1" class="w-full h-full overflow-x-hidden">
         <div class="w-full h-full px-5">
           <div class="flex items-center w-full  bg-f5 h-16">
             <ProductsFiltercomponentVue />
