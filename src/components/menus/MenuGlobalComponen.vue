@@ -287,6 +287,9 @@ export default {
         ...mapActions(["onChangeViewWindow","exitCms"]),
         goTo(payload) {
             this.onChangeViewWindow(payload)
+            if(payload === typesViewsMenu.products){
+                  this.isOpen =false;
+            }
         },
         onChangeViewMenu(){
             this.isOpen = !this.isOpen;

@@ -56,7 +56,7 @@
    <div 
         v-if="activeModal"
         class="z-50 fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-20">
-        <div class="w-full h-full flex items-center justify-center">
+        <div class="w-full h-full flex items-center justify-center py-5">
              <div class=" bg-white h-full overflow-y-auto"  style="width:664px; max-height:984px">
                 <div class="flex justify-end">
                     <img 

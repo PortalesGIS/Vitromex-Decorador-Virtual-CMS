@@ -7,35 +7,35 @@
         w-full
         flex
         justify-between
-        overflow-x-auto
+        overflow-x-hidden
         min-w-1500px
       "
     >
       <div class=" w-full overflow-x-auto h-full">
-        <table class="w-full  min-w-1500px">
+        <table class="w-full  min-w-2100px">
           <thead >
             <tr>
               <th  class="sticky top-0 bg-1f z-40">
-                <div class="col-span-1 flex items-center justify-start mr-4">
+                <div class=" flex items-center justify-center mr-4">
                   <p class="text-white text-xs font-semibold py-2">No.</p>
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-start mr-4">
+                <div class=" flex items-center justify-center mr-4">
                   <p class="text-white text-xs font-semibold py-2">
                     Imagen Miniatura
                   </p>
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-start mr-4">
+                <div class="col-span-2 flex items-center justify-center mr-4">
                   <p class="text-white text-xs font-semibold py-2">
                     Imagen del producto
                   </p>
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-start mr-4">
+                <div class="col-span-2 flex items-center justify-center mr-4">
                   <p class="text-white text-xs font-semibold py-2">
                     Textura AR/3D
                   </p>
@@ -45,10 +45,9 @@
                 <div
                   @click="onFilterArrow('name')"
                   class="
-                    col-span-2
                     flex
                     items-center
-                    justify-start
+                    justify-center
                     mr-4
                     cursor-pointer
                   "
@@ -66,7 +65,7 @@
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-start mr-4">
+                <div class="col-span-2 flex items-center justify-center mr-4">
                   <p class="text-white text-xs font-semibold py-2">Tipologia</p>
                   <div class="">
                     <img
@@ -79,7 +78,7 @@
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-start mr-4">
+                <div class="col-span-2 flex items-center justify-center mr-4">
                   <p class="text-white text-xs font-semibold py-2">Formato</p>
                   <div class="">
                     <img
@@ -92,7 +91,7 @@
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-start mr-4">
+                <div class="col-span-2 flex items-center justify-center mr-4">
                   <p class="text-white text-xs font-semibold py-2">Serie</p>
                   <div class="">
                     <img
@@ -105,7 +104,7 @@
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-start mr-4">
+                <div class="col-span-2 flex items-center justify-center mr-4">
                   <p class="text-white text-xs font-semibold py-2">Acabado</p>
                   <div class="">
                     <img
@@ -118,7 +117,7 @@
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-start mr-4">
+                <div class="col-span-2 flex items-center justify-center mr-4">
                   <p class="text-white text-xs font-semibold py-2">Color</p>
                   <div class="">
                     <img
@@ -130,56 +129,16 @@
                   </div>
                 </div>
               </th>
-              <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-start mr-4">
-                  <p class="text-white text-xs font-semibold py-2">Piso</p>
+              <th v-for="aplication in getAllSpaces" :key="aplication" class="sticky top-0 bg-1f z-40">
+                <div class="col-span-2 flex items-center justify-center mr-4">
+                  <p class="text-white text-xs font-semibold py-2">{{aplication.name}}</p>
                   <div class="">
                     <img src="../../assets/dropdown.svg" class="px-2" alt="" />
                   </div>
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-start mr-4">
-                  <p class="text-white text-xs font-semibold py-2">Muro</p>
-                  <div class="">
-                    <img src="../../assets/dropdown.svg" class="px-2" alt="" />
-                  </div>
-                </div>
-              </th>
-              <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-start mr-4">
-                  <p class="text-white text-xs font-semibold py-2">Iterior</p>
-                  <div class="">
-                    <img src="../../assets/dropdown.svg" class="px-2" alt="" />
-                  </div>
-                </div>
-              </th>
-              <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-start mr-4">
-                  <p class="text-white text-xs font-semibold py-2">Exterior</p>
-                  <div class="">
-                    <img src="../../assets/dropdown.svg" class="px-2" alt="" />
-                  </div>
-                </div>
-              </th>
-              <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-start mr-4">
-                  <p class="text-white text-xs font-semibold py-2">Fachada</p>
-                  <div class="">
-                    <img src="../../assets/dropdown.svg" class="px-2" alt="" />
-                  </div>
-                </div>
-              </th>
-              <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-start mr-4">
-                  <p class="text-white text-xs font-semibold py-2">Baño</p>
-                  <div class="">
-                    <img src="../../assets/dropdown.svg" class="px-2" alt="" />
-                  </div>
-                </div>
-              </th>
-              <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-start mr-4">
+                <div class="col-span-2 flex items-center justify-center mr-4">
                   <p class="text-white text-xs font-semibold py-2">
                     Fecha de Registro
                   </p>
@@ -194,7 +153,7 @@
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-start mr-4">
+                <div class="col-span-2 flex items-center justify-center mr-4">
                   <p class="text-white text-xs font-semibold py-2">Editar</p>
                   <div class="">
                     <img src="../../assets/dropdown.svg" class="px-2" alt="" />
@@ -202,7 +161,7 @@
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-start mr-4">
+                <div class="col-span-2 flex items-center justify-center mr-4">
                   <p class="text-white text-xs font-semibold py-2">Nuevo</p>
                   <div class="">
                     <img src="../../assets/dropdown.svg" class="px-2" alt="" />
@@ -210,7 +169,7 @@
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-start mr-4">
+                <div class="col-span-2 flex items-center justify-center mr-4">
                   <p class="text-white text-xs font-semibold py-2">Activar</p>
                   <div class="">
                     <img src="../../assets/dropdown.svg" class="px-2" alt="" />
@@ -219,74 +178,75 @@
               </th>
             </tr>
           </thead>
-          <tbody class="bg-gray-200 min-w-1500px">
+          <tbody class="bg-gray-200 min-w-2100px">
             <tr
               v-for="(product, index) in getAllProducts"
               :key="index"
               :class="index % 2 ? 'bg-white' : ''"
             >
               <td v-if="index >= startData && index <= endData">
-                <div class="col-span-1">
+                <div class=" flex justify-center">
                   <p class="text-black text-sm py-2">{{ index }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
-                <div class="col-span-2">
+                <div class="flex justify-center">
                   <p class="text-black text-sm py-2">
                     {{ product.smallPicture != "" ? "1/1" : "0/1" }}
                   </p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
-                <div class="col-span-2">
+                <div class="flex justify-center">
                   <p class="text-black text-sm py-2 truncate">
                     {{ `${countRendersProduct(product)}/3` }}
                   </p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
-                <div class="col-span-2">
+                <div class="flex justify-center">
                   <p class="text-black text-sm py-2">
                     {{ `${countImgsProduct(product)}/2` }}
                   </p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
-                <div class="col-span-2 max-w-full truncate">
+                <div class="flex justify-center max-w-full truncate">
                   <p class="text-black text-sm py-2">{{ product.name }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
-                <div class="col-span-2">
+                <div class="flex justify-center">
                   <p class="text-black text-sm py-2">
                     {{ product.typologies }}
                   </p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
-                <div class="col-span-2">
+                <div class="flex justify-center">
                   <p class="text-black text-sm py-2">{{ product.sized }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
-                <div class="col-span-2">
+                <div class="flex justify-center">
                   <p class="text-black text-sm py-2">{{ product.serie }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
-                <div class="col-span-2">
+                <div class="flex justify-center">
                   <p class="text-black text-sm py-2">{{ product.finish }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
-                <div class="col-span-2">
+                <div class="flex justify-center">
                   <p class="text-black text-sm py-2">{{ product.color }}</p>
                 </div>
-              </td>
-              <td v-if="index >= startData && index <= endData">
-                <div class="col-span-2">
+              </td> 
+                <template v-if="index >= startData && index <= endData">   
+              <td  v-for="aplication in getAllSpaces" :key="aplication" >
+                <div  class="flex justify-center">
                   <div
-                    v-if="serchAplication(product, 'PISO')"
+                    v-if="serchAplication(product,`${aplication.name}` )"
                     class="flex items-center h-full"
                   >
                     <img src="../../assets/ok.svg" alt="" />
@@ -294,70 +254,16 @@
                   <div v-else>-</div>
                 </div>
               </td>
+                  </template>  
               <td v-if="index >= startData && index <= endData">
-                <div class="col-span-2">
-                  <div
-                    v-if="serchAplication(product, 'MURO')"
-                    class="flex items-center h-full"
-                  >
-                    <img src="../../assets/ok.svg" alt="" />
-                  </div>
-                  <div v-else>-</div>
-                </div>
-              </td>
-              <td v-if="index >= startData && index <= endData">
-                <div class="col-span-2">
-                  <div
-                    v-if="serchAplication(product, 'INTERIOR')"
-                    class="flex items-center h-full"
-                  >
-                    <img src="../../assets/ok.svg" alt="" />
-                  </div>
-                  <div v-else>-</div>
-                </div>
-              </td>
-              <td v-if="index >= startData && index <= endData">
-                <div class="col-span-2">
-                  <div
-                    v-if="serchAplication(product, 'EXTERIOR')"
-                    class="flex items-center h-full"
-                  >
-                    <img src="../../assets/ok.svg" alt="" />
-                  </div>
-                  <div v-else>-</div>
-                </div>
-              </td>
-              <td v-if="index >= startData && index <= endData">
-                <div class="col-span-2">
-                  <div
-                    v-if="serchAplication(product, 'FACHADA')"
-                    class="flex items-center h-full"
-                  >
-                    <img src="../../assets/ok.svg" alt="" />
-                  </div>
-                  <div v-else>-</div>
-                </div>
-              </td>
-              <td v-if="index >= startData && index <= endData">
-                <div class="col-span-2">
-                  <div
-                    v-if="serchAplication(product, 'BANO')"
-                    class="flex items-center h-full"
-                  >
-                    <img src="../../assets/ok.svg" alt="" />
-                  </div>
-                  <div v-else>-</div>
-                </div>
-              </td>
-              <td v-if="index >= startData && index <= endData">
-                <div class="col-span-2">
+                <div class="flex justify-center">
                   <p class="text-black text-sm py-2">
                     {{ product.dateCreated }}
                   </p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
-                <div class="col-span-2 flex justify-center items-center">
+                <div class="flex justify-center items-center">
                   <button @click="onOpenModal(product)">
                     <img
                       class="object-cover h-6 w-6"
@@ -371,7 +277,6 @@
                 <div
                   class="
                     relative
-                    col-span-2
                     mx-2
                     cursor-pointer
                     flex
@@ -446,11 +351,9 @@
                 <div
                   class="
                     relative
-                    col-span-2
+                    flex justify-center
                     mx-2
                     cursor-pointer
-                    flex
-                    justify-center
                     items-center
                   "
                 >
@@ -525,7 +428,7 @@
                         Suspender
                       </button>
                       <button
-                        @click="modalNewProductToggle(-1)"
+                        @click="colseModalDisableProduct(-1)"
                         class="
                           w-28
                           h-6
@@ -556,7 +459,7 @@
       </div>
     </div>
   </div>
-  <div class="pl-10 py-2 flex items-center w-full justify-between bg-1f overflow-x-hidden">
+  <div class="pl-10 py-2 pr-20 flex items-center w-full justify-between bg-1f overflow-x-hidden">
     <div class="flex items-center">
       <p class="text-white font-semibold text-xs pr-2">Total de Filas:</p>
       <div class="border-2 px-1 bg-white">
@@ -686,6 +589,9 @@ export default {
       this.changeAvailableProductDB(product);
       this.modalAlertDisableProduct = -1;
     },
+    colseModalDisableProduct(){
+this.modalAlertDisableProduct = -1;
+    },
     closeModalIncompleteProduct(value) {
       this.modalActiveProduct = value;
     },
@@ -722,7 +628,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(["getAllProducts"]),
+    ...mapGetters(["getAllProducts","getAllSpaces"]),
   },
   created() {
     this.onGetAllProducts();

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-8 flex items-center ">
+  <div class="w-full h-8 flex items-center overflow-x-hidden">
       <div class="h-full ml-10 mr-4">
           <div class="flex items-center  h-full bg-white max-w-17">
               <img src="../../assets/buscar.svg" class="w-4 h-4 mx-2" alt="">    

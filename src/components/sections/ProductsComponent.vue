@@ -7,7 +7,7 @@
           Series y Productos
         </p>
       </div>
-      <div class="flex h-10 px-5">
+      <div class="flex h-10 px-5 overflow-x-hidden">
         <div
           class="mx-1 px-16 py-2 font-semibold text-sm cursor-pointer rounded-t-sm"
           :class="
@@ -29,7 +29,7 @@
       </div>
       <div v-if="menuOption === 1" class="w-full h-full overflow-x-hidden">
         <div class="w-full h-full px-5">
-          <div class="flex items-center w-full  bg-f5 h-16">
+          <div class="flex items-center w-full  bg-f5 h-16 overflow-x-hidden">
             <ProductsFiltercomponentVue />
           </div>
           <div class="w-full h-4/6   bg-f5">
