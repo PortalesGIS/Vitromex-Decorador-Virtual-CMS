@@ -2,3 +2,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@layer base {
+    :root{
+        --color-base-background: #6F6F6F;
+        --color-text:#ffffff;
+        --color-text-back:#000000;
+        --color-unoD:#1D1D1D;
+        --user-background:#070707;
+        --color-menu-select:#F5F5F5;
+        --color-bg-select-menu-product:#555555;
+        
+    }
+    .theme-arko{
+        --color-base-background: #FFFFFF;
+        --color-text:#000000;
+        --color-text-back:#ffffff;
+        --color-unoD:#FFFFFF;
+        --user-background:#1D1D1D;
+        --color-menu-select:#1D1D1D;
+        --color-bg-select-menu-product:#999999;
+    }
+}

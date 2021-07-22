@@ -9,10 +9,10 @@
     <div class="flex justify-between bg-1f">
       <div class="pl-10 w-full max-w-1400px grid grid-cols-12">
         <div class="col-span-1 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">No.</p>
+          <p class="text-force-white text-xs font-semibold py-2">No.</p>
         </div>
         <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-white text-xs font-semibold py-2">
+          <p class="text-force-white text-xs font-semibold py-2">
             Nombre de la Serie
           </p>
           <div class="">
@@ -21,13 +21,13 @@
           </div>
         </div>
         <div class="col-span-2 flex items-center justify-center mr-4">
-          <p class="text-white text-xs font-semibold py-2">Imagen Miniatura</p>
+          <p class="text-force-white text-xs font-semibold py-2">Imagen Miniatura</p>
           <div class="">
             <!-- <img src="../../assets/dropdown.svg" class="px-2" alt=""> -->
           </div>
         </div>
         <div class="col-span-2 flex items-center justify-center mr-4">
-          <p class="text-white text-xs font-semibold py-2">fecha de registro</p>
+          <p class="text-force-white text-xs font-semibold py-2">fecha de registro</p>
           <div class="">
             <img @click="onFilterArrow('dateCreated')"
             src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
@@ -36,7 +36,7 @@
       </div>
       <div class="bg-1f pr-10">
         <div class="px-1">
-          <p class="text-white text-sm font-bold py-2">Editar</p>
+          <p class="text-force-white text-sm font-bold py-2">Editar</p>
         </div>
       </div>
     </div>
@@ -47,18 +47,18 @@
           <div class="flex justify-between" :class="index % 2 ? 'bg-white' : ''">
           <div class="pl-10 w-full grid grid-cols-12 max-w-1400px">
             <div class="col-span-1 flex justify-start">
-              <p class="text-black text-sm py-2">{{ index }}</p>
+              <p class="text-force-black text-sm py-2">{{ index }}</p>
             </div>
             <div class="col-span-2 flex justify-start">
-              <p class="text-black text-sm py-2">{{ serie.name }}</p>
+              <p class="text-force-black text-sm py-2">{{ serie.name }}</p>
             </div>
             <div class="col-span-2 flex justify-center">
-              <p class="text-black text-sm py-2 truncate">
+              <p class="text-force-black text-sm py-2 truncate">
                 {{ `${serie.img != "" ? "1" : "0"}/1` }}
               </p>
             </div>
             <div class="col-span-2 flex justify-center">
-              <p class="text-black text-sm py-2">{{ serie.dateCreated }}</p>
+              <p class="text-force-black text-sm py-2">{{ serie.dateCreated }}</p>
             </div>
           </div>
           <div class="mr-10 flex items-center">
@@ -76,7 +76,7 @@
     </div>
     <div class="pl-10 py-2 flex items-center w-full justify-between bg-1f">
       <div class="flex items-center">
-        <p class="text-white font-semibold text-xs pr-2">Total de Filas:</p>
+        <p class="text-force-white font-semibold text-xs pr-2">Total de Filas:</p>
         <div class="border-2 px-1 bg-white">
           <select
             class="
@@ -102,7 +102,7 @@
       </div>
       <div class="flex mr-7 items-center">
         <div>
-          <p class="text-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllSeries.length}}</p>
+          <p class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllSeries.length}}</p>
         </div>
         <div class="cursor-pointer ml-7"
           @click="backPageTable()"

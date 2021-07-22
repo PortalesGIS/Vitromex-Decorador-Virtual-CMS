@@ -8,7 +8,7 @@
       DASHBOARD
       </p>
       <div class="flex items-end pb-7"> 
-        <button class="mr-10 text-white text-sm w-48 h-8 bg-1f" >Ir A Google Analytics</button>
+        <button class="mr-10 text-force-white text-sm w-48 h-8 bg-1f" >Ir A Google Analytics</button>
       </div>
       </div>
     </div>

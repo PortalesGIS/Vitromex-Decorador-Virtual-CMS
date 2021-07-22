@@ -1,10 +1,19 @@
 import { normalizeText } from "../helpers";
 import {baseUrl} from "../../types/data"
 
-const plataforma ="vitromex"
+const vitromex ="vitromex"
+const arko = "arko"
 
-export const getAllproductsdb = async({commit})=>{
-    await fetch(`${baseUrl}/api/product/${plataforma}/cms`,{
+export const getAllproductsdb = async({commit,getters})=>{
+  let platform="";
+  if(getters.getPageState){
+     platform = vitromex
+  }  
+  else{
+     platform = arko
+
+  }
+    await fetch(`${baseUrl}/api/product/${platform}/cms`,{
       method: "GET",
       headers:{
         'Content-Type': 'application/json'

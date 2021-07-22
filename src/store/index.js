@@ -24,6 +24,7 @@ import * as mutationsDashboard from './dashboard/mutationsDashboard'
 
 export default createStore({
   state: {
+    pageState:false,
     adminStateLogin:false,
     activeWindow:1,
     dashboard:{
@@ -61,6 +62,9 @@ export default createStore({
     ...mutationsOnboarding,
     setView(state,payload){
       state.activeWindow = payload;
+    },
+    setStatePage(state,payload){
+      state.pageState = payload
     }
   },
   actions: {
@@ -73,6 +77,9 @@ export default createStore({
    ...actionsDashboard,
     onChangeViewWindow({commit},payload){      
       commit("setView",payload);
+    },
+    onChangeStatePage({commit},payload){      
+      commit("setStatePage",payload);
     }
   },
   getters:{
@@ -85,6 +92,9 @@ export default createStore({
     ...gettersDashboard,
     getVieWindow(state){
       return state.activeWindow;
+    },
+    getPageState(state){
+      return state.pageState;
     }
   },
   modules: {

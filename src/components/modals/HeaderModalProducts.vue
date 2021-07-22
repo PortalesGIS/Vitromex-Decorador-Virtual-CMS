@@ -6,7 +6,7 @@
                         >
                         <div>
                             <p class="text-center font-semibold text-lg" 
-                            :class="(page===0)?'text-white':'text-black'"
+                            :class="(page===0)?'text-force-white':'text-force-black'"
                             >1</p>
                         </div>
                     </div>
@@ -20,7 +20,7 @@
                          >
                         <div>
                             <p class="text-center font-semibold text-lg" 
-                            :class="(page===1)?'text-white':'text-black'"
+                            :class="(page===1)?'text-force-white':'text-force-black'"
                             >2</p>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                          >
                         <div>
                             <p class="text-center font-semibold text-lg" 
-                            :class="(page===2)?'text-white':'text-black'"
+                            :class="(page===2)?'text-force-white':'text-force-black'"
                             >3</p>
                         </div>
                     </div>

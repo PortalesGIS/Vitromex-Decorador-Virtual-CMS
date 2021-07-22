@@ -17,26 +17,26 @@
             <tr>
               <th  class="sticky top-0 bg-1f z-40">
                 <div class=" flex items-center justify-center mr-4">
-                  <p class="text-white text-xs font-semibold py-2">No.</p>
+                  <p class="text-force-white text-xs font-semibold py-2">No.</p>
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class=" flex items-center justify-center mr-4">
-                  <p class="text-white text-xs font-semibold py-2">
+                  <p class="text-force-white text-xs font-semibold py-2">
                     Imagen Miniatura
                   </p>
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-white text-xs font-semibold py-2">
+                  <p class="text-force-white text-xs font-semibold py-2">
                     Imagen del producto
                   </p>
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-white text-xs font-semibold py-2">
+                  <p class="text-force-white text-xs font-semibold py-2">
                     Textura AR/3D
                   </p>
                 </div>
@@ -52,7 +52,7 @@
                     cursor-pointer
                   "
                 >
-                  <p class="text-white text-xs font-semibold py-2">
+                  <p class="text-force-white text-xs font-semibold py-2">
                     Nombre del producto
                   </p>
                   <div class="">
@@ -66,7 +66,7 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-white text-xs font-semibold py-2">Tipologia</p>
+                  <p class="text-force-white text-xs font-semibold py-2">Tipologia</p>
                   <div class="">
                     <img
                       @click="onFilterArrow('typologies')"
@@ -79,7 +79,7 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-white text-xs font-semibold py-2">Formato</p>
+                  <p class="text-force-white text-xs font-semibold py-2">Formato</p>
                   <div class="">
                     <img
                       @click="onFilterArrow('sized')"
@@ -92,7 +92,7 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-white text-xs font-semibold py-2">Serie</p>
+                  <p class="text-force-white text-xs font-semibold py-2">Serie</p>
                   <div class="">
                     <img
                       @click="onFilterArrow('serie')"
@@ -105,7 +105,7 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-white text-xs font-semibold py-2">Acabado</p>
+                  <p class="text-force-white text-xs font-semibold py-2">Acabado</p>
                   <div class="">
                     <img
                       @click="onFilterArrow('finish')"
@@ -118,7 +118,7 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-white text-xs font-semibold py-2">Color</p>
+                  <p class="text-force-white text-xs font-semibold py-2">Color</p>
                   <div class="">
                     <img
                       @click="onFilterArrow('color')"
@@ -131,7 +131,7 @@
               </th>
               <th v-for="aplication in getAllSpaces" :key="aplication" class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-white text-xs font-semibold py-2">{{aplication.name}}</p>
+                  <p class="text-force-white text-xs font-semibold py-2">{{aplication.name}}</p>
                   <div class="">
                     <img src="../../assets/dropdown.svg" class="px-2" alt="" />
                   </div>
@@ -139,7 +139,7 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-white text-xs font-semibold py-2">
+                  <p class="text-force-white text-xs font-semibold py-2">
                     Fecha de Registro
                   </p>
                   <div class="">
@@ -154,7 +154,7 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-white text-xs font-semibold py-2">Editar</p>
+                  <p class="text-force-white text-xs font-semibold py-2">Editar</p>
                   <div class="">
                     <img src="../../assets/dropdown.svg" class="px-2" alt="" />
                   </div>
@@ -162,7 +162,7 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-white text-xs font-semibold py-2">Nuevo</p>
+                  <p class="text-force-white text-xs font-semibold py-2">Nuevo</p>
                   <div class="">
                     <img src="../../assets/dropdown.svg" class="px-2" alt="" />
                   </div>
@@ -170,7 +170,7 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-white text-xs font-semibold py-2">Activar</p>
+                  <p class="text-force-white text-xs font-semibold py-2">Activar</p>
                   <div class="">
                     <img src="../../assets/dropdown.svg" class="px-2" alt="" />
                   </div>
@@ -186,60 +186,60 @@
             >
               <td v-if="index >= startData && index <= endData">
                 <div class=" flex justify-center">
-                  <p class="text-black text-sm py-2">{{ index }}</p>
+                  <p class="text-force-black text-sm py-2">{{ index }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-black text-sm py-2">
+                  <p class="text-force-black text-sm py-2">
                     {{ product.smallPicture != "" ? "1/1" : "0/1" }}
                   </p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-black text-sm py-2 truncate">
+                  <p class="text-force-black text-sm py-2 truncate">
                     {{ `${countRendersProduct(product)}/3` }}
                   </p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-black text-sm py-2">
+                  <p class="text-force-black text-sm py-2">
                     {{ `${countImgsProduct(product)}/2` }}
                   </p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center max-w-full truncate">
-                  <p class="text-black text-sm py-2">{{ product.name }}</p>
+                  <p class="text-force-black text-sm py-2">{{ product.name }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-black text-sm py-2">
+                  <p class="text-force-black text-sm py-2">
                     {{ product.typologies }}
                   </p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-black text-sm py-2">{{ product.sized }}</p>
+                  <p class="text-force-black text-sm py-2">{{ product.sized }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-black text-sm py-2">{{ product.serie }}</p>
+                  <p class="text-force-black text-sm py-2">{{ product.serie }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-black text-sm py-2">{{ product.finish }}</p>
+                  <p class="text-force-black text-sm py-2">{{ product.finish }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-black text-sm py-2">{{ product.color }}</p>
+                  <p class="text-force-black text-sm py-2">{{ product.color }}</p>
                 </div>
               </td> 
                 <template v-if="index >= startData && index <= endData">   
@@ -257,7 +257,7 @@
                   </template>  
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-black text-sm py-2">
+                  <p class="text-force-black text-sm py-2">
                     {{ product.dateCreated }}
                   </p>
                 </div>
@@ -299,7 +299,7 @@
                   >
                     <div class="flex px-3 pt-5">
                       <img src="../../assets/alerta.svg" class="pr-2" alt="" />
-                      <p class="text-black text-justify text-xs font-normal">
+                      <p class="text-force-black text-justify text-xs font-normal">
                         ¿Estás seguro que deseas
                         {{ product.isNewProduct ? "desmarcar" : "marcar" }} este
                         producto como nuevo?
@@ -314,7 +314,7 @@
                           bg-black
                           text-center text-xs
                           font-medium
-                          text-white
+                          text-force-white
                         "
                       >
                         {{
@@ -372,7 +372,7 @@
                   >
                     <div class="flex px-3 pt-5">
                       <img src="../../assets/alerta.svg" class="pr-2" alt="" />
-                      <p class="text-black text-justify text-xs font-normal">
+                      <p class="text-force-black text-justify text-xs font-normal">
                         Debes completar los datos de este producto antes de
                         activarlo.
                       </p>
@@ -386,7 +386,7 @@
                           bg-black
                           text-center text-xs
                           font-medium
-                          text-white
+                          text-force-white
                         "
                       >
                         Aceptar
@@ -408,7 +408,7 @@
                   >
                     <div class="flex px-3 pt-5">
                       <img src="../../assets/alerta.svg" class="pr-2" alt="" />
-                      <p class="text-black text-justify text-xs font-normal">
+                      <p class="text-force-black text-justify text-xs font-normal">
                         ¿Estás seguro de que deseas suspender este producto en
                         la App y Web 3D?
                       </p>
@@ -422,7 +422,7 @@
                           bg-black
                           text-center text-xs
                           font-medium
-                          text-white
+                          text-force-white
                         "
                       >
                         Suspender
@@ -461,7 +461,7 @@
   </div>
   <div class="pl-10 py-2 pr-20 flex items-center w-full justify-between bg-1f overflow-x-hidden">
     <div class="flex items-center">
-      <p class="text-white font-semibold text-xs pr-2">Total de Filas:</p>
+      <p class="text-force-white font-semibold text-xs pr-2">Total de Filas:</p>
       <div class="border-2 px-1 bg-white">
         <select
           class="
@@ -487,7 +487,7 @@
     </div>
     <div class="flex mr-7 items-center">
       <div>
-        <p class="text-white font-semibold text-xs">
+        <p class="text-force-white font-semibold text-xs">
           {{ startData }}-{{ endData }},{{ getAllProducts.length }}
         </p>
       </div>

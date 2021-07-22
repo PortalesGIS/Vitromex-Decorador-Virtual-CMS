@@ -46,7 +46,7 @@
           <div>
               <button 
               @click="OnOpenModalNew"
-              class=" border-black border-2 bg-black text-white mx-2 p-2">Nuevo administrador</button>
+              class=" border-black border-2 bg-black text-force-white mx-2 p-2">Nuevo administrador</button>
           </div>
       </div>
   </div>

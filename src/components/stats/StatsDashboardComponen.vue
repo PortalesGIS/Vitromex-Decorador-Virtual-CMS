@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-between  w-full ">
         <div class="w-full  h-full p-2 ">
-          <div class="w-full bg-white " style="height:648px">
+          <div class="w-full bg-white shadow-4xl" style="height:648px">
             <div class="flex w-full justify-between items-center">
               <div>                
                 <p class=" text-lg font-semibold text-black pl-7 pt-4">Top de Productos Favoritos</p>
@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class="w-full bg-6f h-full p-2 ">
-          <div class="w-full bg-white p" style="height:648px">
+          <div class="w-full bg-white shadow-4xl" style="height:648px">
             <div class="flex w-full justify-between items-center">
               <div>                
                 <p class="text-lg font-semibold text-black pl-7 pt-4">Top de Productos Aplicados</p>

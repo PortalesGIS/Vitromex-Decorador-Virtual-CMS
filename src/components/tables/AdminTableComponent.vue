@@ -2,23 +2,23 @@
   <div class="w-full bg-f5">
     <div class="pl-10 w-full grid grid-cols-12 bg-1f">
       <div class="flex items-center justify-between bg-1f">
-        <p class="text-white text-sm font-bold py-2">
+        <p class="text-force-white text-sm font-bold py-2">
           <input type="checkbox" />
         </p>
       </div>
       <div class="">
-        <p class="text-white text-xs font-semibold py-2">No.</p>
+        <p class="text-force-white text-xs font-semibold py-2">No.</p>
       </div>
       <div class="col-span-2 flex items-center justify-start mr-4">
-        <p class="text-white text-xs font-semibold py-2">Nombre</p>
+        <p class="text-force-white text-xs font-semibold py-2">Nombre</p>
         <i class="fas fa-angle-down px-2" style="color: white"></i>
       </div>
       <div class="col-span-2 flex items-center justify-start mr-4">
-        <p class="text-white text-xs font-semibold py-2">Correo</p>
+        <p class="text-force-white text-xs font-semibold py-2">Correo</p>
         <i class="fas fa-angle-down px-2" style="color: white"></i>
       </div>
       <div class="col-span-2 flex items-center justify-start mr-4">
-        <p class="text-white text-xs font-semibold py-2">Fecha de registro</p>
+        <p class="text-force-white text-xs font-semibold py-2">Fecha de registro</p>
         <i class="fas fa-angle-down px-2" style="color: white"></i>
       </div>
     </div>
@@ -26,22 +26,22 @@
     <div v-for="(user, i) in getAllAdmins" :key="i">
       <div class="pl-10 grid grid-cols-12" :class="i % 2 ? 'bg-white' : ''">
         <div class="col-span-1">
-          <p class="text-black text-sm py-2">
+          <p class="text-force-black text-sm py-2">
             <input 
             @change="selectCheckBox(user._id)"
             type="checkbox" /></p>
         </div>
         <div class="">
-          <p class="text-black text-sm py-2">{{ i }}</p>
+          <p class="text-force-black text-sm py-2">{{ i }}</p>
         </div>
         <div class="col-span-2">
-          <p class="text-black text-sm py-2">{{ user.name }}</p>
+          <p class="text-force-black text-sm py-2">{{ user.name }}</p>
         </div>
         <div class="col-span-2">
-          <p class="text-black text-sm py-2">{{ user.email }}</p>
+          <p class="text-force-black text-sm py-2">{{ user.email }}</p>
         </div>
         <div class="col-span-2">
-          <p class="text-black text-sm py-2 overflow-x-hidden">
+          <p class="text-force-black text-sm py-2 overflow-x-hidden">
             {{ user.dateCreated }}
           </p>
         </div>
@@ -51,7 +51,7 @@
   </div>
   <div class="pl-10 py-2 flex items-center w-full justify-between bg-1f">
     <div class="flex items-center">
-      <p class="text-white font-semibold text-xs pr-2">Total de Filas:</p>
+      <p class="text-force-white font-semibold text-xs pr-2">Total de Filas:</p>
       <div class="border-2 px-1 bg-white">
         <select
           class="
@@ -75,7 +75,7 @@
     </div>
     <div class="flex mr-7 items-center">
       <div>
-        <p class="text-white font-semibold text-xs">20-12,458</p>
+        <p class="text-force-white font-semibold text-xs">20-12,458</p>
       </div>
       <div class="cursor-pointer ml-7">
         <img

@@ -11,10 +11,10 @@
                 </div>
                 <div class="px-8">
                     <div class="-mt-3">
-                        <p class="uppercase text-xl text-black font-bold">Nuevo administrador</p>
+                        <p class="uppercase text-xl text-force-black font-bold">Nuevo administrador</p>
                     </div>
                     <div class="pt-6">
-                        <p class="text-black text-sm font-normal">Nombre del administrador</p>
+                        <p class="text-force-black text-sm font-normal">Nombre del administrador</p>
                     </div>   
                    <form action=""
                         @submit.prevent="onSaveNewAdmin"
@@ -27,7 +27,7 @@
                         placeholder="Escribe el nombre del nuevo administrador">
                     </div>                               
                     <div class="pt-6">
-                        <p class="text-black text-sm font-normal">Correo</p>
+                        <p class="text-force-black text-sm font-normal">Correo</p>
                     </div>         
                     <div class="pt-3">
                         <input type="email" 
@@ -45,7 +45,7 @@
                         class="w-full flex justify-center pt-3">
                         <button 
                         type="submit"
-                        class="bg-1f text-white w-44 h-8 text-sm font-medium">Agregar</button>    
+                        class="bg-1f text-force-white w-44 h-8 text-sm font-medium">Agregar</button>    
                     </div>                                                
                    </form>              
                 </div>                

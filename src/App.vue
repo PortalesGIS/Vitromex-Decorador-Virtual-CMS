@@ -10,12 +10,21 @@
 </div>
 <!-- /Active Breakpoint Indicator -->
   <p class="bg-red-400 text-sm">
-    V 0.9.2
+    V 0.9.4
   </p>
   </div>
- 
+ <div :class="getPageState?'':'theme-arko'">
   <router-view/>
+ </div>
 </template>
+<script >
+import { mapGetters } from 'vuex'
 
+export default {
+  computed: {
+    ...mapGetters(["getPageState"])
+  },
+}
+</script>
 <style>
 </style>

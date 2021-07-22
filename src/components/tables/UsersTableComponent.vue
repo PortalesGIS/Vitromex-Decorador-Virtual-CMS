@@ -2,9 +2,9 @@
   <div class="w-full bg-f5 ">
       <div class="pl-10 w-full  grid grid-cols-12 bg-1f">
           <div class="">
-              <p class="text-white text-xs font-semibold py-2">No.</p></div>
+              <p class="text-force-white text-xs font-semibold py-2">No.</p></div>
           <div class="col-span-2 flex items-center justify-start">
-              <p class="text-white text-xs font-semibold py-2">Nombre</p>
+              <p class="text-force-white text-xs font-semibold py-2">Nombre</p>
               <div class="">
             <img 
             @click="filterAlphabetUsers('name')"
@@ -12,7 +12,7 @@
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start">
-              <p class="text-white text-xs font-semibold py-2">Apellido</p>
+              <p class="text-force-white text-xs font-semibold py-2">Apellido</p>
               <div class="">
             <img 
              @click="filterAlphabetUsers('lastName')"
@@ -20,14 +20,14 @@
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start">
-              <p class="text-white text-xs font-semibold py-2">Correo</p>
+              <p class="text-force-white text-xs font-semibold py-2">Correo</p>
               <div class="">
             <img  @click="filterAlphabetUsers('email')"
             src="../../assets/dropdown.svg" class="px-2" alt="">
           </div>
               </div>
           <div class="col-span-1 flex items-center justify-start">
-              <p class="text-white text-xs font-semibold py-2">Pais         </p>
+              <p class="text-force-white text-xs font-semibold py-2">Pais         </p>
               <div class="">
             <img 
              @click="filterAlphabetUsers('country')"
@@ -35,14 +35,14 @@
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start">
-              <p class="text-white text-xs font-semibold py-2">Ciudad</p>
+              <p class="text-force-white text-xs font-semibold py-2">Ciudad</p>
               <div class="">
             <img  @click="filterAlphabetUsers('city')"
             src="../../assets/dropdown.svg" class="px-2" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start">
-              <p class="text-white text-xs font-semibold py-2">Fecha de Registro</p>
+              <p class="text-force-white text-xs font-semibold py-2">Fecha de Registro</p>
               <div class="">
             <img  @click="filterAlphabetUsers('dateUserCreated')"
             src="../../assets/dropdown.svg" class="px-2" alt="">
@@ -55,25 +55,25 @@
           <div class="pl-10 grid grid-cols-12  "
            :class="(index%2)?'bg-white':''">
           <div class="">
-              <p class="text-black text-xs font-normal py-2">{{index}}</p>
+              <p class="text-force-black text-xs font-normal py-2">{{index}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-xs font-normal py-2">{{user.name}}</p>
+              <p class="text-force-black text-xs font-normal py-2">{{user.name}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-xs font-normal py-2">{{user.lastName}}</p>
+              <p class="text-force-black text-xs font-normal py-2">{{user.lastName}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-xs font-normal py-2 overflow-x-hidden">{{user.email}}</p>
+              <p class="text-force-black text-xs font-normal py-2 overflow-x-hidden">{{user.email}}</p>
           </div>
           <div class="col-span-1">
-              <p class="text-black text-xs font-normal py-2">{{user.country}}</p>
+              <p class="text-force-black text-xs font-normal py-2">{{user.country}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-xs font-normal py-2">{{user.city}}</p>
+              <p class="text-force-black text-xs font-normal py-2">{{user.city}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-xs font-normal py-2">{{user.dateUserCreated}}</p>
+              <p class="text-force-black text-xs font-normal py-2">{{user.dateUserCreated}}</p>
           </div>
       </div>
       </div>
@@ -81,7 +81,7 @@
   </div>
   <div class="pl-10 py-2 flex items-center w-full  justify-between bg-1f">
      <div class="flex items-center">
-          <p class="text-white font-semibold text-xs pr-2">Total de Filas:</p>
+          <p class="text-force-white font-semibold text-xs pr-2">Total de Filas:</p>
         <div class="border-2 px-1 bg-white">
             <select 
             class="text-xs w-10 pl-2   appearance-none focus:outline-none active:outline-non"
@@ -99,7 +99,7 @@
      </div>
      <div class="flex mr-7 items-center">
          <div>
-             <p class="text-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllUsers.length}}</p>
+             <p class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllUsers.length}}</p>
          </div>
          <div class="cursor-pointer ml-7"
             @click="backPageTable()">

@@ -8,10 +8,10 @@
       </p>
     </div>
       <div class="w-full h-full px-5">
-        <div class="flex items-center w-full  bg-f5 h-16">
+        <div class="flex items-center w-full shadow-4xl bg-f5 h-16">
       <StoresFilterComponentVue/>
     </div>
-    <div class="w-full h-4/6   bg-6f">
+    <div class="w-full h-4/6 shadow-4xl  bg-6f">
      <StoreTablecomponentVue/>
     </div>
       </div>

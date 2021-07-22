@@ -3,41 +3,41 @@
       <div class="flex justify-between">
           <div class="pl-10 w-full  grid grid-cols-12 bg-1f">
           <div class="col-span-1 flex items-center justify-start mr-4">
-              <p class="text-white text-xs font-semibold py-2">No.</p>
+              <p class="text-force-white text-xs font-semibold py-2">No.</p>
               <div class="">
             <img src="../../assets/dropdown.svg" class="px-2" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
-              <p class="text-white text-xs font-semibold py-2">Nombre de la Tienda</p>
+              <p class="text-force-white text-xs font-semibold py-2">Nombre de la Tienda</p>
               <div class="">
             <img @click="filterArrow('name')"
             src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
-              <p class="text-white text-xs font-semibold py-2">Direccion</p>
+              <p class="text-force-white text-xs font-semibold py-2">Direccion</p>
               <div class="">
             <img @click="filterArrow('street')"
             src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
-              <p class="text-white text-xs font-semibold py-2">Coordenadas</p>
+              <p class="text-force-white text-xs font-semibold py-2">Coordenadas</p>
               <div class="">
             <img @click="filterArrow('lat')"
             src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
-              <p class="text-white text-xs font-semibold py-2">Telefono</p>
+              <p class="text-force-white text-xs font-semibold py-2">Telefono</p>
               <div class="">
             <img @click="filterArrow('phone')"
             src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
-              <p class="text-white text-xs font-semibold py-2">Fecha de Registro</p>
+              <p class="text-force-white text-xs font-semibold py-2">Fecha de Registro</p>
               <div class="">
             <img @click="filterArrow('dateCreated')"
             src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
@@ -45,7 +45,7 @@
               </div>
       </div>
       <div class="bg-1f">
-          <div class="px-1"><p class="text-white text-sm font-bold px-4 py-2">Publicar</p></div>
+          <div class="px-1"><p class="text-force-white text-sm font-bold px-4 py-2">Publicar</p></div>
       </div>
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
@@ -55,22 +55,22 @@
              :class="(index%2)?'bg-white':''">
           <div class="pl-10 w-full grid grid-cols-12  ">
           <div class="col-span-1">
-              <p class="text-black text-sm py-2">{{index}}</p>
+              <p class="text-force-black text-sm py-2">{{index}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">{{store.name}}</p>
+              <p class="text-force-black text-sm py-2">{{store.name}}</p>
           </div>
           <div class="col-span-2 ">
-              <p class="text-black text-sm py-2 truncate  ">{{`${store.street} ${store.city}`}}</p>
+              <p class="text-force-black text-sm py-2 truncate  ">{{`${store.street} ${store.city}`}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">{{`${store.lat},${store.lng}`}}</p>
+              <p class="text-force-black text-sm py-2">{{`${store.lat},${store.lng}`}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">{{store.phone}}</p>
+              <p class="text-force-black text-sm py-2">{{store.phone}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-black text-sm py-2">{{store.dateCreated}}</p>
+              <p class="text-force-black text-sm py-2">{{store.dateCreated}}</p>
           </div>
       </div>
         <div 
@@ -81,7 +81,7 @@
                 >
                   <div class="flex px-3 pt-5">
                     <img src="../../assets/alerta.svg" class="pr-2" alt="" />
-                    <p class="text-black text-justify text-xs font-normal">
+                    <p class="text-force-black text-justify text-xs font-normal">
                       ¿Estás seguro que deseas
                       {{ store.status ? "suspender" : "activar" }} este producto en la App y Web 3D?
                     </p>
@@ -95,7 +95,7 @@
                         bg-black
                         text-center text-xs
                         font-medium
-                      text-white "
+                      text-force-white "
                     >
                       {{
                         store.status ? "Suspender" : "Activar"
@@ -129,7 +129,7 @@
   </div>
   <div class="pl-10 py-2 flex items-center w-full  justify-between bg-1f">
      <div class="flex items-center">
-          <p class="text-white font-semibold text-xs pr-2">Total de Filas:</p>
+          <p class="text-force-white font-semibold text-xs pr-2">Total de Filas:</p>
         <div class="border-2 px-1 bg-white">
             <select 
             class="text-xs w-10 pl-2   appearance-none focus:outline-none active:outline-non"
@@ -146,7 +146,7 @@
      </div>
      <div class="flex mr-7 items-center">
          <div>
-             <p class="text-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllStores.length}}</p>
+             <p class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllStores.length}}</p>
          </div>
          <div class="cursor-pointer ml-7"   @click="backPageTable()">
             <img src="../../assets/paginador_izquierda.svg" style="width:18px; height:12px" alt="">

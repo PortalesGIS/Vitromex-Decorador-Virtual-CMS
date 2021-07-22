@@ -11,7 +11,7 @@
         <div
           class="mx-1 px-16 py-2 font-semibold text-sm cursor-pointer rounded-t-sm"
           :class="
-            menuOption === 0 ? 'bg-f5 text-black' : 'bg-555555 text-white'
+            menuOption === 0 ? 'bg-f5 text-force-black' : 'bg-555555 text-force-white'
           "
           @click="chageMenuOption(0)"
         >
@@ -20,7 +20,7 @@
         <div
           class=" px-16 py-2 font-semibold text-sm cursor-pointer rounded-t-sm"
           :class="
-            menuOption === 1 ? 'bg-f5 text-black' : 'bg-555555 text-white'
+            menuOption === 1 ? 'bg-f5 text-force-black' : 'bg-555555 text-force-white'
           "
           @click="chageMenuOption(1)"
         >
@@ -29,7 +29,7 @@
       </div>
       <div v-if="menuOption === 1" class="w-full h-full overflow-x-hidden">
         <div class="w-full h-full px-5">
-          <div class="flex items-center w-full  bg-f5 h-16 overflow-x-hidden">
+          <div class="flex items-center w-full shadow-4xl  bg-f5 h-16  ">
             <ProductsFiltercomponentVue />
           </div>
           <div class="w-full h-4/6   bg-f5">
@@ -38,7 +38,7 @@
         </div>
       </div>
       <div v-else class="w-full h-full px-5 ">
-        <div class="flex items-center w-full  bg-f5 h-16">
+        <div class="flex items-center w-full shadow-4xl   bg-f5 h-16">
             <SeriesFiltercomponentVue />
           </div>
           <div class="w-full h-4/6   bg-f5">

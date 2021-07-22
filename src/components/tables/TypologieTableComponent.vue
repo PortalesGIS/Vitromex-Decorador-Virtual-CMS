@@ -8,23 +8,23 @@
       <div class=" flex justify-between bg-1f">
           <div class="pl-10 w-full max-w-1400px grid grid-cols-12 bg-1f">
           <div class="col-span-1 flex items-center justify-center mr-4">
-              <p class="text-white text-xs font-semibold py-2"></p>
+              <p class="text-force-white text-xs font-semibold py-2"></p>
             </div>
           <div class="col-span-1 flex items-center justify-center mr-4">
-              <p class="text-white text-xs font-semibold py-2">No.</p>
+              <p class="text-force-white text-xs font-semibold py-2">No.</p>
             </div>
           <div class="col-span-2 flex items-center justify-center mr-4">
-              <p class="text-white text-xs font-semibold py-2">Imágenes</p>
+              <p class="text-force-white text-xs font-semibold py-2">Imágenes</p>
             </div>
           <div class="col-span-2 flex items-center justify-center mr-4">
-              <p class="text-white text-xs font-semibold py-2">Nombre del Espacio</p>
+              <p class="text-force-white text-xs font-semibold py-2">Nombre del Espacio</p>
             </div>
           <div class="col-span-2 flex items-center justify-center mr-4">
-              <p class="text-white text-xs font-semibold py-2">Fecha de Registro</p>
+              <p class="text-force-white text-xs font-semibold py-2">Fecha de Registro</p>
             </div>
       </div>
       <div class="bg-1f">
-          <div class="mr-10"><p class="text-white text-sm font-bold py-2">Editar</p></div>
+          <div class="mr-10"><p class="text-force-white text-sm font-bold py-2">Editar</p></div>
       </div>
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
@@ -35,24 +35,24 @@
              :class="(index%2)?'bg-white':''">
           <div class="pl-10 w-full grid grid-cols-12 max-w-1400px ">
               <div class="col-span-1 flex justify-start items-center">
-              <p class="text-black text-sm py-2"> 
+              <p class="text-force-black text-sm py-2"> 
                   <input @change="changeTextBox(typologie._id)" type="checkbox">
                   </p>
           </div>
           <div class="col-span-1 flex justify-center items-center">
-              <p class="text-black text-sm py-2">{{index}}</p>
+              <p class="text-force-black text-sm py-2">{{index}}</p>
           </div>
           <div class="col-span-2 flex justify-center items-center">
-              <!-- <p class="text-black text-sm py-2">{{typologie.name}}</p> -->
+              <!-- <p class="text-force-black text-sm py-2">{{typologie.name}}</p> -->
               <div class="py-2">
                 <img  :src="typologie.img" style="width:86px; height:86px" alt="">              
               </div>
           </div>
           <div class="col-span-2  flex justify-center items-center">
-              <p class="text-black text-sm py-2 truncate  ">{{typologie.name}}</p>
+              <p class="text-force-black text-sm py-2 truncate  ">{{typologie.name}}</p>
           </div>
           <div class="col-span-2 flex justify-center items-center">
-              <p class="text-black text-sm py-2">{{typologie.dateCreated}}</p>
+              <p class="text-force-black text-sm py-2">{{typologie.dateCreated}}</p>
           </div>
       </div>
       <div class="mr-10 flex items-center">
@@ -68,7 +68,7 @@
           </div>      
  <div class="pl-10 py-2 flex items-center w-full  justify-between bg-1f">
      <div class="flex items-center">
-          <p class="text-white font-semibold text-xs pr-2">Total de Filas:</p>
+          <p class="text-force-white font-semibold text-xs pr-2">Total de Filas:</p>
         <div class="border-2 px-1 bg-white">
             <select 
             class="text-xs w-10 pl-2   appearance-none focus:outline-none active:outline-non"
@@ -83,7 +83,7 @@
      </div>
      <div class="flex mr-7 items-center">
          <div>
-             <p class="text-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllTypologies.length}}</p>
+             <p class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllTypologies.length}}</p>
          </div>
          <div class="cursor-pointer ml-7"    @click="backPageTable()">
             <img src="../../assets/paginador_izquierda.svg" style="width:18px; height:12px" alt="">

@@ -34,7 +34,7 @@ ref="modalDelete"
               <div>
                   <button 
                   @click="onOpenModal"
-                  class="w-48 h-8 bg-black text-white">
+                  class="w-48 h-8 bg-black text-force-white">
                       Nuevo espacio
                   </button>
               </div>

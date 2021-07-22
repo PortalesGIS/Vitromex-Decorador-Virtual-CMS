@@ -6,20 +6,20 @@
             <div class="bg-white" style="width:434px; height:183px">               
                 <div class="px-4">
                     <div class="mt-5">
-                        <p class="text-black text-xl font-bold uppercase">Eliminar {{name}}</p>
+                        <p class="text-force-black text-xl font-bold uppercase">Eliminar {{name}}</p>
                     </div>
                     <div class="mt-3">
                         <p
-                        class="text-black text-sm font-normal"
+                        class="text-force-black text-sm font-normal"
                         >¿Estás seguro de que deseas eliminar?</p>
                     </div>
                     <div class="flex justify-evenly mt-7">
                         <button 
                         @click="OnAccept"
-                        class="bg-1f text-white w-44 h-8 ">Eliminar</button>
+                        class="bg-1f text-force-white w-44 h-8 ">Eliminar</button>
                         <button 
                         @click="closeModal"
-                        class="bg-white w-44 text-black h-8 border border-black ">Cancelar</button>
+                        class="bg-white w-44 text-force-black h-8 border border-black ">Cancelar</button>
                     </div>
                 </div>  
             </div>

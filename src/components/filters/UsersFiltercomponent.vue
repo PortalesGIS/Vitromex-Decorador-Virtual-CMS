@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-8 flex">
+  <div class="w-full h-8 flex ">
       <div class="flex justify-between w-full">
           <div class="flex">
                 <div class="h-full ml-10 mr-4 bg-white">
@@ -34,7 +34,7 @@
           <div class="flex justify-center items-center pr-3">
               <button 
               @click="onexportDocument"
-              class="bg-1f w-44 h-8 text-white text-sm">Exportar Documento</button>
+              class="bg-1f w-44 h-8 text-force-white text-sm">Exportar Documento</button>
           </div>
       </div>
           

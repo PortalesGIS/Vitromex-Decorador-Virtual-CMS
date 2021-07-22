@@ -11,7 +11,7 @@
         <div
           class="mx-1 px-16 py-2 font-semibold text-sm cursor-pointer rounded-t-sm"
           :class="
-            menuOption === 0 ? 'bg-f5 text-black' : 'bg-555555 text-white'
+            menuOption === 0 ? 'bg-f5 text-force-black' : 'bg-555555 text-force-white'
           "
           @click="chageMenuOption(0)"
         >
@@ -20,7 +20,7 @@
         <div
           class="  px-16 py-2 font-semibold text-sm cursor-pointer rounded-t-sm"
           :class="
-            menuOption === 1 ? 'bg-f5 text-black' : 'bg-555555 text-white'
+            menuOption === 1 ? 'bg-f5 text-force-black' : 'bg-555555 text-force-white'
           "
           @click="chageMenuOption(1)"
         >
