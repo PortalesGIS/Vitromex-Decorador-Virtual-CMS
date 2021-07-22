@@ -3,9 +3,15 @@ import { normalizeText } from "../helpers";
 
 import {baseUrl} from "../../types/data"
 
-export const getAllUsersApp = async ({commit})=>{
-    
-    await fetch(`${baseUrl}/api/user?limit=100`,{
+export const getAllUsersApp = async ({commit,getters})=>{
+  let platform="";
+  if(getters.getPageState){
+     platform =""
+  }  
+  else{
+     platform = "arko"
+  }
+    await fetch(`${baseUrl}/api/user/${platform}`,{
       method: "GET",
       headers:{
         'Content-Type': 'application/json'

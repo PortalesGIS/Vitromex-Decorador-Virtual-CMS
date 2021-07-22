@@ -24,7 +24,7 @@ import * as mutationsDashboard from './dashboard/mutationsDashboard'
 
 export default createStore({
   state: {
-    pageState:false,
+    pageState:true,
     adminStateLogin:false,
     activeWindow:1,
     dashboard:{
