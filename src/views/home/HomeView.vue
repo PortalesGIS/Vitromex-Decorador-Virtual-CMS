@@ -1,7 +1,16 @@
 <template>
-  <div class="flex h-screen w-screen">
+<div v-if="sesionExpired" class="absolute top-0 z-50 w-screen flex justify-center">
+  <div class="bg-white flex">
+    <p class="text-3xl">¡Sesion expirada iniciar sesión de nuevo!</p>
+    <button  class="text-3xl pl-2 font-bold"
+    @click="exitCms"
+    > Aqui</button>
+  </div>
+</div>
+  <div v-else class="flex h-screen w-screen">
     <MenuGlobalComponenVue/>
     <div class="w-full h-full">
+      
       <div 
         v-if="getVieWindow===windows.dashboard"
         class="w-full h-full">
@@ -32,12 +41,12 @@
         class="w-full h-full">
         <AdmisComponentVue/>
       </div>    
-    </div>    
+    </div>        
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 import MenuGlobalComponenVue from '../../components/menus/MenuGlobalComponen.vue'
 import AdmisComponentVue from '../../components/sections/AdmisComponent.vue'
 import DashboradComponentVue from '../../components/sections/DashboradComponent.vue'
@@ -61,8 +70,17 @@ export default {
       windows:typesViewsMenu
     }
   },
+  methods: {
+    ...mapActions(["exitCms"])
+  },
   computed: {
     ...mapGetters(["getVieWindow"]),
+    sesionExpired(){
+      if(localStorage.getItem("token")){
+        return false;
+      }
+      return true;
+    }
   },
 }
 </script>
