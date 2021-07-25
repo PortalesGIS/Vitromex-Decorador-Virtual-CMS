@@ -19,12 +19,19 @@ export const getNmberOfUsers = async ({ commit }) => {
     .catch((error) => console.log("error", error));
 };
 
-export const onGetProductsFavorites = async ({ commit }) => {
+export const onGetProductsFavorites = async ({ commit,getters }) => {
+  let platform="";
+  if(getters.getPageState){
+     platform =""
+  }  
+  else{
+     platform = "arko"
+  }
   let requestOptions = {
     method: "GET",
     redirect: "follow",
   };
-  fetch(`${baseUrl}/api/favorite/list`, requestOptions)
+  fetch(`${baseUrl}/api/favorite/list/${platform}`, requestOptions)
     .then((response) => response.json())
     .then(async (result) => {
       const arrayformated = await Promise.all(
@@ -46,12 +53,19 @@ export const onGetProductsFavorites = async ({ commit }) => {
     .catch((error) => console.log("error", error));
 };
 
-export const onGetProductsAplicated = async ({ commit }) => {
+export const onGetProductsAplicated = async ({ commit,getters }) => {
+  let platform="";
+  if(getters.getPageState){
+     platform =""
+  }  
+  else{
+     platform = "arko"
+  }
   let requestOptions = {
     method: "GET",
     redirect: "follow",
   };
-  fetch(`${baseUrl}/api/counter/list`, requestOptions)
+  fetch(`${baseUrl}/api/counter/list/${platform}`, requestOptions)
     .then((response) => response.json())
     .then(async (result) => {
       const arrayformated = await Promise.all(

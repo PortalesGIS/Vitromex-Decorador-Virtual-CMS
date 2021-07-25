@@ -1,10 +1,16 @@
 import { normalizeText } from "../helpers";
-
 import {baseUrl} from "../../types/data"
 
-export const getAllSeriesDB = async ({commit})=>{
-    
-    await fetch(`${baseUrl}/api/series/cms`,{
+
+export const getAllSeriesDB = async ({commit,getters})=>{
+  let platform="";
+  if(getters.getPageState){
+     platform =""
+  }  
+  else{
+     platform = "arko"
+  }
+    await fetch(`${baseUrl}/api/series/cms/${platform}`,{
       method: "GET",
       headers:{
         'Content-Type': 'application/json'

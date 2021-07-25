@@ -20,6 +20,7 @@ import * as mutationsOnboarding from './onboarding/mutationsOnboarding'
 import * as actionsDashboard from './dashboard/actionsDashboard'
 import * as gettersDashboard from './dashboard/gettersDashboard'
 import * as mutationsDashboard from './dashboard/mutationsDashboard'
+import router from '../router'
 
 
 export default createStore({
@@ -78,7 +79,8 @@ export default createStore({
     onChangeViewWindow({commit},payload){      
       commit("setView",payload);
     },
-    onChangeStatePage({commit},payload){      
+    onChangeStatePage({commit},payload){ 
+      router.push("/")     
       commit("setStatePage",payload);
     }
   },
