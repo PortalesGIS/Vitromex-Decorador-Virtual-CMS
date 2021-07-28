@@ -76,6 +76,7 @@ export default {
   computed: {
     ...mapGetters(["getVieWindow"]),
     sesionExpired(){
+      // TODO: optimizar cuando una peticion regresa error(JWT expirado) mandar esta alerta VUEX
       if(localStorage.getItem("token")){
         return false;
       }

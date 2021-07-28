@@ -281,19 +281,22 @@
                     </div>  
                     <div class="mt-6 px-16">
                         <p class="text-force-black text-sm font-semibold">Repeticiones</p>
-                        <p class="mt-2 text-xs text-force-black font-normal">Indica el número de veces que se repitió el producto a lo largo y a lo ancho para generar el patrón en las texturas de Albedo y Normal.</p>
+                        <p class="mt-2 text-xs text-force-black font-normal">Indica el número de veces que se repitió el 
+                            producto a lo largo(<strong>Y</strong>) y a lo ancho(<strong>X</strong>) para generar el patrón en las texturas de Albedo y Normal.</p>
                     </div>  
                     <div class="mt-2 px-16">
                         <div class="flex ">
-                            <div>
-                                <input 
-                                v-model="textureHeight"
-                                class="pl-2 h-8 border w-40" type="text" placeholder="Largo">
-                            </div>
-                            <div>
+                            <div class="flex items-center">
+                                <p class="font-bold text-lg pr-1">X</p>                                
                                 <input 
                                 v-model="textureWidth"
-                                class="pl-2 h-8 border w-40 ml-8" type="text" placeholder="Ancho">
+                                class="pl-2 h-8 border w-40" type="text" placeholder="Largo">
+                            </div>
+                            <div class="flex ml-8 items-center">
+                                <p class="font-bold text-lg pr-1">Y</p>
+                                <input 
+                                v-model="textureHeight"
+                                class="pl-2 h-8 border w-40 " type="text" placeholder="Ancho">
                             </div>
                         </div>
                     </div>  
