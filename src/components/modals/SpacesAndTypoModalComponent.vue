@@ -14,6 +14,7 @@
                             {{isNew?'Nuevo':'Editar'}} {{titleForm}}
                     </p>
                 </div>
+                <div v-if="titleForm==='espacio'">
                 <div  class="flex justify-start pl-6 pt-5 pb-3">
                     <p class="text-sm">Nombre del {{titleForm}}</p>
                 </div>
@@ -24,13 +25,15 @@
                         class="border w-full h-8 pl-3" type="text" placeholder="Ingresa el nombre">
                     
                 </div>
+                </div>
                 <div  class="flex justify-center pt-6">
                      <p>Imagen Miniatura</p>
                 </div>
                 <div  class="flex justify-center pt-3">
                     <label for="inpfile">
-                        <div class="bg-f5 px-6 pt-4 cursor-pointer">
-                        <div v-if="!img">
+                        <div class=" px-6 pt-4 cursor-pointer">
+                        <div class="flex justify-center">
+                            <div v-if="!img">
                             <img 
                          src='../../assets/agregar_imagen.svg'
                         style="width:120px;height:120px" alt="">
@@ -40,7 +43,8 @@
                          :src="img"
                         style="width:120px;height:120px" alt="">
                         </div>
-                        <p class="py-2 " style="color:#6e6e6e">Agregar imagen</p>
+                        </div>
+                        <p class="my-1 py-1 border-2 px-2 border-black" style="color:#1f1f1f">Cambiar imagen</p>
                     </div>
                     <input 
                         @change="addFileImg"   
@@ -57,7 +61,7 @@
                     class="w-44 h-8 text-white"
                     :class="btnDisabled ? 'bg-gray-300':'bg-black'"
                     >
-                        Agregar
+                         {{isNew?'Guardar':'Agregar'}}
                     </button>                    
                 </div>
             </div>

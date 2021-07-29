@@ -47,7 +47,7 @@
           <div class="flex justify-between" :class="index % 2 ? 'bg-white' : ''">
           <div class="pl-10 w-full grid grid-cols-12 max-w-1400px">
             <div class="col-span-1 flex justify-start">
-              <p class="text-force-black text-sm py-2">{{ index }}</p>
+              <p class="text-force-black text-sm py-2">{{ index+1 }}</p>
             </div>
             <div class="col-span-2 flex justify-start">
               <p class="text-force-black text-sm py-2">{{ serie.name }}</p>

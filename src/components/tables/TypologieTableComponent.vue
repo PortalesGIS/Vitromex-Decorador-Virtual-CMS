@@ -40,7 +40,7 @@
                   </p>
           </div>
           <div class="col-span-1 flex justify-center items-center">
-              <p class="text-force-black text-sm py-2">{{index}}</p>
+              <p class="text-force-black text-sm py-2">{{index+1}}</p>
           </div>
           <div class="col-span-2 flex justify-center items-center">
               <!-- <p class="text-force-black text-sm py-2">{{typologie.name}}</p> -->
@@ -76,7 +76,7 @@
             <option value="20">20</option>
             <option value="50">50</option>
             <option value="100">10</option>
-            <option value="100000">full</option>
+            <option value="100000">todo</option>
         </select>
         <i class="fas fa-angle-down w-2"></i>
         </div>

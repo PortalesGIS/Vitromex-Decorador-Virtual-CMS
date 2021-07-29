@@ -55,7 +55,7 @@
           <div class="pl-10 grid grid-cols-12  "
            :class="(index%2)?'bg-white':''">
           <div class="">
-              <p class="text-force-black text-xs font-normal py-2">{{index}}</p>
+              <p class="text-force-black text-xs font-normal py-2">{{index+1}}</p>
           </div>
           <div class="col-span-2">
               <p class="text-force-black text-xs font-normal py-2">{{user.name}}</p>
@@ -92,7 +92,7 @@
             <option value="20">20</option>
             <option value="50">50</option>
             <option value="100">100</option>
-            <option value="100000">full</option>
+            <option value="100000">todo</option>
         </select>
         <i class="fas fa-angle-down w-2"></i>
         </div>

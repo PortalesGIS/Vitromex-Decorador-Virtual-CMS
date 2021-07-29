@@ -59,7 +59,7 @@
                     <button 
                     @click="onSave"
                     class="w-44 h-8 bg-1f text-white">
-                        Agregar imagen
+                        Guardar
                         </button>                    
                 </div>
             </div>

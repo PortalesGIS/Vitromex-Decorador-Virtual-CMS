@@ -32,7 +32,7 @@
             type="checkbox" /></p>
         </div>
         <div class="">
-          <p class="text-force-black text-sm py-2">{{ i }}</p>
+          <p class="text-force-black text-sm py-2">{{ i+1 }}</p>
         </div>
         <div class="col-span-2">
           <p class="text-force-black text-sm py-2">{{ user.name }}</p>
@@ -68,7 +68,7 @@
           <option value="20">20</option>
           <option value="50">50</option>
           <option value="10">10</option>
-          <option value="1000">full</option>
+          <option value="1000">todo</option>
         </select>
         <i class="fas fa-angle-down w-2"></i>
       </div>

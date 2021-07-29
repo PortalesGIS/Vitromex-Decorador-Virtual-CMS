@@ -227,7 +227,7 @@
                                     <img src="../../assets/agregar_imagen.svg" style="width:51px; height:51px" alt=""> 
                                </div>
                                <div v-else class="flex justify-center pt-5">
-                                    <img :src="albedo" style="width:174px; height:112px" alt=""> 
+                                    <img :src="albedo" class="object-cover" style="width:174px; height:112px" alt=""> 
                                </div>
                                <div v-if="albedo===''" class="flex w-full justify-center">
                                     <p  class="text-xs mt-2">Agregar imagen</p>
@@ -259,7 +259,7 @@
                                     <img src="../../assets/agregar_imagen.svg" style="width:51px; height:51px" alt=""> 
                                </div>
                                <div v-else class="flex justify-center pt-5">
-                                    <img :src="normal" style="width:174px; height:112px" alt=""> 
+                                    <img :src="normal" class="object-cover" style="width:174px; height:112px" alt=""> 
                                </div>
                                 <div v-if="normal===''" class="flex w-full justify-center">
                                     <p  class="text-xs mt-2">Agregar imagen</p>
@@ -282,7 +282,7 @@
                     <div class="mt-6 px-16">
                         <p class="text-force-black text-sm font-semibold">Repeticiones</p>
                         <p class="mt-2 text-xs text-force-black font-normal">Indica el número de veces que se repitió el 
-                            producto a lo largo(<strong>Y</strong>) y a lo ancho(<strong>X</strong>) para generar el patrón en las texturas de Albedo y Normal.</p>
+                            producto a lo largo (<strong>Y</strong>) y a lo ancho (<strong>X</strong>) para generar el patrón en las texturas de Albedo y Normal.</p>
                     </div>  
                     <div class="mt-2 px-16">
                         <div class="flex ">
@@ -338,7 +338,10 @@
                     <div class=" relative bottom-0 mt-5 px-16">
                         <div class="flex justify-center">
                             <button  @click="beforePage" class="mx-2 w-44 h-8 border border-black">Anterior</button>                                
-                            <button  @click="save" class="mx-2 w-44 h-8 bg-black text-force-white">Guardar Cambios</button>                                
+                            <button 
+                            :disabled="activeBtn"
+                            :class="!activeBtn?'':'opacity-10'"
+                             @click="save" class="mx-2 w-44 h-8 bg-black text-force-white">Guardar Cambios</button>                                
                         </div>
                     </div>                    
                 </div>
@@ -360,6 +363,7 @@ export default {
             activeModal:false,
             activeModalAccept:false,
             modalCancel:false,
+            isModificate:false,
             page: 0,
             img1:"",
             fileimg1:File,
@@ -380,7 +384,10 @@ export default {
         }
     },
     computed: {
-        ...mapGetters(["getAllSpaces"])
+        ...mapGetters(["getAllSpaces"]),
+        activeBtn(){
+            return   !this.isModificate
+        }
     },
     methods: {
         ...mapActions(["updateProductDB","getAllSpacesDB"]),
@@ -477,14 +484,19 @@ export default {
             }
             else{
              this.spaces.push(value)
+             this.onModificateSomething()
             }
         },
         save(){
             this.activeModal = false;
             this.activeModalAccept = true;
         },
+        onModificateSomething(){
+            this.isModificate=true
+        },
         onAccept(){
             this.onCloseModal()
+              this.isModificate=false;
             this.updateProductDB({
                 id:this.id,
                 name:this.name,

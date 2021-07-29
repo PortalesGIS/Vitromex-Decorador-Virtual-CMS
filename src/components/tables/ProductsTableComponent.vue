@@ -186,7 +186,7 @@
             >
               <td v-if="index >= startData && index <= endData">
                 <div class=" flex justify-center">
-                  <p class="text-force-black text-sm py-2">{{ index }}</p>
+                  <p class="text-force-black text-sm py-2">{{ index+1 }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
@@ -480,7 +480,7 @@
           <option value="20">20</option>
           <option value="50">50</option>
           <option value="100">100</option>
-          <option value="100000">full</option>
+          <option value="100000">todo</option>
         </select>
         <i class="fas fa-angle-down w-2"></i>
       </div>
@@ -575,8 +575,10 @@ export default {
       }
       return false;
     },
+    // alerts active/disable 
     onChageStatusAvailable(product, index) {
       if (product.available) {
+         this.modalNewProduct =-1
         return (this.modalAlertDisableProduct = index);
       }
       if (this.verifyProductIsComplete(product)) {
@@ -590,11 +592,20 @@ export default {
       this.modalAlertDisableProduct = -1;
     },
     colseModalDisableProduct(){
-this.modalAlertDisableProduct = -1;
+      this.modalAlertDisableProduct = -1;
     },
     closeModalIncompleteProduct(value) {
       this.modalActiveProduct = value;
     },
+    onChangeStatusIsNew(product) {
+      this.changeStatusIsNewProductDB(product);
+      this.modalNewProductToggle(-1);
+    },
+    modalNewProductToggle(value) {
+      this.colseModalDisableProduct()
+      this.modalNewProduct = value;
+    },
+      // 
     changeRange() {
       this.startData = 0;
       this.endData = this.numberDataPerPage;
@@ -618,13 +629,6 @@ this.modalAlertDisableProduct = -1;
         this.startData =
           parseInt(this.endData) - parseInt(this.numberDataPerPage);
       }
-    },
-    onChangeStatusIsNew(product) {
-      this.changeStatusIsNewProductDB(product);
-      this.modalNewProductToggle(-1);
-    },
-    modalNewProductToggle(value) {
-      this.modalNewProduct = value;
     },
   },
   computed: {

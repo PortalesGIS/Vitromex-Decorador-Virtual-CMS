@@ -20,7 +20,7 @@ ref="modalDelete"
                     placeholder="Buscar"
               >
               </div>
-              <div class="flex">
+              <div class=" hidden">
               <div class="px-6"
                     :class="!isActive ? 'opacity-100':'opacity-10'"
               >
