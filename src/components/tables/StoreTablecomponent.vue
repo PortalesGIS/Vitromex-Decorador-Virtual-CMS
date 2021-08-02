@@ -45,7 +45,7 @@
               </div>
       </div>
       <div class="bg-1f">
-          <div class="px-1"><p class="text-force-white text-sm font-bold px-4 py-2">Publicar</p></div>
+          <div class="px-1"><p class="text-force-white text-sm font-bold px-4 py-2">Suspender</p></div>
       </div>
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
@@ -146,7 +146,9 @@
      </div>
      <div class="flex mr-7 items-center">
          <div>
-             <p class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllStores.length}}</p>
+             <!-- <p class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllStores.length}}</p> -->
+             <p v-if="endData<10000" class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllStores.length}}</p>
+          <p v-else class="text-force-white font-semibold text-xs">Todo</p>
          </div>
          <div class="cursor-pointer ml-7"   @click="backPageTable()">
             <img src="../../assets/paginador_izquierda.svg" style="width:18px; height:12px" alt="">

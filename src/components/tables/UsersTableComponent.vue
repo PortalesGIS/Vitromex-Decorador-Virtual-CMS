@@ -99,7 +99,9 @@
      </div>
      <div class="flex mr-7 items-center">
          <div>
-             <p class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllUsers.length}}</p>
+             <!-- <p class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllUsers.length}}</p> -->
+             <p v-if="endData<10000" class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllUsers.length}}</p>
+          <p v-else class="text-force-white font-semibold text-xs">Todo</p>
          </div>
          <div class="cursor-pointer ml-7"
             @click="backPageTable()">
@@ -118,9 +120,9 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
     data() {
         return {
-             numberDataPerPage: 20,
-      startData:0,
-      endData:20,
+            numberDataPerPage: 20,
+            startData:0,
+            endData:20,
         }
     },
     methods: {

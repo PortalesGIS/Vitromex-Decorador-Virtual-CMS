@@ -1,7 +1,7 @@
 <template>
   <div class="w-full h-8 flex">
       <div class="h-full ml-10 mr-4 bg-white">
-          <div class="flex items-center h-full  max-w-17">
+          <div class="flex items-center h-full  max-w-17 border" style="border-color: #D4D4D4">
               <img src="../../assets/buscar.svg" class="w-4 h-4 mx-2" alt="">    
               <input type="text"
                v-model="word"
@@ -11,7 +11,7 @@
               >
           </div>
       </div>
-      <div class="flex h-full bg-white items-center">
+      <div class="flex h-full bg-white items-center border" style="border-color: #D4D4D4">
             <i class="fas fa-calendar-alt mx-2"></i>
           <input 
           v-model="dateone"

@@ -24,6 +24,7 @@
     </div>
     <div class="pl-10 h-px w-full bg-gray-400"></div>
     <div v-for="(user, i) in getAllAdmins" :key="i">
+       <div v-if="(i >= startData && i <= endData)">
       <div class="pl-10 grid grid-cols-12" :class="i % 2 ? 'bg-white' : ''">
         <div class="col-span-1">
           <p class="text-force-black text-sm py-2">
@@ -46,6 +47,7 @@
           </p>
         </div>
       </div>
+      </div>
     </div>
     
   </div>
@@ -53,52 +55,45 @@
     <div class="flex items-center">
       <p class="text-force-white font-semibold text-xs pr-2">Total de Filas:</p>
       <div class="border-2 px-1 bg-white">
-        <select
-          class="
-            text-xs
-            w-10
-            pl-2
-            appearance-none
-            focus:outline-none
-            active:outline-non
-          "
-          name=""
-          id=""
-        >
-          <option value="20">20</option>
-          <option value="50">50</option>
-          <option value="10">10</option>
-          <option value="1000">todo</option>
+        <select 
+            class="text-xs w-10 pl-2   appearance-none focus:outline-none active:outline-non"
+            name="" id=""
+            v-model="numberDataPerPage"
+            @change="changeRange"
+            >
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="100000">todo</option>
         </select>
         <i class="fas fa-angle-down w-2"></i>
       </div>
     </div>
     <div class="flex mr-7 items-center">
-      <div>
-        <p class="text-force-white font-semibold text-xs">20-12,458</p>
-      </div>
-      <div class="cursor-pointer ml-7">
-        <img
-          src="../../assets/paginador_izquierda.svg"
-          style="width: 18px; height: 12px"
-          alt=""
-        />
-      </div>
-      <div class="cursor-pointer ml-14">
-        <img
-          src="../../assets/paginador_derecha.svg"
-          style="width: 18px; height: 12px"
-          alt=""
-        />
-      </div>
-    </div>
+         <div>
+             <p v-if="endData<10000" class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllAdmins.length}}</p>
+             <p v-else class="text-force-white font-semibold text-xs">Todo</p>
+         </div>
+         <div class="cursor-pointer ml-7"
+            @click="backPageTable()">
+            <img src="../../assets/paginador_izquierda.svg" style="width:18px; height:12px" alt="">
+         </div>
+         <div class="cursor-pointer ml-14"
+          @click="nextPageTable">
+            <img src="../../assets/paginador_derecha.svg" style="width:18px; height:12px" alt="">            
+         </div>
+     </div>
   </div>
 </template>
 <script>
 import { mapActions, mapGetters } from "vuex";
 export default {
   data() {
-    return {};
+    return {
+            numberDataPerPage: 20,
+            startData:0,
+            endData:20,
+        }
   },  
   props: {
     onSelectedAdmin: {
@@ -113,7 +108,32 @@ export default {
     },
   selectCheckBox(value){  
     this.onSelectedAdmin(value)
-  }
+  },
+  nextPageTable(){
+      if(this.startData<=-1){
+        this.changeRange()
+      }
+      else if(this.endData>this.getAllAdmins.length){
+        return
+      }
+      else{
+        this.startData = this.endData
+        this.endData = parseInt(this.startData)  + parseInt(this.numberDataPerPage)
+      }
+    },
+    backPageTable(){
+      if(this.startData<=0){
+        this.changeRange()
+      }
+      else{
+        this.endData = this.startData
+        this.startData =parseInt(this.endData)  - parseInt(this.numberDataPerPage)
+      }
+    },
+    changeRange(){        
+        this.startData = 0;
+        this.endData = this.numberDataPerPage
+    },
   },
   computed: {
     ...mapGetters(["getAllAdmins"]),

@@ -13,9 +13,9 @@
     >
       <div class=" w-full overflow-x-auto h-full">
         <table class="w-full  min-w-2100px">
-          <thead >
+          <thead>
             <tr>
-              <th  class="sticky top-0 bg-1f z-40">
+              <th  class="pl-6 sticky top-0 bg-1f z-40">
                 <div class=" flex items-center justify-center mr-4">
                   <p class="text-force-white text-xs font-semibold py-2">No.</p>
                 </div>
@@ -487,9 +487,8 @@
     </div>
     <div class="flex mr-7 items-center">
       <div>
-        <p class="text-force-white font-semibold text-xs">
-          {{ startData }}-{{ endData }},{{ getAllProducts.length }}
-        </p>
+        <p v-if="endData<10000" class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllProducts.length}}</p>
+        <p v-else class="text-force-white font-semibold text-xs">Todo</p>
       </div>
       <div class="cursor-pointer ml-7" @click="backPageTable()">
         <img

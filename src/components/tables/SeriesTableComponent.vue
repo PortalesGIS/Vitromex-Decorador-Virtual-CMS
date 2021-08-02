@@ -102,7 +102,9 @@
       </div>
       <div class="flex mr-7 items-center">
         <div>
-          <p class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllSeries.length}}</p>
+          <!-- <p class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllSeries.length}}</p> -->
+          <p v-if="endData<10000" class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllSeries.length}}</p>
+          <p v-else class="text-force-white font-semibold text-xs">Todo</p>
         </div>
         <div class="cursor-pointer ml-7"
           @click="backPageTable()"

@@ -320,9 +320,7 @@ export default {
         ...mapActions(["onChangeViewWindow","exitCms","onChangeStatePage"]),
         goTo(payload) {
             this.onChangeViewWindow(payload)
-            if(payload === typesViewsMenu.products){
-                  this.isOpen =false;
-            }
+            
         },
         changeVitroArko(){
             this.onChangeStatePage(!this.getPageState)

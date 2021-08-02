@@ -70,12 +70,15 @@
      <div class="flex items-center">
           <p class="text-force-white font-semibold text-xs pr-2">Total de Filas:</p>
         <div class="border-2 px-1 bg-white">
-            <select 
+           <select 
             class="text-xs w-10 pl-2   appearance-none focus:outline-none active:outline-non"
-            name="" id="">
+            name="" id=""
+            v-model="numberDataPerPage"
+            @change="changeRange"
+            >
             <option value="20">20</option>
             <option value="50">50</option>
-            <option value="100">10</option>
+            <option value="100">100</option>
             <option value="100000">todo</option>
         </select>
         <i class="fas fa-angle-down w-2"></i>
@@ -83,7 +86,9 @@
      </div>
      <div class="flex mr-7 items-center">
          <div>
-             <p class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllTypologies.length}}</p>
+             <!-- <p class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllTypologies.length}}</p> -->
+             <p v-if="endData<10000" class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllTypologies.length}}</p>
+          <p v-else class="text-force-white font-semibold text-xs">Todo</p>
          </div>
          <div class="cursor-pointer ml-7"    @click="backPageTable()">
             <img src="../../assets/paginador_izquierda.svg" style="width:18px; height:12px" alt="">

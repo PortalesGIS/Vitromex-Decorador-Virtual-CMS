@@ -28,11 +28,11 @@
         </div>
       </div>
       <div v-if="menuOption === 1" class="w-full h-full overflow-x-hidden">
-        <div class="w-full h-full px-5">
-          <div class="flex items-center w-full shadow-4xl  bg-f5 h-16  ">
+        <div class="w-full h-full pr-72 px-5">
+          <div class="flex items-center  w-full shadow-4xl  bg-f5 h-16  ">
             <ProductsFiltercomponentVue />
           </div>
-          <div class="w-full h-4/6   bg-f5">
+          <div class="w-full h-4/6  ">
             <ProductsTableComponentVue />
           </div>
         </div>

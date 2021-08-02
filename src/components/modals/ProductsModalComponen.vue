@@ -5,7 +5,7 @@
         <div class="w-full h-full flex items-center justify-center">
             <div class="bg-white" style="width:434px; height:183px">               
                 <div class="px-4">
-                    <div class="mt-5">
+                    <div class="mt-3">
                         <p class="text-force-black text-xl font-bold uppercase">Eliminar cambios del Producto</p>
                     </div>
                     <div class="mt-3">
