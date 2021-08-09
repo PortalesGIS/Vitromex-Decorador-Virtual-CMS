@@ -169,13 +169,13 @@
                   <div class="flex w-full bg-user-background py-4">
                   <div class="mx-4"><img src="../../assets/perfil.svg" alt=""></div>
                   <div class="flex items-center">
-                      <p class="text-force-white text-sm">{{nameAdmin}}</p>
+                      <p class="text-force-white monserrat text-sm">{{nameAdmin}}</p>
                     </div>
               </div>
               <div class="w-full flex justify-center">
                    <button 
                    @click="exit()"
-                   class="text-xs text-white py-4 focus:outline-none">Cerrar Sesión                       
+                   class="text-xs moserrat-semibold text-white py-4 focus:outline-none">Cerrar Sesión                       
                    </button>
               </div>
               </div>
