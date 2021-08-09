@@ -49,7 +49,7 @@
           <div class="mx-2">
               <p 
               :class="colorText(typesViews.dashboard)"
-              class="">Dashboard</p>
+              class="monserrat ">Dashboard</p>
           </div>
       </div>
       <div 
@@ -71,7 +71,7 @@
           <div class="mx-2">
               <p 
               :class="colorText(typesViews.users)"
-              class="">Usuarios</p>
+              class="monserrat ">Usuarios</p>
           </div>
       </div>
       <div 
@@ -93,7 +93,7 @@
           <div class="mx-2">
               <p 
               :class="colorText(typesViews.products)"
-              class="">Series y Productos</p>
+              class="monserrat ">Series y Productos</p>
           </div>
       </div>
       <div 
@@ -115,7 +115,7 @@
           <div class="mx-2">
               <p 
               :class="colorText(typesViews.onboarding)"
-              class="">Onboarding</p>
+              class="monserrat ">Onboarding</p>
           </div>
       </div>
       <div 
@@ -137,7 +137,7 @@
           <div class="mx-2">
               <p 
               :class="colorText(typesViews.stores)"
-              class="">Tiendas</p>
+              class="monserrat ">Tiendas</p>
           </div>
       </div>
       <div 
@@ -159,7 +159,7 @@
           <div class="mx-2">
               <p 
               :class="colorText(typesViews.admins)"
-              class="">Administradores</p>
+              class="monserrat ">Administradores</p>
           </div>
       </div>
       </div>
