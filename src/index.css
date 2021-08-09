@@ -26,3 +26,48 @@
         --color-bg-select-menu-product:#999999;
     }
 }
+
+@font-face {
+    font-family: monserrat;
+    src: url("./assets/fonts/Montserrat_Regular.ttf");
+  }
+@font-face {
+    font-family: monserrat_bold;
+    src: url("./assets/fonts/Montserrat_Bold.otf");
+  }
+@font-face {
+    font-family: monserrat_semibold;
+    src: url("./assets/fonts/Montserrat_SemiBold.otf");
+  }
+@font-face {
+    font-family: monserrat_light;
+    src: url("./assets/fonts/Montserrat_Light.ttf");
+  }
+@font-face {
+    font-family: gotham;
+    src: url("./assets/fonts/Gotham_Bold.otf");
+  }
+@font-face {
+    font-family: gotham_light;
+    src: url("./assets/fonts/Gotham_Light.ttf");
+  }
+
+
+.gotham{
+    font-family:gotham
+}
+.gotham-light{
+    font-family:gotham_light
+}
+.monserrat-light{
+    font-family:monserrat_light
+}
+.monserrat {
+  font-family: monserrat;
+}
+.moserrat-bold{
+    font-family:monserrat_bold
+}
+.moserrat-semibold{
+    font-family:monserrat_semibold
+}

@@ -8,19 +8,19 @@
       <div class=" flex justify-between bg-1f">
           <div class="pl-10 w-full max-w-1400px grid grid-cols-12 bg-1f">
           <div class="col-span-1 flex items-center justify-center mr-4">
-              <p class="text-force-white text-xs font-semibold py-2"></p>
+              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold"></p>
             </div>
           <div class="col-span-1 flex items-center justify-center mr-4">
-              <p class="text-force-white text-xs font-semibold py-2">No.</p>
+              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">No.</p>
             </div>
           <div class="col-span-2 flex items-center justify-center mr-4">
-              <p class="text-force-white text-xs font-semibold py-2">Imágenes</p>
+              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Imágenes</p>
             </div>
           <div class="col-span-2 flex items-center justify-center mr-4">
-              <p class="text-force-white text-xs font-semibold py-2">Nombre del Espacio</p>
+              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Nombre del Espacio</p>
             </div>
           <div class="col-span-2 flex items-center justify-center mr-4">
-              <p class="text-force-white text-xs font-semibold py-2">Fecha de Registro</p>
+              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Fecha de Registro</p>
             </div>
       </div>
       <div class="bg-1f">
@@ -35,24 +35,24 @@
              :class="(index%2)?'bg-white':''">
           <div class="pl-10 w-full grid grid-cols-12 max-w-1400px ">
               <div class="col-span-1 flex justify-start items-center">
-              <p class="text-force-black text-sm py-2"> 
+              <p class="text-force-black text-sm py-2 monserrat "> 
                   <input @change="changeTextBox(typologie._id)" type="checkbox">
                   </p>
           </div>
           <div class="col-span-1 flex justify-center items-center">
-              <p class="text-force-black text-sm py-2">{{index+1}}</p>
+              <p class="text-force-black text-sm py-2 monserrat ">{{index+1}}</p>
           </div>
           <div class="col-span-2 flex justify-center items-center">
-              <!-- <p class="text-force-black text-sm py-2">{{typologie.name}}</p> -->
+              <!-- <p class="text-force-black text-sm py-2 monserrat ">{{typologie.name}}</p> -->
               <div class="py-2">
                 <img  :src="typologie.img" style="width:86px; height:86px" alt="">              
               </div>
           </div>
           <div class="col-span-2  flex justify-center items-center">
-              <p class="text-force-black text-sm py-2 truncate  ">{{typologie.name}}</p>
+              <p class="text-force-black text-sm py-2 monserrat  truncate  ">{{typologie.name}}</p>
           </div>
           <div class="col-span-2 flex justify-center items-center">
-              <p class="text-force-black text-sm py-2">{{typologie.dateCreated}}</p>
+              <p class="text-force-black text-sm py-2 monserrat ">{{typologie.dateCreated}}</p>
           </div>
       </div>
       <div class="mr-10 flex items-center">

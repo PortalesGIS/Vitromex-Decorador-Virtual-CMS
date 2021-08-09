@@ -3,41 +3,41 @@
       <div class="flex justify-between">
           <div class="pl-10 w-full  grid grid-cols-12 bg-1f">
           <div class="col-span-1 flex items-center justify-start mr-4">
-              <p class="text-force-white text-xs font-semibold py-2">No.</p>
+              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">No.</p>
               <div class="">
             <img src="../../assets/dropdown.svg" class="px-2" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
-              <p class="text-force-white text-xs font-semibold py-2">Nombre de la Tienda</p>
+              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Nombre de la Tienda</p>
               <div class="">
             <img @click="filterArrow('name')"
             src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
-              <p class="text-force-white text-xs font-semibold py-2">Direccion</p>
+              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Direccion</p>
               <div class="">
             <img @click="filterArrow('street')"
             src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
-              <p class="text-force-white text-xs font-semibold py-2">Coordenadas</p>
+              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Coordenadas</p>
               <div class="">
             <img @click="filterArrow('lat')"
             src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
-              <p class="text-force-white text-xs font-semibold py-2">Telefono</p>
+              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Telefono</p>
               <div class="">
             <img @click="filterArrow('phone')"
             src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
-              <p class="text-force-white text-xs font-semibold py-2">Fecha de Registro</p>
+              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Fecha de Registro</p>
               <div class="">
             <img @click="filterArrow('dateCreated')"
             src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
@@ -56,22 +56,22 @@
              :class="(index%2)?'bg-white':''">
           <div class="pl-10 w-full grid grid-cols-12  ">
           <div class="col-span-1">
-              <p class="text-force-black text-sm py-2">{{index+1}}</p>
+              <p class="text-force-black text-sm py-2 monserrat">{{index+1}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-force-black text-sm py-2">{{store.name}}</p>
+              <p class="text-force-black text-sm py-2 monserrat">{{store.name}}</p>
           </div>
           <div class="col-span-2 ">
-              <p class="text-force-black text-sm py-2 truncate  ">{{`${store.street} ${store.city}`}}</p>
+              <p class="text-force-black text-sm py-2 monserrat truncate  ">{{`${store.street} ${store.city}`}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-force-black text-sm py-2">{{`${store.lat},${store.lng}`}}</p>
+              <p class="text-force-black text-sm py-2 monserrat">{{`${store.lat},${store.lng}`}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-force-black text-sm py-2">{{store.phone}}</p>
+              <p class="text-force-black text-sm py-2 monserrat">{{store.phone}}</p>
           </div>
           <div class="col-span-2">
-              <p class="text-force-black text-sm py-2">{{store.dateCreated}}</p>
+              <p class="text-force-black text-sm py-2 monserrat">{{store.dateCreated}}</p>
           </div>
       </div>
         <div 

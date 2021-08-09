@@ -3,13 +3,13 @@
     <div class="h-16"></div>
     <div class="h-5/6  bg-6f shadow-10xl overflow-hidden">
       <div class="overflow-hidden">
-        <p class="uppercase text-5xl text-white font-normal pl-10 py-7">
+        <p class="uppercase text-5xl text-white font-normal pl-10 monserrat py-7">
           Series y Productos
         </p>
       </div>
       <div class="flex h-10 px-5 overflow-x-hidden">
         <div
-          class="mx-1 px-16 py-2 font-semibold text-sm cursor-pointer rounded-t-sm"
+          class="mx-1 px-16 py-2 font-semibold text-sm cursor-pointer rounded-t-sm moserrat-semibold"
           :class="
             menuOption === 0 ? 'bg-f5 text-force-black' : 'bg-555555 text-force-white'
           "
@@ -18,7 +18,7 @@
           Series
         </div>
         <div
-          class=" px-16 py-2 font-semibold text-sm cursor-pointer rounded-t-sm"
+          class=" px-16 py-2 font-semibold text-sm cursor-pointer rounded-t-sm moserrat-semibold "
           :class="
             menuOption === 1 ? 'bg-f5 text-force-black' : 'bg-555555 text-force-white'
           "

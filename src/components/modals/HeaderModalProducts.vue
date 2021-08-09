@@ -5,7 +5,7 @@
                             :class="(page===0)?'bg-black':'bg-c4'"
                         >
                         <div>
-                            <p class="text-center font-semibold text-lg" 
+                            <p class="text-center font-semibold text-lg monserrat " 
                             :class="(page===0)?'text-force-white':'text-force-black'"
                             >1</p>
                         </div>
@@ -19,7 +19,7 @@
                             :class="(page===1)?'bg-black':'bg-c4'"
                          >
                         <div>
-                            <p class="text-center font-semibold text-lg" 
+                            <p class="text-center font-semibold text-lg monserrat " 
                             :class="(page===1)?'text-force-white':'text-force-black'"
                             >2</p>
                         </div>
@@ -33,7 +33,7 @@
                             :class="(page===2)?'bg-black':'bg-c4'"
                          >
                         <div>
-                            <p class="text-center font-semibold text-lg" 
+                            <p class="text-center font-semibold text-lg monserrat " 
                             :class="(page===2)?'text-force-white':'text-force-black'"
                             >3</p>
                         </div>

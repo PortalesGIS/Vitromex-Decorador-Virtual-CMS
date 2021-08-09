@@ -35,7 +35,7 @@
           <div class="flex justify-center items-center pr-3">
               <button 
               @click="onexportDocument"
-              class="bg-1f w-44 h-8 text-force-white text-sm">Exportar Documento</button>
+              class="bg-1f w-44 h-8 monserrat text-force-white text-sm">Exportar Documento</button>
           </div>
       </div>
           

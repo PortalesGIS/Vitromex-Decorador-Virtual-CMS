@@ -12,20 +12,20 @@
                   <!-- <input type="checkbox"> -->
               </p></div>
           <div class="col-span-1 flex items-center justify-center mr-4">
-              <p class="text-force-white text-xs font-semibold py-2">No.</p>
+              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">No.</p>
             </div>
           <div class="col-span-2 flex items-center justify-center mr-4">
-              <p class="text-force-white text-xs font-semibold py-2">Imágenes</p>
+              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Imágenes</p>
             </div>
           <div class="col-span-2 flex items-center justify-center mr-4">
-              <p class="text-force-white text-xs font-semibold py-2">Nombre del Espacio</p>
+              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Nombre del Espacio</p>
             </div>
           <div class="col-span-2 flex items-center justify-center mr-4">
-              <p class="text-force-white text-xs font-semibold py-2">Fecha de Registro</p>
+              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Fecha de Registro</p>
             </div>
       </div>
       <div class="bg-1f">
-          <div class="mr-10"><p class="text-force-white text-sm  py-2">Editar</p></div>
+          <div class="mr-10"><p class="text-force-white text-sm moserrat-semibold  py-2">Editar</p></div>
       </div>
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
@@ -36,24 +36,24 @@
              :class="(index%2)?'bg-white':''">
           <div class="pl-10 w-full grid grid-cols-12 max-w-1400px ">
                <div class="col-span-1 flex justify-start items-center">
-              <p class="text-force-black text-sm py-2"> 
+              <p class="text-force-black text-sm py-2 monserrat"> 
                   <input @change="changeTextBox(serie._id)" type="checkbox">
                   </p>
           </div>
           <div class="col-span-1 flex justify-center items-center">
-              <p class="text-force-black text-sm py-2">{{index+1}}</p>
+              <p class="text-force-black text-sm py-2 monserrat">{{index+1}}</p>
           </div>
           <div class="col-span-2 flex justify-center items-center">
-              <!-- <p class="text-force-black text-sm py-2">{{serie.name}}</p> -->
+              <!-- <p class="text-force-black text-sm py-2 monserrat">{{serie.name}}</p> -->
               <div class="py-2">
                 <img  :src="serie.img" style="width:86px; height:86px" alt="">              
               </div>
           </div>
           <div class="col-span-2 flex justify-center items-center">
-              <p class="text-force-black text-sm py-2 truncate  ">{{serie.name}}</p>
+              <p class="text-force-black text-sm py-2 monserrat truncate  ">{{serie.name}}</p>
           </div>
           <div class="col-span-2 flex justify-center items-center">
-              <p class="text-force-black text-sm py-2">{{serie.dateCreated}}</p>
+              <p class="text-force-black text-sm py-2 monserrat">{{serie.dateCreated}}</p>
           </div>
       </div>
       <div class="mr-10 flex items-center">

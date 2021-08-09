@@ -41,12 +41,12 @@
           <div>
               <button 
               @click="OnOpenModalDelete"
-              class="border-gray-400 border-2 bg-white text-gray-500 px-4 py-2 mx-2">Eliminar</button>
+              class="border-gray-400 border-2 monserrat bg-white text-gray-500 px-4 py-2 mx-2">Eliminar</button>
           </div>
           <div>
               <button 
               @click="OnOpenModalNew"
-              class=" border-black border-2 bg-black text-force-white mx-2 p-2">Nuevo administrador</button>
+              class=" border-black border-2 monserrat bg-black text-force-white mx-2 p-2">Nuevo administrador</button>
           </div>
       </div>
   </div>

@@ -9,10 +9,10 @@
     <div class="flex justify-between bg-1f">
       <div class="pl-10 w-full max-w-1400px grid grid-cols-12">
         <div class="col-span-1 flex items-center justify-start mr-4">
-          <p class="text-force-white text-xs font-semibold py-2">No.</p>
+          <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">No.</p>
         </div>
         <div class="col-span-2 flex items-center justify-start mr-4">
-          <p class="text-force-white text-xs font-semibold py-2">
+          <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">
             Nombre de la Serie
           </p>
           <div class="">
@@ -21,13 +21,13 @@
           </div>
         </div>
         <div class="col-span-2 flex items-center justify-center mr-4">
-          <p class="text-force-white text-xs font-semibold py-2">Imagen Miniatura</p>
+          <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Imagen Miniatura</p>
           <div class="">
             <!-- <img src="../../assets/dropdown.svg" class="px-2" alt=""> -->
           </div>
         </div>
         <div class="col-span-2 flex items-center justify-center mr-4">
-          <p class="text-force-white text-xs font-semibold py-2">fecha de registro</p>
+          <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">fecha de registro</p>
           <div class="">
             <img @click="onFilterArrow('dateCreated')"
             src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
@@ -47,18 +47,18 @@
           <div class="flex justify-between" :class="index % 2 ? 'bg-white' : ''">
           <div class="pl-10 w-full grid grid-cols-12 max-w-1400px">
             <div class="col-span-1 flex justify-start">
-              <p class="text-force-black text-sm py-2">{{ index+1 }}</p>
+              <p class="text-force-black text-sm py-2 monserrat">{{ index+1 }}</p>
             </div>
             <div class="col-span-2 flex justify-start">
-              <p class="text-force-black text-sm py-2">{{ serie.name }}</p>
+              <p class="text-force-black text-sm py-2 monserrat">{{ serie.name }}</p>
             </div>
             <div class="col-span-2 flex justify-center">
-              <p class="text-force-black text-sm py-2 truncate">
+              <p class="text-force-black text-sm py-2 monserrat truncate">
                 {{ `${serie.img != "" ? "1" : "0"}/1` }}
               </p>
             </div>
             <div class="col-span-2 flex justify-center">
-              <p class="text-force-black text-sm py-2">{{ serie.dateCreated }}</p>
+              <p class="text-force-black text-sm py-2 monserrat">{{ serie.dateCreated }}</p>
             </div>
           </div>
           <div class="mr-10 flex items-center">

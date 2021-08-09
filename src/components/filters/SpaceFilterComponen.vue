@@ -27,14 +27,14 @@ ref="modalDelete"
                   <button 
                   @click="onOpenModalDelete"
                    :disabled="isActive"
-                  class="w-28 h-8 bg-white border">
+                  class="w-28 h-8 monserrat bg-white border">
                       Eliminar
                   </button>
               </div>
               <div>
                   <button 
                   @click="onOpenModal"
-                  class="w-48 h-8 bg-black text-force-white">
+                  class="w-48 h-8 monserrat bg-black text-force-white">
                       Nuevo espacio
                   </button>
               </div>

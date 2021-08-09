@@ -17,42 +17,42 @@
             <tr>
               <th  class="pl-6 sticky top-0 bg-1f z-40">
                 <div class=" flex items-center justify-center mr-4">
-                  <p class="text-force-white text-xs font-semibold py-2">No.</p>
+                  <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">No.</p>
                 </div>
               </th>
-              <th class="sticky top-0 bg-1f z-40">
+              <th class="sticky top-0 bg-1f z-40 ">
                 <div class=" flex items-center justify-center mr-4">
-                  <p class="text-force-white text-xs font-semibold py-2">
+                  <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">
                     Imagen Miniatura
                   </p>
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-force-white text-xs font-semibold py-2">
+                  <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">
                     Imagen del producto
                   </p>
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-force-white text-xs font-semibold py-2">
+                  <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">
                     Textura AR/3D
                   </p>
                 </div>
               </th>
-              <th class="sticky top-0 bg-1f z-40">
+              <th class="sticky min-w-17 top-0 bg-1f z-40">
                 <div
                   @click="onFilterArrow('name')"
                   class="
-                    flex
+                  flex
                     items-center
                     justify-center
-                    mr-4
+                    mr-4 
                     cursor-pointer
                   "
                 >
-                  <p class="text-force-white text-xs font-semibold py-2">
+                  <p class="text-force-white flex-auto  text-xs font-semibold py-2 moserrat-semibold">
                     Nombre del producto
                   </p>
                   <div class="">
@@ -66,7 +66,7 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-force-white text-xs font-semibold py-2">Tipologia</p>
+                  <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Tipologia</p>
                   <div class="">
                     <img
                       @click="onFilterArrow('typologies')"
@@ -79,7 +79,7 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-force-white text-xs font-semibold py-2">Formato</p>
+                  <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Formato</p>
                   <div class="">
                     <img
                       @click="onFilterArrow('sized')"
@@ -92,7 +92,7 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-force-white text-xs font-semibold py-2">Serie</p>
+                  <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Serie</p>
                   <div class="">
                     <img
                       @click="onFilterArrow('serie')"
@@ -105,7 +105,7 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-force-white text-xs font-semibold py-2">Acabado</p>
+                  <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Acabado</p>
                   <div class="">
                     <img
                       @click="onFilterArrow('finish')"
@@ -118,7 +118,7 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-force-white text-xs font-semibold py-2">Color</p>
+                  <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Color</p>
                   <div class="">
                     <img
                       @click="onFilterArrow('color')"
@@ -131,7 +131,7 @@
               </th>
               <th v-for="aplication in getAllSpaces" :key="aplication" class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-force-white text-xs font-semibold py-2">{{aplication.name}}</p>
+                  <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">{{aplication.name}}</p>
                   <div class="">
                     <img src="../../assets/dropdown.svg" class="px-2" alt="" />
                   </div>
@@ -139,7 +139,7 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-force-white text-xs font-semibold py-2">
+                  <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">
                     Fecha de Registro
                   </p>
                   <div class="">
@@ -154,7 +154,7 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-force-white text-xs font-semibold py-2">Editar</p>
+                  <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Editar</p>
                   <div class="">
                     <img src="../../assets/dropdown.svg" class="px-2" alt="" />
                   </div>
@@ -162,7 +162,7 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-force-white text-xs font-semibold py-2">Nuevo</p>
+                  <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Nuevo</p>
                   <div class="">
                     <img src="../../assets/dropdown.svg" class="px-2" alt="" />
                   </div>
@@ -170,7 +170,7 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-force-white text-xs font-semibold py-2">Activar</p>
+                  <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Activar</p>
                   <div class="">
                     <img src="../../assets/dropdown.svg" class="px-2" alt="" />
                   </div>
@@ -186,60 +186,60 @@
             >
               <td v-if="index >= startData && index <= endData">
                 <div class=" flex justify-center">
-                  <p class="text-force-black text-sm py-2">{{ index+1 }}</p>
+                  <p class="text-force-black text-sm py-2 monserrat">{{ index+1 }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-force-black text-sm py-2">
+                  <p class="text-force-black text-sm py-2 monserrat">
                     {{ product.smallPicture != "" ? "1/1" : "0/1" }}
                   </p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-force-black text-sm py-2 truncate">
+                  <p class="text-force-black text-sm py-2 monserrat truncate">
                     {{ `${countRendersProduct(product)}/3` }}
                   </p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-force-black text-sm py-2">
+                  <p class="text-force-black text-sm py-2 monserrat">
                     {{ `${countImgsProduct(product)}/2` }}
                   </p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center max-w-full truncate">
-                  <p class="text-force-black text-sm py-2">{{ product.name }}</p>
+                  <p class="text-force-black text-sm py-2 monserrat">{{ product.name }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-force-black text-sm py-2">
+                  <p class="text-force-black text-sm py-2 monserrat">
                     {{ product.typologies }}
                   </p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-force-black text-sm py-2">{{ product.sized }}</p>
+                  <p class="text-force-black text-sm py-2 monserrat">{{ product.sized }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-force-black text-sm py-2">{{ product.serie }}</p>
+                  <p class="text-force-black text-sm py-2 monserrat">{{ product.serie }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-force-black text-sm py-2">{{ product.finish }}</p>
+                  <p class="text-force-black text-sm py-2 monserrat">{{ product.finish }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-force-black text-sm py-2">{{ product.color }}</p>
+                  <p class="text-force-black text-sm py-2 monserrat">{{ product.color }}</p>
                 </div>
               </td> 
                 <template v-if="index >= startData && index <= endData">   
@@ -257,7 +257,7 @@
                   </template>  
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-force-black text-sm py-2">
+                  <p class="text-force-black text-sm py-2 monserrat">
                     {{ product.dateCreated }}
                   </p>
                 </div>
@@ -299,7 +299,7 @@
                   >
                     <div class="flex px-3 pt-5">
                       <img src="../../assets/alerta.svg" class="pr-2" alt="" />
-                      <p class="text-force-black text-justify text-xs font-normal">
+                      <p class="text-force-black text-justify text-xs monserrat">
                         ¿Estás seguro que deseas
                         {{ product.isNewProduct ? "desmarcar" : "marcar" }} este
                         producto como nuevo?
@@ -313,7 +313,7 @@
                           h-6
                           bg-black
                           text-center text-xs
-                          font-medium
+                          moserrat-semibold
                           text-force-white
                         "
                       >
@@ -328,7 +328,7 @@
                           h-6
                           bg-white
                           text-center text-xs
-                          font-medium
+                          moserrat-semibold
                           border border-black
                         "
                       >
@@ -385,7 +385,7 @@
                           h-6
                           bg-black
                           text-center text-xs
-                          font-medium
+                          moserrat-semibold
                           text-force-white
                         "
                       >
@@ -401,14 +401,14 @@
                       mt-40
                       absolute
                       w-72
-                      h-28
+                      h-32
                       bg-white
                       border border-black
                     "
                   >
                     <div class="flex px-3 pt-5">
                       <img src="../../assets/alerta.svg" class="pr-2" alt="" />
-                      <p class="text-force-black text-justify text-xs font-normal">
+                      <p class="text-force-black text-justify text-xs monserrat">
                         ¿Estás seguro de que deseas suspender este producto en
                         la App y Web 3D?
                       </p>
@@ -421,7 +421,7 @@
                           h-6
                           bg-black
                           text-center text-xs
-                          font-medium
+                          moserrat-semibold
                           text-force-white
                         "
                       >
@@ -434,7 +434,7 @@
                           h-6
                           bg-white
                           text-center text-xs
-                          font-medium
+                          moserrat-semibold
                           border border-black
                         "
                       >

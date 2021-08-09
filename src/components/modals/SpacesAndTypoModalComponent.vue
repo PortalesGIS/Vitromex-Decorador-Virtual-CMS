@@ -10,13 +10,13 @@
                     class=" mr-3 mt-3 cursor-pointer w-3 h-3" src="../../assets/cerrar.svg" alt="">
                 </div>
                 <div class="flex justify-start pl-6">
-                    <p class="uppercase text-xl font-bold ">
+                    <p class="uppercase text-xl moserrat-bold">
                             {{isNew?'Nuevo':'Editar'}} {{titleForm}}
                     </p>
                 </div>
                 <div v-if="titleForm==='espacio'">
                 <div  class="flex justify-start pl-6 pt-5 pb-3">
-                    <p class="text-sm">Nombre del {{titleForm}}</p>
+                    <p class="text-sm monserrat">Nombre del {{titleForm}}</p>
                 </div>
                 <div  class="flex justify-start px-6">
                         <input 
@@ -26,7 +26,7 @@
                     
                 </div>
                 </div>
-                <div  class="flex justify-center pt-6">
+                <div  class="flex justify-center pt-6 monserrat">
                      <p>Imagen Miniatura</p>
                 </div>
                 <div  class="flex justify-center pt-3">
@@ -44,7 +44,7 @@
                         style="width:120px;height:120px" alt="">
                         </div>
                         </div>
-                        <p class="my-1 py-1 border-2 px-2 border-black" style="color:#1f1f1f">Cambiar imagen</p>
+                        <p class="my-1 py-1 border-2 px-2 border-black monserrat" style="color:#1f1f1f">Cambiar imagen</p>
                     </div>
                     <input 
                         @change="addFileImg"   
@@ -58,7 +58,7 @@
                     <button 
                     :disabled="btnDisabled"
                     @click="onSave"
-                    class="w-44 h-8 text-white"
+                    class="w-44 h-8 text-white monserrat"
                     :class="btnDisabled ? 'bg-gray-300':'bg-black'"
                     >
                          {{isNew?'Guardar':'Agregar'}}

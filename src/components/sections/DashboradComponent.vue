@@ -4,11 +4,11 @@
     <div class="h-5/6  bg-6f shadow-10xl overflow-hidden">
     <div class="overflow-hidden">
       <div class="flex justify-between ">
-        <p class="uppercase text-5xl text-white font-normal pl-10 py-7">
+        <p class="uppercase monserrat text-5xl text-white font-normal pl-10 py-7">
       DASHBOARD
       </p>
       <div class="flex items-end pb-7"> 
-        <button class="mr-10 text-force-white text-sm w-48 h-8 bg-1f" >Ir A Google Analytics</button>
+        <button class="mr-10 moserrat-semibold text-force-white text-sm w-48 h-8 bg-1f" >Ir A Google Analytics</button>
       </div>
       </div>
     </div>

@@ -7,18 +7,18 @@
         </p>
       </div>
       <div class="">
-        <p class="text-force-white text-xs font-semibold py-2">No.</p>
+        <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold ">No.</p>
       </div>
       <div class="col-span-2 flex items-center justify-start mr-4">
-        <p class="text-force-white text-xs font-semibold py-2">Nombre</p>
+        <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold ">Nombre</p>
         <i class="fas fa-angle-down px-2" style="color: white"></i>
       </div>
       <div class="col-span-2 flex items-center justify-start mr-4">
-        <p class="text-force-white text-xs font-semibold py-2">Correo</p>
+        <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold ">Correo</p>
         <i class="fas fa-angle-down px-2" style="color: white"></i>
       </div>
       <div class="col-span-2 flex items-center justify-start mr-4">
-        <p class="text-force-white text-xs font-semibold py-2">Fecha de registro</p>
+        <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold ">Fecha de registro</p>
         <i class="fas fa-angle-down px-2" style="color: white"></i>
       </div>
     </div>
@@ -28,22 +28,22 @@
        <div v-if="(i >= startData && i <= endData)">
       <div class="pl-10 grid grid-cols-12" :class="i % 2 ? 'bg-white' : ''">
         <div class="col-span-1">
-          <p class="text-force-black text-sm py-2">
+          <p class="text-force-black text-sm py-2 monserrat">
             <input 
             @change="selectCheckBox(user._id)"
             type="checkbox" /></p>
         </div>
         <div class="">
-          <p class="text-force-black text-sm py-2">{{ i+1 }}</p>
+          <p class="text-force-black text-sm py-2 monserrat">{{ i+1 }}</p>
         </div>
         <div class="col-span-2">
-          <p class="text-force-black text-sm py-2">{{ user.name }}</p>
+          <p class="text-force-black text-sm py-2 monserrat">{{ user.name }}</p>
         </div>
         <div class="col-span-2">
-          <p class="text-force-black text-sm py-2">{{ user.email }}</p>
+          <p class="text-force-black text-sm py-2 monserrat">{{ user.email }}</p>
         </div>
         <div class="col-span-2">
-          <p class="text-force-black text-sm py-2 overflow-x-hidden">
+          <p class="text-force-black text-sm py-2 monserrat overflow-x-hidden">
             {{ user.dateCreated }}
           </p>
         </div>
