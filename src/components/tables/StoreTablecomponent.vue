@@ -49,7 +49,8 @@
       </div>
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
-      <div v-for="(store,index) in getAllStores" :key="index">
+     <div class="max-h-120 overflow-y-scroll">
+      <div v-for="(store,index) in getAllStores" :key="index" >
          <div v-if="(index >= startData && index <= endData)">
           <div class="flex justify-between"
              :class="(index%2)?'bg-white':''">
@@ -125,6 +126,7 @@
         </div>
         </div>
         </div>
+      </div>
       </div>
   </div>
   <div class="pl-10 py-2 flex items-center w-full  justify-between bg-1f">

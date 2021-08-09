@@ -23,6 +23,7 @@
       </div>
     </div>
     <div class="pl-10 h-px w-full bg-gray-400"></div>
+    <div class="max-h-120 overflow-y-scroll">
     <div v-for="(user, i) in getAllAdmins" :key="i">
        <div v-if="(i >= startData && i <= endData)">
       <div class="pl-10 grid grid-cols-12" :class="i % 2 ? 'bg-white' : ''">
@@ -48,6 +49,7 @@
         </div>
       </div>
       </div>
+    </div>
     </div>
     
   </div>

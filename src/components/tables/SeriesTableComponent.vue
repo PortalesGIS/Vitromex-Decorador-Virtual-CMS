@@ -41,7 +41,7 @@
       </div>
     </div>
     <div class="pl-10 h-px w-full bg-gray-400"></div>
-    <div class="h-full overflow-y-auto bg-f5">
+    <div class="h-full overflow-y-auto">
       <div v-for="(serie, index) in getAllSeries" :key="index">
         <div v-if="(index >= startData && index <= endData)">
           <div class="flex justify-between" :class="index % 2 ? 'bg-white' : ''">
