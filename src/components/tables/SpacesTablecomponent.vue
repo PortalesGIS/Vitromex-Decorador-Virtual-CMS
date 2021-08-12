@@ -2,7 +2,7 @@
 <SpacesAndTypoModalComponentVue 
     :titleForm="'espacio'"
     :isNew="false" 
-    :onSaveNewSpace="onSaveNewSpace" 
+    :onSaveNewSpace="onUpdateSpace" 
     ref="modal"/>
     <div class=" w-full h-full bg-f5 ">
       <div class=" flex justify-between bg-1f">
@@ -79,7 +79,7 @@
             <option value="20">20</option>
             <option value="50">50</option>
             <option value="10">100</option>
-            <option value="100000">todo</option>
+            <option value="100000">Todo</option>
         </select>
         <i class="fas fa-angle-down w-2"></i>
         </div>
@@ -132,7 +132,7 @@ export default {
         onOpenModalForEditing(space){
           this.$refs.modal.openModalForEditing(space)
         },
-        onSaveNewSpace(space){    
+        onUpdateSpace(space){    
             this.updateSpaceDB(space)
         },
         changeTextBox(value){

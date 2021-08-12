@@ -1,13 +1,18 @@
 import { baseUrl } from "../../types/data";
 
-export const getNmberOfUsers = async ({ commit }) => {
-  // let myHeaders = new Headers();
-  // myHeaders.append("key",`${localStorage.getItem("token")}`);
+export const getNmberOfUsers = async ({ commit,getters }) => {
+  let platform="";
+  if(getters.getPageState){
+     platform = "vitromex"
+  }  
+  else{
+     platform = "arko"
+  }
   let requestOptions = {
     method: "GET",
     redirect: "follow",
   };
-  fetch(`${baseUrl}/api/user/total`, requestOptions)
+  fetch(`${baseUrl}/api/user/total/${platform}`, requestOptions)
     .then((response) => response.json())
     .then((result) => {
       console.log(result.total);

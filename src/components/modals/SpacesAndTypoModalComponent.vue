@@ -22,29 +22,32 @@
                         <input 
                         @keyup="validateText"
                         v-model="name"
-                        class="border w-full h-8 pl-3" type="text" placeholder="Ingresa el nombre">
+                        class="border w-full h-8 pl-3 uppercase" type="text" placeholder="Ingresa el nombre">
                     
                 </div>
                 </div>
                 <div  class="flex justify-center pt-6 monserrat">
                      <p>Imagen Miniatura</p>
                 </div>
-                <div  class="flex justify-center pt-3">
+                <div  class="flex justify-center bg ">
                     <label for="inpfile">
-                        <div class=" px-6 pt-4 cursor-pointer">
+                        <div class=" px-6 pt-2 cursor-pointer">
                         <div class="flex justify-center">
-                            <div v-if="!img">
-                            <img 
+                            <div v-if="!img" class="bg-f5 px-4 py-2 ">
+                            <div class="flex justify-center">
+                                <img 
                          src='../../assets/agregar_imagen.svg'
-                        style="width:120px;height:120px" alt="">
+                        style="width:100px;height:100px" alt="">
+                            </div>
+                        <p v-if="isNew" class="monserrat text-center pt-1 text-base" style="color:#6E6E6E">Agregar imagen</p>
                         </div>
                         <div v-else>
                             <img 
                          :src="img"
-                        style="width:120px;height:120px" alt="">
+                        style="width:160px;height:160px" alt="">
                         </div>
                         </div>
-                        <p class="my-1 py-1 border-2 px-2 border-black monserrat" style="color:#1f1f1f">Cambiar imagen</p>
+                        <p v-if="!isNew" class="my-1 py-1 border-2 w-40 px-2 border-black monserrat" style="color:#1f1f1f">Cambiar imagen</p>
                     </div>
                     <input 
                         @change="addFileImg"   
@@ -61,7 +64,7 @@
                     class="w-44 h-8 text-white monserrat"
                     :class="btnDisabled ? 'bg-gray-300':'bg-black'"
                     >
-                         {{isNew?'Guardar':'Agregar'}}
+                         {{!isNew?'Guardar':'Agregar'}}
                     </button>                    
                 </div>
             </div>
@@ -92,6 +95,7 @@ export default {
             img:"",
             fileimg:File,
             id:"",
+            dateCreated:"",
             btnDisabled:true
         }        
     },
@@ -110,6 +114,7 @@ export default {
             this.name=payload.name
             this.img=payload.img
             this.id=payload._id
+            this.dateCreated=payload.dateCreated
             this.isOpen =true
         },
          addFileImg(e){                    
@@ -125,7 +130,8 @@ export default {
                 name:this.name.toUpperCase(),
                 file:this.fileimg,
                 id:this.id,
-                img:this.img
+                img:this.img,
+                dateCreated:this.dateCreated,
             })
             this.closeModal()
              this.name=""

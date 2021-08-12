@@ -16,121 +16,155 @@
           <thead>
             <tr>
               <th  class="pl-6 sticky top-0 bg-1f z-40">
-                <div class=" flex items-center justify-center mr-4">
+                <div class=" flex items-center justify-center">
                   <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">No.</p>
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40 ">
-                <div class=" flex items-center justify-center mr-4">
+                <div class=" flex items-center justify-center">
                   <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">
-                    Imagen Miniatura
+                    Imagen <br> Miniatura
                   </p>
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-center mr-4">
+                <div class="col-span-2 flex items-center justify-center ">
                   <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">
-                    Imagen del producto
+                    Imagen <br> del producto
                   </p>
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-center mr-4">
+                <div class="col-span-2 flex items-center justify-center ">
                   <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">
-                    Textura AR/3D
+                    Textura <br> AR/3D
                   </p>
                 </div>
               </th>
-              <th class="sticky min-w-17 top-0 bg-1f z-40">
+              <th class="sticky  top-0 bg-1f z-40">
                 <div
                   @click="onFilterArrow('name')"
-                  class="
-                  flex
-                    items-center
-                    justify-center
-                    mr-4 
-                    cursor-pointer
-                  "
+                  class=" flex items-center justify-center cursor-pointer"
                 >
                   <p class="text-force-white flex-auto  text-xs font-semibold py-2 moserrat-semibold">
                     Nombre del producto
                   </p>
                   <div class="">
-                    <img
+                    <img v-if="stateOfFilters.name"
                       src="../../assets/dropdown.svg"
-                      class="cursor-pointer px-2"
+                      class="cursor-pointer"
+                      alt=""
+                    />
+                    <img v-else
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer transform rotate-180"
                       alt=""
                     />
                   </div>
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-center mr-4">
-                  <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Tipologia</p>
+                <div class="col-span-2 flex items-center justify-center ">
+                  <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Tipología</p>
                   <div class="">
-                    <img
+                    <img v-if="stateOfFilters.typologies"
                       @click="onFilterArrow('typologies')"
                       src="../../assets/dropdown.svg"
-                      class="cursor-pointer px-2"
+                      class="cursor-pointer pl-1"
                       alt=""
                     />
+                    <img v-else
+                      @click="onFilterArrow('typologies')"
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1 transform rotate-180"
+                      alt=""
+                    />
+                    
                   </div>
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-center mr-4">
+                <div class="col-span-2 flex items-center justify-center ">
                   <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Formato</p>
                   <div class="">
-                    <img
+                    <img v-if="stateOfFilters.sized"
                       @click="onFilterArrow('sized')"
                       src="../../assets/dropdown.svg"
-                      class="cursor-pointer px-2"
+                      class="cursor-pointer pl-1"
                       alt=""
                     />
+                    <img v-else
+                      @click="onFilterArrow('sized')"
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1 transform rotate-180"
+                      alt=""
+                    />
+                    
                   </div>
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-center mr-4">
+                <div class="col-span-2 flex items-center justify-center ">
                   <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Serie</p>
                   <div class="">
-                    <img
+                    <img v-if="stateOfFilters.serie"
                       @click="onFilterArrow('serie')"
                       src="../../assets/dropdown.svg"
-                      class="cursor-pointer px-2"
+                      class="cursor-pointer pl-1"
                       alt=""
                     />
+                    <img v-else
+                      @click="onFilterArrow('serie')"
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1 transform rotate-180"
+                      alt=""
+                    />
+                    
                   </div>
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-center mr-4">
+                <div class="col-span-2 flex items-center justify-center ">
                   <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Acabado</p>
                   <div class="">
-                    <img
+                    <img v-if="stateOfFilters.finish"
                       @click="onFilterArrow('finish')"
                       src="../../assets/dropdown.svg"
-                      class="cursor-pointer px-2"
+                      class="cursor-pointer pl-1"
                       alt=""
                     />
+                    <img v-else
+                      @click="onFilterArrow('finish')"
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1 transform rotate-180"
+                      alt=""
+                    />
+                    
                   </div>
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-center mr-4">
+                <div class="col-span-2 flex items-center justify-center ">
                   <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Color</p>
                   <div class="">
-                    <img
+                    <img v-if="stateOfFilters.color"
                       @click="onFilterArrow('color')"
                       src="../../assets/dropdown.svg"
-                      class="cursor-pointer px-2"
+                      class="cursor-pointer pl-1"
                       alt=""
                     />
+                    <img v-else
+                      @click="onFilterArrow('color')"
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1 transform rotate-180"
+                      alt=""
+                    />
+                    
                   </div>
                 </div>
               </th>
               <th v-for="aplication in getAllSpaces" :key="aplication" class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-center mr-4">
+                <div class="col-span-2 flex items-center justify-center ">
                   <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">{{aplication.name}}</p>
                   <div class="">
                     <img src="../../assets/dropdown.svg" class="px-2" alt="" />
@@ -138,7 +172,7 @@
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-center mr-4">
+                <div class="col-span-2 flex items-center justify-center ">
                   <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">
                     Fecha de Registro
                   </p>
@@ -153,7 +187,7 @@
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-center mr-4">
+                <div class="col-span-2 flex items-center justify-center ">
                   <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Editar</p>
                   <div class="">
                     <img src="../../assets/dropdown.svg" class="px-2" alt="" />
@@ -161,7 +195,7 @@
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-center mr-4">
+                <div class="col-span-2 flex items-center justify-center ">
                   <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Nuevo</p>
                   <div class="">
                     <img src="../../assets/dropdown.svg" class="px-2" alt="" />
@@ -169,7 +203,7 @@
                 </div>
               </th>
               <th class="sticky top-0 bg-1f z-40">
-                <div class="col-span-2 flex items-center justify-center mr-4">
+                <div class="col-span-2 flex items-center justify-center ">
                   <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Activar</p>
                   <div class="">
                     <img src="../../assets/dropdown.svg" class="px-2" alt="" />
@@ -211,35 +245,35 @@
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
-                <div class="flex justify-center max-w-full truncate">
-                  <p class="text-force-black text-sm py-2 monserrat">{{ product.name }}</p>
+                <div class="flex justify-center max-w-full truncate ">
+                  <p class="text-force-black text-sm py-2 monserrat capitalize">{{ product.name.toLowerCase() }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-force-black text-sm py-2 monserrat">
-                    {{ product.typologies }}
+                  <p class="text-force-black text-sm py-2 monserrat capitalize">
+                    {{ product.typologies.toLowerCase() }}
                   </p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-force-black text-sm py-2 monserrat">{{ product.sized }}</p>
+                  <p class="text-force-black text-sm py-2 monserrat capitalize">{{ product.sized.toLowerCase() }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-force-black text-sm py-2 monserrat">{{ product.serie }}</p>
+                  <p class="text-force-black text-sm py-2 monserrat capitalize">{{ product.serie.toLowerCase() }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-force-black text-sm py-2 monserrat">{{ product.finish }}</p>
+                  <p class="text-force-black text-sm py-2 monserrat capitalize">{{ product.finish.toLowerCase() }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-force-black text-sm py-2 monserrat">{{ product.color }}</p>
+                  <p class="text-force-black text-sm py-2 monserrat capitalize">{{ product.color.toLowerCase() }}</p>
                 </div>
               </td> 
                 <template v-if="index >= startData && index <= endData">   
@@ -480,7 +514,7 @@
           <option value="20">20</option>
           <option value="50">50</option>
           <option value="100">100</option>
-          <option value="100000">todo</option>
+          <option value="100000">Todo</option>
         </select>
         <i class="fas fa-angle-down w-2"></i>
       </div>
@@ -523,6 +557,15 @@ export default {
       numberDataPerPage: 20,
       startData: 0,
       endData: 20,
+      stateOfFilters:{
+        name:true,
+        typologies:true,
+        sized:true,
+        serie:false,
+        finish:false,
+        color:false,
+        dateCreated:false,
+      }
     };
   },
   methods: {
@@ -535,8 +578,9 @@ export default {
     async onGetAllProducts() {
       await this.getAllproductsdb();
     },
-    onFilterArrow(value) {
-      this.filterAlphabetProduct(value);
+    onFilterArrow(campToFilter) {
+      this.filterAlphabetProduct({campToFilter,sateChange: this.stateOfFilters[campToFilter]})
+      this.stateOfFilters[campToFilter] = !this.stateOfFilters[campToFilter]
     },
     countImgsProduct(product) {
       let counter = 0;

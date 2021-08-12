@@ -2,7 +2,7 @@
 <SpacesAndTypoModalComponentVue 
     :titleForm="'tipología'"
     :isNew="false" 
-    :onSaveNewSpace="onSaveNewSpace" 
+    :onSaveNewSpace="onSaveNewTipologie" 
     ref="modal"/>
   <div class=" w-full h-full bg-f5 ">
       <div class=" flex justify-between bg-1f">
@@ -79,7 +79,7 @@
             <option value="20">20</option>
             <option value="50">50</option>
             <option value="100">100</option>
-            <option value="100000">todo</option>
+            <option value="100000">Todo</option>
         </select>
         <i class="fas fa-angle-down w-2"></i>
         </div>
@@ -133,7 +133,7 @@ export default {
         changeTextBox(value){
             this.changeTypologieSelected(value)
         },
-        onSaveNewSpace(typologie){
+        onSaveNewTipologie(typologie){
             this.updateTypologieDB(typologie)
         },
          changeRange(){        

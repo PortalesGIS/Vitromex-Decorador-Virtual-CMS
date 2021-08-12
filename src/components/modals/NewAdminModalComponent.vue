@@ -79,6 +79,8 @@ export default {
         },
         onSaveNewAdmin (){
             this.createAdmin({name:this.name,email:this.email})
+            this.email="";
+            this.name="";
             this.closeModal()
         }
     },

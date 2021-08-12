@@ -76,7 +76,7 @@
                         <input 
                         placeholder="value"
                         v-model="name"
-                        class="bg-white px-3 mt-2 w-96 h-8"
+                        class="bg-white px-3 mt-2 w-96 h-8 uppercase"
                         type="text">
                     </div>                    
                 </div>
@@ -121,7 +121,7 @@
                            </label>
                         </div>
                     </div>
-                    <div class="flex justify-between items-center mt-2">
+                    <div class="flex justify-between items-center mt-1">
                         <div class="w-44 flex justify-center items-center cursor-pointer" >
                                <label for="inp">
                                 <div class="border border-black py-1 px-2 cursor-pointer">
@@ -197,11 +197,12 @@
                 <div class="px-3 mt-5">
                     <div class="h-px bg-d5"></div>
                 </div>                         
-                <div class="w-full flex justify-center items-center mt-5">
+                <div class="w-full flex justify-center items-center mt-4">
                     <button 
                     @click="nexPage"
                     class="bg-1f w-48 monserrat text-force-white py-1">Siguiente</button>
                 </div>
+                <div class="h-4"></div>
                 </div>
                 <!-- page 2 -->
                 <div v-if="page===1">
@@ -211,12 +212,12 @@
                             <p class="uppercase text-xl text-force-white moserrat-bold">{{name}}</p>
                         </div>                    
                     </div>
-                    <div class="mt-5 px-16">
+                    <div class="mt-4 px-16">
                         <p class="uppercase text-xl text-force-black font-bold ">Carga de imágenes</p>
-                        <p class="mt-2 text-xs text-force-black font-normal">Carga las texturas que serán montadas dentro de la App y Web 3D.</p>
+                        <p class="mt-2 text-xs text-force-black font-normal monserrat">Carga las texturas que serán montadas dentro de la App y Web 3D.</p>
                     </div>
                     <div class="mt-4 px-16">
-                        <p class="text-force-black text-sm moserrat-semibold">Albedo</p>
+                        <p class="text-force-black text-sm moserrat-semibold ">Albedo</p>
                         <p class="mt-2 text-xs text-force-black monserrat">Agrega las texturas que darán color a los modelos aplicados en la experiencia de Realidad Aumentada en la App y Web 3D.</p>
                     </div>            
                     <div class="mt-5 px-16">
@@ -248,7 +249,7 @@
                         </div>
                     </div>        
                     <div class="mt-6 px-16">
-                        <p class="text-force-black text-sm moserrat-semibold">Normal</p>
+                        <p class="text-force-black text-sm moserrat-semibold pt-1">Normal</p>
                         <p class="mt-2 text-xs text-force-black monserrat">Agrega las texturas que darán relieve a los modelos aplicados en la experiencia de Realidad Aumentada en  la App y Web 3D.</p>
                     </div>            
                     <div class="mt-5 px-16">
@@ -266,7 +267,7 @@
                                </div>
                                <div v-else class="py-2">
                                   <div class="border border-black py-1 px-2 flex w-full justify-center">
-                                        <p class="text-xs monserrat font-medium text-force-black">Cambiar imagen</p>
+                                        <p class="text-xs moserrat-semibold font-medium text-force-black">Cambiar imagen</p>
                                     </div>
                                 </div>                               
                             </div>
@@ -280,9 +281,9 @@
                         </div>
                     </div>  
                     <div class="mt-6 px-16">
-                        <p class="text-force-black text-sm moserrat-semibold">Repeticiones</p>
+                        <p class="text-force-black text-sm moserrat-semibold pt-4">Repeticiones</p>
                         <p class="mt-2 text-xs text-force-black monserrat">Indica el número de veces que se repitió el 
-                            producto a lo largo (<strong>Y</strong>) y a lo ancho (<strong>X</strong>) para generar el patrón en las texturas de Albedo y Normal.</p>
+                            producto a lo ancho (<strong>X</strong>) y a lo largo (<strong>Y</strong>) para generar el patrón en las texturas de Albedo y Normal.</p>
                     </div>  
                     <div class="mt-2 px-16">
                         <div class="flex ">
@@ -300,7 +301,7 @@
                             </div>
                         </div>
                     </div>  
-                    <div class="px-3 " style=" margin-top:85px">
+                    <div class="px-3 " style=" margin-top:64px">
                         <div class="h-px bg-d5 "></div>
                     </div>    
                     <div class="mt-5 px-16">
@@ -309,6 +310,7 @@
                             <button  @click="nexPage" class="mx-2 w-44 h-8 monserrat bg-black text-force-white">Siguiente</button>                                
                         </div>
                     </div>
+                    <div class="h-4"></div>
                 </div>
                 <!-- page 3 -->
                 <div v-if="page===2" class="overflow-y-auto">
@@ -320,7 +322,7 @@
                     </div>
                     <div class="mt-5 px-16">
                         <p class="uppercase text-xl text-force-black moserrat-bold ">Asignar Espacios</p>
-                        <p class="mt-2 text-xs text-force-black monserrat">Selecciona dentro de los check box las opciones de Espacios correspondientes</p>
+                        <p class="mt-2 text-xs text-force-black monserrat">Selecciona dentro de los checkbox las opciones de Espacios correspondientes</p>
                     </div>
                     <div class=" px-16" style="max-height:633px; min-height:633px">
                         <div class="grid grid-cols-3 justify-center">
@@ -343,7 +345,8 @@
                             :class="!activeBtn?'':'opacity-10'"
                              @click="save" class="mx-2 w-44 h-8 bg-black monserrat text-force-white">Guardar Cambios</button>                                
                         </div>
-                    </div>                    
+                    </div>  
+                    <div class="h-4"></div>                  
                 </div>
              </div>
         </div>

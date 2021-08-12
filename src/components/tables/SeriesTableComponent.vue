@@ -5,13 +5,13 @@
     :onSaveNew="onSaveNew"
     ref="modal"
   />
-  <div class="w-full h-full bg-f5">
+  <div class="w-full h-full ">
     <div class="flex justify-between bg-1f">
       <div class="pl-10 w-full max-w-1400px grid grid-cols-12">
-        <div class="col-span-1 flex items-center justify-start mr-4">
+        <div class="col-span-1 flex items-center justify-start ">
           <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">No.</p>
         </div>
-        <div class="col-span-2 flex items-center justify-start mr-4">
+        <div class="col-span-2 flex items-center justify-start ">
           <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">
             Nombre de la Serie
           </p>
@@ -20,14 +20,14 @@
             src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
           </div>
         </div>
-        <div class="col-span-2 flex items-center justify-center mr-4">
+        <div class="col-span-2 flex items-center justify-center ">
           <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Imagen Miniatura</p>
           <div class="">
             <!-- <img src="../../assets/dropdown.svg" class="px-2" alt=""> -->
           </div>
         </div>
-        <div class="col-span-2 flex items-center justify-center mr-4">
-          <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">fecha de registro</p>
+        <div class="col-span-2 flex items-center justify-center ">
+          <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Fecha de registro</p>
           <div class="">
             <img @click="onFilterArrow('dateCreated')"
             src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
@@ -41,15 +41,15 @@
       </div>
     </div>
     <div class="pl-10 h-px w-full bg-gray-400"></div>
-    <div class="h-full overflow-y-auto">
+    <div class="h-5/6  overflow-y-auto ">
       <div v-for="(serie, index) in getAllSeries" :key="index">
         <div v-if="(index >= startData && index <= endData)">
-          <div class="flex justify-between" :class="index % 2 ? 'bg-white' : ''">
+          <div class="flex justify-between" :class="index % 2 ? 'bg-white' : 'bg-f5'">
           <div class="pl-10 w-full grid grid-cols-12 max-w-1400px">
-            <div class="col-span-1 flex justify-start">
+            <div class="col-span-1 flex justify-start pl-1">
               <p class="text-force-black text-sm py-2 monserrat">{{ index+1 }}</p>
             </div>
-            <div class="col-span-2 flex justify-start">
+            <div class="col-span-2 flex justify-start pl-2">
               <p class="text-force-black text-sm py-2 monserrat">{{ serie.name }}</p>
             </div>
             <div class="col-span-2 flex justify-center">
@@ -95,7 +95,7 @@
             <option value="20" >20</option>
             <option value="50">50</option>
             <option value="100">100</option>
-            <option value="100000">todo</option>
+            <option value="100000">Todo</option>
           </select>
           <i class="fas fa-angle-down w-2"></i>
         </div>

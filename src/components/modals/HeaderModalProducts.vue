@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-11 w-full px-16 pt-5 items-center justify-center">
+  <div class="grid grid-cols-11 w-full px-16 pt-4 items-center justify-center">
                     <div class="w-full flex justify-center">
                         <div class="h-10 w-10 rounded-full col-span-1 flex justify-center items-center"
                             :class="(page===0)?'bg-black':'bg-c4'"

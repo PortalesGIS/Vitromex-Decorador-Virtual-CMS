@@ -37,13 +37,13 @@ export default {
    }   
  },
  methods: {
-   selectedAdmin(value) {
-     const index = this.adminSelected.findIndex(elm =>elm ===value)
+   selectedAdmin(idAdmin) {
+     const index = this.adminSelected.findIndex(elm =>elm ===idAdmin)
             if(index>=0){
                 this.adminSelected.splice(index,1)
             }
             else{
-             this.adminSelected.push(value)
+             this.adminSelected.push(idAdmin)
             }          
    }
  },

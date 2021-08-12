@@ -37,11 +37,11 @@
           </div>
         </div>
       </div>
-      <div v-else class="w-full h-full px-5 ">
+      <div v-else class="w-5/6 h-full px-5 ">
         <div class="flex items-center w-full shadow-4xl   bg-f5 h-16">
             <SeriesFiltercomponentVue />
           </div>
-          <div class="w-full h-4/6   bg-f5">
+          <div class="w-full h-4/6   ">
             <SeriesTableComponentVue />
           </div>
       </div>

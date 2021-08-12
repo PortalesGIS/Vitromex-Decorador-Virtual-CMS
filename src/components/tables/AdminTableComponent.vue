@@ -66,7 +66,7 @@
             <option value="20">20</option>
             <option value="50">50</option>
             <option value="100">100</option>
-            <option value="100000">todo</option>
+            <option value="100000">Todo</option>
         </select>
         <i class="fas fa-angle-down w-2"></i>
       </div>
@@ -108,8 +108,8 @@ export default {
     async onGetAllUsers() {
       await this.getAllAdminsDB();
     },
-  selectCheckBox(value){  
-    this.onSelectedAdmin(value)
+  selectCheckBox(idAdmin){  
+    this.onSelectedAdmin(idAdmin)
   },
   nextPageTable(){
       if(this.startData<=-1){

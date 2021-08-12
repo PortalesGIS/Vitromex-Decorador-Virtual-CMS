@@ -4,7 +4,7 @@
           <div class="w-full bg-white shadow-4xl" style="height:648px">
             <div class="flex w-full justify-between items-center">
               <div>                
-                <p class=" text-lg font-semibold text-black pl-7 pt-4 moserrat-semibold">Top de Productos Favoritos</p>
+                <p class=" text-lg font-semibold text-force-black pl-7 pt-4 moserrat-semibold">Top de Productos Favoritos</p>
               </div>
               <div class="flex items-center pr-3 pt-4">
                 <div class="flex h-7 bg-white items-center border ">
@@ -27,7 +27,7 @@
                 </div>
                 <div class="grid grid-cols-12 w-full">
                   <div class="col-span-3 h-14  flex items-center justify-center">
-                    <p class="text-base font-medium moserrat-semibold" style="color:#030405">{{product.name}} </p>
+                    <p class="text-base text-center font-medium moserrat-semibold" style="color:#030405">{{product.name}} </p>
                   </div>
                   <div class="col-span-8 h-14  flex items-center  justify-center">
                     <div class="h-4" style="width:450px;">
@@ -48,7 +48,7 @@
           <div class="w-full bg-white shadow-4xl" style="height:648px">
             <div class="flex w-full justify-between items-center">
               <div>                
-                <p class="text-lg font-semibold text-black pl-7 pt-4 moserrat-semibold">Top de Productos Aplicados</p>
+                <p class="text-lg font-semibold text-force-black pl-7 pt-4 moserrat-semibold">Top de Productos Aplicados</p>
               </div>
               <div class="flex items-center pr-3 pt-4">
                 <div class="flex h-7 bg-white items-center border ">
@@ -71,7 +71,7 @@
                 </div>
                 <div class="grid grid-cols-12 w-full">
                   <div class="col-span-3 h-14  flex items-center justify-center">
-                    <p class="text-base font-medium moserrat-semibold" style="color:#030405">{{product.name}}</p>
+                    <p class="text-base text-center font-medium moserrat-semibold" style="color:#030405">{{product.name}}</p>
                   </div>
                   <div class="col-span-8 h-14  flex items-center  justify-center">
                     <div class="h-4" style="width:450px;">

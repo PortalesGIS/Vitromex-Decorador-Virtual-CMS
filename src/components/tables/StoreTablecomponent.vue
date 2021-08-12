@@ -16,7 +16,7 @@
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
-              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Direccion</p>
+              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Dirección</p>
               <div class="">
             <img @click="filterArrow('street')"
             src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
@@ -30,7 +30,7 @@
           </div>
               </div>
           <div class="col-span-2 flex items-center justify-start mr-4">
-              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Telefono</p>
+              <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Teléfono</p>
               <div class="">
             <img @click="filterArrow('phone')"
             src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
@@ -45,7 +45,7 @@
               </div>
       </div>
       <div class="bg-1f">
-          <div class="px-1"><p class="text-force-white text-sm font-bold px-4 py-2">Suspender</p></div>
+          <div class="px-1"><p class="text-force-white text-sm font-bold px-4 py-2">Activo</p></div>
       </div>
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
@@ -61,7 +61,7 @@
           <div class="col-span-2">
               <p class="text-force-black text-sm py-2 monserrat">{{store.name}}</p>
           </div>
-          <div class="col-span-2 ">
+          <div class="col-span-2 pr-5">
               <p class="text-force-black text-sm py-2 monserrat truncate  ">{{`${store.street} ${store.city}`}}</p>
           </div>
           <div class="col-span-2">
@@ -84,7 +84,7 @@
                     <img src="../../assets/alerta.svg" class="pr-2" alt="" />
                     <p class="text-force-black text-justify text-xs font-normal">
                       ¿Estás seguro que deseas
-                      {{ store.status ? "suspender" : "activar" }} este producto en la App y Web 3D?
+                      {{ store.status ? "suspender" : "activar" }} este producto en la App 
                     </p>
                   </div>
                   <div class="flex px-3 pt-5 justify-evenly">
@@ -141,7 +141,7 @@
             <option value="20">20</option>
             <option value="50">50</option>
             <option value="100">10</option>
-            <option value="100000">todo</option>
+            <option value="100000">Todo</option>
         </select>
         <i class="fas fa-angle-down w-2"></i>
         </div>

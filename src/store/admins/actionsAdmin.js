@@ -64,8 +64,8 @@ export const getAllAdminsDB = async ({commit})=>{
     commit("setAllAdmins",{admins:result})
   }
 
-  export const deleteAdmin =({commit},payload)=>{
-    payload.map(async (admin) => {
+  export const deleteAdmin =({commit},idsAdmins)=>{
+    idsAdmins.map(async (idAdmin) => {
       let myHeaders = new Headers();
       myHeaders.append("key",`${localStorage.getItem("token")}`);
       myHeaders.append("Content-Type",`application/json`);
@@ -73,16 +73,16 @@ export const getAllAdminsDB = async ({commit})=>{
         method: 'DELETE',
         headers: myHeaders,
         body:  JSON.stringify({
-          id: admin,
+          id: idAdmin,
         }),
         redirect: 'follow'
       };
       fetch(`${baseUrl}/api/admin/delete`, requestOptions)
         .then(response => response.text())
-        .then(result => console.log(result))
+        .then(() =>commit("quitAdmin",idAdmin)  )
         .catch(error => console.log('error', error));
     })
-    commit("setView",1)   
+      
   }
 
   export const createAdmin =({commit},payload)=>{
@@ -100,9 +100,9 @@ export const getAllAdminsDB = async ({commit})=>{
       };
       fetch(`${baseUrl}/api/admin/create`, requestOptions)
         .then(response => response.text())
-        .then(result => console.log(result))
+        .then(() => commit("addAdmin",{name:payload.name,email:payload.email,dateCreated:new Date().toISOString().slice(0,10)}) )
         .catch(error => console.log('error', error));
-        commit("setView",1)   
+          
   }
 
   export const exitCms = ()=>{
