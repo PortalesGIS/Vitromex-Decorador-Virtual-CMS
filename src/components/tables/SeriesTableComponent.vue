@@ -11,13 +11,23 @@
         <div class="col-span-1 flex items-center justify-start ">
           <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">No.</p>
         </div>
-        <div class="col-span-2 flex items-center justify-start ">
+        <div  @click="onFilterArrow('name')" class="col-span-2 flex items-center justify-start cursor-pointer">
           <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">
             Nombre de la Serie
           </p>
           <div class="">
-            <img @click="onFilterArrow('name')"
-            src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
+            <div class="">
+                    <img v-if="stateOfFilters.name"
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1"
+                      alt=""
+                    />
+                    <img v-else
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1 transform rotate-180"
+                      alt=""
+                    />
+            </div>
           </div>
         </div>
         <div class="col-span-2 flex items-center justify-center ">
@@ -26,12 +36,20 @@
             <!-- <img src="../../assets/dropdown.svg" class="px-2" alt=""> -->
           </div>
         </div>
-        <div class="col-span-2 flex items-center justify-center ">
+        <div @click="onFilterArrow('dateCreated')" class="col-span-2 flex items-center justify-center ">
           <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Fecha de registro</p>
           <div class="">
-            <img @click="onFilterArrow('dateCreated')"
-            src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
-          </div>
+                    <img v-if="stateOfFilters.dateCreated"
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1"
+                      alt=""
+                    />
+                    <img v-else
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1 transform rotate-180"
+                      alt=""
+                    />
+            </div>
         </div>
       </div>
       <div class="bg-1f pr-10">
@@ -141,7 +159,11 @@ export default {
     return {
       numberDataPerPage: 20,
       startData:0,
-      endData:20,      
+      endData:20,   
+      stateOfFilters:{
+        name:true,
+        dateCreated:true
+      }   
     };
   },
   methods: {
@@ -152,8 +174,9 @@ export default {
     onOpenModal(serie) {
       this.$refs.modal.openModalForEditing(serie);
     },
-    onFilterArrow(value){
-      this.filterAlphabetSeries(value)
+    onFilterArrow(campToFilter){
+      this.filterAlphabetSeries({campToFilter,sateChange: this.stateOfFilters[campToFilter]})
+       this.stateOfFilters[campToFilter] = !this.stateOfFilters[campToFilter]
     },
     onSaveNew(payload) {
       this.UpdateSerieImgDB({

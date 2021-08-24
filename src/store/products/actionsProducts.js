@@ -159,7 +159,6 @@ formdata.append("positionArray", positionArray);
 
     let requestOptions = {
       method: 'POST',
-      
       headers: myHeaders,
       body: formdata,
       redirect: 'follow'
@@ -221,3 +220,4 @@ formdata.append("positionArray", positionArray);
     }
     commit("setAllProduts",arrayd)
   }
+

@@ -79,7 +79,6 @@
                       class="cursor-pointer pl-1 transform rotate-180"
                       alt=""
                     />
-                    
                   </div>
                 </div>
               </th>
@@ -561,10 +560,10 @@ export default {
         name:true,
         typologies:true,
         sized:true,
-        serie:false,
-        finish:false,
-        color:false,
-        dateCreated:false,
+        serie:true,
+        finish:true,
+        color:true,
+        dateCreated:true,
       }
     };
   },

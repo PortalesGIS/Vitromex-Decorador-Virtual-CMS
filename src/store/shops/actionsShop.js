@@ -68,14 +68,27 @@ export const getAllStoreDB = async ({commit})=>{
 
   export const filterAlphabetShops = ({commit,getters},payload)=>{
     const arrayd = getters.getAllStoresFilter
-    arrayd.sort((a,b)=>{
-      if (a[`${payload}`].toUpperCase() < b[`${payload}`].toUpperCase()) {
-        return -1;
+    if(payload.sateChange){
+      arrayd.sort((a,b)=>{
+        if (a[`${payload.campToFilter}`].toUpperCase() < b[`${payload.campToFilter}`].toUpperCase()) {
+          return -1;
+      }
+      if (b[`${payload.campToFilter}`].toUpperCase() < a[`${payload.campToFilter}`].toUpperCase()) {
+          return 1;
+      }
+      return 0;
+      })
     }
-    if (b[`${payload}`].toUpperCase() < a[`${payload}`].toUpperCase()) {
-        return 1;
+    else{
+      arrayd.sort((a,b)=>{
+        if (a[`${payload.campToFilter}`].toUpperCase() > b[`${payload.campToFilter}`].toUpperCase()) {
+          return -1;
+      }
+      if (b[`${payload.campToFilter}`].toUpperCase() > a[`${payload.campToFilter}`].toUpperCase()) {
+          return 1;
+      }
+      return 0;
+      })
     }
-    return 0;
-    })
     commit("setAllStores",{shops:arrayd})
   }

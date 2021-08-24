@@ -8,39 +8,93 @@
             <img src="../../assets/dropdown.svg" class="px-2" alt="">
           </div>
               </div>
-          <div class="col-span-2 flex items-center justify-start mr-4">
+          <div 
+            @click="filterArrow('name')"
+          class="col-span-2 flex items-center justify-start mr-4 cursor-pointer">
               <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Nombre de la Tienda</p>
               <div class="">
-            <img @click="filterArrow('name')"
-            src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
+            <!-- <img @click="filterArrow('name')"
+            src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt=""> -->
+            <div class="">
+                    <img v-if="stateOfFilters.name"
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1"
+                      alt=""
+                    />
+                    <img v-else
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1 transform rotate-180"
+                      alt=""
+                    />
+            </div>
           </div>
               </div>
-          <div class="col-span-2 flex items-center justify-start mr-4">
+          <div class="col-span-2 flex items-center justify-start mr-4 cursor-pointer"  @click="filterArrow('street')">
               <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Dirección</p>
               <div class="">
-            <img @click="filterArrow('street')"
-            src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
+            <div class="">
+                    <img v-if="stateOfFilters.street"
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1"
+                      alt=""
+                    />
+                    <img v-else
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1 transform rotate-180"
+                      alt=""
+                    />
+            </div>
           </div>
               </div>
-          <div class="col-span-2 flex items-center justify-start mr-4">
+          <div  @click="filterArrow('lat')" class="col-span-2 flex items-center justify-start mr-4 cursor-pointer">
               <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Coordenadas</p>
               <div class="">
-            <img @click="filterArrow('lat')"
-            src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
+           <div class="">
+                    <img v-if="stateOfFilters.lat"
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1"
+                      alt=""
+                    />
+                    <img v-else
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1 transform rotate-180"
+                      alt=""
+                    />
+            </div>
           </div>
               </div>
-          <div class="col-span-2 flex items-center justify-start mr-4">
+          <div @click="filterArrow('phone')" class="col-span-2 flex items-center justify-start mr-4 cursor-pointer">
               <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Teléfono</p>
               <div class="">
-            <img @click="filterArrow('phone')"
-            src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
+             <div class="">
+                    <img v-if="stateOfFilters.phone"
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1"
+                      alt=""
+                    />
+                    <img v-else
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1 transform rotate-180"
+                      alt=""
+                    />
+            </div>
           </div>
               </div>
-          <div class="col-span-2 flex items-center justify-start mr-4">
+          <div  @click="filterArrow('dateCreated')" class="col-span-2 flex items-center justify-start mr-4 cursor-pointer">
               <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Fecha de Registro</p>
               <div class="">
-            <img @click="filterArrow('dateCreated')"
-            src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="">
+           <div class="">
+                    <img v-if="stateOfFilters.dateCreated"
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1"
+                      alt=""
+                    />
+                    <img v-else
+                      src="../../assets/dropdown.svg"
+                      class="cursor-pointer pl-1 transform rotate-180"
+                      alt=""
+                    />
+            </div>
           </div>
               </div>
       </div>
@@ -84,7 +138,7 @@
                     <img src="../../assets/alerta.svg" class="pr-2" alt="" />
                     <p class="text-force-black text-justify text-xs font-normal">
                       ¿Estás seguro que deseas
-                      {{ store.status ? "suspender" : "activar" }} este producto en la App 
+                      {{ store.status ? "suspender" : "activar" }} este producto en la App? 
                     </p>
                   </div>
                   <div class="flex px-3 pt-5 justify-evenly">
@@ -172,6 +226,13 @@ export default {
       startData:0,
       endData:20,
       modalAlertActiveStore:-1,
+      stateOfFilters:{
+        name:true,
+        street:true,
+        lat:true,
+        phone:true,
+        dateCreated:true
+      }
         }
     },
     methods: {
@@ -183,8 +244,9 @@ export default {
       this.changeStatusShopDB(shop)
       this.onActiveAlertchangeStatus(-1)
     },
-    filterArrow(value){
-      this.filterAlphabetShops(value)
+    filterArrow(campToFilter){
+      this.filterAlphabetShops({campToFilter,sateChange: this.stateOfFilters[campToFilter]})
+       this.stateOfFilters[campToFilter] = !this.stateOfFilters[campToFilter]
     },
     onActiveAlertchangeStatus(index){
       this.modalAlertActiveStore = index

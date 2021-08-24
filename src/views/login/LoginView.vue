@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
 import LoginFormComponentVue from '../../components/forms/LoginFormComponent.vue'
 export default {
     data() {
@@ -37,9 +38,15 @@ export default {
         }
     },
     methods: {
+        ...mapActions(["onChangeStatePage"]),
         changeView() {
             this.view ===0 ?this.view=1:this.view=0 
+            this.view ===0 ? this.onChangeStatePage(true): this.onChangeStatePage(false)
+           
         }
+    },
+    computed: {
+        ...mapGetters(["getPageState"])
     },
     components:{
         LoginFormComponentVue

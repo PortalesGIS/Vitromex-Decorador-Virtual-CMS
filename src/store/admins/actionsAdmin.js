@@ -99,8 +99,15 @@ export const getAllAdminsDB = async ({commit})=>{
         redirect: 'follow'
       };
       fetch(`${baseUrl}/api/admin/create`, requestOptions)
-        .then(response => response.text())
-        .then(() => commit("addAdmin",{name:payload.name,email:payload.email,dateCreated:new Date().toISOString().slice(0,10)}) )
+        .then(response => response.json())
+        .then((result) =>{
+          if(!result.error){
+            commit("addAdmin",{name:payload.name,email:payload.email,dateCreated:new Date().toISOString().slice(0,10)}) 
+          }
+          else{
+            alert("Email ya registrado")
+          }
+        }) 
         .catch(error => console.log('error', error));
           
   }

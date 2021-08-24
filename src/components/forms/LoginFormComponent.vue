@@ -24,7 +24,7 @@
        </div>    
        <div class="pt-20 w-full flex justify-center">
            <div>
-               <p class="text-black text-2xl font-medium">Iniciar Sesión</p>
+               <p class="text-force-black text-2xl font-medium">Iniciar Sesión</p>
            </div>
         </div>   
         <div class='px-16 pt-7 w-full'>            
@@ -33,7 +33,7 @@
         class="h-full overflow-auto w-full">
         <div class='flex justify-start w-full' >
             <div class="w-full">                
-            <p class="text-black text-sm font-normal">Correo</p>
+            <p class="text-force-black text-sm font-normal">Correo</p>
             <input 
             class="border px-2 py-1 w-full"
             v-model="email"
@@ -44,7 +44,7 @@
         </div>
         <div class='flex justify-sart'>
             <div class="w-full pt-6">                
-            <p class="text-black text-sm font-normal">Contraseña</p>
+            <p class="text-force-black text-sm font-normal">Contraseña</p>
             <input 
             class="border px-2 py-1 w-full"
             v-model="password"
@@ -55,7 +55,7 @@
         <div class="flex justify-center pt-12">
             <button 
             type="submit"
-            class="bg-1f h-8 w-44 text-white" >
+            class="bg-1f h-8 w-44 text-force-white" >
                 Ingresar
             </button>
         </div>

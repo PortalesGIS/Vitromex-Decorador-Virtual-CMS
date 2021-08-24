@@ -7,9 +7,9 @@
   <div class=" w-full h-full bg-f5 ">
       <div class=" flex justify-between bg-1f">
           <div class="pl-10 w-full max-w-1400px grid grid-cols-12 bg-1f">
-          <div class="col-span-1 flex items-center justify-center mr-4">
+          <!-- <div class="col-span-1 flex items-center justify-center mr-4">
               <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold"></p>
-            </div>
+            </div> -->
           <div class="col-span-1 flex items-center justify-center mr-4">
               <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">No.</p>
             </div>
@@ -34,11 +34,11 @@
           <div class="flex justify-between"
              :class="(index%2)?'bg-white':''">
           <div class="pl-10 w-full grid grid-cols-12 max-w-1400px ">
-              <div class="col-span-1 flex justify-start items-center">
+              <!-- <div class="col-span-1 flex justify-start items-center">
               <p class="text-force-black text-sm py-2 monserrat "> 
                   <input @change="changeTextBox(typologie._id)" type="checkbox">
                   </p>
-          </div>
+          </div> -->
           <div class="col-span-1 flex justify-center items-center">
               <p class="text-force-black text-sm py-2 monserrat ">{{index+1}}</p>
           </div>
