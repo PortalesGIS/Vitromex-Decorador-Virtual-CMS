@@ -1,4 +1,51 @@
 <template>
+<div 
+v-if="isOpenModalFormat"
+class="z-50 fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-20">
+    <div class='w-full h-full flex justify-center items-center'>
+        <div class="bg-white w-full max-w-411px max-h-612px" >
+            <div class="w-full flex justify-center">
+                <p class="pt-6 uppercase monserrat text-xl text-force-black">FORMATOS de LOS ProductoS</p>    
+            </div>
+            <div class="bg-1f w-full h-7 mt-3 flex justify-around items-center px-11">
+                <p class="text-force-white text-xs">Formato</p>
+                <p class="text-force-white text-xs">Formato redondeado</p>
+            </div>
+            <div v-for="x in 10 " :key="x">
+                <div 
+                :class="(x%2===0)?'bg-f5':'bg-white'"
+                class="w-full h-9 flex justify-around items-center px-11">
+                <p class="text-sm text-black">20.3 x 20.3</p>
+                <input type="text" placeholder="20.3 x 20.3" class="text-sm pl-2 w-44 h-8 border border-black">
+            </div>
+            </div>
+            <div class="w-full h-7 bg-1f">
+                <div class="w-full h-full flex justify-end pr-7 items-center">
+            <div>
+                <!-- <p class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllStores.length}}</p> -->
+                <!-- <p v-if="true" class="text-force-white font-semibold text-xs">{{startData}}-{{endData}},{{getAllStores.length}}</p> -->
+                <p v-if="true" class="text-force-white font-semibold text-xs">12-15,412</p>
+                    <p v-else class="text-force-white font-semibold text-xs">Todo</p>
+                    </div>
+                    <div class="cursor-pointer ml-7"   @click="backPageTable()">
+                        <img src="../../assets/paginador_izquierda.svg" style="width:18px; height:12px" alt="">
+                    </div>
+                    <div class="cursor-pointer ml-7" @click="nextPageTable">
+                        <img src="../../assets/paginador_derecha.svg" style="width:18px; height:12px" alt="">            
+                    </div>
+                </div>
+            </div>  
+            <div class="w-full h-16 flex justify-around items-center">
+                <div class="w-44 h-8 text-center py-1 text-white bg-1f cursor-pointer">Guardar cambios</div>
+                <div 
+                @click="clickNewFormat(false)"
+                class="w-44 h-8 text-center py-1 text-black border border-black cursor-pointer">Cancelar</div>
+            </div>                      
+        </div>
+    </div>
+</div>
+
+<!-- start -->
   <div class="w-full h-8 flex items-center overflow-x-hidden ">
       <div class="h-full ml-10 mr-4 ">
           <div class="flex items-center   h-full bg-white max-w-17 border" style="border-color: #D4D4D4">
@@ -24,16 +71,15 @@
           v-model="dateTwo"
           @input="changeInputDate"
           :min="dateone===''?'':dateone"
-           :max="now"
+          :max="now"
           class=" appearance-none w-30 bg-white focus:outline-none active:outline-non"
           type="date">          
       </div>
-      <!-- <div class="h-full ml-10 mr-4">
+      <div class="h-full w-full ml-10 mr-4 flex justify-end">
           <div class="flex items-center h-full max-w-17 cursor-pointer">
-              <div class="w-4 h-4 rounded-full bg-gray-400 mx-2"></div>
-              <div><p class="text-gray-400">Eliminar</p></div>
+              <div @click="clickNewFormat(true)"><p class="text-force-white bg-black px-9 py-1">Formatos</p></div>
           </div>
-      </div> -->
+      </div>
   </div>
 </template>
 
@@ -46,6 +92,7 @@ export default {
             stringSearch: "",
             dateone:"",
             dateTwo:"",
+            isOpenModalFormat:false,
         }
     },
     methods: {
@@ -63,6 +110,9 @@ export default {
                 console.log(this.dateone)
                 console.log(this.dateTwo)
             }            
+        },
+        clickNewFormat(isOpend){
+            this.isOpenModalFormat = isOpend
         }
     },
     computed:{

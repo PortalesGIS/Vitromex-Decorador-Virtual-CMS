@@ -7,7 +7,8 @@ module.exports = {
       "120":"36rem",
       "32px":"32px",
       "700px":"700px",
-      "full":"100%"
+      "full":"100%",
+      "612px":"612px",
     },
     maxWidth:{
       "17":"17rem",
@@ -17,6 +18,7 @@ module.exports = {
       "1400px":"1400px",
       "1900px":"1900px",
       "full":"100%",
+      "411px":"411px",
     },
     minWidth: {
       "17":"17rem",
