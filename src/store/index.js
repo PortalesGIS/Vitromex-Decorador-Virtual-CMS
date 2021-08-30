@@ -1,3 +1,4 @@
+import router from '../router'
 import { createStore } from 'vuex'
 import * as actionsProducts from './products/actionsProducts'
 import * as mutationsProducts from './products/mutationsProducts'
@@ -20,7 +21,10 @@ import * as mutationsOnboarding from './onboarding/mutationsOnboarding'
 import * as actionsDashboard from './dashboard/actionsDashboard'
 import * as gettersDashboard from './dashboard/gettersDashboard'
 import * as mutationsDashboard from './dashboard/mutationsDashboard'
-import router from '../router'
+import * as actionsFormat from './formats/actionsFormat'
+import * as gettersFormat from './formats/gettersFormat'
+import * as mutationsFormat from './formats/mutationsFormat'
+
 
 
 export default createStore({
@@ -52,10 +56,12 @@ export default createStore({
     listSpacesFilter:[],
     listTypologies:[],
     listTypologiesFilter:[],    
+    listFormats:[],
   },
   mutations: {
     ...mutationsProducts,
     ...mutationsShop,
+    ...mutationsFormat,
     ...mutationsAdmin,
     ...mutationsUsers,
     ...mutationsDashboard,
@@ -72,6 +78,7 @@ export default createStore({
   ...actionsProducts,
    ...actionsShop,
    ...actionsAdmin,
+   ...actionsFormat,
    ...actionsUsers,
    ...actionsSeries,
    ...actionsOnboarding,
@@ -88,6 +95,7 @@ export default createStore({
     ...gettersProducts,
     ...gettersShop,
     ...gettersAdmin,
+    ...gettersFormat,
     ...gettersUsers,
     ...gettersSeries,
     ...gettersOnboarding,
