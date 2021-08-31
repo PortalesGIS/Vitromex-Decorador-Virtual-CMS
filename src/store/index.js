@@ -35,10 +35,10 @@ export default createStore({
     dashboard:{
       totalUserRegister:0,
       totalDownloadsApps:0,
+      totalViewsWeb:0,
       totalDownloadAndoid:0,
       totalDownloadsIos:0,
       totalspaceMoreVisited:0,
-      totalViewsDecorator:0,
       listProductFavorites:[],
       listProductsApplications:[],
     },

@@ -380,6 +380,7 @@
                   </div>
                 </div>
               </td>
+              <!-- este filtro sirve para que la tabla no renderize mas de los que deberia optimizar? -->
               <td v-if="index >= startData && index <= endData">
                 <div
                   class="
@@ -392,15 +393,7 @@
                 >
                   <div
                     v-if="index === modalActiveProduct"
-                    class="
-                      z-50
-                      -ml-64
-                      mt-40
-                      absolute
-                      w-72
-                      h-28
-                      bg-white
-                      border border-black
+                    class=" z-50 -ml-64 mt-40 absolute w-72 h-28 bg-white border border-black
                     "
                   >
                     <div class="flex px-3 pt-5">
@@ -611,7 +604,8 @@ export default {
       if (
         product.smallPicture &&
         this.countRendersProduct(product) === 3 &&
-        this.countImgsProduct(product) == 2
+        this.countImgsProduct(product) == 2 &&
+        !product.sized.includes(".")
       ) {
         return true;
       }

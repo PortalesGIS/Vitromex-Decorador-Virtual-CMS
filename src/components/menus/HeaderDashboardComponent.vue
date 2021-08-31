@@ -55,7 +55,7 @@
                       <img class="w-9 h-9 " src="../../assets/Descargas.svg" alt="">                      
                     </div>
                     <div>
-                      <p class="text-force-black font-bold text-xl">{{getDasboardData.totalDownloadsApps/1000}}K</p>
+                      <p class="text-force-black font-bold text-xl">{{(parseInt(getDasboardData.totalDownloadAndoid)+parseInt(getDasboardData.totalDownloadsIos))/1000}}K</p>
                       <p class="text-xs font-medium moserrat-semibold -mt-1" style="color:#7d7d7d">Descargas</p>
                     </div>
                   </div>
@@ -98,7 +98,7 @@
                       <img class="w-9 h-9 " src="../../assets/vistas.svg" alt="">                      
                     </div>
                     <div>
-                      <p class="text-force-black font-bold text-xl">{{getDasboardData.totalViewsDecorator/1000}}K</p>
+                      <p class="text-force-black font-bold text-xl">{{getDasboardData.totalViewsWeb/1000}}K</p>
                       <p class="text-xs font-medium moserrat-semibold -mt-1" style="color:#7d7d7d">Vistas</p>
                     </div>
               </div>
@@ -118,10 +118,16 @@ export default {
     ...mapGetters(["getDasboardData"])
   },
   methods: {
-    ...mapActions(["getNmberOfUsers"])
+    ...mapActions(["getNmberOfUsers",
+    'onGeatAllUsersDowloadAndroid',
+    'onGeatAllUsersDowloadWeb',
+    'onGeatAllUsersDowloadIos'])
   },
   created () {
     this.getNmberOfUsers()
+    this.onGeatAllUsersDowloadAndroid()
+    this.onGeatAllUsersDowloadWeb()
+    this.onGeatAllUsersDowloadIos()
   },
 }
 </script>
