@@ -38,7 +38,15 @@ export default createStore({
       totalViewsWeb:0,
       totalDownloadAndoid:0,
       totalDownloadsIos:0,
-      totalspaceMoreVisited:0,
+      totalspaceMoreVisited:{
+        spaces:{
+          comedor:{total:0},
+        sala:{total:0},
+        banio:{total:0},
+        fachada:{total:0},
+        cocina:{total:0},
+        }
+      },
       listProductFavorites:[],
       listProductsApplications:[],
     },

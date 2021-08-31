@@ -24,7 +24,7 @@
                       <img class="w-9 h-9 " src="../../assets/Android.svg" alt="">                      
                     </div>
                     <div>
-                      <p class="text-force-black font-bold text-xl">{{0/1000}}K</p>
+                      <p class="text-force-black font-bold text-xl">{{getDasboardData.totalDownloadAndoid/1000}}K</p>
                       <p class="text-xs font-medium moserrat-semibold -mt-1" style="color:#7d7d7d">Android</p>
                     </div>
                   </div>
@@ -33,7 +33,7 @@
                       <img class="w-9 h-9 " src="../../assets/iOS.svg" alt="">                      
                     </div>
                     <div>
-                      <p class="text-force-black font-bold text-xl">{{0/1000}}K</p>
+                      <p class="text-force-black font-bold text-xl">{{getDasboardData.totalDownloadsIos/1000}}K</p>
                       <p class="text-xs font-medium moserrat-semibold -mt-1" style="color:#7d7d7d">iOS</p>
                     </div>
                   </div>
@@ -44,7 +44,7 @@
                       <img class="w-9 h-9 " src="../../assets/Usuarios.svg" alt="">                      
                     </div>
                     <div>
-                      <p class="text-force-black font-bold text-xl">{{0/1000}}K</p>
+                      <p class="text-force-black font-bold text-xl">{{getDasboardData.totalUserRegister/1000}}K</p>
                       <p class="text-xs font-medium moserrat-semibold -mt-1" style="color:#7d7d7d">Usuarios</p>
                     </div>
                   </div>
@@ -55,7 +55,7 @@
                       <img class="w-9 h-9 " src="../../assets/Descargas.svg" alt="">                      
                     </div>
                     <div>
-                      <p class="text-force-black font-bold text-xl">{{(0/1000)}}K</p>
+                      <p class="text-force-black font-bold text-xl">{{(parseInt(getDasboardData.totalDownloadAndoid)+parseInt(getDasboardData.totalDownloadsIos))/1000}}K</p>
                       <p class="text-xs font-medium moserrat-semibold -mt-1" style="color:#7d7d7d">Descargas</p>
                     </div>
                   </div>
@@ -83,9 +83,9 @@
                       <img class="w-9 h-9 " src="../../assets/AR.svg" alt="">                      
                     </div>
                     <div>
-                      <p class="text-force-black font-bold text-xl">{{0/1000}}K</p>
+                      <p class="text-force-black font-bold text-xl">{{spaceMoreAplicated.total/1000}}K</p>
                       <!-- TODO: espacio mas visitado -->
-                      <p class="text-xs font-medium moserrat-semibold -mt-1" style="color:#7d7d7d">Cocina</p>
+                      <p class="text-xs font-medium moserrat-semibold -mt-1 capitalize" style="color:#7d7d7d">{{(spaceMoreAplicated.name==='banio'?'baño':spaceMoreAplicated.name)}}</p>
                     </div>
               </div>
             </div>
@@ -98,7 +98,7 @@
                       <img class="w-9 h-9 " src="../../assets/vistas.svg" alt="">                      
                     </div>
                     <div>
-                      <p class="text-force-black font-bold text-xl">{{0/1000}}K</p>
+                      <p class="text-force-black font-bold text-xl">{{getDasboardData.totalViewsWeb/1000}}K</p>
                       <p class="text-xs font-medium moserrat-semibold -mt-1" style="color:#7d7d7d">Vistas</p>
                     </div>
               </div>
@@ -115,19 +115,34 @@
 import { mapActions, mapGetters } from 'vuex'
 export default {
   computed: {
-    ...mapGetters(["getDasboardData"])
+    ...mapGetters(["getDasboardData"]),
+    spaceMoreAplicated(){
+      // i don't know why i did this 
+      const spaces = this.getDasboardData.totalspaceMoreVisited
+      const arrayspacs = ['cocina','comedor','sala','banio','fachada']
+      let mayor = {name:'cocina',total:0}
+      for (let index = 0; index <= 4; index++) {
+         if(spaces.spaces[arrayspacs[index]].total>mayor.total){
+           mayor = {name:arrayspacs[index], total:spaces.spaces[arrayspacs[index]].total}
+         }
+      }
+      return mayor
+    }
   },
   methods: {
     ...mapActions(["getNmberOfUsers",
     'onGeatAllUsersDowloadAndroid',
     'onGeatAllUsersDowloadWeb',
-    'onGeatAllUsersDowloadIos'])
+    'onGetSpacesCountersAplicateds',
+    'onGeatAllUsersDowloadIos']),
+    
   },
   created () {
     this.getNmberOfUsers()
     this.onGeatAllUsersDowloadAndroid()
     this.onGeatAllUsersDowloadWeb()
     this.onGeatAllUsersDowloadIos()
+    this.onGetSpacesCountersAplicateds()
   },
 }
 </script>
