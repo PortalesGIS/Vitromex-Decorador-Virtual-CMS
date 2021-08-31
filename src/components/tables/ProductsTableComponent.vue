@@ -84,7 +84,8 @@
               </th>
               <th class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center ">
-                  <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Formato</p>
+                  <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold"
+                  >Formato</p>
                   <div class="">
                     <img v-if="stateOfFilters.sized"
                       @click="onFilterArrow('sized')"
@@ -257,7 +258,9 @@
               </td>
               <td v-if="index >= startData && index <= endData">
                 <div class="flex justify-center">
-                  <p class="text-force-black text-sm py-2 monserrat capitalize">{{ product.sized.toLowerCase() }}</p>
+                  <p 
+                  :class="product.sized.includes('.')?'text-red':'text-force-black'"
+                  class=" text-sm py-2 monserrat capitalize">{{ product.sized.toLowerCase() }}</p>
                 </div>
               </td>
               <td v-if="index >= startData && index <= endData">

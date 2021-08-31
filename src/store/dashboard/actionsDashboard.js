@@ -112,10 +112,10 @@ export const onGetProductsFavorites = async ({ commit,getters }) => {
         result.list.map(async (product, index) => {
           if (index < 11) {
             const name = await getProduct(product._id);
-            return {
-              total: product.total,
-              name: await name,
-            };
+              return {
+                total: product.total,
+                name: await name,
+              };
           }
         })
       );
@@ -171,5 +171,10 @@ const getProduct = async (id) => {
     requestOptions
   );
   const result = await response.json();
-  return result.product.name;
+  if(!result.errors){  
+    return result.product.name;
+  }
+  else{
+    console.log("un producto al que intentas aceder no existe, consulte al desarollador ")
+  }
 };

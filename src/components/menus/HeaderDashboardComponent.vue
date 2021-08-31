@@ -24,7 +24,7 @@
                       <img class="w-9 h-9 " src="../../assets/Android.svg" alt="">                      
                     </div>
                     <div>
-                      <p class="text-force-black font-bold text-xl">{{getDasboardData.totalDownloadAndoid/1000}}K</p>
+                      <p class="text-force-black font-bold text-xl">{{0/1000}}K</p>
                       <p class="text-xs font-medium moserrat-semibold -mt-1" style="color:#7d7d7d">Android</p>
                     </div>
                   </div>
@@ -33,7 +33,7 @@
                       <img class="w-9 h-9 " src="../../assets/iOS.svg" alt="">                      
                     </div>
                     <div>
-                      <p class="text-force-black font-bold text-xl">{{getDasboardData.totalDownloadsIos/1000}}K</p>
+                      <p class="text-force-black font-bold text-xl">{{0/1000}}K</p>
                       <p class="text-xs font-medium moserrat-semibold -mt-1" style="color:#7d7d7d">iOS</p>
                     </div>
                   </div>
@@ -44,7 +44,7 @@
                       <img class="w-9 h-9 " src="../../assets/Usuarios.svg" alt="">                      
                     </div>
                     <div>
-                      <p class="text-force-black font-bold text-xl">{{getDasboardData.totalUserRegister/1000}}K</p>
+                      <p class="text-force-black font-bold text-xl">{{0/1000}}K</p>
                       <p class="text-xs font-medium moserrat-semibold -mt-1" style="color:#7d7d7d">Usuarios</p>
                     </div>
                   </div>
@@ -55,7 +55,7 @@
                       <img class="w-9 h-9 " src="../../assets/Descargas.svg" alt="">                      
                     </div>
                     <div>
-                      <p class="text-force-black font-bold text-xl">{{(parseInt(getDasboardData.totalDownloadAndoid)+parseInt(getDasboardData.totalDownloadsIos))/1000}}K</p>
+                      <p class="text-force-black font-bold text-xl">{{(0/1000)}}K</p>
                       <p class="text-xs font-medium moserrat-semibold -mt-1" style="color:#7d7d7d">Descargas</p>
                     </div>
                   </div>
@@ -83,7 +83,7 @@
                       <img class="w-9 h-9 " src="../../assets/AR.svg" alt="">                      
                     </div>
                     <div>
-                      <p class="text-force-black font-bold text-xl">{{getDasboardData.totalspaceMoreVisited/1000}}K</p>
+                      <p class="text-force-black font-bold text-xl">{{0/1000}}K</p>
                       <!-- TODO: espacio mas visitado -->
                       <p class="text-xs font-medium moserrat-semibold -mt-1" style="color:#7d7d7d">Cocina</p>
                     </div>
@@ -98,7 +98,7 @@
                       <img class="w-9 h-9 " src="../../assets/vistas.svg" alt="">                      
                     </div>
                     <div>
-                      <p class="text-force-black font-bold text-xl">{{getDasboardData.totalViewsWeb/1000}}K</p>
+                      <p class="text-force-black font-bold text-xl">{{0/1000}}K</p>
                       <p class="text-xs font-medium moserrat-semibold -mt-1" style="color:#7d7d7d">Vistas</p>
                     </div>
               </div>

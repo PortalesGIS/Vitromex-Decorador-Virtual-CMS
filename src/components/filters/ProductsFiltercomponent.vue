@@ -11,7 +11,7 @@ class="z-50 fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-20">
                 <p class="text-force-white text-xs">Formato</p>
                 <p class="text-force-white text-xs">Formato redondeado</p>
             </div>           
-            <div v-for="format,index in getAllFormats" :key="format">
+            <div v-for="format,index in getAllFormats" :key="format" >
                 <div 
                v-if="(index >= startData && index <= endData)"
                 :class="(index%2===0)?'bg-f5':'bg-white'"
@@ -141,7 +141,8 @@ export default {
         },
         onUpdateFormatsToDB(){
             this.UpdateFormats(this.formatsToupdate)
-             this.clickNewFormat(false)
+            this.clickNewFormat(false)
+
         },
         // controlador de paginas Formatos
          changeRange(){        

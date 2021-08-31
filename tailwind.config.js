@@ -82,6 +82,7 @@ module.exports = {
     }),
     textColor:theme=>("colors"),
     textColor:{
+      'red':'#ff0000',
       "white":"var(--color-text)",
       "black":"var(--color-text-back)",
       "force-black":"#000000",
