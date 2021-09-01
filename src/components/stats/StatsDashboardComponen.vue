@@ -10,10 +10,17 @@
                 <div class="flex h-7 bg-white items-center border ">
                     <img src="../../assets/Calendario.svg" class="mx-2" style="width:15px; height:13px" alt="">                    
                     <input 
+                    v-model="dateone"
+                    @input="changeInputDate"
+                    :max="now"
                     class=" appearance-none  text-xs bg-white focus:outline-none active:outline-non"
                     type="date">
                     <p class="">-</p>
                     <input 
+                      v-model="dateTwo"
+                      @input="changeInputDate"
+                      :min="dateone===''?'':dateone"
+                      :max="now"
                     class=" appearance-none  text-xs bg-white focus:outline-none active:outline-non"
                     type="date">          
                 </div>
@@ -95,6 +102,13 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 export default {
+  data() {
+    return {
+     now: new Date().toISOString().slice(0,10),
+     dateone:"",
+     dateTwo:"",
+    }
+  },
  computed: {
     ...mapGetters(["getDasboardData"])
   },
@@ -102,7 +116,13 @@ export default {
     ...mapActions(["onGetProductsFavorites","onGetProductsAplicated"]),
     getPercentage(total,max){   
       return (total*100)/max;
-    }
+    },
+    changeInputDate(){
+          // console.log(new Date(this.dateone).getTime() < new Date("2021-06-20").getTime() && new Date(this.dateTwo).getTime() > new Date("2021-06-20").getTime() )            
+          if(this.dateone!="" && this.dateTwo!=""){
+              console.log("filtar por: " + this.dateone +" "+ this.dateTwo)
+          }            
+      }
   },
   created () {
     this.onGetProductsFavorites()

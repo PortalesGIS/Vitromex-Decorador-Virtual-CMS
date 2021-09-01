@@ -173,7 +173,6 @@ export const onGetSpacesCountersAplicateds = async ({ commit,getters }) => {
   fetch(`${baseUrl}/api/analytics/countspaces/${platform}`, requestOptions)
     .then((response) => response.json())
     .then(async (result) => {
-      console.log(result)
       commit("setDashboardProperti", {
         properti: "totalspaceMoreVisited",
         value:result,
@@ -181,8 +180,6 @@ export const onGetSpacesCountersAplicateds = async ({ commit,getters }) => {
     })
     .catch((error) => console.log("error", error));
 };
-
-
 
 const getProduct = async (id) => {
   let requestOptions = {

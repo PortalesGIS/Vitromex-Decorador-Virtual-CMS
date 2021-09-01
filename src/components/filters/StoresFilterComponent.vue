@@ -36,7 +36,7 @@ import { mapActions } from 'vuex'
 export default {
     data() {
         return {
-             now: new Date().toISOString().slice(0,10),
+          now: new Date().toISOString().slice(0,10),
           word:"",
           dateone:"",
           dateTwo:"",
