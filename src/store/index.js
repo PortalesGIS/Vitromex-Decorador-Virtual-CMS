@@ -40,7 +40,7 @@ export default createStore({
       totalDownloadsIos:0,
       totalspaceMoreVisited:{
         spaces:{
-          comedor:{total:0},
+        comedor:{total:0},
         sala:{total:0},
         banio:{total:0},
         fachada:{total:0},
@@ -49,6 +49,8 @@ export default createStore({
       },
       listProductFavorites:[],
       listProductsApplications:[],
+      listProductsFavoritesResponseFilter:[],
+      listProductsApplicationsResponseFilter:[],
     },
     listUsers:[],
     listUsersForFilter:[],
