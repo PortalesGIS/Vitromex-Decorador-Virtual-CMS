@@ -246,6 +246,16 @@ export const onFilterFavoritesList = async({commit,getters},{dateOne="",dateTwo=
       }
     })
   );
+  // ordenar de mayor a menor 
+  arrayformated.sort(function (a, b) {
+    if (a.total < b.total) {
+      return 1;
+    }
+    if (a.total > b.total) {
+      return -1;
+    }
+    return 0;
+});
   // se sustitue por el arrar a mostrar en el front
   commit("setDashboardProperti", {
     properti: "listProductFavorites",
@@ -309,6 +319,16 @@ export const onFilterAplicatesList = async({commit,getters},{dateOne="",dateTwo=
       }
     })
   );
+  // ordenar de mayor a menor 
+  arrayformated.sort(function (a, b) {
+    if (a.total < b.total) {
+      return 1;
+    }
+    if (a.total > b.total) {
+      return -1;
+    }
+    return 0;
+    });
   // se sustitue por el arrar a mostrar en el front
   commit("setDashboardProperti", {
     properti: "listProductsApplications",
