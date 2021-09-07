@@ -1,24 +1,33 @@
-# cms-vitromex-arko
 
-## Project setup
+# Vitromex-Arko CMS (Vue+Vuex)
+
+descripcion e instalaciones para correrlo en local y produccion 
+
+## Authors
+
+- [Angel Isai (developer)](https://github.com/AngelIsaiRB)
+- [Inmersys](https://www.inmersys.com)
+
+  
+## Instalacion
+
+Install my-project with npm
+
+```bash
+  git clone
+  npm install
+  npm run serve
 ```
-npm install
+produccion 
+```
+    npm run build 
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+#### Para poder correrlo es necesario la liga para apuntar al api 
+ruta: `/src/types/data.js`
 ```
 
-### Lints and fixes files
-```
-npm run lint
+// TODO: liga de desarollo
+export const baseUrl = "https://testing-api-vitro-arko.xyz"
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
