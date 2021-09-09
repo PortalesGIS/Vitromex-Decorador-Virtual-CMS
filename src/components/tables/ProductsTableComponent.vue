@@ -607,7 +607,7 @@ export default {
       if (
         product.smallPicture &&
         this.countRendersProduct(product) >= 1 &&
-        this.countImgsProduct(product) == 2 &&
+        this.countImgsProduct(product) === 2 &&
         !product.sized.includes(".")
       ) {
         return true;

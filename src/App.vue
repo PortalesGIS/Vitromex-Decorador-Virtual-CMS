@@ -10,7 +10,7 @@
 </div>
 <!-- /Active Breakpoint Indicator -->
   <p class="bg-red-400 text-sm">
-    V 1.0.0
+    V 1.0.1
   </p>
   </div>
  <div :class="getPageState?'':'theme-arko'">
