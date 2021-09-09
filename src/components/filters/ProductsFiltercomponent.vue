@@ -105,7 +105,7 @@ export default {
         }
     },
     methods: {
-        ...mapActions(["filterProductsForString","productFilterDates","onGeatAllFotmatsDB","UpdateFormats"]),
+        ...mapActions(["filterProductsForString","onChangeViewWindow","getAllproductsdb","productFilterDates","onGeatAllFotmatsDB","UpdateFormats"]),
         chngeInputName() {
             this.filterProductsForString({word:this.stringSearch});
         },
@@ -116,8 +116,6 @@ export default {
                     dateOne:this.dateone,
                     dateTwo:this.dateTwo
                 })
-                console.log(this.dateone)
-                console.log(this.dateTwo)
             }            
         },
         clickNewFormat(isOpend){
@@ -139,12 +137,13 @@ export default {
         async getFormats(){
             await this.onGeatAllFotmatsDB()
         },
-        onUpdateFormatsToDB(){
-            this.UpdateFormats(this.formatsToupdate)
-            this.clickNewFormat(false)
+       async onUpdateFormatsToDB(){
+           this.clickNewFormat(false)
+            await this.UpdateFormats(this.formatsToupdate)
+            this.onChangeViewWindow(1)
 
         },
-        // controlador de paginas Formatos
+        /////////////////////// controlador de paginas Formatos
          changeRange(){        
         this.startData = 0;
         this.endData = this.numberDataPerPage
@@ -170,6 +169,7 @@ export default {
         this.startData =parseInt(this.endData)  - parseInt(this.numberDataPerPage)
       }
     }
+    // ///////////////////////////
     },
     computed:{
         ...mapGetters(["getAllProducts","getAllFormats"]),

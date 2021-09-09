@@ -16,7 +16,7 @@ export const onGeatAllFotmatsDB = async({commit})=>{
     // 
 }
 
-export const UpdateFormats = ({commit},formatsToUpdate) =>{
+export const UpdateFormats = (commit,formatsToUpdate) =>{
     formatsToUpdate.forEach(format=>{
         let myHeaders = new Headers();
         myHeaders.append("key",`${localStorage.getItem("token")}`);

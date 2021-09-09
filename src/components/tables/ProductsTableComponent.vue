@@ -606,7 +606,7 @@ export default {
     verifyProductIsComplete(product) {
       if (
         product.smallPicture &&
-        this.countRendersProduct(product) === 3 &&
+        this.countRendersProduct(product) >= 1 &&
         this.countImgsProduct(product) == 2 &&
         !product.sized.includes(".")
       ) {

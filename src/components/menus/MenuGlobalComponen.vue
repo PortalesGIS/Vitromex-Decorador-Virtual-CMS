@@ -317,13 +317,43 @@ export default {
         }
     },
     methods: {
-        ...mapActions(["onChangeViewWindow","exitCms","onChangeStatePage"]),
+        ...mapActions(["onChangeViewWindow","exitCms","onChangeStatePage",
+        "onGetProductsFavorites",
+        "onGetProductsAplicated",
+        "getNmberOfUsers",
+        "onGeatAllUsersDowloadAndroid",
+        "onGeatAllUsersDowloadWeb",
+        "onGeatAllUsersDowloadIos",
+        "onGetSpacesCountersAplicateds",
+        "getAllAdminsDB",
+        "getAllproductsdb",
+        "getAllSeriesDB",
+        "getAllSpacesDB",
+        "getAllStoreDB",
+        "getAllTypologiesDB",
+        "getAllUsersApp",
+        ]),
         goTo(payload) {
             this.onChangeViewWindow(payload)
             
         },
         changeVitroArko(){
             this.onChangeStatePage(!this.getPageState)
+            this.onGetProductsFavorites()
+            this.onGetProductsAplicated()
+            this.getNmberOfUsers()
+            this.onGeatAllUsersDowloadAndroid()
+            this.onGeatAllUsersDowloadWeb()
+            this.onGeatAllUsersDowloadIos()
+            this.onGetSpacesCountersAplicateds()
+
+            // this.getAllAdminsDB();
+            this.getAllproductsdb();
+            this.getAllSeriesDB();
+            this.getAllSpacesDB();
+            // this.getAllStoreDB();
+            // this.getAllTypologiesDB();
+            this.getAllUsersApp();
         },
         onChangeViewMenu(){
             this.isOpen = !this.isOpen;

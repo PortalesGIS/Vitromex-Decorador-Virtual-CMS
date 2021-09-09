@@ -97,7 +97,7 @@ export default createStore({
       commit("setView",payload);
     },
     onChangeStatePage({commit},payload){ 
-      router.push("/")     
+      router.push("/") 
       commit("setStatePage",payload);
     }
   },

@@ -168,7 +168,7 @@ formdata.append("positionArray", positionArray);
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
   }
-
+  
   export const filterProductsForString=({commit,getters},{word=""})=>{
     word= normalizeText(word)
     const result = getters.getAllProductsFilter.filter(product =>
@@ -189,9 +189,9 @@ formdata.append("positionArray", positionArray);
         return new Date(dateOne).getTime() <= new Date(product.dateCreated).getTime() 
         && new Date(dateTwo).getTime() >= new Date(product.dateCreated).getTime()
       }
-    )
-    console.log(result)
-    commit("setAllProduts",result)
+      )
+      console.log(result)
+      commit("setAllProduts",result)
   }
 
   export const filterAlphabetProduct = ({commit,getters},payload)=>{
@@ -221,3 +221,23 @@ formdata.append("positionArray", positionArray);
     commit("setAllProduts",arrayd)
   }
 
+  export const deleteImgRender=({commit},payload)=>{
+    commit("updateProductRender",{id:payload.id,render:"",index:payload.index})
+    let myHeaders = new Headers();
+    myHeaders.append("key",`${localStorage.getItem("token")}`);
+    myHeaders.append("Access-Control-Allow-Origin",`*`);
+    myHeaders.append("Content-Type",`application/json`);
+    let requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: JSON.stringify({
+        id: payload.id,
+        positionImg: payload.index
+      }),
+      redirect: 'follow'
+    };
+    fetch(`${baseUrl}/api/product/deleteimg`, requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+  }

@@ -95,31 +95,43 @@
                                <div v-if="img1===''" class="flex justify-center cursor-pointer">
                                     <img src="../../assets/agregar_imagen.svg"  alt=""> 
                                </div>
-                               <div v-else class="flex justify-center cursor-pointer">
+                               <div v-else class="flex justify-center cursor-pointer border ">
                                     <img :src="img1"  alt="" style="width:174px; height:112px;"> 
                                </div>
                            </label>
                         </div>
+                        <!-- imagenes que se pueden eliminar -->
                         <div class="mx-1" style="width:174px; height:112px;">
-                           <label for="inp2">
+                           <!-- <label for="inp2"> -->
                                <div v-if="img2===''" class="flex justify-center">
                                     <img src="../../assets/agregar_imagen.svg"  alt=""> 
                                </div>
-                               <div v-else class="flex justify-center">
-                                    <img :src="img2"  alt="" style="width:174px; height:112px;"> 
+                               <div v-else class="flex justify-center  ">
+                                   <div class="w-40 absolute flex justify-end">
+                                       <img
+                                       @click="onDeleteImgRender(1)"
+                                        class="mt-1 cursor-pointer" src="../../assets/deleteImg.png" style="width:25px; height:25px;" alt="">
+                                   </div>
+                                    <img :src="img2"   alt="" style="width:174px; height:112px;"> 
                                </div>
-                           </label>
+                           <!-- </label> -->
                         </div>
                         <div class="mx-1" style="width:174px; height:112px;">
-                           <label for="inp3">
-                               <div v-if="img3===''" class="flex justify-center">
+                           <!-- <label for="inp3"> -->
+                               <div v-if="img3===''" class="flex justify-center ">
                                     <img src="../../assets/agregar_imagen.svg"  alt=""> 
                                </div>
                                <div v-else class="flex justify-center">
+                                   <div class="w-40 absolute flex justify-end">
+                                       <img
+                                       @click="onDeleteImgRender(2)"
+                                        class="mt-1 cursor-pointer" src="../../assets/deleteImg.png" style="width:25px; height:25px;" alt="">
+                                   </div>
                                     <img :src="img3"  alt="" style="width:174px; height:112px;"> 
                                </div>
-                           </label>
+                           <!-- </label> -->
                         </div>
+                        <!-- end-imagenes que se pueden eliminar  -->
                     </div>
                     <div class="flex justify-between items-center mt-1">
                         <div class="w-44 flex justify-center items-center cursor-pointer" >
@@ -393,7 +405,7 @@ export default {
         }
     },
     methods: {
-        ...mapActions(["updateProductDB","getAllSpacesDB"]),
+        ...mapActions(["updateProductDB","getAllSpacesDB","deleteImgRender"]),
         nexPage() {
             if(this.page<2){
                 this.page++
@@ -409,6 +421,18 @@ export default {
             else{
                 this.page=2
             }
+        },
+        onDeleteImgRender(index){
+            if(index===1){
+                this.img2=""
+            }
+            if(index===2){
+                this.img3=""
+            }
+            this.deleteImgRender({
+                id:this.id,
+                index
+            })
         },
         onActiveModal(payload){
             this.id=payload._id
