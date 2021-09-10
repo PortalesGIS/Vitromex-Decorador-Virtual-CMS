@@ -106,7 +106,7 @@
                                <div v-if="img2===''" class="flex justify-center">
                                     <img src="../../assets/agregar_imagen.svg"  alt=""> 
                                </div>
-                               <div v-else class="flex justify-center  ">
+                               <div v-else class="flex relative justify-center  ">
                                    <div class="w-40 absolute flex justify-end">
                                        <img
                                        @click="onDeleteImgRender(1)"
@@ -121,7 +121,7 @@
                                <div v-if="img3===''" class="flex justify-center ">
                                     <img src="../../assets/agregar_imagen.svg"  alt=""> 
                                </div>
-                               <div v-else class="flex justify-center">
+                               <div v-else class="flex relative justify-center">
                                    <div class="w-40 absolute flex justify-end">
                                        <img
                                        @click="onDeleteImgRender(2)"
