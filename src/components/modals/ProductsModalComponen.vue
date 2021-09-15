@@ -340,7 +340,7 @@
                         <div class="grid grid-cols-3 justify-center">
                             <div v-for="aplication in getAllSpaces" :key="aplication">
                             <div class="py-4  flex justify-start items-center">
-                                <input type="checkbox" @change="changeTextBox(aplication.name)" class="h-4 w-4">
+                                <input :checked='isDefaultActiveCheckbox(aplication.name)?true:false' type="checkbox" @change="changeTextBox(aplication.name)" class="h-4 w-4">
                                 <p class="pl-2 moserrat-semibold text-force-black text-xs">{{aplication.name}}</p>
                             </div>
                             </div>                            
@@ -401,7 +401,7 @@ export default {
     computed: {
         ...mapGetters(["getAllSpaces"]),
         activeBtn(){
-            return   !this.isModificate
+            return   !this.spaces.length > 0;
         }
     },
     methods: {
@@ -434,9 +434,14 @@ export default {
                 index
             })
         },
+        isDefaultActiveCheckbox(nameSpace){
+           return this.spaces.find(name =>name === nameSpace)
+            
+        },
         onActiveModal(payload){
             this.id=payload._id
             this.page=0;
+            this.spaces = payload.aplications
             this.name=payload.name
             this.activeModal=true;
             this.img1 = payload.renders[0]

@@ -88,7 +88,7 @@ export const getAllproductsdb = async({commit,getters})=>{
     }
     if(product.textureWidth){
       updateProductCamp(product.id,"textureWidth",product.textureWidth)
-      commit("updateProduct",{id:product.id,camp:"textureHeight",value:product.textureHeight})
+      commit("updateProduct",{id:product.id,camp:"textureWidth",value:product.textureWidth})
     }
     if(product.spaces && product.spaces.length >= 1){
       updateProductCamp(product.id,"aplications",product.spaces)
