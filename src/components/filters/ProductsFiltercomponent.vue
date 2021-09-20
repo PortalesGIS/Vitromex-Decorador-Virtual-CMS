@@ -16,7 +16,7 @@ class="z-50 fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-20">
                v-if="(index >= startData && index <= endData)"
                 :class="(index%2===0)?'bg-f5':'bg-white'"
                 class="w-full h-9 flex justify-around items-center px-11">
-                <p class="text-sm text-black w-8">{{format.format}}</p>
+                <p class="text-sm text-force-black w-8">{{format.format}}</p>
                 <input 
                 @change="addFormatToUpdate(format)"
                 type="text" :id="format._id" :placeholder="format.rounded" class="text-sm pl-2 w-44 h-8 border border-black">
@@ -41,10 +41,10 @@ class="z-50 fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-20">
             <div class="w-full h-16 flex justify-around items-center">
                 <div 
                 @click="onUpdateFormatsToDB"
-                class="w-44 h-8 text-center py-1 text-white bg-1f cursor-pointer">Guardar cambios</div>
+                class="w-44 h-8 text-center py-1 text-force-white bg-1f cursor-pointer">Guardar cambios</div>
                 <div 
                 @click="clickNewFormat(false)"
-                class="w-44 h-8 text-center py-1 text-black border border-black cursor-pointer">Cancelar</div>
+                class="w-44 h-8 text-center text-force-black py-1 text-black border border-black cursor-pointer">Cancelar</div>
             </div>                      
         </div>
     </div>
