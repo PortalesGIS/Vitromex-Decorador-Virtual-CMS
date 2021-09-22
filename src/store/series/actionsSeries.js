@@ -44,7 +44,23 @@ export const getAllSeriesDB = async ({commit,getters})=>{
     commit("setAllSeries",{serie:result})
   }
 
-  export const UpdateSerieImgDB = async ({commit},payload) =>{
+  export const UpdateSerieImgDB = async ({commit,getters},payload) =>{
+    // actualizar en local
+      const series =  getters.getAllSeries
+      console.log(series)
+      const seriesUpdates = []
+      series.forEach((ser)=>{
+        if(ser._id === payload.id){
+          seriesUpdates.push({...ser, img:URL.createObjectURL(payload.file)})          
+        }
+        else{
+          seriesUpdates.push(ser)
+        }
+      })
+      commit('setAllSeries',{serie:seriesUpdates})
+      commit('setAllSeriesFilter',{serie:seriesUpdates})
+      
+    // 
     let myHeaders = new Headers();
     myHeaders.append("key",`${localStorage.getItem("token")}`);
     let formdata = new FormData();

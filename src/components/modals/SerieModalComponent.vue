@@ -58,7 +58,7 @@
                 <div  class="flex justify-center py-9">
                     <button 
                     @click="onSave"
-                    class="w-44 h-8 bg-1f text-white">
+                    class="w-44 h-8 bg-1f text-force-white">
                         Guardar
                         </button>                    
                 </div>
