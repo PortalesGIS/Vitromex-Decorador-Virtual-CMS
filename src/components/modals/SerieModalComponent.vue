@@ -34,7 +34,7 @@
                         >                        
                         </div>
                         <div class="border mt-2 border-black ">
-                        <button><p class="px-2" style="color:#6e6e6e">Cambiar imagen</p></button>
+                        <p class="px-2 cursor-pointer" style="color:#6e6e6e">Cambiar imagen</p>
                             </div>                        
                     </div>
                     <div v-else>
@@ -44,7 +44,7 @@
                         style="width:120px;height:120px" alt="">                        
                         </div>                        
                         <div class="border mt-2 border-black ">
-                        <button><p class="px-2" style="color:#6e6e6e">Cambiar imagen</p></button>
+                        <p class="px-2 cursor-pointer" style="color:#6e6e6e">Cambiar imagen</p>
                             </div>                        
                     </div>
                     <input 
