@@ -41,7 +41,7 @@
         <div class="flex items-center w-full shadow-4xl   bg-f5 h-16">
             <SeriesFiltercomponentVue />
           </div>
-          <div class="w-full h-4/6   ">
+          <div class="w-full h-3/6 xl:h-4/6  ">
             <SeriesTableComponentVue />
           </div>
       </div>

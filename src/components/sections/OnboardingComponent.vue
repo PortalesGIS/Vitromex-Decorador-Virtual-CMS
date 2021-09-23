@@ -47,7 +47,7 @@
             :typologiasSelected="typologiesSelected"
             />
           </div>
-          <div class="w-full h-4/6   bg-f5">
+          <div class="w-full h-3/6 xl:h-4/6  bg-f5">
             <TypologieTableComponentVue 
             :changeTypologieSelected="onchangeTypologieSelected"
             />
