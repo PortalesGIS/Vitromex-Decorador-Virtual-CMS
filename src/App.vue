@@ -22,6 +22,9 @@ export default {
   computed: {
     ...mapGetters(["getPageState"])
   },
+  mounted () {
+    console.log("V 1.0.4")
+  },
 }
 </script>
 <style>
