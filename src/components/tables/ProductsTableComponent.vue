@@ -163,11 +163,13 @@
                   </div>
                 </div>
               </th>
-              <th v-for="aplication in getAllSpaces" :key="aplication" class="sticky top-0 bg-1f z-40">
+              <th v-for="(aplication,index) in getAllSpaces" :key="aplication" class="sticky top-0 bg-1f z-40">
                 <div class="col-span-2 flex items-center justify-center ">
                   <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">{{aplication.name}}</p>
                   <div class="">
-                    <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+                    <img 
+                     @click="onFilterArrowAplication(index,aplication.name)"
+                    src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="" />
                   </div>
                 </div>
               </th>
@@ -190,7 +192,7 @@
                 <div class="col-span-2 flex items-center justify-center ">
                   <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Editar</p>
                   <div class="">
-                    <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+                    
                   </div>
                 </div>
               </th>
@@ -198,7 +200,9 @@
                 <div class="col-span-2 flex items-center justify-center ">
                   <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Nuevo</p>
                   <div class="">
-                    <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+                    <img 
+                     @click="onFilterArrowfilterisNewProduct()"
+                    src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="" />
                   </div>
                 </div>
               </th>
@@ -206,13 +210,15 @@
                 <div class="col-span-2 flex items-center justify-center ">
                   <p class="text-force-white text-xs font-semibold py-2 moserrat-semibold">Activar</p>
                   <div class="">
-                    <img src="../../assets/dropdown.svg" class="px-2" alt="" />
+                    <img 
+                     @click="onFilterArrowActive()"
+                    src="../../assets/dropdown.svg" class="px-2 cursor-pointer" alt="" />
                   </div>
                 </div>
               </th>
             </tr>
           </thead>
-          <tbody class="bg-gray-200 min-w-2100px">
+          <tbody class="bg-gray-200 min-w-2100px ">
             <tr
               v-for="(product, index) in getAllProducts"
               :key="index"
@@ -569,6 +575,9 @@ export default {
       "changeAvailableProductDB",
       "changeStatusIsNewProductDB",
       "filterAlphabetProduct",
+      "filterAplicationProduct",
+      "filterisNewProduct",
+      "filterActiveProduct",
     ]),
     async onGetAllProducts() {
       await this.getAllproductsdb();
@@ -576,6 +585,15 @@ export default {
     onFilterArrow(campToFilter) {
       this.filterAlphabetProduct({campToFilter,sateChange: this.stateOfFilters[campToFilter]})
       this.stateOfFilters[campToFilter] = !this.stateOfFilters[campToFilter]
+    },
+    onFilterArrowAplication(position,name) {
+      this.filterAplicationProduct({ position:position,name:name})
+    },
+    onFilterArrowActive() {
+      this.filterActiveProduct()
+    },
+    onFilterArrowfilterisNewProduct() {
+      this.filterisNewProduct()
     },
     countImgsProduct(product) {
       let counter = 0;

@@ -9,6 +9,7 @@ module.exports = {
       "700px":"700px",
       "full":"100%",
       "612px":"612px",
+      "312px":"312px",
     },
     maxWidth:{
       "17":"17rem",
@@ -56,7 +57,7 @@ module.exports = {
       "lg": '1024px',
       // => @media (min-width: 1024px) { ... }
 
-      "xl": '1280px',
+      "xl": '1340px',
       // => @media (min-width: 1280px) { ... }
 
       '2xl': '1536px',

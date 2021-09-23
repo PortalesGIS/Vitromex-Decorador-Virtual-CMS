@@ -1,6 +1,6 @@
 <template>
 <div class="h-screen w-full bg-6f overflow-hidden">
-    <div class="h-16"></div>    
+    <div class="h-5 xl:h-16"></div>    
     <div class="h-5/6  bg-6f shadow-10xl overflow-hidden">
     <div class="overflow-hidden">
       <p class="uppercase monserrat text-5xl text-white font-normal pl-10 py-7">
@@ -11,7 +11,7 @@
         <div class="flex items-center w-full shadow-4xl  bg-f5 h-16">
       <UsersFiltercomponentVue/>
     </div>
-    <div class="w-full shadow-4xl   bg-f5">
+    <div class="w-full  shadow-4xl  bg-f5">
      <UsersTableComponentVue/>
     </div>
       </div>

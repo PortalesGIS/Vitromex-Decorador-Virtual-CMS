@@ -1,6 +1,6 @@
 <template>
   <div class="h-screen w-full bg-6f overflow-hidden">
-    <div class="h-16"></div>    
+    <div class="h-5 xl:h-16"></div>    
     <div class="h-5/6  bg-6f shadow-10xl overflow-hidden">
     <div class="overflow-hidden">
       <div class="flex justify-between ">

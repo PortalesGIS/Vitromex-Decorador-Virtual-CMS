@@ -1,6 +1,6 @@
 <template>
   <div class="h-screen w-full bg-6f overflow-hidden">
-    <div class="h-16"></div>
+    <div class="h-5 xl:h-16"></div>
     <div class="h-5/6  bg-6f shadow-10xl overflow-hidden">
       <div class="overflow-hidden">
         <p class="uppercase text-5xl text-white font-normal pl-10 py-7 monserrat">
@@ -34,7 +34,7 @@
             :spacesSelected="spacesSelected"
             />
           </div>
-          <div class="w-full h-4/6   bg-f5">
+          <div class="w-full h-3/6 xl:h-4/6   bg-f5">
             <SpacesTablecomponentVue 
             :changespaseSelected="onchangeSpaceSelected"
             />

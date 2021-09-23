@@ -221,6 +221,56 @@ formdata.append("positionArray", positionArray);
     commit("setAllProduts",arrayd)
   }
 
+  export const filterAplicationProduct = ({commit,getters},payload)=>{
+    const arrayd = getters.getAllProductsFilter
+    // if(payload.sateChange){
+    const pf= [];
+    const pt= [];
+    arrayd.forEach(p=>{            
+      if(p.aplications.find(namep => namep === payload.name)){
+        pt.push(p)
+      }
+      else{
+        pf.push(p)
+      }      
+    })
+    const finalarray = pt.concat(pf)
+    commit("setAllProduts",finalarray)
+  }
+  export const filterActiveProduct = ({commit,getters})=>{
+    const arrayd = getters.getAllProductsFilter
+    // if(payload.sateChange){
+    const pf= [];
+    const pt= [];
+    arrayd.forEach(p=>{     
+      if(p.available === true ){
+        pt.push(p)
+      }
+      else{
+        pf.push(p)
+      }      
+    })
+    const finalarray = pt.concat(pf)
+    commit("setAllProduts",finalarray)
+  }
+  export const filterisNewProduct = ({commit,getters})=>{
+    const arrayd = getters.getAllProductsFilter
+    // if(payload.sateChange){
+    const pf= [];
+    const pt= [];
+    arrayd.forEach(p=>{     
+      if(p.isNewProduct === true ){
+        pt.push(p)
+      }
+      else{
+        pf.push(p)
+      }      
+    })
+    const finalarray = pt.concat(pf)
+    commit("setAllProduts",finalarray)
+  }
+
+
   export const deleteImgRender=({commit},payload)=>{
     commit("updateProductRender",{id:payload.id,render:"",index:payload.index})
     let myHeaders = new Headers();

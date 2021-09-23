@@ -78,7 +78,7 @@
               </div>
       </div>
       <div class="pl-10 h-px w-full  bg-gray-400"></div>
-       <div class="max-h-120 overflow-y-auto bg-f5">
+       <div class="max-h-312px xl:max-h-120 overflow-y-auto bg-f5">
       <div v-for="(user,index) in getAllUsers" :key="index">
            <div v-if="(index >= startData && index <= endData)">
           <div class="pl-10 grid grid-cols-12  "
