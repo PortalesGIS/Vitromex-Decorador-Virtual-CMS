@@ -38,7 +38,7 @@
                             </div>                        
                     </div>
                     <div v-else>
-                        <div class="cursor-pointer  border border-black">
+                        <div class="cursor-pointer flex justify-center border border-black">
                             <img 
                          src="../../assets/agregar_imagen.svg"
                         style="width:120px;height:120px" alt="">                        

@@ -46,7 +46,7 @@ export const getAllSeriesDB = async ({commit,getters})=>{
 
   export const UpdateSerieImgDB = async ({commit,getters},payload) =>{
     // actualizar en local
-      const series =  getters.getAllSeries
+      const series =  getters.getAllSeriesFilter
       console.log(series)
       const seriesUpdates = []
       series.forEach((ser)=>{
