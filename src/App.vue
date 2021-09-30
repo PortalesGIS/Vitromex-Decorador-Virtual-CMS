@@ -23,7 +23,7 @@ export default {
     ...mapGetters(["getPageState"])
   },
   mounted () {
-    console.log("V 1.0.5")
+    console.log("V 1.1.0")
   },
 }
 </script>
