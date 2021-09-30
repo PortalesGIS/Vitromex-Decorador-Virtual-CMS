@@ -1,7 +1,7 @@
 
 // TODO: liga de desarollo
-export const baseUrl = "https://decorador3d.gis.com.mx"
-// export const baseUrl = "http://localhost:8080"
+// export const baseUrl = "https://decorador3d.gis.com.mx"
+export const baseUrl = "http://localhost:8080"
 
 export const typesViewsMenu={
     dashboard:1,

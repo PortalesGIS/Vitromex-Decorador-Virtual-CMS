@@ -42,8 +42,10 @@ export const getAllproductsdb = async({commit,getters})=>{
     })
     .then(result => result.json())
     .then(response =>{
-      if(response.errors){
+      console.log(response)
+      if(response.error){
         commit("ChangeOneProduct",{...product, available:product.available});
+        alert('El servidor no puedo activar el producto (recarga la página para traer los cambios)')
       } 
     })
   }
@@ -95,16 +97,14 @@ export const getAllproductsdb = async({commit,getters})=>{
       commit("updateProduct",{id:product.id,camp:"aplications",value:product.spaces})
     }
     if(product.miniatura){
-      updateImgDBOne(product.id,product.miniatura,"smallPicture")
-      commit("updateProduct",{id:product.id,camp:"smallPicture",value:URL.createObjectURL(product.miniatura)})
+      updateImgDBOne(product.id,product.miniatura,"smallPicture",commit)
     }
     if(product.albedo){
-      updateImgDBOne(product.id,product.albedo,"albedo")
-      commit("updateProduct",{id:product.id,camp:"albedo",value:URL.createObjectURL(product.albedo)})      
+      updateImgDBOne(product.id,product.albedo,"albedo",commit)
+      // commit("updateProduct",{id:product.id,camp:"albedo",value:URL.createObjectURL(product.albedo)})    
     }
     if(product.normal){
-      updateImgDBOne(product.id,product.normal,"normal")
-      commit("updateProduct",{id:product.id,camp:"normal",value:URL.createObjectURL(product.normal)})
+      updateImgDBOne(product.id,product.normal,"normal",commit)
     }
   }
 
@@ -148,7 +148,7 @@ formdata.append("positionArray", positionArray);
       .catch(error => console.log('error', error));
   }
 
-  const updateImgDBOne = async (id,file,name)=>{
+  const updateImgDBOne = async (id,file,name,commit)=>{
     let myHeaders = new Headers();
     myHeaders.append("key",`${localStorage.getItem("token")}`);
     myHeaders.append("Access-Control-Allow-Origin",`*`);
@@ -164,8 +164,13 @@ formdata.append("positionArray", positionArray);
       redirect: 'follow'
     };
     fetch(`${baseUrl}/api/product/upload-img`, requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
+      .then(response => response.json())
+      .then(result => {
+        console.log(result)
+        if(result.url) {
+          commit("updateProduct",{id:id,camp:name,value:result.url})    
+        }
+      })
       .catch(error => console.log('error', error));
   }
   
