@@ -1,5 +1,5 @@
 
-// TODO: liga de desarollo
+// TODO: liga de desarollo testcommit
 export const baseUrl = "https://decorador3d.gis.com.mx"
 // export const baseUrl = "http://localhost:8080"
 
