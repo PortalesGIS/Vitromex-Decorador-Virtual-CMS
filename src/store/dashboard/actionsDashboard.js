@@ -120,7 +120,6 @@ export const onGetProductsFavorites = async ({ commit,getters }) => {
           }
         })
       );
-      console.log(arrayformated)
       commit("setDashboardProperti", {
         properti: "listProductFavorites",
         value: arrayformated.filter((el) => el != null),

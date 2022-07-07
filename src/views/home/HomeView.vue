@@ -54,7 +54,7 @@ import OnboardingComponentVue from '../../components/sections/OnboardingComponen
 import ProductsComponentVue from '../../components/sections/ProductsComponent.vue'
 import StoresComponentVue from '../../components/sections/StoresComponent.vue'
 import UsersComponentVue from '../../components/sections/UsersComponent.vue'
-import {typesViewsMenu} from '../../types/data'
+import {baseUrl, typesViewsMenu} from '../../types/data'
 export default {
   components: {
     MenuGlobalComponenVue,
@@ -67,21 +67,39 @@ export default {
   },
   data() {
     return {
-      windows:typesViewsMenu
+      windows:typesViewsMenu,
+      sesionExpired:false
     }
   },
   methods: {
-    ...mapActions(["exitCms"])
+    ...mapActions(["exitCms"]),
+    isSesionExpired(){
+      fetch(`${baseUrl}/api/admin/validatejwt`,{
+      method: "POST",
+      headers:{
+        'Content-Type': 'application/json',
+        "key":`${localStorage.getItem("token")}`,
+      },  
+    })
+    .then(result => result.json())
+    .then(response =>{     
+      if(response.isNewToken){
+       localStorage.setItem("token",response.newToken);
+       this.sesionExpired =false
+      }else{
+        if(response.error){
+          this.exitCms()
+          this.sesionExpired = true
+        }
+      }
+    })
+    }
   },
   computed: {
     ...mapGetters(["getVieWindow"]),
-    sesionExpired(){
-      // TODO: optimizar cuando una peticion regresa error(JWT expirado) mandar esta alerta VUEX
-      if(localStorage.getItem("token")){
-        return false;
-      }
-      return true;
-    }
+  },
+  created () {
+    this.isSesionExpired()
   },
 }
 </script>
